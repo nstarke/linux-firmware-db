@@ -160,7 +160,7 @@ export default {
       return this.results.length;
     },
     fullArchTypes() {
-      return [...new Set(this.results.map((res)=> res.full_arch))];
+      return [...new Set(this.results.map((res)=> res.full_arch))].sort();
     }
   },
   methods: {
