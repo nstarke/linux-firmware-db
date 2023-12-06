@@ -16,4 +16,4 @@ python3 ./disassembly/mips.py $LATEST_TAG &
 python3 ./disassembly/8051.py $LATEST_TAG &
 python3 ./disassembly/x86.py $LATEST_TAG &
 wait
-sed -i '/Copyright//d' ../data/txt/disassembly/*.txt
+sed -i '/Copyright/d' ../data/txt/disassembly/*.txt
