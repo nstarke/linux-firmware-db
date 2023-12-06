@@ -4,6 +4,11 @@ START=$HOME/firmware/linux/linux-firmware-db/scripts
 
 cd $START
 
+if [ -f /tmp/.lfwdb-running ]; then
+    echo "Manual Job Running, exiting"
+    exit 0
+fi
+
 cd ../git
 if [ -d linux-firmware ]; then
     echo "Linux-firmware found, pulling"
