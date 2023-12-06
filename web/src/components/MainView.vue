@@ -112,7 +112,7 @@
             <td class="text-center">{{ result.chunk_length }}</td>
             <td class="text-center">{{ result.chunk_count }}</td>
             <td class="text-center">{{ result.file_type }}</td>
-            <td class="text-center" v-if="['Xtensa', 'SuperH', 'ARM', 'MIPS', 'X86'].some(term => result.full_arch.includes(term))">
+            <td class="text-center" v-if="['Xtensa', 'SuperH', 'ARM', 'MIPS', 'X86', '8051'].some(term => result.full_arch.includes(term))">
               <router-link :to="{ name: 'disassembly', params: { firmware: result, sha256: result.sha256 } }">View</router-link>
             </td>
           </tr>
@@ -219,7 +219,7 @@ export default {
       } else if (!this.dataOnly && this.fullOnly) {
         this.results = this.json.filter((res)=>{ return res.full_arch !== "None"});
       } else if (this.noAscii) {
-        this.results = this.json.filter((res)=>{ return res.file_type && res.file_type.toLowerCase().indexOf("ascii") === -1 && res.file_type.toLowerCase().indexOf("unicode") === -1; })
+        this.results = this.json.filter(res => res.file_type && !['ascii', 'unicode', 'utf-8', 'text'].some(i=>res.file_type.includes(i)));
       } else {
         this.results = this.json;
       }
