@@ -1,0 +1,64 @@
+  ;-- rax:
+  ;-- rbx:
+  ;-- rcx:
+  ;-- rdx:
+  ;-- rsi:
+  ;-- rdi:
+  ;-- r8:
+  ;-- r9:
+  ;-- r10:
+  ;-- r11:
+  ;-- r12:
+  ;-- r13:
+  ;-- r14:
+  ;-- r15:
+  ;-- rip:
+  ;-- rflags:
+┌ 33: int.00000000 (int64_t arg1, int64_t arg3);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg3 @ rdx
+│ 0x00000000      a30000004480.  movabs dword [0x6000018044000000], eax ; [0x6000018044000000:4]=-1
+│ ; DATA XREF from int.00000000 @ +0x2c68
+│ 0x00000009      020400         add al, byte [rax + rax]
+│ ; XREFS: DATA 0x000003bb  DATA 0x0000090a  DATA 0x0000091c  
+│ ; XREFS: DATA 0x000026d4  DATA 0x0001616f  DATA 0x00016d70  
+│ ; XREFS: DATA 0x00016d72  DATA 0x00017351  DATA 0x00017f52  
+│ 0x0000000c      f1             int1
+│ ; XREFS: DATA 0x000003a7  DATA 0x000009ca  DATA 0x000009dc  
+│ ; XREFS: DATA 0x000040d9  DATA 0x0000723f  DATA 0x00008373  
+│ ; XREFS: DATA 0x0000a8f4  DATA 0x0000bf4f  DATA 0x0000ffd7  
+│ ; XREFS: DATA 0x00012204  DATA 0x000159da  DATA 0x00015f34  
+│ ; XREFS: DATA 0x00016b35  DATA 0x00017dc3  
+│ 0x0000000d      c02220         shl byte [rdx], 0x20                  ; arg3
+│ ; XREFS(51)
+│ 0x00000010      800f04         or byte [rdi], 4                      ; arg1
+│ ; XREFS: DATA 0x000026d7  DATA 0x00006f48  DATA 0x0000723b  
+│ ; XREFS: DATA 0x00007f27  DATA 0x0000c6b2  CALL 0x0000f7bf  
+│ ; XREFS: DATA 0x000131ff  DATA 0x000158b1  DATA 0x000176f8  
+│ ; XREFS: DATA 0x00017a1d  
+│ 0x00000013      00685b         add byte [rax + 0x5b], ch
+│ ; XREFS: DATA 0x00001896  DATA 0x00002dc8  DATA 0x00002e2e  
+│ ; XREFS: DATA 0x00007502  DATA 0x0000943c  DATA 0x00009a66  
+│ ; XREFS: DATA 0x00009b65  DATA 0x00009b6e  DATA 0x000100d7  
+│ 0x00000016      e078           loopne 0x90
+  false: 0x00000018
+│ ; XREFS: CODE 0x00000033  DATA 0x0000298a  DATA 0x00007350  
+│ ; XREFS: DATA 0x000084a8  DATA 0x00009a1a  DATA 0x0000c4cf  
+│ ; XREFS: DATA 0x00013382  
+│ 0x00000017      78d1           js 0xffffffffffffffea
+  false: 0x00000019
+│ ; XREFS: DATA 0x000002af  DATA 0x000023de  DATA 0x000031f8  
+│ ; XREFS: DATA 0x0000700c  DATA 0x00009135  DATA 0x0000a9a0  
+│ ; XREFS: DATA 0x0000b767  DATA 0x0000baca  DATA 0x0000c2a4  
+│ ; XREFS: DATA 0x0000c76c  DATA 0x0000c891  DATA 0x0000d5ea  
+│ ; XREFS: DATA 0x0000dd32  DATA 0x0000e00e  DATA 0x0000ec24  
+│ ; XREFS: DATA 0x0000fb49  DATA 0x00015d72  
+│ 0x00000018      d1c0           rol eax, 1
+│ ; XREFS: DATA 0x00007e38  DATA 0x00009fb4  DATA 0x0000e49c  
+│ ; XREFS: DATA 0x0000e4be  DATA 0x0000ee84  DATA 0x00016c77  
+│ ; XREFS: DATA 0x000171df  
+└ 0x0000001a      e07e           loopne 0x9a
+
+│ ; XREFS(21)
+└ 0x00000019      c0e07e         shl al, 0x7e
+

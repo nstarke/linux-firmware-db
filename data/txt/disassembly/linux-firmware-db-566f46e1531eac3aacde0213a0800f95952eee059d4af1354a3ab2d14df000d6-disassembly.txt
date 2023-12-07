@@ -1,0 +1,53 @@
+  ;-- rax:
+  ;-- rbx:
+  ;-- rcx:
+  ;-- rdx:
+  ;-- rsi:
+  ;-- rdi:
+  ;-- r8:
+  ;-- r9:
+  ;-- r10:
+  ;-- r11:
+  ;-- r12:
+  ;-- r13:
+  ;-- r14:
+  ;-- r15:
+  ;-- rip:
+  ;-- rflags:
+┌ 44: fcn.00000000 (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x00000000      018efc0a0001   add dword [rsi + 0x1000afc], ecx      ; arg4
+│ ; DATA XREF from fcn.00000000 @ +0x5b83
+│ 0x00000006      0008           add byte [rax], cl
+│ 0x00000008      000402         add byte [rdx + rax], al              ; arg3
+│ ; DATA XREFS from fcn.00000000 @ +0x5cd, +0x5354
+│ 0x0000000b      030d57020e04   add ecx, dword [0x040e0268]           ; [0x40e0268:4]=-1 ; arg4
+│ ; XREFS: DATA 0x0000035f  DATA 0x00001a08  DATA 0x00001b70  
+│ ; XREFS: DATA 0x00004897  DATA 0x000048a3  DATA 0x00004d28  
+│ ; XREFS: DATA 0x00005081  DATA 0x00005f0f  DATA 0x00005f2b  
+│ ; XREFS: DATA 0x000060c9  DATA 0x000060e5  DATA 0x000060f9  
+│ ; XREFS: DATA 0x00006115  DATA 0x00006129  
+│ 0x00000011      018efc00018e   add dword [rsi - 0x71feff04], ecx     ; arg4
+│ ; DATA XREFS from fcn.00000000 @ +0x14f5, +0x2a62, +0x3439
+│ 0x00000017      fc             cld
+│ ; DATA XREFS from fcn.00000000 @ +0x1e8, +0x1183, +0x2426, +0x5eb9
+│ 0x00000018      fa             cli
+│ ; DATA XREFS from fcn.00000000 @ +0x2335, +0x3665, +0x60a9
+│ 0x00000019      0000           add byte [rax], al
+│ ; DATA XREFS from fcn.00000000 @ +0x253f, +0x299d, +0x2a35, +0x3d6f
+│ 0x0000001b      0021           add byte [rcx], ah                    ; arg4
+│ ; DATA XREF from fcn.00000000 @ +0x3e35
+│ 0x0000001d      00f4           add ah, dh
+│ ; DATA XREF from fcn.00000000 @ +0x13c0
+│ 0x0000001f      2020           and byte [rax], ah
+│ ; XREFS: DATA 0x00000b6f  DATA 0x00000b81  DATA 0x00001772  
+│ ; XREFS: DATA 0x00001b55  DATA 0x00002508  DATA 0x0000341e  
+│ 0x00000021      800f00         or byte [rdi], 0                      ; arg1
+│ ; DATA XREF from fcn.00000000 @ +0x247f
+│ 0x00000024      088a02f807c2   or byte [rdx - 0x3df807fe], cl        ; arg3
+│ ; DATA XREF from fcn.00000000 @ +0x27f
+└ 0x0000002a      ffe1           jmp rcx                               ; arg4
+

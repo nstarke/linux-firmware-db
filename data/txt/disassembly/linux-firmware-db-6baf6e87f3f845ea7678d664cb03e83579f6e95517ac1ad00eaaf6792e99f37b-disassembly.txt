@@ -1,0 +1,33 @@
+  ;-- rax:
+  ;-- rbx:
+  ;-- rcx:
+  ;-- rdx:
+  ;-- rsi:
+  ;-- rdi:
+  ;-- r8:
+  ;-- r9:
+  ;-- r10:
+  ;-- r11:
+  ;-- r12:
+  ;-- r13:
+  ;-- r14:
+  ;-- r15:
+  ;-- rip:
+  ;-- rflags:
+┌ 8: fcn.00000000 ();
+│ 0x00000000      6c             insb byte [rdi], dx
+│ ; DATA XREFS from int.00000026 @ +0x10cee, +0x10ef2
+│ 0x00000001      0000           add byte [rax], al
+│ 0x00000003      003c13         add byte [rbx + rdx], bh
+└ 0x00000006      0100           add dword [rax], eax
+
+  ; CALL XREF from fcn.00000000 @ +0x1d
+  ; DATA XREFS from int.00000026 @ +0x7d8d, +0xcd22
+┌ 5: int.00000026 ();
+│ 0x00000026      e1c5           loope 0xffffffffffffffed
+  false: 0x00000028
+│ ; DATA XREFS from int.00000026 @ +0x683, +0x8154, +0xbe67
+│ 0x00000028      00dd           add ch, bl
+│ ; DATA XREFS from int.00000026 @ +0x43df, +0xd684
+└ 0x0000002a      cf             iretd
+

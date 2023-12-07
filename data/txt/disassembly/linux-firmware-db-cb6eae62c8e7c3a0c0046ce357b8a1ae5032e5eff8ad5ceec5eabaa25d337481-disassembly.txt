@@ -1,0 +1,1016 @@
+│ ; CODE XREF from fcn.00036b21 @ 0x36b43
+│ 0x00036b03      d8aeff89e824   fsubr dword [rsi + 0x24e889ff]        ; arg2
+│ 0x00036b09      d8adff85e82c   fsubr dword [rbp + 0x2ce885ff]
+│ 0x00036b0f      d8abffad7302   fsubr dword [rbx + 0x273adff]
+│ 0x00036b15      e807dd2bd8     call 0xffffffffd82f4821
+│ 0x00036b1a      a9ff89e824     test eax, 0x24e889ff
+│ 0x00036b1f  ~   d8a7ff87e82c   fsub dword [rdi + 0x2ce887ff]
+  ; CALL XREF from rax @ +0x521c
+┌ 89: fcn.00036b21 (int64_t arg1, int64_t arg2);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ 0x00036b21      ff87e82cd8a6   inc dword [rdi - 0x5927d318]          ; arg1
+│ 0x00036b27      ff1470         call qword [rax + rsi*2]
+│ 0x00036b2a      0c70           or al, 0x70
+│ 0x00036b2c      02             invalid
+| // true: 0x00036b2f  false: 0x00036b2d
+  ; CALL XREF from rax @ +0x521c
+┌ 89: fcn.00036b21 (int64_t arg1, int64_t arg2);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ 0x00036b21      ff87e82cd8a6   inc dword [rdi - 0x5927d318]          ; arg1
+│ 0x00036b27      ff1470         call qword [rax + rsi*2]
+│ 0x00036b2a      0c70           or al, 0x70
+│ 0x00036b2c      02f2           add dh, dl
+│ 0x00036b2e      08d8           or al, bl
+| // true: 0x00036b30
+│ 0x00036b2d      f208d8         or al, bl
+| // true: 0x00036b30
+│ ; CODE XREF from fcn.00036b21 @ 0x36b2b
+│ 0x00036b2f      d8b8600dafe8   fdivr dword [rax - 0x1750f2a0]
+| // true: 0x00036b35
+│ 0x00036b30      b8600dafe8     mov eax, 0xe8af0d60
+| // true: 0x00036b35
+│ 0x00036b35      d80e           fmul dword [rsi]
+│ 0x00036b37      af             scasd eax, dword [rdi]
+│ 0x00036b38      23d8           and ebx, eax
+│ 0x00036b3a      a1ff86e82bd8.  movabs eax, dword [0x14ff9fd82be886ff] ; [0x14ff9fd82be886ff:4]=-1
+│ 0x00036b43      70be           jo 0x36b03
+| // true: 0x00036b03  false: 0x00036b45
+│ 0x00036b45      d803           fadd dword [rbx]
+
+  ; CALL XREF from fcn.000082e0 @ +0x1427
+┌ 13: fcn.0000a7a1 ();
+│ 0x0000a7a1      7100           jno 0xa7a3
+| // true: 0x0000a7a3  false: 0x0000a7a3
+│ 0x0000a7a3      80f48c         xor ah, 0x8c
+│ 0x0000a7a6      041e           add al, 0x1e
+│ 0x0000a7a8      407000         jo 0xa7ab
+| // true: 0x0000a7ab  false: 0x0000a7ab
+│ ; CODE XREF from fcn.0000a7a1 @ 0xa7a8
+└ 0x0000a7ab      80f48c         xor ah, 0x8c
+
+│ ; CODE XREF from fcn.0003c957 @ 0x3c968
+│ 0x0003c92d      083b           or byte [rbx], bh
+│ 0x0003c92f      0080c3410000   add byte [rax + 0x41c3], al
+│ 0x0003c935      02fc           add bh, ah
+│ 0x0003c937      40205000       and byte [rax], dl
+│ 0x0003c93b      4e224021       and r8b, byte [rax + 0x21]
+│ 0x0003c93f      001c44         add byte [rsp + rax*2], bl
+│ 0x0003c942      305320         xor byte [rbx + 0x20], dl
+│ 0x0003c945      53             push rbx
+│ 0x0003c946      0082c22f2107   add byte [rdx + 0x7212fc2], al        ; arg3
+│ 0x0003c94c      0438           add al, 0x38
+
+  ; CALL XREF from fcn.0000a7a1 @ +0x8b1
+┌ 55: fcn.0003c957 (int64_t arg1, int64_t arg3);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg3 @ rdx
+│ 0x0003c957      204302         and byte [rbx + 2], al
+│ 0x0003c95a      1cc2           sbb al, 0xc2
+│ 0x0003c95c      34b6           xor al, 0xb6
+│ 0x0003c95e      09afe3304400   or dword [rdi + 0x4430e3], ebp        ; arg1
+│ 0x0003c964      22d2           and dl, dl
+│ 0x0003c966      2446           and al, 0x46
+│ 0x0003c968      73c3           jae 0x3c92d
+| // true: 0x0003c92d  false: 0x0003c96a
+│ 0x0003c96a      400000         add byte [rax], al
+
+  ; CALL XREF from fcn.0000a7a1 @ +0x531b
+┌ 17: fcn.00013b84 (int64_t arg3, int64_t arg_15h);
+│ ; arg int64_t arg_15h @ rbp+0x15
+│ ; arg int64_t arg3 @ rdx
+│ 0x00013b84      084515         or byte [arg_15h], al
+│ 0x00013b87      095000         or dword [rax], edx                   ; arg3
+│ 0x00013b8a      8ce9           mov ecx, gs
+└ 0x00013b8c      a1402c7108f0.  movabs eax, dword [0x6640a1f008712c40] ; [0x6640a1f008712c40:4]=-1
+
+  ; CALL XREF from fcn.00013b84 @ +0x1048
+┌ 22: fcn.00056c5b (int64_t arg4);
+│ ; var int64_t var_39395200h @ rbp-0x39395200
+│ ; arg int64_t arg4 @ rcx
+│ 0x00056c5b      fc             cld
+│ 0x00056c5c      0080f81701f0   add byte [rax - 0xffee808], al
+│ 0x00056c62      e07f           loopne 0x56ce3
+  false: 0x00056c64
+│ 0x00056c64      00a113083002   add byte [rcx + 0x2300813], ah        ; arg4
+│ 0x00056c6a      1474           adc al, 0x74
+│ 0x00056c6c      18d8           sbb al, bl
+│ 0x00056c6e      e07d           loopne 0x56ced
+  false: 0x00056c70
+└ 0x00056c70      c3             ret
+
+  ; CALL XREF from fcn.00013b84 @ +0x5383
+┌ 8: fcn.0001a090 (int64_t arg3, int64_t arg4);
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x0001a090      80629c32       and byte [rdx - 0x64], 0x32           ; [0x32:1]=0 ; arg3
+│ 0x0001a094      2301           and eax, dword [rcx]                  ; arg4
+└ 0x0001a096      0446           add al, 0x46
+
+│ 0x0002996a      450d8efcf5a5   or eax, 0xa5f5fc8e
+│ 0x00029970      8512           test dword [rdx], edx                 ; arg3
+│ 0x00029972      0000           add byte [rax], al
+│ 0x00029974      ef             out dx, eax
+│ 0x00029975      e8028d6241     call 0x4165267c
+│ 0x0002997a      5f             pop rdi
+│ 0x0002997b  ~   208005c37000   and byte [rax + 0x70c305], al
+  ; CALL XREF from fcn.0001a090 @ +0xe677
+┌ 203: fcn.0002997f (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4, int64_t arg_71h, int64_t arg_15421f04h, int64_t arg_202fa905h);
+│ ; arg int64_t arg_71h @ rbp+0x71
+│ ; arg int64_t arg_15421f04h @ rbp+0x15421f04
+│ ; arg int64_t arg_202fa905h @ rbp+0x202fa905
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x0002997f      7000           jo 0x29981
+| // true: 0x00029981
+  ; CALL XREF from fcn.0001a090 @ +0xe677
+┌ 203: fcn.0002997f (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4, int64_t arg_71h, int64_t arg_15421f04h, int64_t arg_202fa905h);
+│ ; arg int64_t arg_71h @ rbp+0x71
+│ ; arg int64_t arg_15421f04h @ rbp+0x15421f04
+│ ; arg int64_t arg_202fa905h @ rbp+0x202fa905
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x0002997f      7000           jo 0x29981
+| // true: 0x00029981  false: 0x00029981
+│ 0x00029981      80e5a3         and ch, 0xa3
+│ 0x00029984      7208           jb 0x2998e
+| // true: 0x0002998e  false: 0x00029986
+│ 0x00029986      ef             out dx, eax
+│ 0x00029987      704c           jo 0x299d5
+| // true: 0x000299d5  false: 0x00029989
+│ 0x00029989      760e           jbe 0x29999
+| // true: 0x00029999  false: 0x0002998b
+│ 0x0002998b      7606           jbe 0x29993
+| // true: 0x00029993  false: 0x0002998d
+│ 0x0002998d      e82671d909     call 0x9dc0ab8
+│ 0x00029992      f4             hlt
+
+│ ; CODE XREF from fcn.0002997f @ 0x29984
+│ 0x0002998e      2671d9         jno 0x2996a
+| // true: 0x0002996a  false: 0x00029991
+│ 0x00029991      09f4           or esp, esi                           ; arg2
+| // true: 0x00029993
+│ ; CODE XREF from fcn.0002997f @ 0x2998b
+│ 0x00029993      a10e7233f034.  movabs eax, dword [0x24802434f033720e] ; [0x24802434f033720e:4]=-1
+│ 0x0002999c      cd71           int 0x71
+│ 0x0002999e      4a234012       and rax, qword [rax + 0x12]
+| // true: 0x000299a2
+│ ; CODE XREF from fcn.0002997f @ 0x29989
+│ 0x00029999      2480           and al, 0x80
+│ 0x0002999b      24cd           and al, 0xcd
+│ 0x0002999d      714a           jno 0x299e9
+| // true: 0x000299e9  false: 0x0002999f
+│ 0x0002999f      234012         and eax, dword [rax + 0x12]
+| // true: 0x000299a2
+│ 0x000299a2      02af28b803af   add ch, byte [rdi - 0x50fc47d8]       ; arg1
+│ 0x000299a8      098d041f4215   or dword [arg_15421f04h], ecx         ; arg4
+│ 0x000299ae      05af23f05a     add eax, 0x5af023af
+│ 0x000299b3      230c1a         and ecx, dword [rdx + rbx]            ; arg4
+│ 0x000299b6      0022           add byte [rdx], ah                    ; arg3
+│ 0x000299b8      0323           add esp, dword [rbx]
+│ 0x000299ba      028b5f20c100   add cl, byte [rbx + 0xc1205f]
+│ 0x000299c0      cc             int3
+
+│ ; CODE XREF from fcn.0002997f @ 0x29987
+│ 0x000299d5      2481           and al, 0x81
+│ 0x000299d7      1415           adc al, 0x15
+
+│ 0x000299e9      8b25a82f2007   mov esp, dword [0x0722c997]           ; [0x722c997:4]=-1
+│ 0x000299ef      0440           add al, 0x40
+│ 0x000299f1      2010           and byte [rax], dl
+│ 0x000299f3      016571         add dword [arg_71h], esp
+│ 0x000299f6      bf0b94924a     mov edi, 0x4a92940b
+│ 0x000299fb      21802215f05a   and dword [rax + 0x5af01522], eax
+│ 0x00029a01      21142a         and dword [rdx + rbp], edx            ; arg3
+│ 0x00029a04      8ed0           mov ss, eax
+│ 0x00029a06      0022           add byte [rdx], ah                    ; arg3
+│ 0x00029a08      0d25228d36     or eax, 0x368d2225
+│ 0x00029a0d      7827           js 0x29a36
+| // true: 0x00029a36  false: 0x00029a0f
+│ 0x00029a0f      8815091e0026   mov byte [0x2602b81e], dl             ; [0x2602b81e:1]=255
+│ 0x00029a15      8811           mov byte [rcx], dl                    ; arg4
+│ 0x00029a17      09a1056241da   or dword [rcx - 0x25be9dfb], esp      ; arg4
+│ 0x00029a1d      0faf704c       imul esi, dword [rax + 0x4c]
+│ 0x00029a21      7609           jbe 0x29a2c
+| // true: 0x00029a2c  false: 0x00029a23
+│ 0x00029a23      e82671dd09     call 0x9e00b4e
+│ 0x00029a28      14a5           adc al, 0xa5
+│ 0x00029a2a      c1af2f200704.  shr dword [rdi + 0x407202f], 0xd4
+
+│ ; CODE XREF from fcn.0002997f @ 0x29a0d
+│ 0x00029a36      0110           add dword [rax], edx                  ; arg3
+│ 0x00029a38      3424           xor al, 0x24
+│ 0x00029a3a      8024c57102a9.  and byte [rax*8 + 0x28a90271], 0xb8   ; [0xb8:1]=96
+│ 0x00029a42      03a9088d04a9   add ebp, dword [rcx - 0x56fb72f8]     ; arg4
+│ 0x00029a48      098d05a92f20   or dword [arg_202fa905h], ecx         ; arg4
+
+  ; CALL XREF from fcn.0002997f @ +0x22e2
+┌ 2: fcn.0002c26b (int64_t arg3);
+│ ; arg int64_t arg3 @ rdx
+└ 0x0002c26b      2802           sub byte [rdx], al                    ; arg3
+
+  ; CALL XREF from fcn.00036b21 @ +0x13e6
+┌ 62: fcn.0003926e (int64_t arg4, int64_t arg_e01cae1h, int64_t arg_e031ce1h);
+│ ; arg int64_t arg_e01cae1h @ rbp+0xe01cae1
+│ ; arg int64_t arg_e031ce1h @ rbp+0xe031ce1
+│ ; arg int64_t arg4 @ rcx
+│ 0x0003926e      20810fffff95   and byte [rcx - 0x6a0000f1], al       ; arg4
+│ 0x00039274      03c9           add ecx, ecx                          ; arg4
+│ 0x00039276      e1ec           loope 0x39264
+| // true: 0x00039264  false: 0x00039278
+│ ; CODE XREF from fcn.00036b21 @ +0x2713
+│ 0x00039278      002e           add byte [rsi], ch
+│ 0x0003927a      00cd           add ch, cl
+│ 0x0003927c      7000           jo 0x3927e
+| // true: 0x0003927e  false: 0x0003927e
+│ ; CODE XREF from fcn.0003926e @ 0x3927c
+│ 0x0003927e      20810fffffd6   and byte [rcx - 0x290000f1], al
+│ 0x00039284      03ade1ca010e   add ebp, dword [arg_e01cae1h]
+│ 0x0003928a      0000           add byte [rax], al
+│ 0x0003928c      20810fffff2c   and byte [rcx + 0x2cffff0f], al
+│ 0x00039292      0389e150020e   add ecx, dword [rcx + 0xe0250e1]
+│ 0x00039298      0000           add byte [rax], al
+│ 0x0003929a      20810ffffffb   and byte [rcx - 0x40000f1], al
+│ 0x000392a0      038de11c030e   add ecx, dword [arg_e031ce1h]
+│ 0x000392a6      00d3           add bl, dl
+│ 0x000392a8      7000           jo 0x392aa
+| // true: 0x000392aa  false: 0x000392aa
+│ ; CODE XREF from fcn.0003926e @ 0x392a8
+└ 0x000392aa      0039           add byte [rcx], bh
+
+  ; CALL XREF from fcn.0003c957 @ +0xb49
+┌ 6: fcn.0004e561 ();
+│ 0x0004e561      83dd08         sbb ebp, 8
+│ 0x0004e564      1100           adc dword [rax], eax
+└ 0x0004e566      98             cwde
+
+  ; CALL XREF from fcn.0003c957 @ +0x3af6
+┌ 38: fcn.00071c7c (int64_t arg1, int64_t arg4);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg4 @ rcx
+│ 0x00071c7c      01800430e3b8   add dword [rax - 0x471ccffc], eax
+│ 0x00071c82      0c71           or al, 0x71
+│ 0x00071c84      0cf2           or al, 0xf2
+│ 0x00071c86      3421           xor al, 0x21
+│ 0x00071c88      810f01800a31   or dword [rdi], 0x310a8001            ; [0x310a8001:4]=-1 ; arg1
+│ 0x00071c8e      1109           adc dword [rcx], ecx                  ; arg4
+│ 0x00071c90      b400           mov ah, 0
+│ 0x00071c92      2c70           sub al, 0x70
+│ 0x00071c94      260f6fff       movq mm7, mm7
+│ 0x00071c98      a1400c70c2c6.  movabs eax, dword [0xf878e0c6c2700c40]
+└ 0x00071ca1      c3             ret
+
+  ; CALL XREF from fcn.0003c957 @ +0xabcb
+┌ 5: fcn.000585e3 (int64_t arg4);
+│ ; arg int64_t arg4 @ rcx
+│ 0x000585e3      400000         add byte [rax], al
+└ 0x000585e6      0bc1           or eax, ecx                           ; arg4
+
+  ; CALL XREF from fcn.0003c957 @ +0xadb0
+┌ 10: fcn.00048b5d (int64_t arg_14h);
+│ ; arg int64_t arg_14h @ rbp+0x14
+│ 0x00048b5d      fc             cld
+│ 0x00048b5e      f5             cmc
+│ 0x00048b5f      83651400       and dword [arg_14h], 0
+│ 0x00048b63      00ef           add bh, ch
+└ 0x00048b65      0c41           or al, 0x41
+
+  ; CALL XREF from fcn.00048b5d @ +0x3840
+┌ 17: fcn.0005d45e ();
+│ 0x0005d45e      f5             cmc
+│ 0x0005d45f      81081180fa08   or dword [rax], 0x8fa8011             ; [0x8fa8011:4]=-1
+│ ; CODE XREF from fcn.0005d45e @ +0x43
+│ 0x0005d465      0ff57908       pmaddwd mm7, qword [rcx + 8]
+└ 0x0005d469      11801e1d0310   adc dword [rax + 0x10031d1e], eax
+
+  ; CALL XREF from fcn.0004e561 @ +0x7e2d
+┌ 3: fcn.0005744f ();
+└ 0x0005744f      0a4000         or al, byte [rax]
+
+│ ; CODE XREFS from fcn.0007968c @ 0x79ea, 0x79682
+│ 0x00079676      011581145071   add dword [0x7157aafd], edx           ; [0x7157aafd:4]=-1 ; arg3
+│ 0x0007967c      0201           add al, byte [rcx]                    ; arg4
+│ 0x0007967e      26003470       add byte es:[rax + rsi*2], dh
+| // true: 0x00079682
+│ ; CODE XREF from fcn.0007968c @ 0x796a5
+│ 0x00079678      811450710201.  adc dword [rax + rdx*2], 0x26010271
+│ 0x0007967f      003470         add byte [rax + rsi*2], dh
+| // true: 0x00079682
+│ 0x00079682      7df2           jge 0x79676
+| // true: 0x00079676  false: 0x00079684
+│ 0x00079684      1d09940300     sbb eax, 0x39409
+│ 0x00079689  ~   8d1508910502   lea edx, [0x020d2797]
+  ; CALL XREF from fcn.0005744f @ +0xbf
+┌ 135: fcn.0007968c (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4);
+│ ; var int64_t var_10f1f530h @ rbp-0x10f1f530
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x0007968c      91             xchg eax, ecx                         ; arg4
+│ 0x0007968d      05028d618d     add eax, 0x8d618d02
+| // true: 0x00079692
+  ; CALL XREF from fcn.0005744f @ +0xbf
+┌ 135: fcn.0007968c (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4);
+│ ; var int64_t var_10f1f530h @ rbp-0x10f1f530
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x0007968c      91             xchg eax, ecx                         ; arg4
+│ 0x0007968d      05028d618d     add eax, 0x8d618d02
+| // true: 0x00079692
+│ 0x00079692      08b865781708   or byte [rax + 0x8177865], bh
+│ 0x00079698      800f00         or byte [rdi], 0                      ; arg1
+│ 0x0007969b      0084fd096a3d.  add byte [rbp + rdi*8 + 0x653d6a09], al
+│ 0x000796a2      22780f         and bh, byte [rax + 0xf]
+│ 0x000796a5      7ad1           jp 0x79678
+| // true: 0x00079678  false: 0x000796a7
+│ 0x000796a7      0ad5           or dl, ch
+│ 0x000796a9      8369f041       sub dword [rcx - 0x10], 0x41          ; [0x41:4]=0 ; arg4
+│ 0x000796ad      6d             insd dword [rdi], dx
+│ 0x000796ae      0022           add byte [rdx], ah                    ; arg3
+│ 0x000796b0      51             push rcx                              ; arg4
+│ 0x000796b1      00fe           add dh, bh
+│ 0x000796b3      1197a0fd1196   adc dword [rdi - 0x69ee0260], edx     ; arg3
+│ 0x000796b9      a0fb1195a0fc.  movabs al, byte [0xa09411fca09511fb]
+│ 0x000796c2      091593100815   or dword [0x150fa75b], edx            ; [0x150fa75b:4]=-1 ; arg3
+│ 0x000796c8      90             nop
+│ 0x000796c9      10e6           adc dh, ah
+│ 0x000796cb      8d8dd00a0eef   lea ecx, [var_10f1f530h]
+│ 0x000796d1      c7c78d478d06   mov edi, 0x68d478d
+│ 0x000796d7      8d28           lea ebp, [rax]
+│ 0x000796d9      8d08           lea ecx, [rax]
+│ 0x000796db      ba057a098d     mov edx, 0x8d097a05
+│ 0x000796e0      08bee57e08b8   or byte [rsi - 0x47f7811b], bh        ; arg2
+│ 0x000796e6      bcf8402810     mov esp, 0x102840f8
+│ 0x000796eb      2405           and al, 5
+
+  ; CALL XREF from fcn.0005d45e @ +0x92a9
+┌ 20: fcn.00067d3b ();
+│ 0x00067d3b      29809c188000   sub dword [rax + 0x80189c], eax
+│ 0x00067d41      2471           and al, 0x71
+│ 0x00067d43      29a020805520   sub dword [rax + 0x20558020], esp
+│ 0x00067d49      430a558e       or dl, byte [r13 - 0x72]
+│ 0x00067d4d      fc             cld
+└ 0x00067d4e      f5             cmc
+
+│ ; CODE XREF from fcn.000699dd @ 0x69a08
+│ 0x0006998b      42c03e4e       sar byte [rsi], 0x4e
+│ 0x0006998f      2c74           sub al, 0x74
+
+  ; CALL XREF from fcn.0005d45e @ +0xa201
+┌ 59: fcn.000699dd (int64_t arg1, int64_t arg2);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ 0x000699dd      80700080       xor byte [rax], 0x80                  ; [0x80:1]=199
+│ 0x000699e1      c038e2         sar byte [rax], 0xe2
+│ 0x000699e4      09ef           or edi, ebp                           ; arg1
+│ 0x000699e6      f730           div dword [rax]
+│ 0x000699e8      40084604       or byte [rsi + 4], al                 ; arg2
+│ 0x000699ec      e8a08688ed     call 0xffffffffed8f2091
+│ 0x000699f1      08d8           or al, bl
+│ 0x000699f3      fe09           dec byte [rcx]
+│ 0x000699f5      ef             out dx, eax
+│ 0x000699f6      d18a211c06a0   ror dword [rdx - 0x5ff9e3df], 1
+│ ; CODE XREF from fcn.000699dd @ +0x9a
+│ 0x000699fc      8681c0402481   xchg byte [rcx - 0x7edbbf40], al
+│ 0x00069a02      30a2092feb4c   xor byte [rdx + 0x4ceb2f09], ah
+│ 0x00069a08      7081           jo 0x6998b
+| // true: 0x0006998b  false: 0x00069a0a
+│ 0x00069a0a      c0402481       rol byte [rax + 0x24], 0x81
+│ 0x00069a0e      304c702e       xor byte [rax + rsi*2 + 0x2e], cl
+
+  ; CALL XREF from fcn.000699dd @ +0x39b9
+┌ 6: fcn.0007145e ();
+│ 0x0007145e      700c           jo 0x7146c
+  false: 0x00071460
+│ 0x00071460      711d           jno 0x7147f
+  false: 0x00071462
+└ 0x00071462      f2c9           leave
+
+  ; CALL XREF from fcn.0007968c @ +0x6623
+┌ 58: fcn.0008148c (int64_t arg3, int64_t arg4, int64_t arg_45080fh);
+│ ; arg int64_t arg_45080fh @ rbp+0x45080f
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x0008148c      4046201c41     and byte [rcx + r8*2], r11b           ; arg4
+│ 0x00081491      3018           xor byte [rax], bl
+│ 0x00081493      1c41           sbb al, 0x41
+│ 0x00081495      3043c6         xor byte [rbx - 0x3a], al
+│ 0x00081498      3e0c6f         or al, 0x6f
+│ 0x0008149b      c441c56c7022   vpunpcklqdq ymm14, ymm7, ymmword [r8 + 0x22]
+│ 0x000814a1      4204f0         add al, 0xf0
+│ 0x000814a4      12e2           adc ah, dl
+│ 0x000814a6      64712f         jno 0x814d8
+  false: 0x000814a9
+│ 0x000814a9      0b1505f90a40   or edx, dword [0x40130db4]            ; [0x40130db4:4]=-1 ; arg3
+│ 0x000814af      830092         add dword [rax], 0xffffff92
+│ 0x000814b2      7ae8           jp 0x8149c
+| // true: 0x0008149c  false: 0x000814b4
+│ 0x000814b4      20950f084500   and byte [arg_45080fh], dl
+│ 0x000814ba      0929           or dword [rcx], ebp
+│ 0x000814bc      3e80f4f5       xor ah, 0xf5
+│ 0x000814c0      04f0           add al, 0xf0
+│ 0x000814c2      0928           or dword [rax], ebp
+└ 0x000814c4      7e80           jle 0x81446
+| // true: 0x00081446
+  ; CALL XREF from fcn.0007968c @ +0x7a93
+┌ 6: fcn.0009359c ();
+└ 0x0009359c      008018444e0e   add byte [rax + 0xe4e4418], al
+
+  ; CALL XREF from fcn.0008148c @ +0x2d80
+┌ 41: fcn.000882d4 (int64_t arg1, int64_t arg3);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg3 @ rdx
+│ 0x000882d4      8c20           mov word [rax], fs
+│ 0x000882d6      0284b7f420d8.  add al, byte [rdi + rsi*4 + 0x6ed820f4] ; arg1
+│ 0x000882dd      f000a20d8bcd.  lock add byte [rdx + 0x70cd8b0d], ah  ; arg3
+│ 0x000882e4      d14286         rol dword [rdx - 0x7a], 1
+│ 0x000882e7      e811d0ee0f     call 0xff752fd
+│ 0x000882ec      ef             out dx, eax
+│ 0x000882ed      d100           rol dword [rax], 1
+│ 0x000882ef      8810           mov byte [rax], dl
+│ 0x000882f1      421ad8         sbb bl, al
+│ 0x000882f4      92             xchg eax, edx
+│ 0x000882f5      0f6ffd         movq mm7, mm5
+│ 0x000882f8      42416c         insb byte [rdi], dx
+└ 0x000882fb      7040           jo 0x8833d
+
+  ; CALL XREF from fcn.0008148c @ +0x3ed0
+┌ 6: fcn.00089424 (int64_t arg2);
+│ ; arg int64_t arg2 @ rsi
+│ 0x00089424      0ad8           or bl, al
+│ 0x00089426      13f0           adc esi, eax                          ; arg2
+└ 0x00089428      00c0           add al, al
+
+  ; CALL XREF from fcn.0008148c @ +0x427b
+┌ 8: fcn.00086f19 ();
+│ ; var int64_t var_78ff0e11h @ rbp-0x78ff0e11
+│ 0x00086f19      20a5eff10087   and byte [var_78ff0e11h], ah
+└ 0x00086f1f      0488           add al, 0x88
+
+│ ; CODE XREF from fcn.000082e0 @ 0x82e8
+│ 0x000082a3      90             nop
+
+  ; CALL XREF from fcn.00089424 @ +0x61b8
+┌ 20: fcn.000082e0 (int64_t arg1, int64_t arg3, int64_t arg4);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x000082e0      3222           xor ah, byte [rdx]                    ; arg3
+│ 0x000082e2      810f1a001049   or dword [rdi], 0x4910001a            ; [0x4910001a:4]=-1 ; arg1
+│ 0x000082e8      77b9           ja 0x82a3
+| // true: 0x000082a3  false: 0x000082ea
+│ 0x000082ea      1309           adc ecx, dword [rcx]                  ; arg4
+│ 0x000082ec      0300           add eax, dword [rax]
+│ 0x000082ee      44718c         jno 0x827d
+| // true: 0x0000827d  false: 0x000082f1
+│ 0x000082f1      22c3           and al, bl
+
+  ; CALL XREF from fcn.00089424 @ +0x7463
+┌ 10: fcn.00094950 ();
+│ 0x00094950      a04e238120ad.  movabs al, byte [0xf00770ad2081234e]
+└ 0x00094959      f9             stc
+
+  ; CALL XREF from fcn.00094950 @ +0x5b7
+┌ 5: fcn.00096808 ();
+│ 0x00096808      f20f2fff       comiss xmm7, xmm7
+└ 0x0009680c      cc             int3
+
+│ 0x0009baa0      22404f         and al, byte [rax + 0x4f]
+│ 0x0009baa3      2001           and byte [rcx], al                    ; arg4
+
+  ; CALL XREF from fcn.00096808 @ +0x11fc
+┌ 50: fcn.0009bacc (uint32_t arg1, int64_t arg2, int64_t arg3, int64_t arg4);
+│ ; var int64_t var_10h @ rbp-0x10
+│ ; arg uint32_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x0009bacc      8c20           mov word [rax], fs
+│ 0x0009bace      42807ff420     cmp byte [rdi - 0xc], 0x20            ; arg1
+│ 0x0009bad3      d000           rol byte [rax], 1
+│ 0x0009bad5      8800           mov byte [rax], al
+│ 0x0009bad7      1a02           sbb al, byte [rdx]                    ; arg3
+│ 0x0009bad9      20f0           and al, dh
+│ 0x0009badb      7879           js 0x9bb56
+| // true: 0x0009bb56  false: 0x0009badd
+│ 0x0009badd      200e           and byte [rsi], cl                    ; arg2
+│ 0x0009badf      007df0         add byte [var_10h], bh
+| // true: 0x0009bae2
+│ ; CODE XREF from fcn.0009bacc @ 0x9bb65
+│ 0x0009baf3      70ab           jo 0x9baa0
+| // true: 0x0009baa0  false: 0x0009baf5
+│ ; CODE XREF from fcn.0009bacc @ 0x9bb62
+│ 0x0009bb55      709e           jo 0x9baf5
+| // true: 0x0009baf5  false: 0x0009bb57
+│ ; CODE XREF from fcn.0009bacc @ 0x9badb
+│ 0x0009bb56      9e             sahf
+| // true: 0x0009bb57
+│ 0x0009bb57      b841c016d0     mov eax, 0xd016c041
+│ 0x0009bb5c      81c1fa096fb7   add ecx, 0xb76f09fa                   ; arg4
+│ ; CODE XREF from fcn.0009bae2 @ +0xb4
+│ 0x0009bb62      4c71f0         jno 0x9bb55
+| // true: 0x0009bb55  false: 0x0009bb65
+│ 0x0009bb65      788c           js 0x9baf3
+| // true: 0x0009baf3  false: 0x0009bb67
+│ 0x0009bb67      2003           and byte [rbx], al
+
+  ; CALL XREF from fcn.00096808 @ +0x1212
+┌ 11: fcn.0009bae2 (uint32_t arg1, int64_t arg3, int64_t arg4);
+│ ; arg uint32_t arg1 @ rdi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x0009bae2      ef             out dx, eax
+│ 0x0009bae3      085100         or byte [rcx], dl                     ; arg4
+│ 0x0009bae6      3917           cmp dword [rdi], edx                  ; arg3
+└ 0x0009bae8      0df6008519     or eax, 0x198500f6
+
+  ; CALL XREF from fcn.00096808 @ +0x137d
+┌ 24: fcn.0009bc4d (int64_t arg5);
+│ ; arg int64_t arg5 @ r8
+│ 0x0009bc4d      5e             pop rsi
+│ 0x0009bc4e      0d2fbf0c72     or eax, 0x720cbf2f
+│ ; CODE XREF from fcn.0009bae2 @ +0xf1
+│ 0x0009bc53      001e           add byte [rsi], bl
+│ 0x0009bc55      0414           add al, 0x14
+│ 0x0009bc57      cd70           int 0x70
+│ 0x0009bc59      c5f1e07858     vpavgb xmm7, xmm1, xmmword [rax + 0x58]
+└ 0x0009bc5e      4b008028deca.  add byte [r8 + 0x26cade28], al        ; arg5
+
+  ; CODE XREFS from fcn.0009bc4d @ +0x110b, +0x5152
+┌ 23: fcn.000a0e20 (int64_t arg2, int64_t arg4);
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg4 @ rcx
+│ 0x000a0e20      9e             sahf
+│ 0x000a0e21      0c20           or al, 0x20                           ; U"@\x01"
+│ 0x000a0e23      000474         add byte [rsp + rsi*2], al
+│ 0x000a0e26      11f0           adc eax, esi                          ; arg2
+│ 0x000a0e28      00818a0c2000   add byte [rcx + 0x200c8a], al         ; arg4
+│ 0x000a0e2e      54             push rsp
+│ 0x000a0e2f      20800a042081   and byte [rax - 0x7edffbf6], al
+└ 0x000a0e35      0fff           ud0
+
+  ; CALL XREF from fcn.000a0e20 @ +0xf2
+┌ 218: fcn.000a4fda (int64_t arg1);
+│ ; arg int64_t arg1 @ rdi
+│ 0x000a4fda      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4fdc      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4fde      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4fe0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4fe2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4fe4      10ff           adc bh, bh
+│ 0x000a4fe6      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a4fe8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4fea      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4fec      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4fee      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4ff0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4ff2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4ff4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4ff6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4ff8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4ffa      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4ffc      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a4ffe      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5000      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5002      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5004      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5006      10ff           adc bh, bh
+│ 0x000a5008      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a500a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a500c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a500e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5010      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5012      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5014      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5016      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5018      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a501a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a501c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a501e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5020      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5022      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5024      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5026      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5028      10ff           adc bh, bh
+│ 0x000a502a      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a502c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a502e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5030      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5032      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5034      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5036      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5038      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a503a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a503c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a503e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5040      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5042      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5044      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5046      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5048      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a504a      10ff           adc bh, bh
+│ 0x000a504c      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a504e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5050      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5052      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5054      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5056      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5058      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a505a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a505c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a505e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5060      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5062      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5064      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5066      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5068      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a506a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a506c      10ff           adc bh, bh
+│ 0x000a506e      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5070      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5072      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5074      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5076      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5078      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a507a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a507c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a507e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5080      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5082      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5084      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5086      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5088      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a508a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a508c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a508e      10ff           adc bh, bh
+│ 0x000a5090      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5092      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5094      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5096      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5098      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a509a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a509c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a509e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a50a0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a50a2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a50a4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a50a6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a50a8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a50aa      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a50ac      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a50ae      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a50b0      10ff           adc bh, bh
+└ 0x000a50b2      ff0f           dec dword [rdi]                       ; arg1
+
+  ; CALL XREF from fcn.000a0e20 @ +0xded
+┌ 367: fcn.000a5cd5 (int64_t arg1, int64_t arg2);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ 0x000a5cd5      10ff           adc bh, bh
+│ 0x000a5cd7      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5cd9      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cdb      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cdd      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cdf      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5ce1      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5ce3      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5ce5      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5ce7      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5ce9      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5ceb      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5ced      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cef      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cf1      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cf3      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cf5      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cf7      10ff           adc bh, bh
+│ 0x000a5cf9      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5cfb      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cfd      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5cff      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d01      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d03      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d05      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d07      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d09      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d0b      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d0d      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d0f      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d11      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d13      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d15      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d17      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d19      10ff           adc bh, bh
+│ 0x000a5d1b      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5d1d      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d1f      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d21      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d23      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d25      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d27      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d29      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d2b      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d2d      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d2f      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d31      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d33      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d35      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d37      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d39      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d3b      10ff           adc bh, bh
+│ 0x000a5d3d      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5d3f      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d41      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d43      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d45      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d47      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d49      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d4b      108efcf56101   adc byte [rsi + 0x161f5fc], cl        ; arg2
+│ 0x000a5d51      1a00           sbb al, byte [rax]
+│ 0x000a5d53      00ef           add bh, ch
+│ 0x000a5d55      0f100f         movups xmm1, xmmword [rdi]            ; arg1
+│ 0x000a5d58      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d5a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d5c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d5e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d60      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d62      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d64      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d66      10ff           adc bh, bh
+│ 0x000a5d68      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5d6a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d6c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d6e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d70      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d72      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d74      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d76      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d78      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d7a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d7c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d7e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d80      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d82      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d84      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d86      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d88      10ff           adc bh, bh
+│ 0x000a5d8a      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5d8c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d8e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d90      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d92      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d94      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d96      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d98      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d9a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d9c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5d9e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5da0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5da2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5da4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5da6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5da8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5daa      10ff           adc bh, bh
+│ 0x000a5dac      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5dae      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5db0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5db2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5db4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5db6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5db8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dba      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dbc      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dbe      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dc0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dc2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dc4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dc6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dc8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dca      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dcc      10ff           adc bh, bh
+│ 0x000a5dce      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5dd0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dd2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dd4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dd6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dd8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dda      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5ddc      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dde      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5de0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5de2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5de4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5de6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5de8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dea      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dec      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dee      10ff           adc bh, bh
+│ 0x000a5df0      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5df2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5df4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5df6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5df8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dfa      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dfc      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5dfe      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e00      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e02      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e04      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e06      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e08      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e0a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e0c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e0e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e10      10ff           adc bh, bh
+│ 0x000a5e12      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5e14      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e16      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e18      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e1a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e1c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e1e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e20      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e22      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e24      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e26      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e28      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e2a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e2c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e2e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e30      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e32      10ff           adc bh, bh
+│ 0x000a5e34      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a5e36      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e38      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e3a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e3c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e3e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a5e40      100f           adc byte [rdi], cl                    ; arg1
+└ 0x000a5e42      100f           adc byte [rdi], cl                    ; arg1
+
+  ; CALL XREF from fcn.000a0e20 @ +0x38e7
+┌ 301: fcn.000a60f7 (int64_t arg1, int64_t arg2);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ 0x000a60f7      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a60f9      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a60fb      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a60fd      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a60ff      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6101      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6103      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6105      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6107      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6109      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a610b      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a610d      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a610f      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6111      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6113      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6115      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6117      10ff           adc bh, bh
+│ 0x000a6119      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a611b      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a611d      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a611f      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6121      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6123      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6125      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6127      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6129      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a612b      108efcf51d05   adc byte [rsi + 0x51df5fc], cl        ; arg2
+│ 0x000a6131      1a00           sbb al, byte [rax]
+│ 0x000a6133      00ef           add bh, ch
+│ 0x000a6135      0f100f         movups xmm1, xmmword [rdi]            ; arg1
+│ 0x000a6138      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a613a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a613c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a613e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6140      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6142      10ff           adc bh, bh
+│ 0x000a6144      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a6146      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6148      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a614a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a614c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a614e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6150      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6152      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6154      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6156      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6158      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a615a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a615c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a615e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6160      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6162      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6164      10ff           adc bh, bh
+│ 0x000a6166      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a6168      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a616a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a616c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a616e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6170      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6172      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6174      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6176      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6178      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a617a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a617c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a617e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6180      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6182      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6184      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6186      10ff           adc bh, bh
+│ 0x000a6188      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a618a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a618c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a618e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6190      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6192      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6194      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6196      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6198      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a619a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a619c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a619e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61a0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61a2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61a4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61a6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61a8      10ff           adc bh, bh
+│ 0x000a61aa      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a61ac      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61ae      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61b0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61b2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61b4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61b6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61b8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61ba      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61bc      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61be      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61c0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61c2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61c4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61c6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61c8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61ca      10ff           adc bh, bh
+│ 0x000a61cc      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a61ce      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61d0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61d2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61d4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61d6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61d8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61da      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61dc      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61de      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61e0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61e2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61e4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61e6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61e8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61ea      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61ec      10ff           adc bh, bh
+│ 0x000a61ee      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a61f0      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61f2      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61f4      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61f6      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61f8      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61fa      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61fc      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a61fe      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6200      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6202      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6204      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6206      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6208      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a620a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a620c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a620e      10ff           adc bh, bh
+│ 0x000a6210      ff0f           dec dword [rdi]                       ; arg1
+│ 0x000a6212      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6214      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6216      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6218      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a621a      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a621c      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a621e      100f           adc byte [rdi], cl                    ; arg1
+│ 0x000a6220      100f           adc byte [rdi], cl                    ; arg1
+└ 0x000a6222      100f           adc byte [rdi], cl                    ; arg1
+
+  ; CALL XREF from fcn.000a60f7 @ +0x3533
+┌ 3: fcn.000b0646 (int64_t arg1);
+│ ; arg int64_t arg1 @ rdi
+└ 0x000b0646      26320f         xor cl, byte es:[rdi]                 ; arg1
+
