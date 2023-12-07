@@ -99,7 +99,7 @@
           <th class="text-center" v-on:click="performSort('file_type')">
             File Type
           </th>
-          <th class="text-center" v-on:click="performSort('file_type')">
+          <th class="text-center">
             Disassembly
           </th>
         </thead>
