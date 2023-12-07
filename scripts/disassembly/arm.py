@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, json, subprocess, os, r2pipe
+import sys, json, os, r2pipe
 tag = sys.argv[1]
 
 with open("../data/json/linux-firmware-db-" + tag + "-cpu_rec.json", 'r') as f:
