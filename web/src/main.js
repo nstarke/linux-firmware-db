@@ -23,7 +23,17 @@ const router = createRouter({
   routes,
 });
 
-if (!localStorage.getItem('refresh')) {
+let refresh = localStorage.getItem('refresh');
+if (refresh) {
+    refresh = parseInt(refresh);
+} else {
+    refresh = 0;
+}
+
+const current = (new Date()).getTime();
+const day = 60 * 60 * 24 * 1000;
+
+if ((current - refresh) > day) {
     localStorage.clear();
     localStorage.setItem('refresh', (new Date()).getTime());
 }
