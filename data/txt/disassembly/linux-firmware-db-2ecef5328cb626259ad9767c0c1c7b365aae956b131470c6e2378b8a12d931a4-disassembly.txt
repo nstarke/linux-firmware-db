@@ -1,0 +1,952 @@
+  ;-- rax:
+  ;-- rbx:
+  ;-- rcx:
+  ;-- rdx:
+  ;-- rsi:
+  ;-- rdi:
+  ;-- r8:
+  ;-- r9:
+  ;-- r10:
+  ;-- r11:
+  ;-- r12:
+  ;-- r13:
+  ;-- r14:
+  ;-- r15:
+  ;-- rip:
+  ;-- rflags:
+┌ 22: fcn.00000000 ();
+│ 0x00000000      400d07002000   or eax, 0x200007
+│ ; XREFS: DATA 0x0001b8c1  DATA 0x000284ef  DATA 0x00028b48  
+│ ; XREFS: DATA 0x0002ddf6  DATA 0x0002f3d2  DATA 0x00031a41  
+│ ; XREFS: DATA 0x00049876  DATA 0x00057f9b  DATA 0x00058136  
+│ ; XREFS: DATA 0x00058790  DATA 0x0006b4af  
+│ 0x00000006      0000           add byte [rax], al
+│ ; XREFS(23)
+│ 0x00000008      0100           add dword [rax], eax
+│ ; XREFS(21)
+│ 0x0000000a      0000           add byte [rax], al
+│ ; XREFS(337)
+│ 0x0000000c      0200           add al, byte [rax]
+│ ; XREFS(115)
+│ 0x0000000e      0000           add byte [rax], al
+│ ; XREFS(168)
+│ 0x00000010      004010         add byte [rax + 0x10], al
+│ ; XREFS(76)
+└ 0x00000013      03400c         add eax, dword [rax + 0xc]
+
+  ; CALL XREF from fcn.00002dbe @ +0x460a
+┌ 19: fcn.000075cf (int64_t arg1, int64_t arg2, int64_t arg3);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg3 @ rdx
+│ 0x000075cf      001f           add byte [rdi], bl                    ; arg1
+│ 0x000075d1      000500ffe401   add byte [0x01e574d7], al             ; [0x1e574d7:1]=255
+│ 0x000075d7      00e0           add al, ah
+│ 0x000075d9      fe02           inc byte [rdx]                        ; arg3
+│ 0x000075db      00fe           add dh, bh
+│ 0x000075dd      0f0200         lar eax, word [rax]
+└ 0x000075e0      001e           add byte [rsi], bl                    ; arg2
+
+  ; CALL XREF from fcn.00002dbe @ +0x4763
+┌ 18: fcn.00057527 (uint32_t arg1, int64_t arg2, int64_t arg4);
+│ ; arg uint32_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg4 @ rcx
+│ 0x00057527      7010           jo 0x57539
+| // true: 0x00057539  false: 0x00057529
+│ 0x00057529      a6             cmpsb byte [rsi], byte ptr [rdi]      ; arg2
+│ 0x0005752a      ac             lodsb al, byte [rsi]
+
+│ ; CODE XREF from fcn.00057527 @ 0x57527
+│ 0x00057539      10a60013400b   adc byte [rsi + 0xb401300], ah        ; arg2
+│ 0x0005753f      3300           xor eax, dword [rax]
+└ 0x00057541      22a12044200c   and ah, byte [rcx + 0xc204420]        ; arg4
+
+  ; CALL XREF from fcn.00008d6e @ +0x5ce
+┌ 36: fcn.00009358 (int64_t arg2, int64_t arg4);
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg4 @ rcx
+│ 0x00009358      8418           test byte [rax], bl
+│ 0x0000935a      0000           add byte [rax], al
+│ 0x0000935c      99             cdq
+│ 0x0000935d      1800           sbb byte [rax], al
+│ 0x0000935f      00ae180000c2   add byte [rsi - 0x3dffffe8], ch       ; arg2
+│ 0x00009365      1800           sbb byte [rax], al
+│ 0x00009367      00d6           add dh, dl
+│ 0x00009369      1800           sbb byte [rax], al
+│ 0x0000936b      00ea           add dl, ch
+│ 0x0000936d      1800           sbb byte [rax], al
+│ 0x0000936f      00fd           add ch, bh
+│ 0x00009371      1800           sbb byte [rax], al
+│ 0x00009373      0011           add byte [rcx], dl                    ; arg4
+│ 0x00009375      1900           sbb dword [rax], eax
+│ 0x00009377      002419         add byte [rcx + rbx], ah              ; arg4
+└ 0x0000937a      0000           add byte [rax], al
+
+  ; CALL XREF from fcn.0000ee69 @ +0x4e7e
+┌ 8: fcn.00013f32 (int64_t arg2);
+│ ; arg int64_t arg2 @ rsi
+│ 0x00013f32      02863700b62a   add al, byte [rsi + 0x2ab60037]       ; arg2
+└ 0x00013f38      02c6           add al, dh
+
+  ; CALL XREF from fcn.00013f32 @ +0x1ffa
+┌ 21: fcn.00009f70 ();
+│ 0x00009f70      e226           loop 0x9f98
+  false: 0x00009f72
+│ 0x00009f72      0000           add byte [rax], al
+│ 0x00009f74      e426           in al, 0x26
+│ 0x00009f76      0000           add byte [rax], al
+│ 0x00009f78      e526           in eax, 0x26
+│ 0x00009f7a      0000           add byte [rax], al
+│ 0x00009f7c      e726           out 0x26, eax
+│ 0x00009f7e      0000           add byte [rax], al
+└ 0x00009f80      e9260000eb     jmp 0xffffffffeb009fab
+
+  ; CALL XREF from fcn.00013f32 @ +0x21f8
+┌ 606: fcn.00002dbe (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4, int64_t arg5, int64_t arg_2h);
+│ ; arg int64_t arg_2h @ rbp+0x2
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ ; arg int64_t arg5 @ r8
+│ 0x00002dbe      0000           add byte [rax], al
+│ 0x00002dc0      d7             xlatb
+│ 0x00002dc1      0100           add dword [rax], eax
+│ 0x00002dc3      00d7           add bh, dl
+│ 0x00002dc5      0100           add dword [rax], eax
+│ 0x00002dc7      00d8           add al, bl
+│ 0x00002dc9      0100           add dword [rax], eax
+│ 0x00002dcb      00d8           add al, bl
+│ 0x00002dcd      0100           add dword [rax], eax
+│ 0x00002dcf      00d8           add al, bl
+│ 0x00002dd1      0100           add dword [rax], eax
+│ 0x00002dd3      00d8           add al, bl
+│ 0x00002dd5      0100           add dword [rax], eax
+│ 0x00002dd7      00d8           add al, bl
+│ 0x00002dd9      0100           add dword [rax], eax
+│ 0x00002ddb      00d8           add al, bl
+│ 0x00002ddd      0100           add dword [rax], eax
+│ 0x00002ddf      00d8           add al, bl
+│ 0x00002de1      0100           add dword [rax], eax
+│ 0x00002de3      00d8           add al, bl
+│ 0x00002de5      0100           add dword [rax], eax
+│ 0x00002de7      00d8           add al, bl
+│ 0x00002de9      0100           add dword [rax], eax
+│ 0x00002deb      00d8           add al, bl
+│ 0x00002ded      0100           add dword [rax], eax
+│ 0x00002def      00d8           add al, bl
+│ 0x00002df1      0100           add dword [rax], eax
+│ 0x00002df3      00d8           add al, bl
+│ 0x00002df5      0100           add dword [rax], eax
+│ 0x00002df7      00d8           add al, bl
+│ 0x00002df9      0100           add dword [rax], eax
+│ 0x00002dfb      00d8           add al, bl
+│ 0x00002dfd      0100           add dword [rax], eax
+│ 0x00002dff      00d8           add al, bl
+│ 0x00002e01      0100           add dword [rax], eax
+│ 0x00002e03      00d8           add al, bl
+│ 0x00002e05      0100           add dword [rax], eax
+│ 0x00002e07      00d9           add cl, bl
+│ 0x00002e09      0100           add dword [rax], eax
+│ 0x00002e0b      00da           add dl, bl
+│ 0x00002e0d      0100           add dword [rax], eax
+│ 0x00002e0f      00db           add bl, bl
+│ 0x00002e11      0100           add dword [rax], eax
+│ 0x00002e13      00dc           add ah, bl
+│ 0x00002e15      0100           add dword [rax], eax
+│ 0x00002e17      00dd           add ch, bl
+│ 0x00002e19      0100           add dword [rax], eax
+│ 0x00002e1b      00de           add dh, bl
+│ 0x00002e1d      0100           add dword [rax], eax
+│ 0x00002e1f      00df           add bh, bl
+│ 0x00002e21      0100           add dword [rax], eax
+│ 0x00002e23      00e0           add al, ah
+│ 0x00002e25      0100           add dword [rax], eax
+│ 0x00002e27      00e1           add cl, ah
+│ 0x00002e29      0100           add dword [rax], eax
+│ 0x00002e2b      00e2           add dl, ah
+│ 0x00002e2d      0100           add dword [rax], eax
+│ 0x00002e2f      00e3           add bl, ah
+│ 0x00002e31      0100           add dword [rax], eax
+│ 0x00002e33      00e4           add ah, ah
+│ 0x00002e35      0100           add dword [rax], eax
+│ 0x00002e37      00e5           add ch, ah
+│ 0x00002e39      0100           add dword [rax], eax
+│ 0x00002e3b      00e6           add dh, ah
+│ 0x00002e3d      0100           add dword [rax], eax
+│ 0x00002e3f      00e7           add bh, ah
+│ 0x00002e41      0100           add dword [rax], eax
+│ 0x00002e43      00e8           add al, ch
+│ 0x00002e45      0100           add dword [rax], eax
+│ 0x00002e47      00eb           add bl, ch
+│ 0x00002e49      0100           add dword [rax], eax
+│ 0x00002e4b      00ec           add ah, ch
+│ 0x00002e4d      0100           add dword [rax], eax
+│ 0x00002e4f      00ed           add ch, ch
+│ 0x00002e51      0100           add dword [rax], eax
+│ 0x00002e53      00ee           add dh, ch
+│ 0x00002e55      0100           add dword [rax], eax
+│ 0x00002e57      00ef           add bh, ch
+│ 0x00002e59      0100           add dword [rax], eax
+│ 0x00002e5b      00f0           add al, dh
+│ 0x00002e5d      0100           add dword [rax], eax
+│ 0x00002e5f      00f1           add cl, dh
+│ 0x00002e61      0100           add dword [rax], eax
+│ 0x00002e63      00f2           add dl, dh
+│ 0x00002e65      0100           add dword [rax], eax
+│ 0x00002e67      00f3           add bl, dh
+│ 0x00002e69      0100           add dword [rax], eax
+│ 0x00002e6b      00f4           add ah, dh
+│ 0x00002e6d      0100           add dword [rax], eax
+│ 0x00002e6f      00f5           add ch, dh
+│ 0x00002e71      0100           add dword [rax], eax
+│ 0x00002e73      00f6           add dh, dh
+│ 0x00002e75      0100           add dword [rax], eax
+│ 0x00002e77      00f7           add bh, dh
+│ 0x00002e79      0100           add dword [rax], eax
+│ 0x00002e7b      00f8           add al, bh
+│ 0x00002e7d      0100           add dword [rax], eax
+│ 0x00002e7f      00f9           add cl, bh
+│ 0x00002e81      0100           add dword [rax], eax
+│ 0x00002e83      00fa           add dl, bh
+│ 0x00002e85      0100           add dword [rax], eax
+│ 0x00002e87      00fb           add bl, bh
+│ 0x00002e89      0100           add dword [rax], eax
+│ 0x00002e8b      00fc           add ah, bh
+│ 0x00002e8d      0100           add dword [rax], eax
+│ 0x00002e8f      00fd           add ch, bh
+│ 0x00002e91      0100           add dword [rax], eax
+│ 0x00002e93      00fe           add dh, bh
+│ 0x00002e95      0100           add dword [rax], eax
+│ 0x00002e97      00ff           add bh, bh
+│ 0x00002e99      0100           add dword [rax], eax
+│ 0x00002e9b      0000           add byte [rax], al
+│ 0x00002e9d      0200           add al, byte [rax]
+│ 0x00002e9f      0001           add byte [rcx], al                    ; arg4
+│ 0x00002ea1      0200           add al, byte [rax]
+│ 0x00002ea3      0002           add byte [rdx], al                    ; arg3
+│ 0x00002ea5      0200           add al, byte [rax]
+│ 0x00002ea7      0003           add byte [rbx], al
+│ 0x00002ea9      0200           add al, byte [rax]
+│ 0x00002eab      000402         add byte [rdx + rax], al              ; arg3
+│ 0x00002eae      0000           add byte [rax], al
+│ 0x00002eb0      0502000006     add eax, 0x6000002
+│ 0x00002eb5      0200           add al, byte [rax]
+│ 0x00002eb7      0007           add byte [rdi], al                    ; arg1
+│ 0x00002eb9      0200           add al, byte [rax]
+│ 0x00002ebb      0008           add byte [rax], cl
+│ 0x00002ebd      0200           add al, byte [rax]
+│ 0x00002ebf      0009           add byte [rcx], cl                    ; arg4
+│ 0x00002ec1      0200           add al, byte [rax]
+│ 0x00002ec3      000a           add byte [rdx], cl                    ; arg3
+│ 0x00002ec5      0200           add al, byte [rax]
+│ 0x00002ec7      000b           add byte [rbx], cl
+│ 0x00002ec9      0200           add al, byte [rax]
+│ 0x00002ecb      000c02         add byte [rdx + rax], cl              ; arg3
+│ 0x00002ece      0000           add byte [rax], al
+│ 0x00002ed0      0d0200000e     or eax, 0xe000002
+│ 0x00002ed5      0200           add al, byte [rax]
+│ 0x00002ed7      000f           add byte [rdi], cl                    ; arg1
+│ 0x00002ed9      0200           add al, byte [rax]
+│ 0x00002edb      0010           add byte [rax], dl
+│ 0x00002edd      0200           add al, byte [rax]
+│ 0x00002edf      0011           add byte [rcx], dl                    ; arg4
+│ 0x00002ee1      0200           add al, byte [rax]
+│ 0x00002ee3      0012           add byte [rdx], dl                    ; arg3
+│ 0x00002ee5      0200           add al, byte [rax]
+│ 0x00002ee7      0013           add byte [rbx], dl
+│ 0x00002ee9      0200           add al, byte [rax]
+│ 0x00002eeb      001402         add byte [rdx + rax], dl              ; arg3
+│ 0x00002eee      0000           add byte [rax], al
+│ 0x00002ef0      1502000016     adc eax, 0x16000002
+│ 0x00002ef5      0200           add al, byte [rax]
+│ 0x00002ef7      0017           add byte [rdi], dl                    ; arg1
+│ 0x00002ef9      0200           add al, byte [rax]
+│ 0x00002efb      0018           add byte [rax], bl
+│ 0x00002efd      0200           add al, byte [rax]
+│ 0x00002eff      0019           add byte [rcx], bl                    ; arg4
+│ 0x00002f01      0200           add al, byte [rax]
+│ 0x00002f03      001a           add byte [rdx], bl                    ; arg3
+│ 0x00002f05      0200           add al, byte [rax]
+│ 0x00002f07      001b           add byte [rbx], bl
+│ 0x00002f09      0200           add al, byte [rax]
+│ 0x00002f0b      001c02         add byte [rdx + rax], bl              ; arg3
+│ 0x00002f0e      0000           add byte [rax], al
+│ 0x00002f10      1d0200001e     sbb eax, 0x1e000002
+│ 0x00002f15      0200           add al, byte [rax]
+│ 0x00002f17      001f           add byte [rdi], bl                    ; arg1
+│ 0x00002f19      0200           add al, byte [rax]
+│ 0x00002f1b      0020           add byte [rax], ah
+│ 0x00002f1d      0200           add al, byte [rax]
+│ 0x00002f1f      0021           add byte [rcx], ah                    ; arg4
+│ 0x00002f21      0200           add al, byte [rax]
+│ 0x00002f23      0022           add byte [rdx], ah                    ; arg3
+│ 0x00002f25      0200           add al, byte [rax]
+│ 0x00002f27      0023           add byte [rbx], ah
+│ 0x00002f29      0200           add al, byte [rax]
+│ 0x00002f2b      002402         add byte [rdx + rax], ah              ; arg3
+│ 0x00002f2e      0000           add byte [rax], al
+│ 0x00002f30      2502000026     and eax, 0x26000002
+│ 0x00002f35      0200           add al, byte [rax]
+│ 0x00002f37      0027           add byte [rdi], ah                    ; arg1
+│ 0x00002f39      0200           add al, byte [rax]
+│ 0x00002f3b      0028           add byte [rax], ch
+│ 0x00002f3d      0200           add al, byte [rax]
+│ 0x00002f3f      0029           add byte [rcx], ch                    ; arg4
+│ 0x00002f41      0200           add al, byte [rax]
+│ 0x00002f43      002a           add byte [rdx], ch                    ; arg3
+│ 0x00002f45      0200           add al, byte [rax]
+│ 0x00002f47      002b           add byte [rbx], ch
+│ 0x00002f49      0200           add al, byte [rax]
+│ 0x00002f4b      002c02         add byte [rdx + rax], ch              ; arg3
+│ 0x00002f4e      0000           add byte [rax], al
+│ 0x00002f50      2d0200002e     sub eax, 0x2e000002
+│ 0x00002f55      0200           add al, byte [rax]
+│ 0x00002f57      002f           add byte [rdi], ch                    ; arg1
+│ 0x00002f59      0200           add al, byte [rax]
+│ 0x00002f5b      0030           add byte [rax], dh
+│ 0x00002f5d      0200           add al, byte [rax]
+│ 0x00002f5f      0031           add byte [rcx], dh                    ; arg4
+│ 0x00002f61      0200           add al, byte [rax]
+│ 0x00002f63      0032           add byte [rdx], dh                    ; arg3
+│ 0x00002f65      0200           add al, byte [rax]
+│ 0x00002f67      0033           add byte [rbx], dh
+│ 0x00002f69      0200           add al, byte [rax]
+│ 0x00002f6b      003402         add byte [rdx + rax], dh              ; arg3
+│ 0x00002f6e      0000           add byte [rax], al
+│ 0x00002f70      3502000036     xor eax, 0x36000002
+│ 0x00002f75      0200           add al, byte [rax]
+│ 0x00002f77      0037           add byte [rdi], dh                    ; arg1
+│ 0x00002f79      0200           add al, byte [rax]
+│ 0x00002f7b      0038           add byte [rax], bh
+│ 0x00002f7d      0200           add al, byte [rax]
+│ 0x00002f7f      0039           add byte [rcx], bh                    ; arg4
+│ 0x00002f81      0200           add al, byte [rax]
+│ 0x00002f83      003a           add byte [rdx], bh                    ; arg3
+│ 0x00002f85      0200           add al, byte [rax]
+│ 0x00002f87      003b           add byte [rbx], bh
+│ 0x00002f89      0200           add al, byte [rax]
+│ 0x00002f8b      003c02         add byte [rdx + rax], bh              ; arg3
+│ 0x00002f8e      0000           add byte [rax], al
+│ 0x00002f90      3d0200003e     cmp eax, 0x3e000002
+│ 0x00002f95      0200           add al, byte [rax]
+│ 0x00002f97      003f           add byte [rdi], bh                    ; arg1
+│ 0x00002f99      0200           add al, byte [rax]
+│ 0x00002f9b      004002         add byte [rax + 2], al
+│ 0x00002f9e      0000           add byte [rax], al
+│ 0x00002fa0      410200         add al, byte [r8]                     ; arg5
+│ 0x00002fa3      004202         add byte [rdx + 2], al                ; arg3
+│ 0x00002fa6      0000           add byte [rax], al
+│ 0x00002fa8      430200         add al, byte [r8]                     ; arg5
+│ 0x00002fab      00440200       add byte [rdx + rax], al              ; arg3
+│ 0x00002faf      004502         add byte [arg_2h], al
+│ 0x00002fb2      0000           add byte [rax], al
+│ 0x00002fb4      460200         add r8b, byte [rax]
+│ 0x00002fb7      004702         add byte [rdi + 2], al                ; arg1
+│ 0x00002fba      0000           add byte [rax], al
+│ 0x00002fbc      480200         add al, byte [rax]
+│ 0x00002fbf      004902         add byte [rcx + 2], cl                ; arg4
+│ 0x00002fc2      0000           add byte [rax], al
+│ 0x00002fc4      4a0200         add al, byte [rax]
+│ 0x00002fc7      004b02         add byte [rbx + 2], cl
+│ 0x00002fca      0000           add byte [rax], al
+│ 0x00002fcc      4c0200         add r8b, byte [rax]
+│ 0x00002fcf      004d02         add byte [arg_2h], cl
+│ 0x00002fd2      0000           add byte [rax], al
+│ 0x00002fd4      4e0200         add r8b, byte [rax]
+│ 0x00002fd7      004f02         add byte [rdi + 2], cl                ; arg1
+│ 0x00002fda      0000           add byte [rax], al
+│ 0x00002fdc      50             push rax
+│ 0x00002fdd      0200           add al, byte [rax]
+│ 0x00002fdf      005102         add byte [rcx + 2], dl                ; arg4
+│ 0x00002fe2      0000           add byte [rax], al
+│ 0x00002fe4      52             push rdx                              ; arg3
+│ 0x00002fe5      0200           add al, byte [rax]
+│ 0x00002fe7      005302         add byte [rbx + 2], dl
+│ 0x00002fea      0000           add byte [rax], al
+│ 0x00002fec      54             push rsp
+│ 0x00002fed      0200           add al, byte [rax]
+│ 0x00002fef      005502         add byte [arg_2h], dl
+│ 0x00002ff2      0000           add byte [rax], al
+│ 0x00002ff4      56             push rsi                              ; arg2
+│ 0x00002ff5      0200           add al, byte [rax]
+│ 0x00002ff7      005702         add byte [rdi + 2], dl                ; arg1
+│ 0x00002ffa      0000           add byte [rax], al
+│ 0x00002ffc      58             pop rax
+│ 0x00002ffd      0200           add al, byte [rax]
+│ 0x00002fff      005902         add byte [rcx + 2], bl                ; arg4
+│ 0x00003002      0000           add byte [rax], al
+│ 0x00003004      5a             pop rdx
+│ 0x00003005      0200           add al, byte [rax]
+│ 0x00003007      005b02         add byte [rbx + 2], bl
+│ 0x0000300a      0000           add byte [rax], al
+│ 0x0000300c      5c             pop rsp
+│ 0x0000300d      0200           add al, byte [rax]
+│ 0x0000300f      005d02         add byte [arg_2h], bl
+│ 0x00003012      0000           add byte [rax], al
+│ 0x00003014      5e             pop rsi
+│ 0x00003015      0200           add al, byte [rax]
+│ 0x00003017      005f02         add byte [rdi + 2], bl                ; arg1
+└ 0x0000301a      0000           add byte [rax], al
+
+  ; CALL XREF from fcn.00013f32 @ +0x265a
+┌ 116: fcn.00008c12 (int64_t arg1, int64_t arg3, int64_t arg4);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg3 @ rdx
+│ ; arg int64_t arg4 @ rcx
+│ 0x00008c12      0000           add byte [rax], al
+│ 0x00008c14      2514000029     and eax, 0x29000014
+│ 0x00008c19      1000           adc byte [rax], al
+│ 0x00008c1b      0029           add byte [rcx], ch                    ; arg4
+│ 0x00008c1d      1000           adc byte [rax], al
+│ 0x00008c1f      0029           add byte [rcx], ch                    ; arg4
+│ 0x00008c21      1000           adc byte [rax], al
+│ 0x00008c23      0029           add byte [rcx], ch                    ; arg4
+│ 0x00008c25      1000           adc byte [rax], al
+│ 0x00008c27      001510000015   add byte [0x15008c3d], dl             ; [0x15008c3d:1]=255
+│ 0x00008c2d      1000           adc byte [rax], al
+│ 0x00008c2f      001510000015   add byte [0x15008c45], dl             ; [0x15008c45:1]=255
+│ 0x00008c35      1000           adc byte [rax], al
+│ 0x00008c37      002a           add byte [rdx], ch                    ; arg3
+│ 0x00008c39      0c00           or al, 0
+│ 0x00008c3b      002a           add byte [rdx], ch                    ; arg3
+│ 0x00008c3d      0c00           or al, 0
+│ 0x00008c3f      002a           add byte [rdx], ch                    ; arg3
+│ 0x00008c41      0c00           or al, 0
+│ 0x00008c43      002a           add byte [rdx], ch                    ; arg3
+│ 0x00008c45      0c00           or al, 0
+│ 0x00008c47      002a           add byte [rdx], ch                    ; arg3
+│ 0x00008c49      0c00           or al, 0
+│ 0x00008c4b      002a           add byte [rdx], ch                    ; arg3
+│ 0x00008c4d      0c00           or al, 0
+│ 0x00008c4f      002a           add byte [rdx], ch                    ; arg3
+│ 0x00008c51      0c00           or al, 0
+│ 0x00008c53      002a           add byte [rdx], ch                    ; arg3
+│ 0x00008c55      0c00           or al, 0
+│ 0x00008c57      001a           add byte [rdx], bl                    ; arg3
+│ 0x00008c59      1000           adc byte [rax], al
+│ 0x00008c5b      001a           add byte [rdx], bl                    ; arg3
+│ 0x00008c5d      1000           adc byte [rax], al
+│ 0x00008c5f      001a           add byte [rdx], bl                    ; arg3
+│ 0x00008c61      1000           adc byte [rax], al
+│ 0x00008c63      001a           add byte [rdx], bl                    ; arg3
+│ 0x00008c65      1000           adc byte [rax], al
+│ 0x00008c67      00441800       add byte [rax + rbx], al
+│ 0x00008c6b      004218         add byte [rdx + 0x18], al             ; arg3
+│ 0x00008c6e      0000           add byte [rax], al
+│ 0x00008c70      0f1400         unpcklps xmm0, xmmword [rax]
+│ 0x00008c73      000f           add byte [rdi], cl                    ; arg1
+│ 0x00008c75      1400           adc al, 0
+│ 0x00008c77      001b           add byte [rbx], bl
+│ 0x00008c79      0400           add al, 0
+│ 0x00008c7b      004104         add byte [rcx + 4], al                ; arg4
+│ 0x00008c7e      0000           add byte [rax], al
+│ 0x00008c80      0810           or byte [rax], dl
+│ 0x00008c82      1013           adc byte [rbx], dl
+└ 0x00008c84      1013           adc byte [rbx], dl
+
+  ; CALL XREF from fcn.00013f32 @ +0x2663
+┌ 6: fcn.0000ee69 (int64_t arg2);
+│ ; arg int64_t arg2 @ rsi
+└ 0x0000ee69      31866cfff221   xor dword [rsi + 0x21f2ff6c], eax     ; arg2
+
+│ ; CODE XREF from fcn.00008d6e @ 0x8d70
+│ 0x00008d2f      39a07f3ddfef   cmp dword [rax - 0x1020c281], esp
+│ 0x00008d35      0c0e           or al, 0xe
+
+│ ; CODE XREF from fcn.00008d6e @ 0x8d6e
+│ 0x00008d40      ae             scasb al, byte [rdi]
+
+  ; CALL XREF from fcn.00013f32 @ +0x27e6
+┌ 21: fcn.00008d6e (int64_t arg2);
+│ ; arg int64_t arg2 @ rsi
+│ 0x00008d6e      7cd0           jl 0x8d40
+| // true: 0x00008d40  false: 0x00008d70
+│ 0x00008d70      7bbd           jnp 0x8d2f
+| // true: 0x00008d2f  false: 0x00008d72
+│ 0x00008d72      2173a7         and dword [rbx - 0x59], esi           ; arg2
+│ 0x00008d75      251decf09f     and eax, 0x9ff0ec1d
+
+  ; CALL XREF from fcn.00013f32 @ +0x284e
+┌ 3: fcn.0000cdd6 (int64_t arg2);
+│ ; arg int64_t arg2 @ rsi
+│ 0x0000cdd6      0000           add byte [rax], al
+└ 0x0000cdd8      96             xchg eax, esi                         ; arg2
+
+  ; CALL XREF from fcn.00013f32 @ +0x1612d
+┌ 5: fcn.0002a163 ();
+│ 0x0002a163      04b2           add al, 0xb2
+└ 0x0002a165      cab0a2         retf 0xa2b0
+
+│ 0x0002a23a      bb0b998c98     mov ebx, 0x988c990b
+│ 0x0002a23f      ac             lodsb al, byte [rsi]
+│ 0x0002a240      09b20380262b   or dword [rdx + 0x2b268003], esi      ; arg3
+│ 0x0002a246      0486           add al, 0x86
+│ 0x0002a248      fa             cli
+│ 0x0002a249      ff9c59c20380.  lcall [rcx + rbx*2 - 0x737ffc3e]
+│ 0x0002a250      0c1d           or al, 0x1d
+
+  ; CALL XREF from fcn.00013f32 @ +0x16225
+┌ 240: fcn.0002a25b (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg_33h);
+│ ; arg int64_t arg_33h @ rbp+0x33
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg3 @ rdx
+│ 0x0002a25b      e0dd           loopne 0x2a23a
+| // true: 0x0002a23a  false: 0x0002a25d
+│ 0x0002a25d      2000           and byte [rax], al
+│ 0x0002a25f      3da61df00c     cmp eax, 0xcf01da6
+│ 0x0002a264      2ee243         loop 0x2a2aa
+| // true: 0x0002a2aa  false: 0x0002a267
+│ 0x0002a267      806533f8       and byte [arg_33h], 0xf8              ; [0xf8:1]=0
+│ 0x0002a26b      46f7ff         idiv edi
+│ 0x0002a26e      0000           add byte [rax], al
+│ 0x0002a270      f2ca34f2       bnd retf 0xf234
+
+│ 0x0002a26f      00f2           add dl, dh
+│ 0x0002a271      ca34f2         retf 0xf234
+
+│ ; CODE XREF from fcn.0002a25b @ 0x2a264
+│ 0x0002a2aa      52             push rdx                              ; arg3
+│ 0x0002a2ab      d80d52c52c30   fmul dword [0x302f6803]
+│ 0x0002a2b1      28c0           sub al, al
+│ 0x0002a2b3      9d             popfq
+│ 0x0002a2b4      05e2057cb0     add eax, 0xb07c05e2
+│ 0x0002a2b9      65c00c0dac1e.  ror byte gs:[rcx + 0x67d1eac], 0x76
+| // true: 0x0002a2c2
+│ ; CODE XREF from fcn.0002a25b @ 0x2a2d9
+│ 0x0002a2c2      8018f2         sbb byte [rax], 0xf2
+│ 0x0002a2c5      25211bdd4b     and eax, 0x4bdd1b21
+│ 0x0002a2ca      55             push rbp
+│ 0x0002a2cb      8c9f32276e3a   mov word [rdi + 0x3a6e2732], ds       ; arg1
+│ 0x0002a2d1      3232           xor dh, byte [rdx]                    ; arg3
+│ 0x0002a2d3      676e           outsb dx, byte [esi]
+│ 0x0002a2d5      e209           loop 0x2a2e0
+| // true: 0x0002a2e0  false: 0x0002a2d7
+│ 0x0002a2d7      7c4b           jl 0x2a324
+| // true: 0x0002a324  false: 0x0002a2d9
+│ 0x0002a2d9      77e7           ja 0x2a2c2
+| // true: 0x0002a2c2  false: 0x0002a2db
+│ 0x0002a2db      bd0406f8ff     mov ebp, 0xfff80604
+| // true: 0x0002a2e0
+│ ; CODE XREF from fcn.0002a25b @ 0x2a2d5
+│ 0x0002a2e0      0000           add byte [rax], al
+│ 0x0002a2e2      e209           loop 0x2a2ed
+| // true: 0x0002a2ed  false: 0x0002a2e4
+│ ; CODE XREF from fcn.0002a25b @ 0x2a2ff
+│ 0x0002a2e4      7e0c           jle 0x2a2f2
+| // true: 0x0002a2f2  false: 0x0002a2e6
+│ 0x0002a2e6      0dac1e7d06     or eax, 0x67d1eac
+│ 0x0002a2eb      5d             pop rbp
+│ 0x0002a2ec      097680         or dword [rsi - 0x80], esi            ; arg2
+| // true: 0x0002a2ef
+│ ; CODE XREF from fcn.0002a25b @ 0x2a2e2
+│ 0x0002a2ed      7680           jbe 0x2a26f
+| // true: 0x0002a26f  false: 0x0002a2ef
+│ ; CODE XREF from fcn.0002a25b @ 0x2a305
+│ 0x0002a2ee      8018f2         sbb byte [rax], 0xf2
+| // true: 0x0002a2f1
+│ 0x0002a2ef      18f2           sbb dl, dh
+| // true: 0x0002a2f1
+│ 0x0002a2f1      25321bdd4b     and eax, 0x4bdd1b32
+│ 0x0002a2f6      55             push rbp
+| // true: 0x0002a2f7
+│ ; CODE XREF from fcn.0002a25b @ 0x2a2e4
+│ 0x0002a2f2      321b           xor bl, byte [rbx]
+│ 0x0002a2f4      dd4b55         fisttp qword [rbx + 0x55]
+| // true: 0x0002a2f7
+│ 0x0002a2f7      8c9f32277f3a   mov word [rdi + 0x3a7f2732], ds       ; arg1
+│ 0x0002a2fd      3232           xor dh, byte [rdx]                    ; arg3
+│ 0x0002a2ff      677fe2         jg 0x2a2e4
+| // true: 0x0002a2e4  false: 0x0002a302
+│ 0x0002a302      097e4b         or dword [rsi + 0x4b], edi            ; arg2
+│ 0x0002a305      77e7           ja 0x2a2ee
+| // true: 0x0002a2ee  false: 0x0002a307
+│ 0x0002a307      bd0206f8ff     mov ebp, 0xfff80602
+│ 0x0002a30c      d209           ror byte [rcx], cl
+│ 0x0002a30e      7f0c           jg 0x2a31c
+| // true: 0x0002a31c  false: 0x0002a310
+│ ; CODE XREF from fcn.0002a25b @ 0x2a30e
+│ 0x0002a31c      774b           ja 0x2a369
+| // true: 0x0002a369  false: 0x0002a31e
+│ 0x0002a31e      55             push rbp
+│ 0x0002a31f      8c9ef22690fa   mov word [rsi - 0x56fd90e], ds
+| // true: 0x0002a325
+│ ; CODE XREF from fcn.0002a25b @ 0x2a2d7
+│ 0x0002a324      fa             cli
+| // true: 0x0002a325
+│ 0x0002a325      f2f26690       nop
+│ 0x0002a329      d209           ror byte [rcx], cl
+│ 0x0002a32b      7f4b           jg 0x2a378
+| // true: 0x0002a378  false: 0x0002a32d
+│ 0x0002a32d      66d7           xlatb
+│ 0x0002a32f      b704           mov bh, 4
+
+│ ; CODE XREF from fcn.0002a25b @ 0x2a385
+│ 0x0002a333      ff00           inc dword [rax]
+│ 0x0002a335      00ca           add dl, cl
+│ 0x0002a337      59             pop rcx
+│ 0x0002a338      0baa565af72c   or ebp, dword [rdx + 0x2cf75a56]      ; arg3
+│ 0x0002a33e      1342d8         adc eax, dword [rdx - 0x28]           ; arg3
+│ 0x0002a341      1542c4fc76     adc eax, 0x76fcc442
+│ 0x0002a346      a32252247e8c.  movabs dword [0x925a358c7e245222], eax
+│ 0x0002a34f      92             xchg eax, edx                         ; arg3
+│ 0x0002a350      647e52         jle 0x2a3a5
+| // true: 0x0002a3a5  false: 0x0002a353
+│ 0x0002a353      247f           and al, 0x7f
+
+│ ; CODE XREF from fcn.0002a25b @ 0x2a32b
+│ 0x0002a378      c8406420       enter 0x6440, 0x20                    ; '@d'
+│ 0x0002a37c      92             xchg eax, edx                         ; arg3
+│ 0x0002a37d      d91a           fstp dword [rdx]
+│ 0x0002a37f      92             xchg eax, edx                         ; arg3
+│ 0x0002a380      c9             leave
+│ ; CODE XREF from fcn.0002a25b @ +0x152
+│ 0x0002a381      c8905920       enter 0x5990, 0x20
+│ 0x0002a385      76ac           jbe 0x2a333
+| // true: 0x0002a333  false: 0x0002a387
+│ ; CODE XREF from fcn.0002a25b @ 0x2a350
+│ 0x0002a3a5      c26580         ret 0x8065
+
+  ; CALL XREF from fcn.0002a25b @ +0x2b317
+┌ 45: fcn.00007c48 (int64_t arg1, int64_t arg3);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg3 @ rdx
+│ 0x00007c48      fb             sti
+│ 0x00007c49      fe050005f302   inc byte [0x02f3814f]
+│ 0x00007c4f      00fc           add ah, bh
+│ 0x00007c51      0c02           or al, 2
+│ 0x00007c53      00fe           add dh, bh
+│ 0x00007c55      e102           loope 0x7c59
+| // true: 0x00007c59  false: 0x00007c57
+│ 0x00007c57      0012           add byte [rdx], dl                    ; arg3
+| // true: 0x00007c59
+│ ; CODE XREF from fcn.00007c48 @ 0x7c55
+│ 0x00007c59      fc             cld
+│ 0x00007c5a      0200           add al, byte [rax]
+│ 0x00007c5c      ee             out dx, al
+│ 0x00007c5d      fc             cld
+│ 0x00007c5e      0200           add al, byte [rax]
+│ 0x00007c60      fc             cld
+│ 0x00007c61      1002           adc byte [rdx], al                    ; arg3
+│ 0x00007c63      0017           add byte [rdi], dl                    ; arg1
+│ 0x00007c65      fe02           inc byte [rdx]                        ; arg3
+│ 0x00007c67      00e6           add dh, ah
+│ 0x00007c69      0202           add al, byte [rdx]                    ; arg3
+│ 0x00007c6b      00f7           add bh, dh
+│ 0x00007c6d      0902           or dword [rdx], eax                   ; arg3
+│ 0x00007c6f      00f3           add bl, dh
+│ 0x00007c71      0902           or dword [rdx], eax                   ; arg3
+└ 0x00007c73      00ee           add dh, ch
+
+  ; CALL XREF from fcn.0002a25b @ +0x2bb80
+┌ 9: fcn.000075eb (int64_t arg3);
+│ ; arg int64_t arg3 @ rdx
+│ 0x000075eb      000a           add byte [rdx], cl                    ; arg3
+│ 0x000075ed      0402           add al, 2
+│ 0x000075ef      00e5           add ch, ah
+│ ; CODE XREF from fcn.000075cf @ +0x1a
+│ 0x000075f1      fd             std
+└ 0x000075f2      0200           add al, byte [rax]
+
+  ; CALL XREF from fcn.0002a25b @ +0x2bb8e
+┌ 91: fcn.000084bf (int64_t arg1, int64_t arg2, int64_t arg4);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg4 @ rcx
+│ 0x000084bf      0001           add byte [rcx], al                    ; arg4
+│ 0x000084c1      0400           add al, 0
+│ 0x000084c3      0001           add byte [rcx], al                    ; arg4
+│ 0x000084c5      0400           add al, 0
+│ 0x000084c7      0001           add byte [rcx], al                    ; arg4
+│ 0x000084c9      0400           add al, 0
+│ 0x000084cb      0001           add byte [rcx], al                    ; arg4
+│ 0x000084cd      0400           add al, 0
+│ 0x000084cf      0001           add byte [rcx], al                    ; arg4
+│ 0x000084d1      0400           add al, 0
+│ 0x000084d3      0001           add byte [rcx], al                    ; arg4
+│ 0x000084d5      0400           add al, 0
+│ 0x000084d7      0001           add byte [rcx], al                    ; arg4
+│ 0x000084d9      0400           add al, 0
+│ 0x000084db      0001           add byte [rcx], al                    ; arg4
+│ 0x000084dd      0400           add al, 0
+│ 0x000084df      0001           add byte [rcx], al                    ; arg4
+│ 0x000084e1      0400           add al, 0
+│ 0x000084e3      0001           add byte [rcx], al                    ; arg4
+│ 0x000084e5      0400           add al, 0
+│ 0x000084e7      0001           add byte [rcx], al                    ; arg4
+│ 0x000084e9      0400           add al, 0
+│ 0x000084eb      0001           add byte [rcx], al                    ; arg4
+│ 0x000084ed      0400           add al, 0
+│ 0x000084ef      0006           add byte [rsi], al                    ; arg2
+│ 0x000084f1      0c00           or al, 0
+│ 0x000084f3      0006           add byte [rsi], al                    ; arg2
+│ 0x000084f5      0c00           or al, 0
+│ 0x000084f7      0006           add byte [rsi], al                    ; arg2
+│ 0x000084f9      0c00           or al, 0
+│ 0x000084fb      0006           add byte [rsi], al                    ; arg2
+│ 0x000084fd      0c00           or al, 0
+│ 0x000084ff      0006           add byte [rsi], al                    ; arg2
+│ 0x00008501      0c00           or al, 0
+│ 0x00008503      0006           add byte [rsi], al                    ; arg2
+│ 0x00008505      0c00           or al, 0
+│ 0x00008507      0006           add byte [rsi], al                    ; arg2
+│ 0x00008509      0c00           or al, 0
+│ 0x0000850b      0006           add byte [rsi], al                    ; arg2
+│ 0x0000850d      0c00           or al, 0
+│ 0x0000850f      0007           add byte [rdi], al                    ; arg1
+│ 0x00008511      1800           sbb byte [rax], al
+│ 0x00008513      001f           add byte [rdi], bl                    ; arg1
+│ 0x00008515      1800           sbb byte [rax], al
+└ 0x00008517      004000         add byte [rax], al
+
+  ; CALL XREF from fcn.00057527 @ +0x119e6
+┌ 473: fcn.0000b6a3 (int64_t arg1);
+│ ; var int64_t var_41ffffd4h @ rbp-0x41ffffd4
+│ ; arg int64_t arg1 @ rdi
+│ 0x0000b6a3      00bd2c0000be   add byte [var_41ffffd4h], bh
+│ 0x0000b6a9      2c00           sub al, 0
+│ 0x0000b6ab      00bf2c0000bf   add byte [rdi - 0x40ffffd4], bh       ; arg1
+│ 0x0000b6b1      2c00           sub al, 0
+│ 0x0000b6b3      00c0           add al, al
+│ 0x0000b6b5      2c00           sub al, 0
+│ 0x0000b6b7      00c1           add cl, al
+│ 0x0000b6b9      2c00           sub al, 0
+│ 0x0000b6bb      00c1           add cl, al
+│ 0x0000b6bd      2c00           sub al, 0
+│ 0x0000b6bf      00c2           add dl, al
+│ 0x0000b6c1      2c00           sub al, 0
+│ 0x0000b6c3      00c3           add bl, al
+│ 0x0000b6c5      2c00           sub al, 0
+│ 0x0000b6c7      00c3           add bl, al
+│ 0x0000b6c9      2c00           sub al, 0
+│ 0x0000b6cb      00c4           add ah, al
+│ 0x0000b6cd      2c00           sub al, 0
+│ 0x0000b6cf      00c4           add ah, al
+│ 0x0000b6d1      2c00           sub al, 0
+│ 0x0000b6d3      00c5           add ch, al
+│ 0x0000b6d5      2c00           sub al, 0
+│ 0x0000b6d7      00c6           add dh, al
+│ 0x0000b6d9      2c00           sub al, 0
+│ 0x0000b6db      00c6           add dh, al
+│ 0x0000b6dd      2c00           sub al, 0
+│ 0x0000b6df      00c7           add bh, al
+│ 0x0000b6e1      2c00           sub al, 0
+│ 0x0000b6e3      00c8           add al, cl
+│ 0x0000b6e5      2c00           sub al, 0
+│ 0x0000b6e7      00c8           add al, cl
+│ 0x0000b6e9      2c00           sub al, 0
+│ 0x0000b6eb      00c9           add cl, cl
+│ 0x0000b6ed      2c00           sub al, 0
+│ 0x0000b6ef      00c9           add cl, cl
+│ 0x0000b6f1      2c00           sub al, 0
+│ 0x0000b6f3      00ca           add dl, cl
+│ 0x0000b6f5      2c00           sub al, 0
+│ 0x0000b6f7      00cb           add bl, cl
+│ 0x0000b6f9      2c00           sub al, 0
+│ 0x0000b6fb      00cb           add bl, cl
+│ 0x0000b6fd      2c00           sub al, 0
+│ 0x0000b6ff      00cc           add ah, cl
+│ 0x0000b701      2c00           sub al, 0
+│ 0x0000b703      00cd           add ch, cl
+│ 0x0000b705      2c00           sub al, 0
+│ 0x0000b707      00cd           add ch, cl
+│ 0x0000b709      2c00           sub al, 0
+│ 0x0000b70b      00ce           add dh, cl
+│ 0x0000b70d      2c00           sub al, 0
+│ 0x0000b70f      00ce           add dh, cl
+│ 0x0000b711      2c00           sub al, 0
+│ 0x0000b713      00cf           add bh, cl
+│ 0x0000b715      2c00           sub al, 0
+│ 0x0000b717      00d0           add al, dl
+│ 0x0000b719      2c00           sub al, 0
+│ 0x0000b71b      00d0           add al, dl
+│ 0x0000b71d      2c00           sub al, 0
+│ 0x0000b71f      00d1           add cl, dl
+│ 0x0000b721      2c00           sub al, 0
+│ 0x0000b723      00d2           add dl, dl
+│ 0x0000b725      2c00           sub al, 0
+│ 0x0000b727      00d2           add dl, dl
+│ 0x0000b729      2c00           sub al, 0
+│ 0x0000b72b      00d3           add bl, dl
+│ 0x0000b72d      2c00           sub al, 0
+│ 0x0000b72f      00d3           add bl, dl
+│ 0x0000b731      2c00           sub al, 0
+│ 0x0000b733      00d4           add ah, dl
+│ 0x0000b735      2c00           sub al, 0
+│ 0x0000b737      00d5           add ch, dl
+│ 0x0000b739      2c00           sub al, 0
+│ 0x0000b73b      00d5           add ch, dl
+│ 0x0000b73d      2c00           sub al, 0
+│ 0x0000b73f      00d6           add dh, dl
+│ 0x0000b741      2c00           sub al, 0
+│ 0x0000b743      00d7           add bh, dl
+│ 0x0000b745      2c00           sub al, 0
+│ 0x0000b747      00d7           add bh, dl
+│ 0x0000b749      2c00           sub al, 0
+│ 0x0000b74b      00d8           add al, bl
+│ 0x0000b74d      2c00           sub al, 0
+│ 0x0000b74f      00d8           add al, bl
+│ 0x0000b751      2c00           sub al, 0
+│ 0x0000b753      00d9           add cl, bl
+│ 0x0000b755      2c00           sub al, 0
+│ 0x0000b757      00da           add dl, bl
+│ 0x0000b759      2c00           sub al, 0
+│ 0x0000b75b      00da           add dl, bl
+│ 0x0000b75d      2c00           sub al, 0
+│ 0x0000b75f      00db           add bl, bl
+│ 0x0000b761      2c00           sub al, 0
+│ 0x0000b763      00dc           add ah, bl
+│ 0x0000b765      2c00           sub al, 0
+│ 0x0000b767      00dc           add ah, bl
+│ 0x0000b769      2c00           sub al, 0
+│ 0x0000b76b      00dd           add ch, bl
+│ 0x0000b76d      2c00           sub al, 0
+│ 0x0000b76f      00dd           add ch, bl
+│ 0x0000b771      2c00           sub al, 0
+│ 0x0000b773      00de           add dh, bl
+│ 0x0000b775      2c00           sub al, 0
+│ 0x0000b777      00df           add bh, bl
+│ 0x0000b779      2c00           sub al, 0
+│ 0x0000b77b      00df           add bh, bl
+│ 0x0000b77d      2c00           sub al, 0
+│ 0x0000b77f      00e0           add al, ah
+│ 0x0000b781      2c00           sub al, 0
+│ 0x0000b783      00e1           add cl, ah
+│ 0x0000b785      2c00           sub al, 0
+│ 0x0000b787      00e1           add cl, ah
+│ 0x0000b789      2c00           sub al, 0
+│ 0x0000b78b      00e2           add dl, ah
+│ 0x0000b78d      2c00           sub al, 0
+│ 0x0000b78f      00e2           add dl, ah
+│ 0x0000b791      2c00           sub al, 0
+│ 0x0000b793      00e3           add bl, ah
+│ 0x0000b795      2c00           sub al, 0
+│ 0x0000b797      00e4           add ah, ah
+│ 0x0000b799      2c00           sub al, 0
+│ 0x0000b79b      00e4           add ah, ah
+│ 0x0000b79d      2c00           sub al, 0
+│ 0x0000b79f      00e5           add ch, ah
+│ 0x0000b7a1      2c00           sub al, 0
+│ 0x0000b7a3      00e5           add ch, ah
+│ 0x0000b7a5      2c00           sub al, 0
+│ 0x0000b7a7      00e6           add dh, ah
+│ 0x0000b7a9      2c00           sub al, 0
+│ 0x0000b7ab      00e7           add bh, ah
+│ 0x0000b7ad      2c00           sub al, 0
+│ 0x0000b7af      00e7           add bh, ah
+│ 0x0000b7b1      2c00           sub al, 0
+│ 0x0000b7b3      00e8           add al, ch
+│ 0x0000b7b5      2c00           sub al, 0
+│ 0x0000b7b7      00e9           add cl, ch
+│ 0x0000b7b9      2c00           sub al, 0
+│ 0x0000b7bb      00e9           add cl, ch
+│ 0x0000b7bd      2c00           sub al, 0
+│ 0x0000b7bf      00ea           add dl, ch
+│ 0x0000b7c1      2c00           sub al, 0
+│ 0x0000b7c3      00ea           add dl, ch
+│ 0x0000b7c5      2c00           sub al, 0
+│ 0x0000b7c7      00eb           add bl, ch
+│ 0x0000b7c9      2c00           sub al, 0
+│ 0x0000b7cb      00ec           add ah, ch
+│ 0x0000b7cd      2c00           sub al, 0
+│ 0x0000b7cf      00ec           add ah, ch
+│ 0x0000b7d1      2c00           sub al, 0
+│ 0x0000b7d3      00ed           add ch, ch
+│ 0x0000b7d5      2c00           sub al, 0
+│ 0x0000b7d7      00ed           add ch, ch
+│ 0x0000b7d9      2c00           sub al, 0
+│ 0x0000b7db      00ee           add dh, ch
+│ 0x0000b7dd      2c00           sub al, 0
+│ 0x0000b7df      00ef           add bh, ch
+│ 0x0000b7e1      2c00           sub al, 0
+│ 0x0000b7e3      00ef           add bh, ch
+│ 0x0000b7e5      2c00           sub al, 0
+│ 0x0000b7e7      00f0           add al, dh
+│ 0x0000b7e9      2c00           sub al, 0
+│ 0x0000b7eb      00f1           add cl, dh
+│ 0x0000b7ed      2c00           sub al, 0
+│ 0x0000b7ef      00f1           add cl, dh
+│ 0x0000b7f1      2c00           sub al, 0
+│ 0x0000b7f3      00f2           add dl, dh
+│ 0x0000b7f5      2c00           sub al, 0
+│ 0x0000b7f7      00f2           add dl, dh
+│ 0x0000b7f9      2c00           sub al, 0
+│ 0x0000b7fb      00f3           add bl, dh
+│ 0x0000b7fd      2c00           sub al, 0
+│ 0x0000b7ff      00f4           add ah, dh
+│ 0x0000b801      2c00           sub al, 0
+│ 0x0000b803      00f4           add ah, dh
+│ 0x0000b805      2c00           sub al, 0
+│ 0x0000b807      00f5           add ch, dh
+│ 0x0000b809      2c00           sub al, 0
+│ 0x0000b80b      00f5           add ch, dh
+│ 0x0000b80d      2c00           sub al, 0
+│ 0x0000b80f      00f6           add dh, dh
+│ 0x0000b811      2c00           sub al, 0
+│ 0x0000b813      00f7           add bh, dh
+│ 0x0000b815      2c00           sub al, 0
+│ 0x0000b817      00f7           add bh, dh
+│ 0x0000b819      2c00           sub al, 0
+│ 0x0000b81b      00f8           add al, bh
+│ 0x0000b81d      2c00           sub al, 0
+│ 0x0000b81f      00f9           add cl, bh
+│ 0x0000b821      2c00           sub al, 0
+│ 0x0000b823      00f9           add cl, bh
+│ 0x0000b825      2c00           sub al, 0
+│ 0x0000b827      00fa           add dl, bh
+│ 0x0000b829      2c00           sub al, 0
+│ 0x0000b82b      00fa           add dl, bh
+│ 0x0000b82d      2c00           sub al, 0
+│ 0x0000b82f      00fb           add bl, bh
+│ 0x0000b831      2c00           sub al, 0
+│ 0x0000b833      00fc           add ah, bh
+│ 0x0000b835      2c00           sub al, 0
+│ 0x0000b837      00fc           add ah, bh
+│ 0x0000b839      2c00           sub al, 0
+│ 0x0000b83b      00fd           add ch, bh
+│ 0x0000b83d      2c00           sub al, 0
+│ 0x0000b83f      00fd           add ch, bh
+│ 0x0000b841      2c00           sub al, 0
+│ 0x0000b843      00fe           add dh, bh
+│ 0x0000b845      2c00           sub al, 0
+│ 0x0000b847      00ff           add bh, bh
+│ 0x0000b849      2c00           sub al, 0
+│ 0x0000b84b      00ff           add bh, bh
+│ 0x0000b84d      2c00           sub al, 0
+│ 0x0000b84f      0000           add byte [rax], al
+│ 0x0000b851      2d0000002d     sub eax, 0x2d000000
+│ 0x0000b856      0000           add byte [rax], al
+│ 0x0000b858      012d0000022d   add dword [0x2d02b85e], ebp           ; [0x2d02b85e:4]=-1
+│ 0x0000b85e      0000           add byte [rax], al
+│ 0x0000b860      022d0000032d   add ch, byte [0x2d03b866]             ; [0x2d03b866:1]=255
+│ 0x0000b866      0000           add byte [rax], al
+│ 0x0000b868      032d0000042d   add ebp, dword [0x2d04b86e]           ; [0x2d04b86e:4]=-1
+│ 0x0000b86e      0000           add byte [rax], al
+│ 0x0000b870      052d000005     add eax, 0x500002d
+│ 0x0000b875      2d0000062d     sub eax, 0x2d060000
+└ 0x0000b87a      0000           add byte [rax], al
+
+  ; CALL XREF from fcn.00057527 @ +0x13a88
+┌ 34: fcn.00001665 ();
+│ 0x00001665      ab             stosd dword [rdi], eax
+│ 0x00001666      02601b         add ah, byte [rax + 0x1b]
+│ 0x00001669      ab             stosd dword [rdi], eax
+│ 0x0000166a      02601b         add ah, byte [rax + 0x1b]
+│ 0x0000166d      ab             stosd dword [rdi], eax
+│ 0x0000166e      02601b         add ah, byte [rax + 0x1b]
+│ 0x00001671      ab             stosd dword [rdi], eax
+│ 0x00001672      02601b         add ah, byte [rax + 0x1b]
+│ 0x00001675      ab             stosd dword [rdi], eax
+│ 0x00001676      02601b         add ah, byte [rax + 0x1b]
+│ 0x00001679      ab             stosd dword [rdi], eax
+│ 0x0000167a      02601b         add ah, byte [rax + 0x1b]
+│ 0x0000167d      ab             stosd dword [rdi], eax
+│ 0x0000167e      02601b         add ah, byte [rax + 0x1b]
+│ ; DATA XREF from fcn.0002a25b @ +0x14455
+│ ; CODE XREF from fcn.00057527 @ +0x13aa4
+│ 0x00001681      ab             stosd dword [rdi], eax
+│ 0x00001682      0260ac         add ah, byte [rax - 0x54]
+└ 0x00001685      b302           mov bl, 2
+
