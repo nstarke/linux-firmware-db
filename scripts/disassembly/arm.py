@@ -10,7 +10,6 @@ with open("../data/json/linux-firmware-db-" + tag + "-cpu_rec.json", 'r') as f:
             continue 
 
         if 'arm' in i['full_arch'].lower():
-
             e = i['full_arch'][-2:]
             endian = "true"
             if e == 'EL':
@@ -20,8 +19,8 @@ with open("../data/json/linux-firmware-db-" + tag + "-cpu_rec.json", 'r') as f:
             if not os.path.isfile("../data/txt/disassembly/linux-firmware-db-" + i['sha256'] + '-disassembly.txt'):
                 try:
                     R2 = r2pipe.open("../git/linux-firmware/" + i['file_name'])
-                    R2.cmd("e asm.arch = arm")
                     R2.cmd("e cfg.bigendian = " + endian)
+                    R2.cmd("e asm.arch = arm")
                     R2.cmd("aaaa")
                     R2.cmd('pdr @@f > ' + "../data/txt/disassembly/linux-firmware-db-" + i['sha256'] + '-disassembly.txt')
                 except:

@@ -16,4 +16,3 @@ python3 ./disassembly/8051.py $LATEST_TAG
 python3 ./disassembly/arc.py $LATEST_TAG
 python3 ./disassembly/x86.py $LATEST_TAG
 python3 ./disassembly/arm.py $LATEST_TAG
-python3 ./disassembly/xtensa.py $LATEST_TAG
