@@ -1,0 +1,1669 @@
+  ;-- pcl:
+  ; CODE XREF from r1_r0 @ 
+┌ 66: entry0 ();
+│ 0x00000098      1124           clr r1
+│ 0x0000009a      1fbe           out 0x3f, r1                          ; IO SREG: flags
+│ 0x0000009c      cfef           ser r28
+│ 0x0000009e      d0e2           ldi r29, 0x20
+│ 0x000000a0      debf           out 0x3e, r29                         ; IO SPH: Stack higher bits SP8-SP10
+│ 0x000000a2      cdbf           out 0x3d, r28                         ; IO SPL: Stack lower bits SP0-SP7
+│ 0x000000a4      11e0           ldi r17, 0x01
+│ 0x000000a6      a0e0           ldi r26, 0x00
+│ 0x000000a8      b1e0           ldi r27, 0x01
+│ 0x000000aa      e2e1           ldi r30, 0x12
+│ 0x000000ac      f7e1           ldi r31, 0x17
+│ 0x000000ae      00e0           ldi r16, 0x00
+│ 0x000000b0      0bbf           out 0x3b, r16                         ; IO GICR: General Interrupt Control Register
+│ 0x000000b2      02c0           rjmp 0xb8
+| // true: 0x000000b8
+│ ; CODE XREF from entry0 @ 0xbc
+│ 0x000000b4      0790           elpm r0, z+
+│ 0x000000b6      0d92           st x+, r0
+| // true: 0x000000b8
+│ ; CODE XREF from entry0 @ 0xb2
+│ 0x000000b8      a839           cpi r26, 0x98
+│ 0x000000ba      b107           cpc r27, r17
+│ 0x000000bc      d9f7           brne 0xb4
+| // true: 0x000000b4  false: 0x000000be
+│ 0x000000be      14e0           ldi r17, 0x04
+│ 0x000000c0      a8e9           ldi r26, 0x98
+│ 0x000000c2      b1e0           ldi r27, 0x01
+│ 0x000000c4      01c0           rjmp 0xc8
+| // true: 0x000000c8
+│ ; CODE XREF from entry0 @ 0xcc
+│ 0x000000c6      1d92           st x+, r1
+| // true: 0x000000c8
+│ ; CODE XREF from entry0 @ 0xc4
+│ 0x000000c8      ab34           cpi r26, 0x4b
+│ 0x000000ca      b107           cpc r27, r17
+│ 0x000000cc      e1f7           brne 0xc6
+| // true: 0x000000c6  false: 0x000000ce
+│ 0x000000ce      0e940b0b       call fcn.00001616
+│ 0x000000d2      0c94870b       jmp 0x170e
+| // true: 0x0000170e
+│ ; CODE XREF from entry0 @ 0xd2
+│ 0x0000170e      f894           cli
+| // true: 0x00001710
+└ 0x00001710      ffcf           rjmp 0x1710
+| // true: 0x00001710
+  ; CALL XREF from entry0 @ 0xce
+┌ 50: fcn.00001616 ();
+│ 0x00001616      0e949a0a       call fcn.00001534
+│ 0x0000161a      0e94030b       call fcn.00001606
+│ 0x0000161e      0e946d00       call fcn.000000da
+│ 0x00001622      83e1           ldi r24, 0x13
+│ 0x00001624      92e0           ldi r25, 0x02
+│ 0x00001626      90932e04       sts 0x42e, r25
+│ 0x0000162a      80932d04       sts 0x42d, r24
+│ 0x0000162e      0e94d80a       call fcn.000015b0
+│ 0x00001632      0e942d05       call fcn.00000a5a
+│ 0x00001636      7894           sei
+| // true: 0x00001638
+│ ; CODE XREF from fcn.00001616 @ 0x1646
+│ 0x00001638      83b7           in r24, 0x33                          ; IO TCCR0: Timer/Counter Control Register 0
+│ 0x0000163a      8160           ori r24, 0x01
+│ 0x0000163c      83bf           out 0x33, r24                         ; IO TCCR0: Timer/Counter Control Register 0
+│ 0x0000163e      8895           sleep
+│ 0x00001640      83b7           in r24, 0x33                          ; IO TCCR0: Timer/Counter Control Register 0
+│ 0x00001642      8e7f           andi r24, 0xfe
+│ 0x00001644      83bf           out 0x33, r24                         ; IO TCCR0: Timer/Counter Control Register 0
+└ 0x00001646      f8cf           rjmp 0x1638
+| // true: 0x00001638
+  ; CALL XREF from fcn.000000da @ 0xec
+  ; CALL XREF from fcn.00001578 @ 0x1580
+┌ 24: fcn.00001560 ();
+│ 0x00001560      289a           sbi 0x05, 0                           ; IO ADCH: ADC Data Register High byte.
+│ 0x00001562      219a           sbi 0x04, 1                           ; IO ADCL: ADC Data Register Low byte.
+│ 0x00001564      229a           sbi 0x04, 2                           ; IO ADCL: ADC Data Register Low byte.
+│ 0x00001566      209a           sbi 0x04, 0                           ; IO ADCL: ADC Data Register Low byte.
+│ 0x00001568      2398           cbi 0x04, 3                           ; IO ADCL: ADC Data Register Low byte.
+│ 0x0000156a      80e5           ldi r24, 0x50
+│ 0x0000156c      8cbd           out 0x2c, r24                         ; IO TCNT1L: Timer/Counter1 Register Low byte.
+│ 0x0000156e      81e0           ldi r24, 0x01
+│ 0x00001570      8dbd           out 0x2d, r24                         ; IO TCNT1H: Timer/Counter1 Register High byte.
+│ 0x00001572      80932b04       sts 0x42b, r24
+└ 0x00001576      0895           ret
+
+  ; CALL XREFS from fcn.000001fc @ 0x26e, 0x28e
+┌ 50: fcn.00001698 ();
+│ 0x00001698      0f93           push r16
+| // true: 0x0000169a
+│ ; CODE XREF from fcn.00001698 @ 0x16b0
+│ 0x0000169a      0830           cpi r16, 0x08
+│ 0x0000169c      90f0           brcs 0x16c2
+| // true: 0x000016c2  false: 0x0000169e
+│ 0x0000169e      982f           mov r25, r24
+│ 0x000016a0      872f           mov r24, r23
+│ 0x000016a2      762f           mov r23, r22
+│ 0x000016a4      652f           mov r22, r21
+│ 0x000016a6      542f           mov r21, r20
+│ 0x000016a8      432f           mov r20, r19
+│ 0x000016aa      322f           mov r19, r18
+│ 0x000016ac      2227           clr r18
+│ 0x000016ae      0850           subi r16, 0x08
+│ 0x000016b0      f4cf           rjmp 0x169a
+| // true: 0x0000169a
+│ ; CODE XREF from fcn.00001698 @ 0x16c4
+│ 0x000016b2      220f           lsl r18
+│ 0x000016b4      331f           rol r19
+│ 0x000016b6      441f           rol r20
+│ 0x000016b8      551f           rol r21
+│ 0x000016ba      661f           rol r22
+│ 0x000016bc      771f           rol r23
+│ 0x000016be      881f           rol r24
+│ 0x000016c0      991f           rol r25
+| // true: 0x000016c2
+│ ; CODE XREF from fcn.00001698 @ 0x169c
+│ 0x000016c2      0a95           dec r16
+│ 0x000016c4      b2f7           brpl 0x16b2
+| // true: 0x000016b2  false: 0x000016c6
+│ 0x000016c6      0f91           pop r16
+└ 0x000016c8      0895           ret
+
+  ; CALL XREF from fcn.000002d0 @ 0x326
+┌ 12: fcn.00001554 ();
+│ 0x00001554      10922b04       sts 0x42b, r1
+│ 0x00001558      8cb5           in r24, 0x2c                          ; IO TCNT1L: Timer/Counter1 Register Low byte.
+│ 0x0000155a      8f7b           andi r24, 0xbf
+│ 0x0000155c      8cbd           out 0x2c, r24                         ; IO TCNT1L: Timer/Counter1 Register Low byte.
+└ 0x0000155e      0895           ret
+
+  ; CODE XREF from fcn.00000114 @ +0x84
+  ; CALL XREF from fcn.00000378 @ +0x4e
+  ; CALL XREF from fcn.00001252 @ 0x1278
+  ; CALL XREF from fcn.000013aa @ +0x28
+┌ 12: fcn.00000108 ();
+│ 0x00000108      8823           tst r24
+│ 0x0000010a      11f0           breq 0x110
+| // true: 0x00000110  false: 0x0000010c
+│ 0x0000010c      5f9a           sbi 0x0b, 7                           ; IO UCSRA: USART Control and Status Register A.
+│ 0x0000010e      0895           ret
+
+│ ; CODE XREF from fcn.00000108 @ 0x10a
+│ 0x00000110      5f98           cbi 0x0b, 7                           ; IO UCSRA: USART Control and Status Register A.
+└ 0x00000112      0895           ret
+
+  ; XREFS: CALL 0x000003ec  CALL 0x000007a4  CALL 0x000007fe  
+  ; XREFS: CALL 0x000009cc  CALL 0x00000aee  CALL 0x00000d16  
+  ; XREFS: CALL 0x00000de2  CALL 0x00001026  CALL 0x000010ca  
+  ; XREFS: CALL 0x00001292  CALL 0x000012b4  CALL 0x0000130e  
+  ; XREFS: CALL 0x000014e8  
+┌ 162: fcn.00000b1e ();
+│ 0x00000b1e      8f92           push r8
+│ 0x00000b20      9f92           push r9
+│ 0x00000b22      af92           push r10
+│ 0x00000b24      bf92           push r11
+│ 0x00000b26      cf92           push r12
+│ 0x00000b28      df92           push r13
+│ 0x00000b2a      ef92           push r14
+│ 0x00000b2c      ff92           push r15
+│ 0x00000b2e      0f93           push r16
+│ 0x00000b30      1f93           push r17
+│ 0x00000b32      cf93           push r28
+│ 0x00000b34      df93           push r29
+│ 0x00000b36      1f92           push r1
+│ 0x00000b38      cdb7           in r28, 0x3d                          ; IO SPL: Stack lower bits SP0-SP7
+│ 0x00000b3a      deb7           in r29, 0x3e                          ; IO SPH: Stack higher bits SP8-SP10
+│ 0x00000b3c      4c01           movw r8, r24
+│ 0x00000b3e      5b01           movw r10, r22
+│ 0x00000b40      6a01           movw r12, r20
+│ 0x00000b42      fc01           movw r30, r24
+│ 0x00000b44      8081           ld r24, z
+│ 0x00000b46      9181           ldd r25, z+1
+│ 0x00000b48      892b           or r24, r25
+│ 0x00000b4a      21f0           breq 0xb54
+| // true: 0x00000b54  false: 0x00000b4c
+│ 0x00000b4c      2983           std y+1, r18
+│ 0x00000b4e      0e948a00       call fcn.00000114
+│ 0x00000b52      2981           ldd r18, y+1
+| // true: 0x00000b54
+│ ; CODE XREF from fcn.00000b1e @ 0xb4a
+│ 0x00000b54      f401           movw r30, r8
+│ 0x00000b56      b182           std z+1, r11
+│ 0x00000b58      a082           std z+0, r10
+│ 0x00000b5a      d382           std z+3, r13
+│ 0x00000b5c      c282           std z+2, r12
+│ 0x00000b5e      c20e           add r12, r18
+│ 0x00000b60      d11c           adc r13, r1
+│ 0x00000b62      d582           std z+5, r13
+│ 0x00000b64      c482           std z+4, r12
+│ 0x00000b66      1087           std z+8, r17
+│ 0x00000b68      0783           std z+7, r16
+│ 0x00000b6a      f286           std z+10, r15
+│ 0x00000b6c      e186           std z+9, r14
+│ 0x00000b6e      c401           movw r24, r8
+│ 0x00000b70      0f90           pop r0
+│ 0x00000b72      df91           pop r29
+│ 0x00000b74      cf91           pop r28
+│ 0x00000b76      1f91           pop r17
+│ 0x00000b78      0f91           pop r16
+│ 0x00000b7a      ff90           pop r15
+│ 0x00000b7c      ef90           pop r14
+│ 0x00000b7e      df90           pop r13
+│ 0x00000b80      cf90           pop r12
+│ 0x00000b82      bf90           pop r11
+│ 0x00000b84      af90           pop r10
+│ 0x00000b86      9f90           pop r9
+│ 0x00000b88      8f90           pop r8
+│ 0x00000b8a      0c94f806       jmp 0xdf0
+| // true: 0x00000df0
+│ ; CODE XREF from fcn.00000b1e @ 0xb8a
+│ 0x00000df0      fc01           movw r30, r24
+│ 0x00000df2      2081           ld r18, z
+│ 0x00000df4      3181           ldd r19, z+1
+│ 0x00000df6      2230           cpi r18, 0x02
+│ 0x00000df8      3105           cpc r19, r1
+│ 0x00000dfa      91f4           brne 0xe20
+| // true: 0x00000e20  false: 0x00000dfc
+│ 0x00000dfc      8553           subi r24, 0x35
+│ 0x00000dfe      9440           sbci r25, 0x04
+│ 0x00000e00      43ea           ldi r20, 0xa3
+│ 0x00000e02      5be8           ldi r21, 0x8b
+│ 0x00000e04      849f           mul r24, r20
+│ 0x00000e06      9001           movw r18, r0
+│ 0x00000e08      859f           mul r24, r21
+│ 0x00000e0a      300d           add r19, r0
+│ 0x00000e0c      949f           mul r25, r20
+│ 0x00000e0e      300d           add r19, r0
+│ 0x00000e10      1124           clr r1
+│ 0x00000e12      2093e900       sts 0xe9, r18
+│ 0x00000e16      8091f000       lds r24, 0xf0
+│ 0x00000e1a      8160           ori r24, 0x01
+│ 0x00000e1c      8093f000       sts 0xf0, r24
+| // true: 0x00000e20
+│ ; CODE XREF from fcn.00000b1e @ 0xdfa
+└ 0x00000e20      0895           ret
+
+  ; XREFS: CALL 0x000004a8  CALL 0x000005ae  CALL 0x000007b0  
+  ; XREFS: CALL 0x00000812  CALL 0x000008b6  CALL 0x0000091a  
+  ; XREFS: CALL 0x00000954  CALL 0x00001230  CALL 0x00001338  
+  ; XREFS: CALL 0x000013ba  CALL 0x0000140e  CALL 0x00001426  
+  ; XREFS: CALL 0x00001520  CALL 0x00001588  CALL 0x0000159c  
+┌ 16: fcn.00001578 ();
+│ 0x00001578      80912b04       lds r24, 0x42b
+│ 0x0000157c      8111           cpse r24, r1
+| // true: 0x00001580  false: 0x0000157e
+│ 0x0000157e      02c0           rjmp 0x1584
+| // true: 0x00001584
+│ ; CODE XREF from fcn.00001578 @ 0x157c
+│ 0x00001580      0e94b00a       call fcn.00001560
+| // true: 0x00001584
+│ ; CODE XREF from fcn.00001578 @ 0x157e
+│ 0x00001584      2898           cbi 0x05, 0                           ; IO ADCH: ADC Data Register High byte.
+└ 0x00001586      0895           ret
+
+  ; XREFS(33)
+┌ 12: fcn.00000458 ();
+│ 0x00000458      8ebd           out 0x2e, r24                         ; IO TCCR1B: Timer/Counter Control Register 1B (16 bits). PWM mode select.
+| // true: 0x0000045a
+│ ; CODE XREF from fcn.00000458 @ 0x45e
+│ 0x0000045a      0db4           in r0, 0x2d                           ; IO TCNT1H: Timer/Counter1 Register High byte.
+│ 0x0000045c      07fe           sbrs r0, 7
+| // true: 0x00000460  false: 0x0000045e
+│ 0x0000045e      fdcf           rjmp 0x45a
+| // true: 0x0000045a
+│ ; CODE XREF from fcn.00000458 @ 0x45c
+│ 0x00000460      8eb5           in r24, 0x2e                          ; IO TCCR1B: Timer/Counter Control Register 1B (16 bits). PWM mode select.
+└ 0x00000462      0895           ret
+
+  ; CALL XREF from fcn.000004a6 @ +0x4c
+┌ 36: fcn.000016ea ();
+│ 0x000016ea      262f           mov r18, r22
+| // true: 0x000016ec
+│ ; CODE XREF from fcn.000016ea @ 0x16ee
+│ 0x000016ec      f999           sbic 0x1f, 1
+| // true: 0x000016f0  false: 0x000016ee
+│ 0x000016ee      fecf           rjmp 0x16ec
+| // true: 0x000016ec
+│ ; CODE XREF from fcn.000016ea @ 0x16ec
+│ 0x000016f0      92bd           out 0x22, r25                         ; IO ASSR: Asynchronous Operation of the Timer/Counter.
+│ 0x000016f2      81bd           out 0x21, r24                         ; IO WDTCR: Watchdog Timer Control Register.
+│ 0x000016f4      f89a           sbi 0x1f, 0                           ; IO EEARH: EEPROM Address Register High byte.
+│ 0x000016f6      0197           sbiw r24, 0x01
+│ 0x000016f8      00b4           in r0, 0x20                           ; IO UBRRH, UCSRC: USART Baud Rate Registers, High byte and Control. A.k.a setting serial port speed.
+│ 0x000016fa      0216           cp r0, r18
+│ 0x000016fc      39f0           breq 0x170c
+| // true: 0x0000170c  false: 0x000016fe
+│ 0x000016fe      1fba           out 0x1f, r1                          ; IO EEARH: EEPROM Address Register High byte.
+│ 0x00001700      20bd           out 0x20, r18                         ; IO UBRRH, UCSRC: USART Baud Rate Registers, High byte and Control. A.k.a setting serial port speed.
+│ 0x00001702      0fb6           in r0, 0x3f                           ; IO SREG: flags
+│ 0x00001704      f894           cli
+│ 0x00001706      fa9a           sbi 0x1f, 2                           ; IO EEARH: EEPROM Address Register High byte.
+│ 0x00001708      f99a           sbi 0x1f, 1                           ; IO EEARH: EEPROM Address Register High byte.
+│ 0x0000170a      0fbe           out 0x3f, r0                          ; IO SREG: flags
+| // true: 0x0000170c
+│ ; CODE XREF from fcn.000016ea @ 0x16fc
+└ 0x0000170c      0895           ret
+
+  ; CALL XREF from fcn.000004a6 @ +0xf0
+  ; CALL XREF from fcn.000013aa @ +0xb6
+┌ 6: fcn.000001ac ();
+│ 0x000001ac      2c9a           sbi 0x05, 4                           ; IO ADCH: ADC Data Register High byte.
+│ 0x000001ae      2c98           cbi 0x05, 4                           ; IO ADCH: ADC Data Register High byte.
+└ 0x000001b0      0895           ret
+
+  ; XREFS: CODE 0x000004ca  CALL 0x000005c4  CALL 0x000007c2  
+  ; XREFS: CALL 0x0000085c  CALL 0x0000092a  CALL 0x0000098c  
+  ; XREFS: CALL 0x00001244  CALL 0x0000134e  CALL 0x00001370  
+  ; XREFS: CODE 0x000013cc  CALL 0x0000141e  CALL 0x00001456  
+  ; XREFS: CODE 0x00001530  CALL 0x00001598  CODE 0x000015ac  
+┌ 4: fcn.00000464 ();
+│ 0x00000464      289a           sbi 0x05, 0                           ; IO ADCH: ADC Data Register High byte.
+└ 0x00000466      0895           ret
+
+  ; CALL XREF from fcn.000004a6 @ +0x1b6
+┌ 32: fcn.000016ca ();
+│ 0x000016ca      dc01           movw r26, r24
+│ 0x000016cc      cb01           movw r24, r22
+│ 0x000016ce      fc01           movw r30, r24
+| // true: 0x000016d0
+│ ; CODE XREF from fcn.000016ca @ 0x16d2
+│ 0x000016d0      f999           sbic 0x1f, 1
+| // true: 0x000016d4  false: 0x000016d2
+│ 0x000016d2      fecf           rjmp 0x16d0
+| // true: 0x000016d0
+│ ; CODE XREF from fcn.000016ca @ 0x16d0
+│ 0x000016d4      06c0           rjmp 0x16e2
+| // true: 0x000016e2
+│ ; CODE XREF from fcn.000016ca @ 0x16e6
+│ 0x000016d6      f2bd           out 0x22, r31                         ; IO ASSR: Asynchronous Operation of the Timer/Counter.
+│ 0x000016d8      e1bd           out 0x21, r30                         ; IO WDTCR: Watchdog Timer Control Register.
+│ 0x000016da      f89a           sbi 0x1f, 0                           ; IO EEARH: EEPROM Address Register High byte.
+│ 0x000016dc      3196           adiw r30, 0x01
+│ 0x000016de      00b4           in r0, 0x20                           ; IO UBRRH, UCSRC: USART Baud Rate Registers, High byte and Control. A.k.a setting serial port speed.
+│ 0x000016e0      0d92           st x+, r0
+| // true: 0x000016e2
+│ ; CODE XREF from fcn.000016ca @ 0x16d4
+│ 0x000016e2      4150           subi r20, 0x01
+│ 0x000016e4      5040           sbci r21, 0x00
+│ 0x000016e6      b8f7           brcc 0x16d6
+| // true: 0x000016d6  false: 0x000016e8
+└ 0x000016e8      0895           ret
+
+  ; CALL XREF from fcn.000004a6 @ +0x1f0
+  ; CALL XREF from fcn.00001670 @ 0x167e
+┌ 40: fcn.00001648 ();
+│ 0x00001648      aa1b           sub r26, r26
+│ 0x0000164a      bb1b           sub r27, r27
+│ 0x0000164c      51e1           ldi r21, 0x11
+│ 0x0000164e      07c0           rjmp 0x165e
+| // true: 0x0000165e
+│ ; CODE XREF from fcn.00001648 @ 0x1664
+│ 0x00001650      aa1f           rol r26
+│ 0x00001652      bb1f           rol r27
+│ 0x00001654      a617           cp r26, r22
+│ 0x00001656      b707           cpc r27, r23
+│ 0x00001658      10f0           brcs 0x165e
+| // true: 0x0000165e  false: 0x0000165a
+│ 0x0000165a      a61b           sub r26, r22
+│ 0x0000165c      b70b           sbc r27, r23
+| // true: 0x0000165e
+│ ; CODE XREFS from fcn.00001648 @ 0x164e, 0x1658
+│ 0x0000165e      881f           rol r24
+│ 0x00001660      991f           rol r25
+│ 0x00001662      5a95           dec r21
+│ 0x00001664      a9f7           brne 0x1650
+| // true: 0x00001650  false: 0x00001666
+│ 0x00001666      8095           com r24
+│ 0x00001668      9095           com r25
+│ 0x0000166a      bc01           movw r22, r24
+│ 0x0000166c      cd01           movw r24, r26
+└ 0x0000166e      0895           ret
+
+  ; XREFS: CODE 0x000004a0  DATA 0x000004ae  DATA 0x000004de  
+  ; XREFS: DATA 0x000006b6  DATA 0x000006e8  CALL 0x0000070a  
+  ; XREFS: DATA 0x00000736  DATA 0x00000766  DATA 0x000007e6  
+  ; XREFS: DATA 0x00000822  DATA 0x00000834  DATA 0x0000083e  
+  ; XREFS: DATA 0x00000860  DATA 0x000008f2  CALL 0x000009e2  
+┌ 8: fcn.0000019c ();
+│ 0x0000019c      88e0           ldi r24, 0x08
+│ ; DATA XREFS from fcn.000004a6 @ +0x29c, +0x338, +0x3ee, +0x45e
+│ 0x0000019e      80936000       sts 0x60, r24
+│ ; DATA XREF from fcn.000004a6 @ +0x2ac
+└ 0x000001a2      0895           ret
+
+  ; CALL XREF from fcn.000004a6 @ +0x26a
+  ; CALL XREF from fcn.00001616 @ 0x161e
+┌ 86: fcn.000000da ();
+│ 0x000000da      14b8           out 0x04, r1                          ; IO ADCL: ADC Data Register Low byte.
+│ 0x000000dc      17b8           out 0x07, r1                          ; IO ADMUX: ADC Multiplexer Selection Register.
+│ 0x000000de      1ab8           out 0x0a, r1                          ; IO UCSRB: USART Control and Status Register B.
+│ ; DATA XREFS from fcn.000015b0 @ 0x15f2, 0x15f8
+│ 0x000000e0      15b8           out 0x05, r1                          ; IO ADCH: ADC Data Register High byte.
+│ ; DATA XREF from fcn.000015b0 @ 0x15fe
+│ 0x000000e2      18b8           out 0x08, r1                          ; IO ACSR: Analog Comparator Control and Status Register.
+│ 0x000000e4      1bb8           out 0x0b, r1                          ; IO UCSRA: USART Control and Status Register A.
+│ 0x000000e6      579a           sbi 0x0a, 7                           ; IO UCSRB: USART Control and Status Register B.
+│ ; XREFS: DATA 0x00000dac  DATA 0x00000f98  DATA 0x00001030  
+│ ; XREFS: DATA 0x00001034  DATA 0x000010d0  DATA 0x000010d4  
+│ ; XREFS: DATA 0x000010e2  DATA 0x000010e6  DATA 0x00001156  
+│ ; XREFS: DATA 0x00001188  
+│ 0x000000e8      259a           sbi 0x04, 5                           ; IO ADCL: ADC Data Register Low byte.
+│ 0x000000ea      249a           sbi 0x04, 4                           ; IO ADCL: ADC Data Register Low byte.
+│ ; DATA XREFS from fcn.00000e22 @ 0xe2c, 0xe6a
+│ 0x000000ec      0e94b00a       call fcn.00001560
+│ ; XREFS: DATA 0x00000e16  DATA 0x00000e1c  DATA 0x00000e4a  
+│ ; XREFS: DATA 0x00000e88  DATA 0x0000117c  DATA 0x00001182  
+│ 0x000000f0      2d98           cbi 0x05, 5                           ; IO ADCH: ADC Data Register High byte.
+│ ; DATA XREFS from fcn.00000e22 @ +0x184, +0x226
+│ 0x000000f2      85e0           ldi r24, 0x05
+| // true: 0x000000f4
+│ ; CODE XREF from fcn.000000da @ 0xf6
+│ ; DATA XREF from fcn.00000e22 @ +0x13a
+│ 0x000000f4      8a95           dec r24
+│ 0x000000f6      f1f7           brne 0xf4
+| // true: 0x000000f4  false: 0x000000f8
+│ 0x000000f8      0000           nop
+│ 0x000000fa      2d9a           sbi 0x05, 5                           ; IO ADCH: ADC Data Register High byte.
+│ 0x000000fc      85e0           ldi r24, 0x05
+| // true: 0x000000fe
+│ ; CODE XREF from fcn.000000da @ 0x100
+│ 0x000000fe      8a95           dec r24
+│ 0x00000100      f1f7           brne 0xfe
+| // true: 0x000000fe  false: 0x00000102
+│ 0x00000102      0000           nop
+│ ;-- aav.0x00000104:
+│ ; UNKNOWN XREF from fcn.000016ea @ +0x78
+│ 0x00000104      0c94c40a       jmp 0x1588
+| // true: 0x00001588
+│ ; CODE XREF from fcn.000000da @ 0x104
+│ 0x00001588      0e94bc0a       call fcn.00001578
+│ 0x0000158c      83ec           ldi r24, 0xc3
+│ 0x0000158e      0e942c02       call fcn.00000458
+│ 0x00001592      80e1           ldi r24, 0x10
+│ 0x00001594      0e942c02       call fcn.00000458
+│ 0x00001598      0e943202       call fcn.00000464
+│ 0x0000159c      0e94bc0a       call fcn.00001578
+│ 0x000015a0      85ec           ldi r24, 0xc5
+│ 0x000015a2      0e942c02       call fcn.00000458
+│ 0x000015a6      80e8           ldi r24, 0x80
+│ 0x000015a8      0e942c02       call fcn.00000458
+└ 0x000015ac      0c943202       jmp fcn.00000464
+| // true: 0x00000464
+  ; CALL XREF from fcn.000004a6 @ +0x26e
+┌ 56: fcn.000014fc ();
+│ 0x000014fc      10922002       sts 0x220, r1
+│ 0x00001500      10921f02       sts 0x21f, r1
+│ 0x00001504      10922702       sts 0x227, r1
+│ 0x00001508      10922602       sts 0x226, r1
+│ 0x0000150c      10922102       sts 0x221, r1
+│ 0x00001510      10922202       sts 0x222, r1
+│ 0x00001514      10922302       sts 0x223, r1
+│ 0x00001518      10922402       sts 0x224, r1
+│ 0x0000151c      10922502       sts 0x225, r1
+│ 0x00001520      0e94bc0a       call fcn.00001578
+│ 0x00001524      84ec           ldi r24, 0xc4
+│ 0x00001526      0e942c02       call fcn.00000458
+│ 0x0000152a      88e2           ldi r24, 0x28
+│ 0x0000152c      0e942c02       call fcn.00000458
+└ 0x00001530      0c943202       jmp fcn.00000464
+| // true: 0x00000464
+  ; DATA XREFS from fcn.000004a6 @ +0x27e, +0x2b4
+┌ 8: fcn.000001a4 ();
+│ 0x000001a4      89b1           in r24, 0x09                          ; IO UBRRL: USART Baud Rate Registers Low byte. A.k.a setting serial port speed.
+│ 0x000001a6      8295           swap r24
+│ 0x000001a8      8170           andi r24, 0x01
+└ 0x000001aa      0895           ret
+
+  ; CALL XREF from fcn.000004a6 @ +0x294
+┌ 196: fcn.000001fc ();
+│ 0x000001fc      7f92           push r7
+│ 0x000001fe      8f92           push r8
+│ 0x00000200      9f92           push r9
+│ 0x00000202      af92           push r10
+│ 0x00000204      bf92           push r11
+│ 0x00000206      cf92           push r12
+│ 0x00000208      df92           push r13
+│ 0x0000020a      ef92           push r14
+│ 0x0000020c      ff92           push r15
+│ 0x0000020e      0f93           push r16
+│ 0x00000210      1f93           push r17
+│ 0x00000212      cf93           push r28
+│ 0x00000214      df93           push r29
+│ 0x00000216      21e0           ldi r18, 0x01
+| // true: 0x00000218
+│ ; CODE XREF from fcn.000001fc @ 0x25e
+│ 0x00000218      b09b           sbis 0x16, 0
+| // true: 0x0000021c  false: 0x0000021a
+│ 0x0000021a      14c0           rjmp 0x244
+| // true: 0x00000244
+│ ; CODE XREF from fcn.000001fc @ 0x218
+│ 0x0000021c      26bb           out 0x16, r18                         ; IO PINB: Input Pins Address for Port B.
+│ 0x0000021e      80919801       lds r24, 0x198
+│ ; XREFS: DATA 0x00001262  DATA 0x0000132c  DATA 0x00001354  
+│ ; XREFS: DATA 0x00001376  DATA 0x00001386  DATA 0x00001510  
+│ 0x00000222      90919901       lds r25, 0x199
+│ ; DATA XREFS from fcn.00001252 @ 0x1296, 0x12b8
+│ ; DATA XREF from fcn.000012ce @ 0x1316
+│ ; DATA XREF from fcn.000014fc @ 0x1508
+│ 0x00000226      a0919a01       lds r26, 0x19a
+│ 0x0000022a      b0919b01       lds r27, 0x19b
+│ 0x0000022e      0196           adiw r24, 0x01
+│ 0x00000230      a11d           adc r26, r1
+│ 0x00000232      b11d           adc r27, r1
+│ 0x00000234      80939801       sts 0x198, r24
+│ 0x00000238      90939901       sts 0x199, r25
+│ 0x0000023c      a0939a01       sts 0x19a, r26
+│ 0x00000240      b0939b01       sts 0x19b, r27
+| // true: 0x00000244
+│ ; CODE XREF from fcn.000001fc @ 0x21a
+│ 0x00000244      80919801       lds r24, 0x198
+│ 0x00000248      90919901       lds r25, 0x199
+│ 0x0000024c      a0919a01       lds r26, 0x19a
+│ 0x00000250      b0919b01       lds r27, 0x19b
+│ 0x00000254      10918400       lds r17, 0x84
+│ 0x00000258      80908500       lds r8, 0x85
+│ 0x0000025c      b099           sbic 0x16, 0
+| // true: 0x00000260  false: 0x0000025e
+│ 0x0000025e      dccf           rjmp 0x218
+| // true: 0x00000218
+│ ; CODE XREF from fcn.000001fc @ 0x25c
+│ 0x00000260      9c01           movw r18, r24
+│ 0x00000262      ad01           movw r20, r26
+│ 0x00000264      60e0           ldi r22, 0x00
+│ 0x00000266      70e0           ldi r23, 0x00
+│ 0x00000268      80e0           ldi r24, 0x00
+│ 0x0000026a      90e0           ldi r25, 0x00
+│ 0x0000026c      00e1           ldi r16, 0x10
+│ 0x0000026e      0e944c0b       call fcn.00001698
+│ 0x00000272      722e           mov r7, r18
+│ 0x00000274      932e           mov r9, r19
+│ 0x00000276      5a01           movw r10, r20
+│ 0x00000278      6b01           movw r12, r22
+│ 0x0000027a      7c01           movw r14, r24
+│ 0x0000027c      282d           mov r18, r8
+│ 0x0000027e      30e0           ldi r19, 0x00
+│ 0x00000280      40e0           ldi r20, 0x00
+│ 0x00000282      50e0           ldi r21, 0x00
+│ 0x00000284      60e0           ldi r22, 0x00
+│ 0x00000286      70e0           ldi r23, 0x00
+│ 0x00000288      80e0           ldi r24, 0x00
+│ 0x0000028a      90e0           ldi r25, 0x00
+│ 0x0000028c      08e0           ldi r16, 0x08
+│ 0x0000028e      0e944c0b       call fcn.00001698
+│ 0x00000292      2729           or r18, r7
+│ 0x00000294      3929           or r19, r9
+│ 0x00000296      4a29           or r20, r10
+│ 0x00000298      5b29           or r21, r11
+│ 0x0000029a      6c29           or r22, r12
+│ 0x0000029c      7d29           or r23, r13
+│ 0x0000029e      212b           or r18, r17
+│ 0x000002a0      8e29           or r24, r14
+│ 0x000002a2      9f29           or r25, r15
+│ 0x000002a4      df91           pop r29
+│ 0x000002a6      cf91           pop r28
+│ 0x000002a8      1f91           pop r17
+│ 0x000002aa      0f91           pop r16
+│ 0x000002ac      ff90           pop r15
+│ 0x000002ae      ef90           pop r14
+│ 0x000002b0      df90           pop r13
+│ 0x000002b2      cf90           pop r12
+│ 0x000002b4      bf90           pop r11
+│ 0x000002b6      af90           pop r10
+│ 0x000002b8      9f90           pop r9
+│ 0x000002ba      8f90           pop r8
+│ 0x000002bc      7f90           pop r7
+└ 0x000002be      0895           ret
+
+  ; CALL XREF from fcn.000004a6 @ +0x2dc
+┌ 168: fcn.000002d0 ();
+│ 0x000002d0      0f93           push r16
+│ 0x000002d2      1f93           push r17
+│ 0x000002d4      cf93           push r28
+│ 0x000002d6      df93           push r29
+│ 0x000002d8      1dba           out 0x1d, r1                          ; IO EEDR: EEPROM Data Register.
+│ 0x000002da      8230           cpi r24, 0x02
+│ 0x000002dc      79f0           breq 0x2fc
+| // true: 0x000002fc  false: 0x000002de
+│ 0x000002de      8330           cpi r24, 0x03
+│ 0x000002e0      b9f0           breq 0x310
+| // true: 0x00000310  false: 0x000002e2
+│ 0x000002e2      8130           cpi r24, 0x01
+│ 0x000002e4      09f0           breq 0x2e8
+| // true: 0x000002e8  false: 0x000002e6
+│ 0x000002e6      40c0           rjmp 0x368
+| // true: 0x00000368
+│ ; CODE XREF from fcn.000002d0 @ 0x2e4
+│ 0x000002e8      94b1           in r25, 0x04                          ; IO ADCL: ADC Data Register Low byte.
+│ 0x000002ea      2095           com r18
+│ 0x000002ec      9223           and r25, r18
+│ 0x000002ee      492b           or r20, r25
+│ 0x000002f0      44b9           out 0x04, r20                         ; IO ADCL: ADC Data Register Low byte.
+│ 0x000002f2      95b1           in r25, 0x05                          ; IO ADCH: ADC Data Register High byte.
+│ 0x000002f4      2923           and r18, r25
+│ 0x000002f6      622b           or r22, r18
+│ 0x000002f8      65b9           out 0x05, r22                         ; IO ADCH: ADC Data Register High byte.
+│ 0x000002fa      13c0           rjmp 0x322
+| // true: 0x00000322
+│ ; CODE XREF from fcn.000002d0 @ 0x2dc
+│ 0x000002fc      97b1           in r25, 0x07                          ; IO ADMUX: ADC Multiplexer Selection Register.
+│ 0x000002fe      2095           com r18
+│ 0x00000300      9223           and r25, r18
+│ 0x00000302      492b           or r20, r25
+│ 0x00000304      47b9           out 0x07, r20                         ; IO ADMUX: ADC Multiplexer Selection Register.
+│ 0x00000306      98b1           in r25, 0x08                          ; IO ACSR: Analog Comparator Control and Status Register.
+│ 0x00000308      2923           and r18, r25
+│ 0x0000030a      622b           or r22, r18
+│ 0x0000030c      68b9           out 0x08, r22                         ; IO ACSR: Analog Comparator Control and Status Register.
+│ 0x0000030e      09c0           rjmp 0x322
+| // true: 0x00000322
+│ ; CODE XREF from fcn.000002d0 @ 0x2e0
+│ 0x00000310      9ab1           in r25, 0x0a                          ; IO UCSRB: USART Control and Status Register B.
+│ 0x00000312      2095           com r18
+│ 0x00000314      9223           and r25, r18
+│ 0x00000316      492b           or r20, r25
+│ 0x00000318      4ab9           out 0x0a, r20                         ; IO UCSRB: USART Control and Status Register B.
+│ 0x0000031a      9bb1           in r25, 0x0b                          ; IO UCSRA: USART Control and Status Register A.
+│ 0x0000031c      2923           and r18, r25
+│ 0x0000031e      622b           or r22, r18
+│ 0x00000320      6bb9           out 0x0b, r22                         ; IO UCSRA: USART Control and Status Register A.
+| // true: 0x00000322
+│ ; CODE XREFS from fcn.000002d0 @ 0x2fa, 0x30e
+│ 0x00000322      e801           movw r28, r16
+│ 0x00000324      182f           mov r17, r24
+│ 0x00000326      0e94aa0a       call fcn.00001554
+│ ;-- aav.0x0000032a:
+│ ; UNKNOWN XREF from fcn.000016ea @ +0x28
+│ 0x0000032a      8fec           ldi r24, 0xcf
+│ 0x0000032c      97e0           ldi r25, 0x07
+| // true: 0x0000032e
+│ ; CODE XREF from fcn.000002d0 @ 0x330
+│ 0x0000032e      0197           sbiw r24, 0x01
+│ 0x00000330      f1f7           brne 0x32e
+| // true: 0x0000032e  false: 0x00000332
+│ 0x00000332      00c0           rjmp 0x334
+| // true: 0x00000334
+│ ; CODE XREF from fcn.000002d0 @ 0x332
+│ 0x00000334      0000           nop
+│ 0x00000336      1230           cpi r17, 0x02
+│ 0x00000338      51f0           breq 0x34e
+| // true: 0x0000034e  false: 0x0000033a
+│ 0x0000033a      1330           cpi r17, 0x03
+│ 0x0000033c      71f0           breq 0x35a
+| // true: 0x0000035a  false: 0x0000033e
+│ 0x0000033e      1130           cpi r17, 0x01
+│ 0x00000340      a9f4           brne 0x36c
+| // true: 0x0000036c  false: 0x00000342
+│ 0x00000342      83b1           in r24, 0x03                          ; IO TWDR: I2C (Two-wire) Serial Interface Data Register.
+│ 0x00000344      8883           std y+0, r24
+│ 0x00000346      85b1           in r24, 0x05                          ; IO ADCH: ADC Data Register High byte.
+│ 0x00000348      8983           std y+1, r24
+│ 0x0000034a      84b1           in r24, 0x04                          ; IO ADCL: ADC Data Register Low byte.
+│ 0x0000034c      0bc0           rjmp 0x364
+| // true: 0x00000364
+│ ; CODE XREF from fcn.000002d0 @ 0x338
+│ 0x0000034e      86b1           in r24, 0x06                          ; IO ADCSRA: ADC Control and Status Register A.
+│ 0x00000350      8883           std y+0, r24
+│ 0x00000352      88b1           in r24, 0x08                          ; IO ACSR: Analog Comparator Control and Status Register.
+│ 0x00000354      8983           std y+1, r24
+│ 0x00000356      87b1           in r24, 0x07                          ; IO ADMUX: ADC Multiplexer Selection Register.
+│ 0x00000358      05c0           rjmp 0x364
+| // true: 0x00000364
+│ ; CODE XREF from fcn.000002d0 @ 0x33c
+│ 0x0000035a      89b1           in r24, 0x09                          ; IO UBRRL: USART Baud Rate Registers Low byte. A.k.a setting serial port speed.
+│ 0x0000035c      8883           std y+0, r24
+│ 0x0000035e      8bb1           in r24, 0x0b                          ; IO UCSRA: USART Control and Status Register A.
+│ 0x00000360      8983           std y+1, r24
+│ 0x00000362      8ab1           in r24, 0x0a                          ; IO UCSRB: USART Control and Status Register B.
+| // true: 0x00000364
+│ ; CODE XREFS from fcn.000002d0 @ 0x34c, 0x358
+│ 0x00000364      8a83           std y+2, r24
+│ 0x00000366      02c0           rjmp 0x36c
+| // true: 0x0000036c
+│ ; CODE XREF from fcn.000002d0 @ 0x2e6
+│ 0x00000368      80e0           ldi r24, 0x00
+│ 0x0000036a      01c0           rjmp 0x36e
+| // true: 0x0000036e
+│ ; CODE XREFS from fcn.000002d0 @ 0x340, 0x366
+│ 0x0000036c      81e0           ldi r24, 0x01
+| // true: 0x0000036e
+│ ; CODE XREF from fcn.000002d0 @ 0x36a
+│ 0x0000036e      df91           pop r29
+│ 0x00000370      cf91           pop r28
+│ 0x00000372      1f91           pop r17
+│ 0x00000374      0f91           pop r16
+└ 0x00000376      0895           ret
+
+  ; CALL XREF from fcn.000004a6 @ +0x304
+┌ 6: fcn.00000378 ();
+│ 0x00000378      81e0           ldi r24, 0x01
+│ 0x0000037a      8dbb           out 0x1d, r24                         ; IO EEDR: EEPROM Data Register.
+└ 0x0000037c      0895           ret
+
+  ; CALL XREF from fcn.000004a6 @ +0x46e
+┌ 40: fcn.000004a6 ();
+│ 0x000004a6      cf93           push r28
+│ 0x000004a8      0e94bc0a       call fcn.00001578
+│ 0x000004ac      c0e0           ldi r28, 0x00
+| // true: 0x000004ae
+│ ; CODE XREF from fcn.000004a6 @ 0x4c6
+│ 0x000004ae      80919c01       lds r24, fcn.0000019c                 ; 0x19c
+│ 0x000004b2      c817           cp r28, r24
+│ 0x000004b4      49f0           breq 0x4c8
+| // true: 0x000004c8  false: 0x000004b6
+│ 0x000004b6      ec2f           mov r30, r28
+│ 0x000004b8      f0e0           ldi r31, 0x00
+│ 0x000004ba      e356           subi r30, 0x63
+│ 0x000004bc      fe4f           sbci r31, 0xfe
+│ 0x000004be      8081           ld r24, z
+│ 0x000004c0      0e942c02       call fcn.00000458
+│ 0x000004c4      cf5f           subi r28, 0xff
+│ 0x000004c6      f3cf           rjmp 0x4ae
+| // true: 0x000004ae
+│ ; CODE XREF from fcn.000004a6 @ 0x4b4
+│ 0x000004c8      cf91           pop r28
+└ 0x000004ca      0c943202       jmp fcn.00000464
+| // true: 0x00000464
+  ; CALL XREF from fcn.00000b1e @ 0xb4e
+  ; CALL XREF from fcn.00000e22 @ +0x18c
+┌ 44: fcn.00000114 ();
+│ 0x00000114      f894           cli
+| // true: 0x00000116
+│ ; CODE XREF from fcn.00000114 @ 0x13e
+│ 0x00000116      5f9a           sbi 0x0b, 7                           ; IO UCSRA: USART Control and Status Register A.
+│ 0x00000118      2fef           ser r18
+│ 0x0000011a      80e7           ldi r24, 0x70
+│ 0x0000011c      92e0           ldi r25, 0x02
+| // true: 0x0000011e
+│ ; CODE XREF from fcn.00000114 @ 0x124
+│ 0x0000011e      2150           subi r18, 0x01
+│ 0x00000120      8040           sbci r24, 0x00
+│ 0x00000122      9040           sbci r25, 0x00
+│ 0x00000124      e1f7           brne 0x11e
+| // true: 0x0000011e  false: 0x00000126
+│ 0x00000126      00c0           rjmp 0x128
+| // true: 0x00000128
+│ ; CODE XREF from fcn.00000114 @ 0x126
+│ 0x00000128      0000           nop
+│ ; DATA XREF from fcn.00000a5a @ +0x78
+│ 0x0000012a      5f98           cbi 0x0b, 7                           ; IO UCSRA: USART Control and Status Register A.
+│ 0x0000012c      2fef           ser r18
+│ ; DATA XREF from fcn.00000468 @ +0x30
+│ ; DATA XREFS from fcn.000004a6 @ +0x572, +0x594
+│ ; DATA XREF from fcn.00000a5a @ +0x74
+│ 0x0000012e      80e7           ldi r24, 0x70
+│ ; DATA XREF from fcn.000004a6 @ +0x214
+│ 0x00000130      92e0           ldi r25, 0x02
+| // true: 0x00000132
+│ ; CODE XREF from fcn.00000114 @ 0x138
+│ 0x00000132      2150           subi r18, 0x01
+│ 0x00000134      8040           sbci r24, 0x00
+│ 0x00000136      9040           sbci r25, 0x00
+│ ; DATA XREFS from fcn.00000b9c @ 0xc48, 0xcba
+│ 0x00000138      e1f7           brne 0x132
+| // true: 0x00000132  false: 0x0000013a
+│ 0x0000013a      00c0           rjmp 0x13c
+| // true: 0x0000013c
+│ ; CODE XREF from fcn.00000114 @ 0x13a
+│ 0x0000013c      0000           nop
+└ 0x0000013e      ebcf           rjmp 0x116
+| // true: 0x00000116
+  ; CALL XREF from fcn.00000b8e @ 0xb9a
+┌ 528: fcn.00000b9c ();
+│ 0x00000b9c      1f92           push r1
+│ 0x00000b9e      cdb7           in r28, 0x3d                          ; IO SPL: Stack lower bits SP0-SP7
+│ 0x00000ba0      deb7           in r29, 0x3e                          ; IO SPH: Stack higher bits SP8-SP10
+│ 0x00000ba2      dc01           movw r26, r24
+│ 0x00000ba4      1196           adiw r26, 0x01
+│ 0x00000ba6      2c91           ld r18, x
+│ 0x00000ba8      1197           sbiw r26, 0x01
+│ 0x00000baa      30e0           ldi r19, 0x00
+│ 0x00000bac      322f           mov r19, r18
+│ 0x00000bae      2227           clr r18
+│ 0x00000bb0      8c91           ld r24, x
+│ 0x00000bb2      282b           or r18, r24
+│ 0x00000bb4      2115           cp r18, r1
+│ 0x00000bb6      85e0           ldi r24, 0x05
+│ 0x00000bb8      3807           cpc r19, r24
+│ 0x00000bba      09f4           brne 0xbbe
+| // true: 0x00000bbe  false: 0x00000bbc
+│ 0x00000bbc      5ec0           rjmp 0xc7a
+| // true: 0x00000c7a
+│ ; CODE XREF from fcn.00000b9c @ 0xbba
+│ 0x00000bbe      e4f4           brge 0xbf8
+| // true: 0x00000bf8  false: 0x00000bc0
+│ 0x00000bc0      2115           cp r18, r1
+│ 0x00000bc2      81e0           ldi r24, 0x01
+│ 0x00000bc4      3807           cpc r19, r24
+│ 0x00000bc6      09f4           brne 0xbca
+| // true: 0x00000bca  false: 0x00000bc8
+│ 0x00000bc8      e4c0           rjmp 0xd92
+| // true: 0x00000d92
+│ ; CODE XREF from fcn.00000b9c @ 0xbc6
+│ 0x00000bca      5cf4           brge 0xbe2
+| // true: 0x00000be2  false: 0x00000bcc
+│ 0x00000bcc      2038           cpi r18, 0x80
+│ 0x00000bce      3105           cpc r19, r1
+│ 0x00000bd0      09f4           brne 0xbd4
+| // true: 0x00000bd4  false: 0x00000bd2
+│ 0x00000bd2      44c0           rjmp 0xc5c
+| // true: 0x00000c5c
+│ ; CODE XREF from fcn.00000b9c @ 0xbd0
+│ 0x00000bd4      0cf4           brge 0xbd8
+| // true: 0x00000bd8  false: 0x00000bd6
+│ 0x00000bd6      d4c0           rjmp 0xd80
+| // true: 0x00000d80
+│ ; CODE XREF from fcn.00000b9c @ 0xbd4
+│ 0x00000bd8      2338           cpi r18, 0x83
+│ 0x00000bda      3105           cpc r19, r1
+│ 0x00000bdc      0cf4           brge 0xbe0
+| // true: 0x00000be0  false: 0x00000bde
+│ 0x00000bde      dbc0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xbdc
+│ 0x00000be0      cfc0           rjmp 0xd80
+| // true: 0x00000d80
+│ ; CODE XREF from fcn.00000b9c @ 0xbca
+│ 0x00000be2      2330           cpi r18, 0x03
+│ 0x00000be4      81e0           ldi r24, 0x01
+│ 0x00000be6      3807           cpc r19, r24
+│ 0x00000be8      0cf4           brge 0xbec
+| // true: 0x00000bec  false: 0x00000bea
+│ 0x00000bea      d5c0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xbe8
+│ 0x00000bec      3350           subi r19, 0x03
+│ 0x00000bee      2330           cpi r18, 0x03
+│ 0x00000bf0      3105           cpc r19, r1
+│ 0x00000bf2      08f0           brcs 0xbf6
+| // true: 0x00000bf6  false: 0x00000bf4
+│ 0x00000bf4      c5c0           rjmp 0xd80
+| // true: 0x00000d80
+│ ; CODE XREF from fcn.00000b9c @ 0xbf2
+│ 0x00000bf6      cfc0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xbbe
+│ 0x00000bf8      2038           cpi r18, 0x80
+│ 0x00000bfa      88e0           ldi r24, 0x08
+│ 0x00000bfc      3807           cpc r19, r24
+│ 0x00000bfe      09f4           brne 0xc02
+| // true: 0x00000c02  false: 0x00000c00
+│ 0x00000c00      7fc0           rjmp 0xd00
+| // true: 0x00000d00
+│ ; CODE XREF from fcn.00000b9c @ 0xbfe
+│ 0x00000c02      74f4           brge 0xc20
+| // true: 0x00000c20  false: 0x00000c04
+│ 0x00000c04      2038           cpi r18, 0x80
+│ 0x00000c06      86e0           ldi r24, 0x06
+│ 0x00000c08      3807           cpc r19, r24
+│ 0x00000c0a      0cf4           brge 0xc0e
+| // true: 0x00000c0e  false: 0x00000c0c
+│ 0x00000c0c      b9c0           rjmp 0xd80
+| // true: 0x00000d80
+│ ; CODE XREF from fcn.00000b9c @ 0xc0a
+│ 0x00000c0e      2238           cpi r18, 0x82
+│ 0x00000c10      86e0           ldi r24, 0x06
+│ 0x00000c12      3807           cpc r19, r24
+│ 0x00000c14      bcf1           brlt 0xc84
+| // true: 0x00000c84  false: 0x00000c16
+│ 0x00000c16      2115           cp r18, r1
+│ 0x00000c18      3740           sbci r19, 0x07
+│ 0x00000c1a      09f4           brne 0xc1e
+| // true: 0x00000c1e  false: 0x00000c1c
+│ 0x00000c1c      bcc0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xc1a
+│ 0x00000c1e      b0c0           rjmp 0xd80
+| // true: 0x00000d80
+│ ; CODE XREF from fcn.00000b9c @ 0xc02
+│ 0x00000c20      2138           cpi r18, 0x81
+│ 0x00000c22      8ae0           ldi r24, 0x0a
+│ 0x00000c24      3807           cpc r19, r24
+│ 0x00000c26      09f4           brne 0xc2a
+| // true: 0x00000c2a  false: 0x00000c28
+│ 0x00000c28      b6c0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xc26
+│ 0x00000c2a      2cf4           brge 0xc36
+| // true: 0x00000c36  false: 0x00000c2c
+│ 0x00000c2c      2115           cp r18, r1
+│ 0x00000c2e      3940           sbci r19, 0x09
+│ 0x00000c30      09f4           brne 0xc34
+| // true: 0x00000c34  false: 0x00000c32
+│ 0x00000c32      74c0           rjmp 0xd1c
+| // true: 0x00000d1c
+│ ; CODE XREF from fcn.00000b9c @ 0xc30
+│ 0x00000c34      a5c0           rjmp 0xd80
+| // true: 0x00000d80
+│ ; CODE XREF from fcn.00000b9c @ 0xc2a
+│ 0x00000c36      2130           cpi r18, 0x01
+│ 0x00000c38      8be0           ldi r24, 0x0b
+│ 0x00000c3a      3807           cpc r19, r24
+│ 0x00000c3c      29f0           breq 0xc48
+| // true: 0x00000c48  false: 0x00000c3e
+│ 0x00000c3e      2238           cpi r18, 0x82
+│ 0x00000c40      3c40           sbci r19, 0x0c
+│ 0x00000c42      09f4           brne 0xc46
+| // true: 0x00000c46  false: 0x00000c44
+│ 0x00000c44      a8c0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xc42
+│ 0x00000c46      9cc0           rjmp 0xd80
+| // true: 0x00000d80
+│ ; CODE XREF from fcn.00000b9c @ 0xc3c
+│ 0x00000c48      20913801       lds r18, 0x138
+│ 0x00000c4c      30e0           ldi r19, 0x00
+│ 0x00000c4e      2a5c           subi r18, 0xca
+│ 0x00000c50      3e4f           sbci r19, 0xfe
+│ 0x00000c52      80e0           ldi r24, 0x00
+│ 0x00000c54      90e0           ldi r25, 0x00
+│ 0x00000c56      efe3           ldi r30, 0x3f
+│ 0x00000c58      f1e0           ldi r31, 0x01
+│ 0x00000c5a      72c0           rjmp 0xd40
+| // true: 0x00000d40
+│ ; CODE XREF from fcn.00000b9c @ 0xbd2
+│ 0x00000c5c      1696           adiw r26, 0x06
+│ 0x00000c5e      8d91           ld r24, x+
+│ 0x00000c60      9c91           ld r25, x
+│ 0x00000c62      1797           sbiw r26, 0x07
+│ 0x00000c64      0297           sbiw r24, 0x02
+│ 0x00000c66      09f0           breq 0xc6a
+| // true: 0x00000c6a  false: 0x00000c68
+│ 0x00000c68      96c0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xc66
+│ 0x00000c6a      e12c           mov r14, r1
+│ 0x00000c6c      f12c           mov r15, r1
+│ 0x00000c6e      00e0           ldi r16, 0x00
+│ 0x00000c70      10e0           ldi r17, 0x00
+│ 0x00000c72      22e0           ldi r18, 0x02
+│ 0x00000c74      46e7           ldi r20, 0x76
+│ 0x00000c76      51e0           ldi r21, 0x01
+│ 0x00000c78      4ac0           rjmp 0xd0e
+| // true: 0x00000d0e
+│ ; CODE XREF from fcn.00000b9c @ 0xbbc
+│ 0x00000c7a      1296           adiw r26, 0x02
+│ 0x00000c7c      8c91           ld r24, x
+│ 0x00000c7e      0e94e006       call fcn.00000dc0
+│ 0x00000c82      87c0           rjmp 0xd92
+| // true: 0x00000d92
+│ ; CODE XREF from fcn.00000b9c @ 0xc14
+│ 0x00000c84      1696           adiw r26, 0x06
+│ 0x00000c86      0d91           ld r16, x+
+│ 0x00000c88      1c91           ld r17, x
+│ 0x00000c8a      1797           sbiw r26, 0x07
+│ 0x00000c8c      1296           adiw r26, 0x02
+│ 0x00000c8e      6c91           ld r22, x
+│ 0x00000c90      1297           sbiw r26, 0x02
+│ 0x00000c92      1396           adiw r26, 0x03
+│ 0x00000c94      8c91           ld r24, x
+│ 0x00000c96      8130           cpi r24, 0x01
+│ 0x00000c98      19f0           breq 0xca0
+| // true: 0x00000ca0  false: 0x00000c9a
+│ 0x00000c9a      8230           cpi r24, 0x02
+│ 0x00000c9c      41f0           breq 0xcae
+| // true: 0x00000cae  false: 0x00000c9e
+│ 0x00000c9e      11c0           rjmp 0xcc2
+| // true: 0x00000cc2
+│ ; CODE XREF from fcn.00000b9c @ 0xc98
+│ 0x00000ca0      88e5           ldi r24, 0x58
+│ 0x00000ca2      91e0           ldi r25, 0x01
+│ 0x00000ca4      9a83           std y+2, r25
+│ 0x00000ca6      8983           std y+1, r24
+│ 0x00000ca8      80915801       lds r24, 0x158
+│ 0x00000cac      08c0           rjmp 0xcbe
+| // true: 0x00000cbe
+│ ; CODE XREF from fcn.00000b9c @ 0xc9c
+│ 0x00000cae      6111           cpse r22, r1
+| // true: 0x00000cb2  false: 0x00000cb0
+│ 0x00000cb0      72c0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xcae
+│ 0x00000cb2      86e3           ldi r24, 0x36
+│ 0x00000cb4      91e0           ldi r25, 0x01
+│ 0x00000cb6      9a83           std y+2, r25
+│ 0x00000cb8      8983           std y+1, r24
+│ 0x00000cba      80913801       lds r24, 0x138
+| // true: 0x00000cbe
+│ ; CODE XREF from fcn.00000b9c @ 0xcac
+│ 0x00000cbe      8b83           std y+3, r24
+│ 0x00000cc0      11c0           rjmp 0xce4
+| // true: 0x00000ce4
+│ ; CODE XREF from fcn.00000b9c @ 0xc9e
+│ 0x00000cc2      e0912d04       lds r30, 0x42d
+│ 0x00000cc6      f0912e04       lds r31, 0x42e
+│ 0x00000cca      3097           sbiw r30, 0x00
+│ 0x00000ccc      09f4           brne 0xcd0
+| // true: 0x00000cd0  false: 0x00000cce
+│ 0x00000cce      63c0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xccc
+│ 0x00000cd0      9e01           movw r18, r28
+│ 0x00000cd2      2d5f           subi r18, 0xfd
+│ 0x00000cd4      3f4f           sbci r19, 0xff
+│ 0x00000cd6      ae01           movw r20, r28
+│ 0x00000cd8      4f5f           subi r20, 0xff
+│ 0x00000cda      5f4f           sbci r21, 0xff
+│ 0x00000cdc      0995           icall
+│ 0x00000cde      8823           tst r24
+│ 0x00000ce0      09f4           brne 0xce4
+| // true: 0x00000ce4  false: 0x00000ce2
+│ 0x00000ce2      59c0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREFS from fcn.00000b9c @ 0xcc0, 0xce0
+│ 0x00000ce4      8b81           ldd r24, y+3
+│ 0x00000ce6      90e0           ldi r25, 0x00
+│ 0x00000ce8      0817           cp r16, r24
+│ 0x00000cea      1907           cpc r17, r25
+│ 0x00000cec      08f4           brcc 0xcf0
+| // true: 0x00000cf0  false: 0x00000cee
+│ 0x00000cee      0b83           std y+3, r16
+| // true: 0x00000cf0
+│ ; CODE XREF from fcn.00000b9c @ 0xcec
+│ 0x00000cf0      4981           ldd r20, y+1
+│ 0x00000cf2      5a81           ldd r21, y+2
+│ 0x00000cf4      e12c           mov r14, r1
+│ 0x00000cf6      f12c           mov r15, r1
+│ 0x00000cf8      00e0           ldi r16, 0x00
+│ 0x00000cfa      10e0           ldi r17, 0x00
+│ 0x00000cfc      2b81           ldd r18, y+3
+│ 0x00000cfe      07c0           rjmp 0xd0e
+| // true: 0x00000d0e
+│ ; CODE XREF from fcn.00000b9c @ 0xc00
+│ 0x00000d00      e12c           mov r14, r1
+│ 0x00000d02      f12c           mov r15, r1
+│ 0x00000d04      00e0           ldi r16, 0x00
+│ 0x00000d06      10e0           ldi r17, 0x00
+│ 0x00000d08      21e0           ldi r18, 0x01
+│ 0x00000d0a      46e9           ldi r20, 0x96
+│ 0x00000d0c      51e0           ldi r21, 0x01
+| // true: 0x00000d0e
+│ ; CODE XREFS from fcn.00000b9c @ 0xc78, 0xcfe
+│ 0x00000d0e      62e0           ldi r22, 0x02
+│ 0x00000d10      70e0           ldi r23, 0x00
+│ 0x00000d12      85e3           ldi r24, 0x35
+│ 0x00000d14      94e0           ldi r25, 0x04
+│ 0x00000d16      0e948f05       call fcn.00000b1e
+│ 0x00000d1a      3bc0           rjmp 0xd92
+| // true: 0x00000d92
+│ ; CODE XREF from fcn.00000b9c @ 0xc32
+│ 0x00000d1c      20913b01       lds r18, 0x13b
+│ 0x00000d20      30e0           ldi r19, 0x00
+│ 0x00000d22      81e0           ldi r24, 0x01
+│ 0x00000d24      1296           adiw r26, 0x02
+│ 0x00000d26      4d91           ld r20, x+
+│ 0x00000d28      5c91           ld r21, x
+│ 0x00000d2a      1397           sbiw r26, 0x03
+│ 0x00000d2c      4217           cp r20, r18
+│ 0x00000d2e      5307           cpc r21, r19
+│ 0x00000d30      91f5           brne 0xd96
+| // true: 0x00000d96  false: 0x00000d32
+│ 0x00000d32      32c0           rjmp 0xd98
+| // true: 0x00000d98
+│ ; CODE XREF from fcn.00000b9c @ 0xd44
+│ 0x00000d34      4181           ldd r20, z+1
+│ 0x00000d36      4430           cpi r20, 0x04
+│ 0x00000d38      39f0           breq 0xd48
+| // true: 0x00000d48  false: 0x00000d3a
+│ ; CODE XREF from fcn.00000b9c @ 0xd7e
+│ 0x00000d3a      4081           ld r20, z
+│ 0x00000d3c      e40f           add r30, r20
+│ 0x00000d3e      f11d           adc r31, r1
+| // true: 0x00000d40
+│ ; CODE XREF from fcn.00000b9c @ 0xc5a
+│ 0x00000d40      e217           cp r30, r18
+│ 0x00000d42      f307           cpc r31, r19
+│ 0x00000d44      b9f7           brne 0xd34
+| // true: 0x00000d34  false: 0x00000d46
+│ 0x00000d46      27c0           rjmp 0xd96
+| // true: 0x00000d96
+│ ; CODE XREF from fcn.00000b9c @ 0xd38
+│ 0x00000d48      4281           ldd r20, z+2
+│ 0x00000d4a      50e0           ldi r21, 0x00
+│ 0x00000d4c      1496           adiw r26, 0x04
+│ 0x00000d4e      6d91           ld r22, x+
+│ 0x00000d50      7c91           ld r23, x
+│ 0x00000d52      1597           sbiw r26, 0x05
+│ 0x00000d54      4617           cp r20, r22
+│ 0x00000d56      5707           cpc r21, r23
+│ 0x00000d58      89f4           brne 0xd7c
+| // true: 0x00000d7c  false: 0x00000d5a
+│ 0x00000d5a      4381           ldd r20, z+3
+│ 0x00000d5c      50e0           ldi r21, 0x00
+│ 0x00000d5e      1296           adiw r26, 0x02
+│ 0x00000d60      6d91           ld r22, x+
+│ 0x00000d62      7c91           ld r23, x
+│ 0x00000d64      1397           sbiw r26, 0x03
+│ 0x00000d66      4617           cp r20, r22
+│ 0x00000d68      5707           cpc r21, r23
+│ 0x00000d6a      41f4           brne 0xd7c
+| // true: 0x00000d7c  false: 0x00000d6c
+│ 0x00000d6c      e0913104       lds r30, 0x431
+│ 0x00000d70      f0913204       lds r31, 0x432
+│ 0x00000d74      3097           sbiw r30, 0x00
+│ 0x00000d76      69f0           breq 0xd92
+| // true: 0x00000d92  false: 0x00000d78
+│ 0x00000d78      0995           icall
+│ 0x00000d7a      0bc0           rjmp 0xd92
+| // true: 0x00000d92
+│ ; CODE XREFS from fcn.00000b9c @ 0xd58, 0xd6a
+│ 0x00000d7c      0196           adiw r24, 0x01
+│ 0x00000d7e      ddcf           rjmp 0xd3a
+| // true: 0x00000d3a
+│ ; XREFS: CODE 0x00000bd6  CODE 0x00000be0  CODE 0x00000bf4  
+│ ; XREFS: CODE 0x00000c0c  CODE 0x00000c1e  CODE 0x00000c34  
+│ ; XREFS: CODE 0x00000c46  
+│ 0x00000d80      e0913304       lds r30, 0x433
+│ 0x00000d84      f0913404       lds r31, 0x434
+│ 0x00000d88      3097           sbiw r30, 0x00
+│ 0x00000d8a      29f0           breq 0xd96
+| // true: 0x00000d96  false: 0x00000d8c
+│ 0x00000d8c      cd01           movw r24, r26
+│ 0x00000d8e      0995           icall
+│ 0x00000d90      03c0           rjmp 0xd98
+| // true: 0x00000d98
+│ ; CODE XREFS from fcn.00000b9c @ 0xbc8, 0xc82, 0xd1a, 0xd76, 0xd7a
+│ 0x00000d92      81e0           ldi r24, 0x01
+│ 0x00000d94      01c0           rjmp 0xd98
+| // true: 0x00000d98
+│ ; XREFS: CODE 0x00000bde  CODE 0x00000bea  CODE 0x00000bf6  
+│ ; XREFS: CODE 0x00000c1c  CODE 0x00000c28  CODE 0x00000c44  
+│ ; XREFS: CODE 0x00000c68  CODE 0x00000cb0  CODE 0x00000cce  
+│ ; XREFS: CODE 0x00000ce2  CODE 0x00000d30  CODE 0x00000d46  
+│ ; XREFS: CODE 0x00000d8a  
+│ 0x00000d96      80e0           ldi r24, 0x00
+| // true: 0x00000d98
+│ ; CODE XREFS from fcn.00000b9c @ 0xd32, 0xd90, 0xd94
+│ 0x00000d98      0f90           pop r0
+│ 0x00000d9a      0f90           pop r0
+│ 0x00000d9c      0f90           pop r0
+│ 0x00000d9e      df91           pop r29
+│ 0x00000da0      cf91           pop r28
+│ 0x00000da2      1f91           pop r17
+│ 0x00000da4      0f91           pop r16
+│ 0x00000da6      ff90           pop r15
+│ 0x00000da8      ef90           pop r14
+└ 0x00000daa      0895           ret
+
+  ; CALL XREF from fcn.00000b9c @ 0xc7e
+┌ 48: fcn.00000dc0 ();
+│ 0x00000dc0      ef92           push r14
+│ 0x00000dc2      ff92           push r15
+│ 0x00000dc4      0f93           push r16
+│ 0x00000dc6      1f93           push r17
+│ 0x00000dc8      8093e300       sts 0xe3, r24
+│ 0x00000dcc      e12c           mov r14, r1
+│ 0x00000dce      f12c           mov r15, r1
+│ 0x00000dd0      06ed           ldi r16, 0xd6
+│ 0x00000dd2      16e0           ldi r17, 0x06
+│ 0x00000dd4      20e0           ldi r18, 0x00
+│ 0x00000dd6      40e0           ldi r20, 0x00
+│ 0x00000dd8      50e0           ldi r21, 0x00
+│ 0x00000dda      62e0           ldi r22, 0x02
+│ 0x00000ddc      70e0           ldi r23, 0x00
+│ 0x00000dde      85e3           ldi r24, 0x35
+│ 0x00000de0      94e0           ldi r25, 0x04
+│ 0x00000de2      0e948f05       call fcn.00000b1e
+│ 0x00000de6      1f91           pop r17
+│ 0x00000de8      0f91           pop r16
+│ 0x00000dea      ff90           pop r15
+│ 0x00000dec      ef90           pop r14
+└ 0x00000dee      0895           ret
+
+  ; CALL XREF from fcn.00000e22 @ +0xb6
+  ; CODE XREF from fcn.000015b0 @ 0x1602
+┌ 122: fcn.00000e22 ();
+│ 0x00000e22      1092e900       sts 0xe9, r1
+│ 0x00000e26      89e0           ldi r24, 0x09
+│ 0x00000e28      8093eb00       sts 0xeb, r24
+│ 0x00000e2c      1092ec00       sts 0xec, r1
+│ 0x00000e30      80e3           ldi r24, 0x30
+│ 0x00000e32      8093ed00       sts 0xed, r24
+│ 0x00000e36      8091ed00       lds r24, 0xed
+│ 0x00000e3a      8260           ori r24, 0x02
+│ 0x00000e3c      8093ed00       sts 0xed, r24
+| // true: 0x00000e40
+│ ; CODE XREF from fcn.00000e22 @ 0xe46
+│ 0x00000e40      8091ee00       lds r24, 0xee
+│ 0x00000e44      87ff           sbrs r24, 7
+| // true: 0x00000e48  false: 0x00000e46
+│ 0x00000e46      fccf           rjmp 0xe40
+| // true: 0x00000e40
+│ ; CODE XREF from fcn.00000e22 @ 0xe44
+│ 0x00000e48      8fe0           ldi r24, 0x0f
+│ 0x00000e4a      8093f000       sts 0xf0, r24
+│ 0x00000e4e      10923604       sts 0x436, r1
+│ 0x00000e52      10923504       sts 0x435, r1
+│ 0x00000e56      80e4           ldi r24, 0x40
+│ 0x00000e58      80933b04       sts 0x43b, r24
+│ 0x00000e5c      81e0           ldi r24, 0x01
+│ 0x00000e5e      8093e900       sts 0xe9, r24
+│ 0x00000e62      89e0           ldi r24, 0x09
+│ 0x00000e64      8093eb00       sts 0xeb, r24
+│ 0x00000e68      81e8           ldi r24, 0x81
+│ 0x00000e6a      8093ec00       sts 0xec, r24
+│ 0x00000e6e      80e3           ldi r24, 0x30
+│ 0x00000e70      8093ed00       sts 0xed, r24
+│ 0x00000e74      8091ed00       lds r24, 0xed
+│ 0x00000e78      8260           ori r24, 0x02
+│ 0x00000e7a      8093ed00       sts 0xed, r24
+| // true: 0x00000e7e
+│ ; CODE XREF from fcn.00000e22 @ 0xe84
+│ 0x00000e7e      8091ee00       lds r24, 0xee
+│ 0x00000e82      87ff           sbrs r24, 7
+| // true: 0x00000e86  false: 0x00000e84
+│ 0x00000e84      fccf           rjmp 0xe7e
+| // true: 0x00000e7e
+│ ; CODE XREF from fcn.00000e22 @ 0xe82
+│ 0x00000e86      83e0           ldi r24, 0x03
+│ 0x00000e88      8093f000       sts 0xf0, r24
+│ 0x00000e8c      10924104       sts 0x441, r1
+│ 0x00000e90      10924004       sts 0x440, r1
+│ 0x00000e94      80e4           ldi r24, 0x40
+│ 0x00000e96      80934604       sts 0x446, r24
+└ 0x00000e9a      0895           ret
+
+  ; CALL XREF from fcn.00000e22 @ +0x1d0
+┌ 14: fcn.00000b8e ();
+│ 0x00000b8e      ef92           push r14
+│ 0x00000b90      ff92           push r15
+│ 0x00000b92      0f93           push r16
+│ 0x00000b94      1f93           push r17
+│ 0x00000b96      cf93           push r28
+│ 0x00000b98      df93           push r29
+└ 0x00000b9a      00d0           rcall fcn.00000b9c
+| // true: 0x00000b9c
+  ; CALL XREF from fcn.000012ce @ 0x12dc
+  ; CALL XREF from fcn.000013aa @ 0x13b0
+  ; CALL XREFS from fcn.000013aa @ +0x5a, +0xf0
+┌ 46: fcn.00001224 ();
+│ 0x00001224      cf93           push r28
+│ 0x00001226      df93           push r29
+│ 0x00001228      1f92           push r1
+│ 0x0000122a      cdb7           in r28, 0x3d                          ; IO SPL: Stack lower bits SP0-SP7
+│ 0x0000122c      deb7           in r29, 0x3e                          ; IO SPH: Stack higher bits SP8-SP10
+│ 0x0000122e      8983           std y+1, r24
+│ 0x00001230      0e94bc0a       call fcn.00001578
+│ 0x00001234      8981           ldd r24, y+1
+│ 0x00001236      8068           ori r24, 0x80
+│ 0x00001238      0e942c02       call fcn.00000458
+│ 0x0000123c      80e0           ldi r24, 0x00
+│ 0x0000123e      0e942c02       call fcn.00000458
+│ 0x00001242      8983           std y+1, r24
+│ 0x00001244      0e943202       call fcn.00000464
+│ 0x00001248      8981           ldd r24, y+1
+│ 0x0000124a      0f90           pop r0
+│ 0x0000124c      df91           pop r29
+│ 0x0000124e      cf91           pop r28
+└ 0x00001250      0895           ret
+
+  ; CALL XREF from fcn.000012ce @ 0x136c
+┌ 48: fcn.00000468 ();
+│ 0x00000468      6623           tst r22
+│ 0x0000046a      a9f0           breq 0x496
+| // true: 0x00000496  false: 0x0000046c
+│ 0x0000046c      1ebc           out 0x2e, r1                          ; IO TCCR1B: Timer/Counter Control Register 1B (16 bits). PWM mode select.
+│ 0x0000046e      fc01           movw r30, r24
+│ 0x00000470      262f           mov r18, r22
+| // true: 0x00000472
+│ ; CODE XREF from fcn.00000468 @ 0x482
+│ 0x00000472      2150           subi r18, 0x01
+│ 0x00000474      39f0           breq 0x484
+| // true: 0x00000484  false: 0x00000476
+│ ; CODE XREF from fcn.00000468 @ 0x47a
+│ 0x00000476      0db4           in r0, 0x2d                           ; IO TCNT1H: Timer/Counter1 Register High byte.
+│ 0x00000478      07fe           sbrs r0, 7
+| // true: 0x0000047c  false: 0x0000047a
+│ 0x0000047a      fdcf           rjmp 0x476
+| // true: 0x00000476
+│ ; CODE XREF from fcn.00000468 @ 0x478
+│ 0x0000047c      3eb5           in r19, 0x2e                          ; IO TCCR1B: Timer/Counter Control Register 1B (16 bits). PWM mode select.
+│ 0x0000047e      3193           st z+, r19
+│ 0x00000480      1ebc           out 0x2e, r1                          ; IO TCCR1B: Timer/Counter Control Register 1B (16 bits). PWM mode select.
+│ 0x00000482      f7cf           rjmp 0x472
+| // true: 0x00000472
+│ ; CODE XREF from fcn.00000468 @ 0x474
+│ 0x00000484      6150           subi r22, 0x01
+│ 0x00000486      fc01           movw r30, r24
+│ 0x00000488      e60f           add r30, r22
+│ 0x0000048a      f11d           adc r31, r1
+| // true: 0x0000048c
+│ ; CODE XREF from fcn.00000468 @ 0x490
+│ 0x0000048c      0db4           in r0, 0x2d                           ; IO TCNT1H: Timer/Counter1 Register High byte.
+│ 0x0000048e      07fe           sbrs r0, 7
+| // true: 0x00000492  false: 0x00000490
+│ 0x00000490      fdcf           rjmp 0x48c
+| // true: 0x0000048c
+│ ; CODE XREF from fcn.00000468 @ 0x48e
+│ 0x00000492      2eb5           in r18, 0x2e                          ; IO TCCR1B: Timer/Counter Control Register 1B (16 bits). PWM mode select.
+│ 0x00000494      2083           std z+0, r18
+| // true: 0x00000496
+│ ; CODE XREF from fcn.00000468 @ 0x46a
+└ 0x00000496      0895           ret
+
+  ; CALL XREF from fcn.000012ce @ 0x1382
+  ; CALL XREF from fcn.000013aa @ +0x38
+┌ 34: fcn.00001670 ();
+│ 0x00001670      97fb           bst r25, 7
+│ 0x00001672      072e           mov r0, r23
+│ 0x00001674      16f4           brtc 0x167a
+| // true: 0x0000167a  false: 0x00001676
+│ 0x00001676      0094           com r0
+│ 0x00001678      07d0           rcall 0x1688
+| // true: 0x0000167a
+│ ; CODE XREF from fcn.00001670 @ 0x1674
+│ 0x0000167a      77fd           sbrc r23, 7
+| // true: 0x0000167e  false: 0x0000167c
+│ 0x0000167c      09d0           rcall fcn.00001690
+| // true: 0x0000167e
+│ ; CODE XREF from fcn.00001670 @ 0x167a
+│ 0x0000167e      0e94240b       call fcn.00001648
+│ 0x00001682      07fc           sbrc r0, 7
+| // true: 0x00001686  false: 0x00001684
+│ 0x00001684      05d0           rcall fcn.00001690
+| // true: 0x00001686
+│ ; CODE XREF from fcn.00001670 @ 0x1682
+│ 0x00001686      3ef4           brtc 0x1696
+| // true: 0x00001696  false: 0x00001688
+│ ; CALL XREF from fcn.00001670 @ 0x1678
+│ 0x00001688      9095           com r25
+│ 0x0000168a      8195           neg r24
+│ 0x0000168c      9f4f           sbci r25, 0xff
+│ 0x0000168e      0895           ret
+
+│ ; CODE XREF from fcn.00001670 @ 0x1686
+└ 0x00001696      0895           ret
+
+  ; CODE XREF from fcn.00001252 @ +0x78
+  ; CALL XREF from fcn.000012ce @ 0x1396
+  ; CALL XREF from fcn.000013aa @ +0x40
+┌ 120: fcn.00001252 ();
+│ 0x00001252      ef92           push r14
+│ 0x00001254      ff92           push r15
+│ 0x00001256      0f93           push r16
+│ 0x00001258      1f93           push r17
+│ 0x0000125a      cf93           push r28
+│ 0x0000125c      df93           push r29
+│ 0x0000125e      c0912102       lds r28, 0x221
+│ 0x00001262      80912202       lds r24, 0x222
+│ 0x00001266      8c17           cp r24, r28
+│ 0x00001268      b1f0           breq 0x1296
+| // true: 0x00001296  false: 0x0000126a
+│ 0x0000126a      81e8           ldi r24, 0x81
+│ 0x0000126c      c89f           mul r28, r24
+│ 0x0000126e      e001           movw r28, r0
+│ 0x00001270      1124           clr r1
+│ 0x00001272      c855           subi r28, 0x58
+│ 0x00001274      dd4f           sbci r29, 0xfd
+│ 0x00001276      81e0           ldi r24, 0x01
+│ 0x00001278      0e948400       call fcn.00000108
+│ 0x0000127c      2881           ld r18, y
+│ 0x0000127e      2e5f           subi r18, 0xfe
+│ 0x00001280      e12c           mov r14, r1
+│ 0x00001282      f12c           mov r15, r1
+│ 0x00001284      08ee           ldi r16, 0xe8
+│ 0x00001286      19e0           ldi r17, 0x09
+│ 0x00001288      ae01           movw r20, r28
+│ 0x0000128a      62e0           ldi r22, 0x02
+│ 0x0000128c      70e0           ldi r23, 0x00
+│ 0x0000128e      80e4           ldi r24, 0x40
+│ 0x00001290      94e0           ldi r25, 0x04
+│ 0x00001292      0e948f05       call fcn.00000b1e
+| // true: 0x00001296
+│ ; CODE XREF from fcn.00001252 @ 0x1268
+│ 0x00001296      80912602       lds r24, 0x226
+│ 0x0000129a      8823           tst r24
+│ 0x0000129c      79f0           breq 0x12bc
+| // true: 0x000012bc  false: 0x0000129e
+│ 0x0000129e      e12c           mov r14, r1
+│ 0x000012a0      f12c           mov r15, r1
+│ 0x000012a2      05e6           ldi r16, 0x65
+│ 0x000012a4      19e0           ldi r17, 0x09
+│ 0x000012a6      21e0           ldi r18, 0x01
+│ 0x000012a8      43e2           ldi r20, 0x23
+│ 0x000012aa      52e0           ldi r21, 0x02
+│ 0x000012ac      62e0           ldi r22, 0x02
+│ 0x000012ae      70e0           ldi r23, 0x00
+│ 0x000012b0      80e4           ldi r24, 0x40
+│ 0x000012b2      94e0           ldi r25, 0x04
+│ 0x000012b4      0e948f05       call fcn.00000b1e
+│ 0x000012b8      10922602       sts 0x226, r1
+| // true: 0x000012bc
+│ ; CODE XREF from fcn.00001252 @ 0x129c
+│ 0x000012bc      df91           pop r29
+│ 0x000012be      cf91           pop r28
+│ 0x000012c0      1f91           pop r17
+│ 0x000012c2      0f91           pop r16
+│ 0x000012c4      ff90           pop r15
+│ 0x000012c6      ef90           pop r14
+└ 0x000012c8      0895           ret
+
+  ; CALL XREF from fcn.000013aa @ +0x78
+┌ 220: fcn.000012ce ();
+│ 0x000012ce      ef92           push r14
+│ 0x000012d0      ff92           push r15
+│ 0x000012d2      0f93           push r16
+│ 0x000012d4      1f93           push r17
+│ 0x000012d6      cf93           push r28
+│ 0x000012d8      df93           push r29
+│ 0x000012da      8fe0           ldi r24, 0x0f
+│ 0x000012dc      0e941209       call fcn.00001224
+│ 0x000012e0      83ff           sbrs r24, 3
+| // true: 0x000012e4  false: 0x000012e2
+│ 0x000012e2      5bc0           rjmp 0x139a
+| // true: 0x0000139a
+│ ; CODE XREF from fcn.000012ce @ 0x12e0
+│ 0x000012e4      20912702       lds r18, 0x227
+│ 0x000012e8      80914004       lds r24, 0x440
+│ 0x000012ec      90914104       lds r25, 0x441
+│ 0x000012f0      2223           tst r18
+│ 0x000012f2      d1f0           breq 0x1328
+| // true: 0x00001328  false: 0x000012f4
+│ 0x000012f4      892b           or r24, r25
+│ 0x000012f6      71f4           brne 0x1314
+| // true: 0x00001314  false: 0x000012f8
+│ 0x000012f8      e12c           mov r14, r1
+│ 0x000012fa      f12c           mov r15, r1
+│ 0x000012fc      05e6           ldi r16, 0x65
+│ 0x000012fe      19e0           ldi r17, 0x09
+│ 0x00001300      21e0           ldi r18, 0x01
+│ 0x00001302      44e2           ldi r20, 0x24
+│ 0x00001304      52e0           ldi r21, 0x02
+│ 0x00001306      62e0           ldi r22, 0x02
+│ 0x00001308      70e0           ldi r23, 0x00
+│ 0x0000130a      80e4           ldi r24, 0x40
+│ 0x0000130c      94e0           ldi r25, 0x04
+│ 0x0000130e      0e948f05       call fcn.00000b1e
+│ 0x00001312      07c0           rjmp 0x1322
+| // true: 0x00001322
+│ ; CODE XREF from fcn.000012ce @ 0x12f6
+│ 0x00001314      81e0           ldi r24, 0x01
+│ 0x00001316      80932602       sts 0x226, r24
+│ 0x0000131a      80912402       lds r24, 0x224
+│ 0x0000131e      80932302       sts 0x223, r24
+| // true: 0x00001322
+│ ; CODE XREF from fcn.000012ce @ 0x1312
+│ 0x00001322      10922702       sts 0x227, r1
+│ 0x00001326      39c0           rjmp 0x139a
+| // true: 0x0000139a
+│ ; CODE XREF from fcn.000012ce @ 0x12f2
+│ 0x00001328      892b           or r24, r25
+│ 0x0000132a      31f0           breq 0x1338
+| // true: 0x00001338  false: 0x0000132c
+│ 0x0000132c      90912202       lds r25, 0x222
+│ 0x00001330      80912102       lds r24, 0x221
+│ 0x00001334      9817           cp r25, r24
+│ 0x00001336      89f1           breq 0x139a
+| // true: 0x0000139a  false: 0x00001338
+│ ; CODE XREF from fcn.000012ce @ 0x132a
+│ 0x00001338      0e94bc0a       call fcn.00001578
+│ 0x0000133c      80e2           ldi r24, 0x20
+│ 0x0000133e      0e942c02       call fcn.00000458
+│ 0x00001342      80e0           ldi r24, 0x00
+│ 0x00001344      0e942c02       call fcn.00000458
+│ 0x00001348      182f           mov r17, r24
+│ 0x0000134a      1816           cp r1, r24
+│ 0x0000134c      1cf0           brlt 0x1354
+| // true: 0x00001354  false: 0x0000134e
+│ 0x0000134e      0e943202       call fcn.00000464
+│ 0x00001352      23c0           rjmp 0x139a
+| // true: 0x0000139a
+│ ; CODE XREF from fcn.000012ce @ 0x134c
+│ 0x00001354      c0912202       lds r28, 0x222
+│ 0x00001358      81e8           ldi r24, 0x81
+│ 0x0000135a      c89f           mul r28, r24
+│ 0x0000135c      e001           movw r28, r0
+│ 0x0000135e      1124           clr r1
+│ 0x00001360      c855           subi r28, 0x58
+│ 0x00001362      dd4f           sbci r29, 0xfd
+│ 0x00001364      61e0           ldi r22, 0x01
+│ 0x00001366      610f           add r22, r17
+│ 0x00001368      ce01           movw r24, r28
+│ 0x0000136a      0196           adiw r24, 0x01
+│ 0x0000136c      0e943402       call fcn.00000468
+│ 0x00001370      0e943202       call fcn.00000464
+│ 0x00001374      1883           std y+0, r17
+│ 0x00001376      80912202       lds r24, 0x222
+│ 0x0000137a      90e0           ldi r25, 0x00
+│ 0x0000137c      0196           adiw r24, 0x01
+│ 0x0000137e      63e0           ldi r22, 0x03
+│ 0x00001380      70e0           ldi r23, 0x00
+│ 0x00001382      0e94380b       call fcn.00001670
+│ 0x00001386      80932202       sts 0x222, r24
+│ 0x0000138a      80914004       lds r24, 0x440
+│ 0x0000138e      90914104       lds r25, 0x441
+│ 0x00001392      892b           or r24, r25
+│ 0x00001394      11f4           brne 0x139a
+| // true: 0x0000139a  false: 0x00001396
+│ 0x00001396      0e942909       call fcn.00001252
+| // true: 0x0000139a
+│ ; CODE XREFS from fcn.000012ce @ 0x12e2, 0x1326, 0x1336, 0x1352, 0x1394
+│ 0x0000139a      81e0           ldi r24, 0x01
+│ 0x0000139c      df91           pop r29
+│ 0x0000139e      cf91           pop r28
+│ 0x000013a0      1f91           pop r17
+│ 0x000013a2      0f91           pop r16
+│ 0x000013a4      ff90           pop r15
+│ 0x000013a6      ef90           pop r14
+└ 0x000013a8      0895           ret
+
+  ; XREFS: CODE 0x000013f0  CALL 0x0000145c  CALL 0x00001474  
+  ; XREFS: CODE 0x0000147e  CALL 0x000014a0  CALL 0x000014b0  
+┌ 38: fcn.000013aa ();
+│ 0x000013aa      cf93           push r28
+│ 0x000013ac      c82f           mov r28, r24
+| // true: 0x000013ae
+│ ; CODE XREF from fcn.000013aa @ 0x13b8
+│ 0x000013ae      81e0           ldi r24, 0x01
+│ 0x000013b0      0e941209       call fcn.00001224
+│ 0x000013b4      8f71           andi r24, 0x1f
+│ 0x000013b6      8f31           cpi r24, 0x1f
+│ 0x000013b8      d1f3           breq 0x13ae
+| // true: 0x000013ae  false: 0x000013ba
+│ 0x000013ba      0e94bc0a       call fcn.00001578
+│ 0x000013be      82ec           ldi r24, 0xc2
+│ 0x000013c0      0e942c02       call fcn.00000458
+│ 0x000013c4      8c2f           mov r24, r28
+│ 0x000013c6      0e942c02       call fcn.00000458
+│ 0x000013ca      cf91           pop r28
+└ 0x000013cc      0c943202       jmp fcn.00000464
+| // true: 0x00000464
+│ ; CODE XREF from fcn.00001534 @ 0x1550
+│ 0x00000140      40e0           ldi r20, 0x00
+│ 0x00000142      50e0           ldi r21, 0x00
+│ 0x00000144      31e2           ldi r19, 0x21
+| // true: 0x00000146
+│ ; CODE XREF from fcn.00001534 @ 0x192
+│ 0x00000146      fa01           movw r30, r20
+│ 0x00000148      3e96           adiw r30, 0x0e
+│ 0x0000014a      30935700       sts 0x57, r19
+│ 0x0000014e      e491           lpm r30, z
+│ 0x00000150      ca01           movw r24, r20
+│ 0x00000152      880f           lsl r24
+│ 0x00000154      991f           rol r25
+│ 0x00000156      880f           lsl r24
+│ ; DATA XREF from fcn.00000b9c @ 0xca8
+│ 0x00000158      991f           rol r25
+│ 0x0000015a      dc01           movw r26, r24
+│ 0x0000015c      1296           adiw r26, 0x02
+│ 0x0000015e      2e2f           mov r18, r30
+│ 0x00000160      2295           swap r18
+│ 0x00000162      2f70           andi r18, 0x0f
+│ 0x00000164      2a30           cpi r18, 0x0a
+│ 0x00000166      10f4           brcc 0x16c
+| // true: 0x0000016c  false: 0x00000168
+│ 0x00000168      205d           subi r18, 0xd0
+│ 0x0000016a      01c0           rjmp 0x16e
+| // true: 0x0000016e
+│ ; CODE XREF from fcn.00001534 @ 0x166
+│ 0x0000016c      295a           subi r18, 0xa9
+| // true: 0x0000016e
+│ ; CODE XREF from fcn.00001534 @ 0x16a
+│ 0x0000016e      a050           subi r26, 0x00
+│ 0x00000170      bf4f           sbci r27, 0xff
+│ 0x00000172      2c93           st x, r18
+│ 0x00000174      0496           adiw r24, 0x04
+│ 0x00000176      ef70           andi r30, 0x0f
+│ ; DATA XREF from fcn.000004a6 @ +0xae
+│ 0x00000178      ea30           cpi r30, 0x0a
+│ 0x0000017a      10f4           brcc 0x180
+| // true: 0x00000180  false: 0x0000017c
+│ 0x0000017c      e05d           subi r30, 0xd0
+│ 0x0000017e      01c0           rjmp 0x182
+| // true: 0x00000182
+│ ; CODE XREF from fcn.00001534 @ 0x17a
+│ 0x00000180      e95a           subi r30, 0xa9
+| // true: 0x00000182
+│ ; CODE XREF from fcn.00001534 @ 0x17e
+│ 0x00000182      dc01           movw r26, r24
+│ 0x00000184      a050           subi r26, 0x00
+│ 0x00000186      bf4f           sbci r27, 0xff
+│ 0x00000188      ec93           st x, r30
+│ 0x0000018a      4f5f           subi r20, 0xff
+│ 0x0000018c      5f4f           sbci r21, 0xff
+│ 0x0000018e      4a30           cpi r20, 0x0a
+│ 0x00000190      5105           cpc r21, r1
+│ 0x00000192      c9f6           brne 0x146
+| // true: 0x00000146  false: 0x00000194
+│ 0x00000194      0895           ret
+
+  ; CALL XREF from fcn.00001616 @ 0x1616
+┌ 118: fcn.00001534 ();
+│ 0x00001534      14be           out 0x34, r1                          ; IO MCUCSR: MCU Control and Status Register. Watchdog, Brown-out, Power-on...
+│ 0x00001536      e0e6           ldi r30, 0x60
+│ 0x00001538      f0e0           ldi r31, 0x00
+│ 0x0000153a      8081           ld r24, z
+│ 0x0000153c      8061           ori r24, 0x10
+│ 0x0000153e      8083           std z+0, r24
+│ 0x00001540      80e1           ldi r24, 0x10
+│ 0x00001542      8083           std z+0, r24
+│ 0x00001544      e1e6           ldi r30, 0x61
+│ 0x00001546      f0e0           ldi r31, 0x00
+│ 0x00001548      80e8           ldi r24, 0x80
+│ 0x0000154a      8083           std z+0, r24
+│ 0x0000154c      81e0           ldi r24, 0x01
+│ 0x0000154e      8083           std z+0, r24
+│ 0x00001550      0c94a000       jmp 0x140
+| // true: 0x00000140
+  ; CALL XREF from fcn.00001616 @ 0x161a
+┌ 16: fcn.00001606 ();
+│ 0x00001606      80e4           ldi r24, 0x40
+│ 0x00001608      80938100       sts 0x81, r24
+│ 0x0000160c      80e2           ldi r24, 0x20
+│ 0x0000160e      86bb           out 0x16, r24                         ; IO PINB: Input Pins Address for Port B.
+│ 0x00001610      80936f00       sts 0x6f, r24
+└ 0x00001614      0895           ret
+
+  ; CALL XREF from fcn.00001616 @ 0x162e
+┌ 86: fcn.000015b0 ();
+│ 0x000015b0      8091d800       lds r24, 0xd8
+│ 0x000015b4      8062           ori r24, 0x20
+│ 0x000015b6      8093d800       sts 0xd8, r24
+│ 0x000015ba      8ce0           ldi r24, 0x0c
+│ 0x000015bc      89bd           out 0x29, r24                         ; IO OCR1BH: Timer/Counter1 Output Compare Register B High byte.
+│ 0x000015be      89b5           in r24, 0x29                          ; IO OCR1BH: Timer/Counter1 Output Compare Register B High byte.
+│ 0x000015c0      8260           ori r24, 0x02
+│ 0x000015c2      89bd           out 0x29, r24                         ; IO OCR1BH: Timer/Counter1 Output Compare Register B High byte.
+| // true: 0x000015c4
+│ ; CODE XREF from fcn.000015b0 @ 0x15c8
+│ 0x000015c4      09b4           in r0, 0x29                           ; IO OCR1BH: Timer/Counter1 Output Compare Register B High byte.
+│ 0x000015c6      00fe           sbrs r0, 0
+| // true: 0x000015ca  false: 0x000015c8
+│ 0x000015c8      fdcf           rjmp 0x15c4
+| // true: 0x000015c4
+│ ; CODE XREF from fcn.000015b0 @ 0x15c6
+│ 0x000015ca      8091d700       lds r24, 0xd7
+│ 0x000015ce      8160           ori r24, 0x01
+│ 0x000015d0      8093d700       sts 0xd7, r24
+│ 0x000015d4      8091d800       lds r24, 0xd8
+│ 0x000015d8      8f76           andi r24, 0x6f
+│ 0x000015da      8093d800       sts 0xd8, r24
+│ 0x000015de      8091d800       lds r24, 0xd8
+│ 0x000015e2      8069           ori r24, 0x90
+│ 0x000015e4      8093d800       sts 0xd8, r24
+│ 0x000015e8      8091d800       lds r24, 0xd8
+│ 0x000015ec      8f7d           andi r24, 0xdf
+│ 0x000015ee      8093d800       sts 0xd8, r24
+│ 0x000015f2      8091e000       lds r24, 0xe0
+│ 0x000015f6      8e7f           andi r24, 0xfe
+│ 0x000015f8      8093e000       sts 0xe0, r24
+│ 0x000015fc      88e0           ldi r24, 0x08
+│ 0x000015fe      8093e200       sts 0xe2, r24
+└ 0x00001602      0c941107       jmp fcn.00000e22
+| // true: 0x00000e22
+  ; CALL XREF from fcn.00001616 @ 0x1632
+┌ 50: fcn.00000a5a ();
+│ 0x00000a5a      82e8           ldi r24, 0x82
+│ 0x00000a5c      92e0           ldi r25, 0x02
+│ 0x00000a5e      90933404       sts 0x434, r25
+│ 0x00000a62      80933304       sts 0x433, r24
+│ 0x00000a66      8fe0           ldi r24, 0x0f
+│ 0x00000a68      95e0           ldi r25, 0x05
+│ 0x00000a6a      90933204       sts 0x432, r25
+│ 0x00000a6e      80933104       sts 0x431, r24
+│ 0x00000a72      83e1           ldi r24, 0x13
+│ 0x00000a74      92e0           ldi r25, 0x02
+│ 0x00000a76      90932e04       sts 0x42e, r25
+│ 0x00000a7a      80932d04       sts 0x42d, r24
+│ 0x00000a7e      8ce4           ldi r24, 0x4c
+│ 0x00000a80      92e0           ldi r25, 0x02
+│ 0x00000a82      90933004       sts 0x430, r25
+│ 0x00000a86      80932f04       sts 0x42f, r24
+└ 0x00000a8a      0895           ret
+
+  ; CALL XREFS from fcn.00001670 @ 0x167c, 0x1684
+┌ 6: fcn.00001690 ();
+│ 0x00001690      7095           com r23
+│ 0x00001692      6195           neg r22
+└ 0x00001694      7f4f           sbci r23, 0xff
+

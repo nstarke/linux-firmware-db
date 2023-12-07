@@ -23,6 +23,11 @@ const router = createRouter({
   routes,
 });
 
+if (!localStorage.getItem('refresh')) {
+    localStorage.clear();
+    localStorage.setItem('refresh', (new Date()).getTime());
+}
+
 let app = createApp(App);
 app.use(router);
 app.mount('#app')

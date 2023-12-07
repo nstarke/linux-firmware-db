@@ -1,6 +1,14 @@
 #!/bin/sh
 
-echo "tag,filename,full,chunk,full_length,chunk_length,chunk_count,file_type,sha256"  >> "../data/csv/linux-firmware-db-$LATEST_TAG-cpu_rec.csv"
+if [ -z "$LATEST_TAG" ]; then
+    LATEST_TAG="$1"
+fi
+
+if ! [ -f "../data/csv/linux-firmware-db-$LATEST_TAG-cpu_rec.csv" ]; then
+    touch "../data/csv/linux-firmware-db-$LATEST_TAG-cpu_rec.csv"
+fi
+
+echo "tag,filename,full,chunk,full_length,chunk_length,chunk_count,file_type,sha256,shannon_entropy"  >> "../data/csv/linux-firmware-db-$LATEST_TAG-cpu_rec.csv"
 while read LINE;
 do
     PARTS=$( for PART in "$LINE"; do echo $PART; done )
@@ -16,6 +24,7 @@ do
     CHUNK_ARCH=$(echo -n $PARTS | awk -F' ' '{print $5}')
     FILE_TYPE=$(file -b ../git/linux-firmware/$FILE_NAME | tr -d '"' | tr -d '\\')
     SHA256=$(sha256sum ../git/linux-firmware/$FILE_NAME | awk -F' ' '{print $1}')
-    echo "\"$LATEST_TAG\",\"$FILE_NAME\",\"$FULL_ARCH\",\"$CHUNK_ARCH\",\"$FULL_LENGTH\",\"$CHUNK_LENGTH\",\"$CHUNK_COUNT\",\"$FILE_TYPE\",\"$SHA256\"" >> "../data/csv/linux-firmware-db-$LATEST_TAG-cpu_rec.csv"
+    ENT=$(ent ../git/linux-firmware/$FILE_NAME | head -n 1 | awk -F' ' '{print $3}')
+    echo "\"$LATEST_TAG\",\"$FILE_NAME\",\"$FULL_ARCH\",\"$CHUNK_ARCH\",\"$FULL_LENGTH\",\"$CHUNK_LENGTH\",\"$CHUNK_COUNT\",\"$FILE_TYPE\",\"$SHA256\",\"$ENT\"" >> "../data/csv/linux-firmware-db-$LATEST_TAG-cpu_rec.csv"
     
 done < "../data/txt/linux-firmware-db-$LATEST_TAG-cpu_rec.txt"

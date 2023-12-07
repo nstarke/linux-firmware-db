@@ -12,7 +12,8 @@ for line in list(csv.reader(sys.stdin))[1:]:
             'chunk_length': int(line[5]),
             'chunk_count': int(line[6]),
             'file_type': line[7],
-            'sha256': line[8]
+            'sha256': line[8],
+            'shannon_entropy': float(line[9])
             })
     except:
         pass

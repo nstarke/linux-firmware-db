@@ -9,7 +9,7 @@
           <br />
           The goal of this project is to spread knowledge and awareness on the proprietary firmware blobs bundled with Linux.
           <br />
-          The data set was built with <a href="https://github.com/airbus-seclab/cpu_rec">cpu_rec</a>
+          The data set was built with <a href="https://github.com/airbus-seclab/cpu_rec">cpu_rec</a> and <a href="https://rada.re/n/">radare2</a>
           <br />
           See the repository for this project on <a href="https://github.com/nstarke/linux-firmware-db/">Github</a>
         </p>
@@ -99,6 +99,9 @@
           <th class="text-center" v-on:click="performSort('file_type')">
             File Type
           </th>
+          <th class="text-center" v-on:click="performSort('shannon_entropy')">
+            Shannon Entropy
+          </th>
           <th class="text-center">
             Disassembly
           </th>
@@ -112,6 +115,7 @@
             <td class="text-center">{{ result.chunk_length }}</td>
             <td class="text-center">{{ result.chunk_count }}</td>
             <td class="text-center">{{ result.file_type }}</td>
+            <td class="text-center">{{ result.shannon_entropy }}</td>
             <td class="text-center" v-if="['Xtensa', 'SuperH', 'ARM', 'MIPS', 'X86', '8051', 'ARcompact'].some(term => result.full_arch.includes(term))">
               <router-link :to="{ name: 'disassembly', params: { firmware: result, sha256: result.sha256 } }">View</router-link>
             </td>
