@@ -1,0 +1,85 @@
+  ;-- rax:
+  ;-- rbx:
+  ;-- rcx:
+  ;-- rdx:
+  ;-- rsi:
+  ;-- rdi:
+  ;-- r8:
+  ;-- r9:
+  ;-- r10:
+  ;-- r11:
+  ;-- r12:
+  ;-- r13:
+  ;-- r14:
+  ;-- r15:
+  ;-- rip:
+  ;-- rflags:
+┌ 29: fcn.00000000 (int64_t arg1, int64_t arg2, int64_t arg4);
+│ ; arg int64_t arg1 @ rdi
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg4 @ rcx
+│ 0x00000000      20a602002000   and byte [rsi + 0x200002], ah         ; arg2
+│ ; DATA XREF from fcn.00000000 @ +0x5d83
+│ 0x00000006      0000           add byte [rax], al
+│ ; XREFS: DATA 0x00002c0f  DATA 0x000064f3  DATA 0x000078ab  
+│ ; XREFS: DATA 0x00008042  DATA 0x00018069  DATA 0x0001c60b  
+│ ; XREFS: DATA 0x000265d4  
+│ 0x00000008      0100           add dword [rax], eax
+│ ; XREFS: DATA 0x000020ba  DATA 0x00004f72  DATA 0x0000653d  
+│ ; XREFS: DATA 0x00007591  DATA 0x00009515  DATA 0x0000e5ea  
+│ ; XREFS: DATA 0x0000ed57  DATA 0x0000fea5  CODE 0x00010fb8  
+│ ; XREFS: DATA 0x00019023  DATA 0x000190a7  DATA 0x0001a6d5  
+│ ; XREFS: DATA 0x0001b09d  
+│ 0x0000000a      0000           add byte [rax], al
+│ ; XREFS(161)
+│ 0x0000000c      0300           add eax, dword [rax]
+│ ; XREFS(47)
+│ 0x0000000e      0400           add al, 0
+│ ; XREFS: DATA 0x00001d6a  DATA 0x000081fb  DATA 0x0000b74e  
+│ ; XREFS: DATA 0x0000bfab  DATA 0x0000d714  DATA 0x0000d795  
+│ ; XREFS: DATA 0x000123b3  DATA 0x00016fc6  DATA 0x0001bbc1  
+│ ; XREFS: DATA 0x0001bf80  DATA 0x0001c093  DATA 0x0001c90f  
+│ ; XREFS: DATA 0x0001e977  DATA 0x0001f03f  DATA 0x0001f513  
+│ ; XREFS: DATA 0x000274fa  DATA 0x00028972  DATA 0x00028a4a  
+│ ; XREFS: DATA 0x0002920a  
+│ 0x00000010      0404           add al, 4
+│ ; XREFS(23)
+│ 0x00000012      90             nop
+│ ; XREFS: DATA 0x00000392  DATA 0x000005ec  DATA 0x00002860  
+│ ; XREFS: DATA 0x0000403a  DATA 0x000111f5  DATA 0x000113dd  
+│ ; XREFS: DATA 0x000113fa  DATA 0x00012337  
+│ 0x00000013      0320           add esp, dword [rax]
+│ ; XREFS: DATA 0x00009b4e  DATA 0x0000bb00  DATA 0x0000f081  
+│ ; XREFS: DATA 0x00013d61  DATA 0x00017951  DATA 0x0001f0b1  
+│ ; XREFS: DATA 0x0001f64d  DATA 0x0002235c  DATA 0x00026bfc  
+│ 0x00000015      a5             movsd dword [rdi], dword ptr [rsi]    ; arg2
+│ ; XREFS(22)
+│ 0x00000016      0200           add al, byte [rax]
+│ ; XREFS(38)
+│ 0x00000018      0001           add byte [rcx], al                    ; arg4
+│ ; XREFS(38)
+│ 0x0000001a      0000           add byte [rax], al
+│ ; XREFS(49)
+└ 0x0000001c      cb             retf
+
+  ; CALL XREF from fcn.00000000 @ +0x223ac
+┌ 36: fcn.000223c8 (int64_t arg2, int64_t arg4);
+│ ; arg int64_t arg2 @ rsi
+│ ; arg int64_t arg4 @ rcx
+│ 0x000223c8      8418           test byte [rax], bl
+│ 0x000223ca      0000           add byte [rax], al
+│ 0x000223cc      99             cdq
+│ 0x000223cd      1800           sbb byte [rax], al
+│ 0x000223cf      00ae180000c2   add byte [rsi - 0x3dffffe8], ch       ; arg2
+│ 0x000223d5      1800           sbb byte [rax], al
+│ 0x000223d7      00d6           add dh, dl
+│ 0x000223d9      1800           sbb byte [rax], al
+│ 0x000223db      00ea           add dl, ch
+│ 0x000223dd      1800           sbb byte [rax], al
+│ 0x000223df      00fd           add ch, bh
+│ 0x000223e1      1800           sbb byte [rax], al
+│ 0x000223e3      0011           add byte [rcx], dl                    ; arg4
+│ 0x000223e5      1900           sbb dword [rax], eax
+│ 0x000223e7      002419         add byte [rcx + rbx], ah              ; arg4
+└ 0x000223ea      0000           add byte [rax], al
+
