@@ -3,6 +3,9 @@
 START=$HOME/firmware/linux/linux-firmware-db/scripts
 
 cd $START
+
+source ../.venv/bin/activate
+
 touch /tmp/.lfwdb-running
 export LATEST_TAG="$1"
 echo "$LATEST_TAG" >> ../data/txt/tags.txt

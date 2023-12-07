@@ -4,6 +4,8 @@ START=$HOME/firmware/linux/linux-firmware-db/scripts
 
 cd $START
 
+source ../.venv/bin/activate
+
 if [ -f /tmp/.lfwdb-running ]; then
     echo "Manual Job Running, exiting"
     exit 0
