@@ -10,7 +10,7 @@ if len(sys.argv) == 3:
 with open("../data/json/linux-firmware-db-" + tag + "-cpu_rec.json", 'r') as f:
     j = json.loads(f.read())
     for i in j:
-        if 'mips' in i['full_arch'].lower():
+        if 'mips' in i['full_arch'].lower() or 'mips' in i['chunk_arch'].lower():
             e = i['full_arch'][-2:]
             endian = None
             if e == 'eb' or e == 'EB':
