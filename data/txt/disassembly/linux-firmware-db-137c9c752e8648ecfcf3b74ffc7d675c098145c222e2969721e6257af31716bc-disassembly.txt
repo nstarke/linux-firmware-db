@@ -1,0 +1,21 @@
+  ;-- pc:
+  ;-- a:
+  ;-- x:
+  ;-- y:
+  ;-- flags:
+  ;-- sp:
+┌ 11: fcn.00000000 ();
+│ 0x00000000      2dbbb2         and 0xb2bb
+│ 0x00000003      115b           ora (0x5b),y
+│ 0x00000005      e9c5           sbc #0xc5
+│ 0x00000007      8d8021         sta 0x2180
+└ 0x0000000a      40             rti
+
+  ; CALL XREF from fcn.000000e4 @ +0x190
+┌ 5: fcn.000000e4 ();
+│ 0x000000e4      868b           stx 0x8b
+│ ; CODE XREF from fcn.00000000 @ +0x83
+│ 0x000000e6      8673           stx 0x73
+│ ; CODE XREF from fcn.000000e4 @ +0xe8
+└ 0x000000e8      bf             lax 0xd0c2,y
+

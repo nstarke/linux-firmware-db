@@ -1,0 +1,65 @@
+  ;-- pc:
+  ;-- a:
+  ;-- x:
+  ;-- y:
+  ;-- flags:
+  ;-- sp:
+┌ 25: fcn.00000000 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x00000000      de1000         dec 0x0010,x
+│ 0x00000003      00             brk
+│ 0x00000004      0100           ora (0x00,x)
+│ 0x00000006      00             brk
+│ 0x00000007      00             brk
+│ 0x00000008      00             brk
+│ 0x00000009      9500           sta 0x00,x
+│ 0x0000000b      00             brk
+│ 0x0000000c      18             clc
+│ 0x0000000d      00             brk
+│ 0x0000000e      00             brk
+│ 0x0000000f      00             brk
+│ 0x00000010      88             dey
+│ 0x00000011      00             brk
+│ 0x00000012      00             brk
+│ 0x00000013      00             brk
+│ 0x00000014      00             brk
+│ 0x00000015      9400           sty 0x00,x
+│ 0x00000017      00             brk
+└ 0x00000018      3c             nop 0x27e8,x
+
+  ; CALL XREF from fcn.00000000 @ +0x2a9
+┌ 3: fcn.00001bbf ();
+│ 0x00001bbf      5124           eor (0x24),y
+└ 0x00001bc1      7a             nop
+
+  ; CALL XREF from fcn.000014e3 @ +0x234
+┌ 4: fcn.00003142 ();
+│ 0x00003142      ad4a03         lda 0x034a
+└ 0x00003145      12             hlt
+
+  ; CALL XREF from fcn.00001bbf @ +0xcd
+┌ 3: fcn.000014e3 ();
+│ 0x000014e3      b436           ldy 0x36,x
+└ 0x000014e5      cf             dcp 0x27e8
+
+│ ; CODE XREF from fcn.000021da @ 0x21da
+│ 0x000021cc      c6b2           dec 0xb2
+│ 0x000021ce      c044           cpy #0x44
+│ 0x000021d0      b8             clv
+│ 0x000021d1      c0ce           cpy #0xce
+│ 0x000021d3      44             nop 0xe8
+
+  ; CALL XREF from fcn.00001bbf @ +0x25e
+┌ 16: fcn.000021da ();
+│ 0x000021da      50f0           bvc 0x0021cc
+| // true: 0x000021cc  false: 0x000021dc
+│ 0x000021dc      68             pla
+│ 0x000021dd      296e           and #0x6e
+│ 0x000021df      9497           sty 0x97,x
+│ 0x000021e1      b7             lax 0xe8,y
+
+  ; CALL XREF from fcn.000038f6 @ +0x124
+┌ 3: fcn.000038f6 ();
+│ 0x000038f6      b6b7           ldx 0xb7,y
+└ 0x000038f8      80             nop #0xe8
+

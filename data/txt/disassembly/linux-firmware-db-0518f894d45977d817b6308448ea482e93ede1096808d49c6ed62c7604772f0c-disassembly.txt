@@ -1,0 +1,119 @@
+  ;-- pc:
+  ;-- a:
+  ;-- x:
+  ;-- y:
+  ;-- flags:
+  ;-- sp:
+┌ 25: fcn.00000000 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x00000000      de1000         dec 0x0010,x
+│ 0x00000003      00             brk
+│ 0x00000004      0100           ora (0x00,x)
+│ 0x00000006      00             brk
+│ 0x00000007      00             brk
+│ 0x00000008      00             brk
+│ 0x00000009      98             tya
+│ 0x0000000a      00             brk
+│ 0x0000000b      00             brk
+│ 0x0000000c      18             clc
+│ 0x0000000d      00             brk
+│ 0x0000000e      00             brk
+│ 0x0000000f      00             brk
+│ 0x00000010      f8             sed
+│ 0x00000011      0100           ora (0x00,x)
+│ 0x00000013      00             brk
+│ 0x00000014      00             brk
+│ 0x00000015      9600           stx 0x00,y
+│ 0x00000017      00             brk
+└ 0x00000018      3c             nop 0xf5a8,x
+
+┌ 9: fcn.0000015f (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0x0000015f      205a01         jsr 0x015a
+│ 0x00000162      914a           sta (0x4a),y
+│ 0x00000164      5dc002         eor 0x02c0,x
+└ 0x00000167      c2             nop #0xa8
+
+  ; CALL XREF from fcn.0000015f @ 0x15f
+│ ;-- (0x0000015f) fcn.0000015f:
+┌ 1: fcn.0000015e ();
+└ 0x0000015e  ~   04             nop 0xa8
+
+  ; CALL XREF from fcn.0000015f @ +0x29
+┌ 15: fcn.00000123 ();
+│ 0x00000123      c8             iny
+│ 0x00000124      6158           adc (0x58,x)
+│ 0x00000126      3ec3fc         rol 0xfcc3,x
+│ 0x00000129      2ef050         rol 0x50f0
+│ 0x0000012c      a479           ldy 0x79
+│ 0x0000012e      5d6cb7         eor 0xb76c,x
+└ 0x00000131      fc             nop 0xf5a8,x
+
+  ; CALL XREF from fcn.00000268 @ +0x332
+┌ 7: fcn.00001fdc ();
+│ 0x00001fdc      2478           bit 0x78
+│ 0x00001fde      79165c         adc 0x5c16,y
+│ 0x00001fe1      78             sei
+└ 0x00001fe2      72             hlt
+
+  ; CALL XREF from fcn.00000268 @ +0x7fb
+┌ 12: fcn.000030c9 ();
+│ 0x000030c9      cefb3f         dec 0x3ffb
+│ 0x000030cc      b5e8           lda 0xe8,x
+│ 0x000030ce      59fe1c         eor 0x1cfe,y
+│ 0x000030d1      8d38c5         sta 0xc538
+└ 0x000030d4      3f             rla 0xf5a8,x
+
+  ; CALL XREF from fcn.00000268 @ +0xe29
+┌ 3: fcn.00002569 ();
+│ 0x00002569      c1d1           cmp (0xd1,x)
+└ 0x0000256b      92             hlt
+
+  ; CALL XREF from fcn.0000134a @ +0x535
+┌ 15: fcn.0000134a ();
+│ 0x0000134a      de05bf         dec 0xbf05,x
+│ 0x0000134d      993b13         sta 0x133b,y
+│ 0x00001350      98             tya
+│ 0x00001351      c1db           cmp (0xdb,x)
+│ 0x00001353      8c985b         sty 0x5b98
+│ 0x00001356      a92d           lda #0x2d
+└ 0x00001358      23             rla (0xa8,x)
+
+│ ; CODE XREF from fcn.00003aa4 @ 0x3aa5
+│ 0x00003a91      9622           stx 0x22,y
+│ 0x00003a93      de0801         dec 0x0108,x
+│ 0x00003a96      1522           ora 0x22,x
+│ 0x00003a98      73             rra (0xa8),y
+
+  ; CALL XREF from fcn.0000134a @ +0x7fa
+┌ 17: fcn.00003aa4 ();
+│ 0x00003aa4      ba             tsx
+│ 0x00003aa5      70ea           bvs 0x003a91
+| // true: 0x00003a91  false: 0x00003aa7
+│ 0x00003aa7      c9fb           cmp #0xfb
+│ 0x00003aa9      2ecd80         rol 0x80cd
+│ 0x00003aac      5b             sre 0xf5a8,y
+
+  ; CALL XREF from fcn.00002569 @ +0x3fc
+┌ 8: fcn.00000268 ();
+│ 0x00000268      b5df           lda 0xdf,x
+│ 0x0000026a      01b5           ora (0xb5,x)
+│ 0x0000026c      d9027e         cmp 0x7e02,y
+│ ; CODE XREF from fcn.00000268 @ +0xe
+└ 0x0000026f      df             dcp 0xf5a8,x
+
+  ; CALL XREF from fcn.000030c9 @ +0x2ba
+┌ 10: fcn.00001c95 ();
+│ 0x00001c95      614f           adc (0x4f,x)
+│ 0x00001c97      cefd12         dec 0x12fd
+│ 0x00001c9a      4632           lsr 0x32
+│ 0x00001c9c      75a7           adc 0xa7,x
+└ 0x00001c9e      7f             rra 0xf5a8,x
+
+  ; CALL XREF from fcn.00003aa4 @ +0x302
+┌ 7: fcn.00004367 ();
+│ 0x00004367      8436           sty 0x36
+│ 0x00004369      dd47c1         cmp 0xc147,x
+│ 0x0000436c      ca             dex
+└ 0x0000436d      80             nop #0xa8
+

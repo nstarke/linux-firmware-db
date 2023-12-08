@@ -1,0 +1,113 @@
+  ;-- pc:
+  ;-- a:
+  ;-- x:
+  ;-- y:
+  ;-- flags:
+  ;-- sp:
+┌ 25: fcn.00000000 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x00000000      de1000         dec 0x0010,x
+│ 0x00000003      00             brk
+│ 0x00000004      0100           ora (0x00,x)
+│ 0x00000006      00             brk
+│ 0x00000007      00             brk
+│ 0x00000008      00             brk
+│ 0x00000009      9500           sta 0x00,x
+│ 0x0000000b      00             brk
+│ 0x0000000c      18             clc
+│ 0x0000000d      00             brk
+│ 0x0000000e      00             brk
+│ 0x0000000f      00             brk
+│ 0x00000010      88             dey
+│ 0x00000011      00             brk
+│ 0x00000012      00             brk
+│ 0x00000013      00             brk
+│ 0x00000014      00             brk
+│ 0x00000015      9400           sty 0x00,x
+│ 0x00000017      00             brk
+└ 0x00000018      3c             nop 0x07e5,x
+
+  ; CALL XREF from fcn.0000012a @ +0xe6
+┌ 3: fcn.0000012a ();
+│ 0x0000012a      05bd           ora 0xbd
+└ 0x0000012c      f4             nop 0xe5,x
+
+  ; CALL XREF from fcn.0000012a @ +0x119
+┌ 2: fcn.00001fcf ();
+│ 0x00001fcf      ca             dex
+└ 0x00001fd0      e7             isb 0xe5
+
+  ; CALL XREF from fcn.00000476 @ +0x4b2
+┌ 6: fcn.00002030 ();
+│ 0x00002030      59bca4         eor 0xa4bc,y
+│ 0x00002033      5691           lsr 0x91,x
+└ 0x00002035      27             rla 0xe5
+
+  ; CALL XREF from fcn.00000476 @ +0x503
+┌ 2: fcn.00002ad9 ();
+│ 0x00002ad9      aa             tax
+└ 0x00002ada      12             hlt
+
+  ; CALL XREFS from fcn.00000476 @ +0x503, +0x6a3
+│ ;-- (0x00002ad9) fcn.00002ad9:
+│ ; CALL XREF from fcn.00000476 @ +0x503
+┌ 1: fcn.00002ad8 ();
+└ 0x00002ad8  ~   47             sre 0xe5
+
+│ ; CODE XREF from fcn.0000106e @ 0x1071
+│ 0x0000104c      ed1bec         sbc 0xec1b
+│ 0x0000104f      948f           sty 0x8f,x
+│ 0x00001051      d2             hlt
+
+  ; CALL XREF from fcn.00000476 @ +0x79b
+┌ 13: fcn.0000106e ();
+│ 0x0000106e      01ef           ora (0xef,x)
+│ 0x00001070      98             tya
+│ 0x00001071      50d9           bvc 0x00104c
+| // true: 0x0000104c  false: 0x00001073
+│ 0x00001073      18             clc
+│ 0x00001074      92             hlt
+
+  ; CALL XREF from fcn.0000106e @ +0x52f
+┌ 3: fcn.000022ee ();
+│ 0x000022ee      e4cf           cpx 0xcf
+└ 0x000022f0      ff             isb 0x07e5,x
+
+  ; CALL XREF from fcn.000022ee @ +0x586
+┌ 5: fcn.00004537 ();
+│ 0x00004537      518e           eor (0x8e),y
+│ 0x00004539      b073           bcs 0x0045ae
+  false: 0x0000453b
+└ 0x0000453b      33             rla (0xe5),y
+
+  ; CALL XREF from fcn.000022ee @ +0x599
+┌ 11: fcn.0000043e ();
+│ 0x0000043e      d142           cmp (0x42),y
+│ 0x00000440      aa             tax
+│ 0x00000441      5d2753         eor 0x5327,x
+│ 0x00000444      6900           adc #0x00
+│ 0x00000446      468a           lsr 0x8a
+└ 0x00000448      d3             dcp (0xe5),y
+
+  ; CALL XREF from fcn.00002ad9 @ +0xa8
+┌ 5: fcn.000030a8 ();
+│ 0x000030a8      195eff         ora 0xff5e,y
+│ 0x000030ab      98             tya
+└ 0x000030ac      e3             isb (0xe5,x)
+
+  ; CALL XREF from fcn.000030a8 @ +0xc43
+┌ 4: fcn.00000476 ();
+│ 0x00000476      ae884f         ldx 0x4f88
+└ 0x00000479      fb             isb 0x07e5,y
+
+  ; CALL XREF from fcn.000030a8 @ +0xea4
+┌ 3: fcn.000046a2 ();
+│ 0x000046a2      d067           bne 0x00470b
+  false: 0x000046a4
+└ 0x000046a4      d4             nop 0xe5,x
+
+  ; CALL XREF from fcn.000030a8 @ +0x1052
+┌ 3: fcn.00001dd6 ();
+│ 0x00001dd6      f6b5           inc 0xb5,x
+└ 0x00001dd8      60             rts
+

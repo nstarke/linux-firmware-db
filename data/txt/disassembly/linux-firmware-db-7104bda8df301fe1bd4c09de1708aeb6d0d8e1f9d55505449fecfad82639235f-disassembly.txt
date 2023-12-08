@@ -1,0 +1,273 @@
+  ;-- pc:
+  ;-- a:
+  ;-- x:
+  ;-- y:
+  ;-- flags:
+  ;-- sp:
+  ; CALL XREF from fcn.00002324 @ +0x806
+┌ 4: fcn.00000000 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x00000000      00             brk
+│ 0x00000001      00             brk
+│ 0x00000002      00             brk
+└ 0x00000003      03             slo (0x48,x)
+
+  ; CALL XREF from fcn.00000000 @ +0x8e
+┌ 1: fcn.000009f4 ();
+└ 0x000009f4      60             rts
+
+  ; CALL XREF from fcn.00000410 @ +0x38
+┌ 8: fcn.000001c2 ();
+│ 0x000001c2      cce006         cpy fcn.000006e0
+│ 0x000001c5      15ae           ora 0xae,x
+│ 0x000001c7      e006           cpx #0x06
+└ 0x000001c9      0f             slo 0x3c48
+
+  ; CALL XREF from fcn.00000410 @ +0xb4
+┌ 15: fcn.00001cf4 ();
+│ 0x00001cf4      29f6           and #0xf6
+│ 0x00001cf6      2cd70f         bit 0x0fd7
+│ 0x00001cf9      d8             cld
+│ 0x00001cfa      fec8fe         inc 0xfec8,x
+│ 0x00001cfd      d97fc9         cmp 0xc97f,y
+│ 0x00001d00      c0e0           cpy #0xe0
+└ 0x00001d02      07             slo 0x48
+
+  ; CALL XREFS from fcn.00000602 @ +0x90, +0xba
+┌ 3: fcn.000000d9 ();
+│ 0x000000d9      f518           sbc 0x18,x
+└ 0x000000db      c2             nop #0x48
+
+  ; CALL XREFS from fcn.00000602 @ +0x98, +0xaa, +0xc2
+  ; CODE XREF from fcn.000009f4 @ +0x322
+  ; CALL XREF from fcn.00002102 @ +0xaa
+┌ 3: fcn.000004e0 ();
+│ 0x000004e0      11f2           ora (0xf2),y
+│ ; CODE XREF from fcn.00000410 @ +0xb7
+└ 0x000004e2      1c             nop 0x3c48,x
+
+  ; CALL XREF from fcn.00000df2 @ +0x38c
+┌ 3: fcn.000005f2 ();
+│ 0x000005f2      09e0           ora #0xe0
+└ 0x000005f4  ~   04             nop 0x48
+
+│ ; CODE XREF from fcn.000001a3 @ 0x1c0
+│ 0x00000189      0f             slo 0x3c48
+
+  ; CALL XREF from fcn.00000df2 @ +0x4a4
+┌ 12: fcn.000001a3 ();
+│ 0x000001a3      f12c           sbc (0x2c),y
+│ 0x000001a5      f019           beq 0x0001c0
+| // true: 0x000001c0  false: 0x000001a7
+│ 0x000001a7      0588           ora 0x88
+│ 0x000001a9      e006           cpx #0x06
+│ 0x000001ab      0f             slo 0x3c48
+
+│ ; CODE XREF from fcn.000001a3 @ 0x1a5
+│ 0x000001c0      30c7           bmi 0x000189
+| // true: 0x00000189  false: 0x000001c2
+│ ; CODE XREF from fcn.00000df2 @ 0xdfc
+│ 0x00000dd5      72             hlt
+
+  ; CALL XREF from fcn.000012b6 @ +0x102
+┌ 28: fcn.00000df2 ();
+│ 0x00000df2      0615           asl 0x15
+│ 0x00000df4      edd65e         sbc 0x5ed6
+│ 0x00000df7      f64c           inc 0x4c,x
+│ 0x00000df9      a8             tay
+│ 0x00000dfa      41d6           eor (0xd6,x)
+│ 0x00000dfc      10d7           bpl 0x000dd5
+| // true: 0x00000dd5  false: 0x00000dfe
+│ 0x00000dfe      31e0           and (0xe0),y
+│ 0x00000e00      0615           asl 0x15
+│ 0x00000e02      eda631         sbc 0x31a6
+│ 0x00000e05      e006           cpx #0x06
+│ 0x00000e07      0a             asl a
+│ 0x00000e08      8ce006         sty fcn.000006e0
+│ 0x00000e0b      0a             asl a
+│ 0x00000e0c      fa             nop
+
+  ; CALL XREF from fcn.000012b6 @ +0x11e
+┌ 6: fcn.000006e2 ();
+│ 0x000006e2      08             php
+│ 0x000006e3      a901           lda #0x01
+│ 0x000006e5      e004           cpx #0x04
+└ 0x000006e7      14             nop 0x48,x
+
+  ; CALL XREF from fcn.000012b6 @ +0x130
+┌ 1: fcn.000006e1 ();
+└ 0x000006e1      d8             cld
+
+  ; CALL XREF from fcn.000012b6 @ +0x1ce
+┌ 3: fcn.00002102 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x00002102      00             brk
+│ 0x00002103      f8             sed
+└ 0x00002104      9c             shy 0x3c48,x
+
+│ ; CODE XREF from fcn.000001f3 @ 0x1f5
+│ 0x0000018d      d144           cmp (0x44),y
+│ 0x0000018f      f12c           sbc (0x2c),y
+│ 0x00000191      e005           cpx #0x05
+│ 0x00000193      0944           ora #0x44
+│ 0x00000195      a559           lda 0x59
+│ 0x00000197      d66c           dec 0x6c,x
+| // true: 0x00000199
+  ; CALL XREF from fcn.000012b6 @ +0x2c8
+┌ 25: fcn.000001f3 ();
+│ 0x000001f3      e006           cpx #0x06
+│ 0x000001f5      1096           bpl 0x00018d
+| // true: 0x0000018d  false: 0x000001f7
+│ 0x000001f7      e006           cpx #0x06
+│ 0x000001f9      0eaaf0         asl 0xf0aa
+│ 0x000001fc      1904f7         ora 0xf704,y
+│ 0x000001ff      e0             invalid
+| // true: 0x00000200
+  ; CALL XREF from fcn.000012b6 @ +0x70a
+│ ;-- (0x000005f2) fcn.000005f2:
+│ ; CALL XREF from fcn.00000df2 @ +0x38c
+┌ 1: fcn.000005f1 ();
+└ 0x000005f1  ~   f4             nop 0x48,x
+
+  ; CALL XREF from fcn.000012b6 @ +0x8a2
+┌ 5: fcn.000005f5 ();
+│ 0x000005f5      166c           asl 0x6c,x
+│ 0x000005f7      a241           ldx #0x41
+└ 0x000005f9      d7             dcp 0x48,x
+
+  ; CALL XREF from fcn.000012b6 @ +0x98a
+┌ 8: fcn.000012b6 ();
+│ 0x000012b6      0dd21c         ora 0x1cd2
+│ 0x000012b9      e002           cpx #0x02
+│ 0x000012bb      15ae           ora 0xae,x
+└ 0x000012bd      d2             hlt
+
+  ; CALL XREFS from fcn.000012b6 @ +0x996, +0x9a2
+┌ 5: fcn.00000410 ();
+│ 0x00000410      b1d2           lda (0xd2),y
+│ 0x00000412      c4f2           cpy 0xf2
+└ 0x00000414      1c             nop 0x3c48,x
+
+  ; CALL XREF from fcn.00001cf4 @ +0x176
+┌ 5: fcn.00000392 ();
+│ 0x00000392      0106           ora (0x06,x)
+│ 0x00000394      b5b3           lda 0xb3,x
+└ 0x00000396      32             hlt
+
+  ; CALL XREFS from fcn.000012b6 @ +0x11e, +0x130
+  ; CALL XREF from fcn.00001cf4 @ +0x1f2
+┌ 1: fcn.000006e0 ();
+└ 0x000006e0      72             hlt
+
+  ; CALL XREF from fcn.0000224b @ +0x2d
+┌ 10: fcn.000003e0 ();
+│ 0x000003e0      1907b1         ora 0xb107,y
+│ 0x000003e3      a411           ldy 0x11
+│ 0x000003e5      e004           cpx #0x04
+│ 0x000003e7      158e           ora 0x8e,x
+└ 0x000003e9      d2             hlt
+
+  ; CODE XREF from fcn.00000200 @ +0x89
+  ; CALL XREF from fcn.00002324 @ +0x198
+┌ 26: fcn.000002e0 ();
+│ 0x000002e0      0616           asl 0x16
+│ 0x000002e2      a4d1           ldy 0xd1
+│ 0x000002e4      bec107         ldx 0x07c1,y
+| // true: 0x000002e7
+│ ; CODE XREF from fcn.00000200 @ +0xc9
+│ ; CODE XREF from fcn.000002e0 @ 0x2f4
+│ 0x000002e7      5dd6f1         eor 0xf1d6,x
+│ 0x000002ea      0505           ora 0x05
+│ 0x000002ec      78             sei
+│ ; CODE XREF from fcn.00000200 @ +0xcf
+│ 0x000002ed      d14f           cmp (0x4f),y
+│ 0x000002ef      c108           cmp (0x08,x)
+│ 0x000002f1      5d6dd0         eor 0xd06d,x
+│ 0x000002f4      50f1           bvc 0x0002e7
+| // true: 0x000002e7  false: 0x000002f6
+│ 0x000002f6      0505           ora 0x05
+│ 0x000002f8      78             sei
+└ 0x000002f9      d4             nop 0x48,x
+
+  ; CALL XREFS from fcn.00002324 @ +0x374, +0x3ec
+┌ 12: fcn.00002324 ();
+│ 0x00002324      191585         ora 0x8515,y
+│ 0x00002327      b45e           ldy 0x5e,x
+│ 0x00002329      d507           cmp 0x07,x
+│ 0x0000232b      e005           cpx #0x05
+│ 0x0000232d      1649           asl 0x49,x
+└ 0x0000232f      12             hlt
+
+  ; CALL XREF from fcn.00002324 @ +0x6d4
+┌ 3: fcn.00002024 ();
+│ 0x00002024      b4e0           ldy 0xe0,x
+└ 0x00002026      03             slo (0x48,x)
+
+│ ; CODE XREF from fcn.00000200 @ 0x201
+│ 0x00000199      c601           dec 0x01
+│ 0x0000019b      e005           cpx #0x05
+│ 0x0000019d      0916           ora #0x16
+│ 0x0000019f      d180           cmp (0x80),y
+│ 0x000001a1      d2             hlt
+
+  ; CALL XREF from fcn.00002324 @ +0x7b2
+┌ 15: fcn.00000200 ();
+│ 0x00000200      0610           asl 0x10
+│ 0x00000202      96             invalid
+| // true: 0x00000199  false: 0x00000203
+│ 0x00000203      e006           cpx #0x06
+│ 0x00000205      0f             slo 0x3c48
+
+  ; CALL XREF from fcn.00002324 @ +0x7ba
+┌ 19: fcn.00000301 ();
+│ 0x00000301      b664           ldx 0x64,y
+│ 0x00000303      f601           inc 0x01,x
+│ 0x00000305      0582           ora 0x82
+│ 0x00000307      b662           ldx 0x62,y
+│ 0x00000309      f601           inc 0x01,x
+│ 0x0000030b      0580           ora 0x80
+│ 0x0000030d      f019           beq 0x000328
+  false: 0x0000030f
+│ 0x0000030f      0588           ora 0x88
+│ 0x00000311      d050           bne 0x000363
+  false: 0x00000313
+└ 0x00000313      f4             nop 0x48,x
+
+  ; CALL XREF from fcn.00002324 @ +0x7c2
+┌ 5: fcn.00000401 ();
+│ 0x00000401      1611           asl 0x11,x
+│ 0x00000403      f019           beq 0x00041e
+  false: 0x00000405
+└ 0x00000405      07             slo 0x48
+
+  ; CALL XREF from fcn.00002324 @ +0x7ca
+┌ 6: fcn.00000500 ();
+│ 0x00000500      35a0           and 0xa0,x
+│ 0x00000502      4df019         eor 0x19f0
+└ 0x00000505      07             slo 0x48
+
+  ; CALL XREF from fcn.00002324 @ +0x7d2
+┌ 2: fcn.00000602 ();
+│ 0x00000602      a8             tay
+└ 0x00000603      f7             isb 0x48,x
+
+  ; CALL XREF from fcn.00002324 @ +0x89f
+┌ 5: fcn.0000206a ();
+│ 0x0000206a      09d5           ora #0xd5
+│ 0x0000206c      01c5           ora (0xc5,x)
+└ 0x0000206e      60             rts
+
+  ; CALL XREF from fcn.00002324 @ +0x9ec
+┌ 9: fcn.00000103 ();
+│ 0x00000103      d13f           cmp (0x3f),y
+│ 0x00000105      8449           sty 0x49
+│ 0x00000107      8448           sty 0x48
+│ 0x00000109      f14c           sbc (0x4c),y
+└ 0x0000010b      c2             nop #0x48
+
+  ; CALL XREF from fcn.00002324 @ +0xa64
+┌ 5: fcn.0000224b ();
+│ 0x0000224b      e003           cpx #0x03
+│ 0x0000224d      1611           asl 0x11,x
+└ 0x0000224f      d3             dcp (0x48),y
+

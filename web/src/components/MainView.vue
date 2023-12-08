@@ -116,7 +116,7 @@
             <td class="text-center">{{ result.chunk_count }}</td>
             <td class="text-center">{{ result.file_type }}</td>
             <td class="text-center">{{ result.shannon_entropy }}</td>
-            <td class="text-center" v-if="['SuperH', 'ARM', 'MIPS', 'X86', '8051', 'ARcompact'].some(term => result.full_arch.includes(term)) || ['ARM', 'MIPS', 'mips', '8051'].some(term => result.chunk_arch.includes(term)) ">
+            <td class="text-center" v-if="['SuperH', 'ARM', 'MIPS', 'X86', '8051', 'ARcompact', '6502'].some(term => result.full_arch.includes(term)) || ['ARM', 'MIPS', 'mips', '8051', '6502'].some(term => result.chunk_arch.includes(term)) ">
               <router-link :to="{ name: 'disassembly', params: { firmware: result, sha256: result.sha256 } }">View</router-link>
             </td>
           </tr>

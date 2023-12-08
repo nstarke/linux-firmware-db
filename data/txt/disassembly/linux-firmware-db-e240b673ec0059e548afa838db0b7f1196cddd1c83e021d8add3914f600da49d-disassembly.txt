@@ -1,0 +1,4966 @@
+  ;-- segment.LOAD0:
+┌ 8: entry0 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0000000      00             brk                                   ; [03] -r-x segment size 4180 named LOAD0
+│ 0xc0000001      c000           cpy #0x00
+│ 0xc0000003      78             sei
+│ 0xc0000004      0640           asl 0x40
+│ 0xc0000006      00             brk
+└ 0xc0000007      67             rra 0x68
+
+┌ 3: fcn.c047f151 ();
+│ 0xc047f151      497c           eor #0x7c
+└ 0xc047f153      5b             sre 0x4d68,y
+
+┌ 1: fcn.c0498e55 ();
+└ 0xc0498e55      40             rti
+
+┌ 16: float sym.asinf (float x);
+│ ; arg int8_t arg_ffh @ sp+0x100
+│ 0xc0498c00      203c01         jsr 0x013c
+│ 0xc0498c03      7006           bvs 0xc0498c0b
+| // true: 0xc0498c0b  false: 0xc0498c05
+│ 0xc0498c05      4102           eor (0x02,x)
+│ 0xc0498c07      5a             nop
+
+│ 0xc0498c0b      b011           bcs 0xc0498c1e
+| // true: 0xc0498c1e  false: 0xc0498c0d
+│ 0xc0498c0d      08             php
+│ 0xc0498c0e      0c             nop 0x4d68
+
+│ 0xc0498c1e      1e9610         asl 0x1096,x
+└ 0xc0498c21      40             rti
+
+  ;-- __hexagon_nesf2:
+┌ 2: sym.__qdsp_nesf2 ();
+│ 0xc0064200      8a             txa
+└ 0xc0064201      7f             rra 0x4d68,x
+
+┌ 8: long long sym.llroundf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049ddd0      303c           bmi 0xc049de0e
+  false: 0xc049ddd2
+│ 0xc049ddd2      0170           ora (0x70,x)
+│ 0xc049ddd4      1040           bpl 0xc049de16
+  false: 0xc049ddd6
+│ 0xc049ddd6      00             brk
+└ 0xc049ddd7      7c             nop 0x4d68,x
+
+┌ 4: sym._Getptoupper ();
+│ 0xc04b3548      ac7fff         ldy 0xff7f
+└ 0xc04b354b      5b             sre 0x4d68,y
+
+┌ 3: fcn.c049df92 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049df92      00             brk
+│ 0xc049df93      00             brk
+└ 0xc049df94      40             rti
+
+┌ 3: fcn.c049d7a1 ();
+│ 0xc049d7a1      5678           lsr 0x78,x
+└ 0xc049d7a3      5b             sre 0x4d68,y
+
+┌ 6: bool sym.isnan (arithmetic x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0f20      00             brk
+│ 0xc04a0f21      c001           cpy #0x01
+│ 0xc04a0f23      f522           sbc 0x22,x
+└ 0xc04a0f25      5f             sre 0x4d68,x
+
+┌ 6: fcn.c049ce61 ();
+│ 0xc049ce61      59015a         eor 0x5a01,y
+│ 0xc049ce64      1040           bpl 0xc049cea6                        ; fcn.c049cea2+0x4
+  false: 0xc049ce66
+│ ; CODE XREF from fcn.c049ce21 @ 0xc049ce24
+└ 0xc049ce66      60             rts
+
+┌ 1: fcn.c0498761 ();
+└ 0xc0498761      40             rti
+
+  ;-- __qdsp_ledf2:
+┌ 3: sym.__hexagon_ledf2 ();
+│ 0xc0063ee0      917f           sta (0x7f),y
+└ 0xc0063ee2      ff             isb 0x4d68,x
+
+┌ 2: fcn.c0060482 ();
+│ 0xc0060482      de             invalid
+└ 0xc0060483  ~   97             sax 0x68,y
+| // true: 0xc0060484
+┌ 3: sym.qurt_pimutex_destroy ();
+│ 0xc04803cc      0110           ora (0x10,x)
+└ 0xc04803ce      03             slo (0x68,x)
+
+┌ 3: sym.qd_self_div_dd ();
+│ 0xc0064830      c040           cpy #0x40
+│ ; CODE XREF from fcn.c00647e5 @ +0xb
+└ 0xc0064832      e2             nop #0x68
+
+┌ 3: fcn.c00620da ();
+│ 0xc00620da      618d           adc (0x8d,x)
+└ 0xc00620dc      e3             isb (0x68,x)
+
+┌ 4: sym.qurt_anysignal_set ();
+│ 0xc0061634      08             php
+│ 0xc0061635      d000           bne 0xc0061637
+| // true: 0xc0061637  false: 0xc0061637
+└ 0xc0061637      92             hlt
+
+┌ 1: fcn.c00613c1 ();
+└ 0xc00613c1      40             rti
+
+┌ 1: sym._Sin ();
+└ 0xc04b0b40      60             rts
+
+┌ 4: int sym.isblank (int c);
+│ 0xc049ce40      2c5901         bit 0x0159
+└ 0xc049ce43      5a             nop
+
+┌ 1: fcn.c0066ae1 ();
+└ 0xc0066ae1      40             rti
+
+┌ 1: fcn.c00626b4 ();
+└ 0xc00626b4      40             rti
+
+┌ 4: fcn.c04a6961 ();
+│ 0xc04a6961      4d775b         eor 0x5b77
+└ 0xc04a6964      03             slo (0x68,x)
+
+  ;-- __qdsp_fixunssfdi:
+┌ 3: sym.__hexagon_fixunssfdi ();
+│ 0xc0063180      103c           bpl 0xc00631be
+  false: 0xc0063182
+└ 0xc0063182      02             hlt
+
+  ;-- __qdsp_unordsf2:
+┌ 3: sym.__hexagon_unordsf2 ();
+│ 0xc0064670      103c           bpl 0xc00646ae
+  false: 0xc0064672
+└ 0xc0064672      02             hlt
+
+┌ 6: float sym.atan2f (float y, float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc0499160      203c02         jsr 0x023c
+│ 0xc0499163      7000           bvs 0xc0499165
+| // true: 0xc0499165  false: 0xc0499165
+│ ; CODE XREF from sym.atan2f @ 0xc0499163
+└ 0xc0499165      40             rti
+
+┌ 12: floating_point sym.remainder (arithmetic x, arithmetic y);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a4130      0140           ora (0x40,x)
+│ 0xc04a4132      00             brk
+│ 0xc04a4133      00             brk
+│ 0xc04a4134      00             brk
+│ 0xc04a4135      c004           cpy #0x04
+│ 0xc04a4137      1600           asl 0x00,x
+│ 0xc04a4139      c000           cpy #0x00
+└ 0xc04a413b      7f             rra 0x4d68,x
+
+┌ 3: int sym.strncasecmp (const char *s1, const char *s2, size_t n);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00a0040      3040           bmi 0xc00a0082
+  false: 0xc00a0042
+└ 0xc00a0042      02             hlt
+
+┌ 2: sym.get_mant_qd (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00646d8      00             brk
+└ 0xc00646d9      7c             nop 0x4d68,x
+
+┌ 1: fcn.c0063541 ();
+└ 0xc0063541      40             rti
+
+┌ 8: void sym.signal (int sig, void *func);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a5090      1040           bpl 0xc04a50d2
+  false: 0xc04a5092
+│ 0xc04a5092      01f5           ora (0xf5,x)
+│ 0xc04a5094      201cf4         jsr 0xf41c
+└ 0xc04a5097      eb             sbc #0x68
+
+┌ 7: float sym.roundf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a4890      2140           and (0x40,x)
+│ 0xc04a4892      00             brk
+│ 0xc04a4893      78             sei
+│ 0xc04a4894      103c           bpl 0xc04a48d2
+  false: 0xc04a4896
+└ 0xc04a4896      02             hlt
+
+  ;-- __hexagon_gtdf2:
+┌ 1: sym.__qdsp_gtdf2 ();
+└ 0xc0063ec0      40             rti
+
+┌ 1: fcn.c0066171 ();
+└ 0xc0066171      40             rti
+
+┌ 3: int sym.fgetpos (FILE *stream, fpos_t*pos);
+│ 0xc049bdc0      b478           ldy 0x78,x
+└ 0xc049bdc2      02             hlt
+
+  ; CODE XREF from sym.__qdsp_cmpxsf2 @ +0xd0
+┌ 3: fcn.c00625a2 ();
+│ 0xc00625a2      0185           ora (0x85,x)
+└ 0xc00625a4      03             slo (0x68,x)
+
+┌ 6: sym.qd_div (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00647a0      1040           bpl 0xc00647e2
+  false: 0xc00647a2
+│ 0xc00647a2      01f5           ora (0xf5,x)
+│ 0xc00647a4      00             brk
+└ 0xc00647a5      42             hlt
+
+  ;-- __qdsp_negsf2:
+┌ 6: sym.__hexagon_negsf2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00641f0      00             brk
+│ 0xc00641f1      c060           cpy #0x60
+│ 0xc00641f3      7040           bvs 0xc0064235
+  false: 0xc00641f5
+└ 0xc00641f5      df             dcp 0x4d68,x
+
+┌ 1: fcn.c04a7e21 ();
+└ 0xc04a7e21      40             rti
+
+┌ 12: int sym.iswprint (wint_t wc);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc049cfe0      ba             tsx
+│ 0xc049cfe1      4500           eor 0x00
+│ 0xc049cfe3      00             brk
+│ 0xc049cfe4      20c701         jsr 0x01c7
+│ 0xc049cfe7      1600           asl 0x00,x
+│ 0xc049cfe9      c000           cpy #0x00
+└ 0xc049cfeb      7f             rra 0x4d68,x
+
+┌ 6: sym.__restore_r27_through_r16_and_deallocframe ();
+│ 0xc0060510      507f           bvc 0xc0060591
+  false: 0xc0060512
+│ 0xc0060512      de9772         dec 0x7297,x
+└ 0xc0060515      ff             isb 0x4d68,x
+
+  ; CODE XREF from sym.tmpfile @ +0x9a
+┌ 6: wint_t sym.towupper (wint_t wc);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a7220      0d4300         ora 0x0043
+│ 0xc04a7223      00             brk
+│ 0xc04a7224      00             brk
+└ 0xc04a7225      c2             nop #0x68
+
+┌ 6: char *sym.strncpy (char *dest, const char *src, size_t  n);
+│ 0xc04a5640      2a             rol a
+│ ; CODE XREF from sym.strncpy @ +0xd
+│ 0xc04a5641      c002           cpy #0x02
+│ 0xc04a5643      1000           bpl 0xc04a5645
+| // true: 0xc04a5645  false: 0xc04a5645
+│ ; CODE XREF from sym.strncpy @ 0xc04a5643
+└ 0xc04a5645      40             rti
+
+┌ 2: fcn.c0143001 ();
+│ 0xc0143001      6a             ror a
+└ 0xc0143002      e3             isb (0x68,x)
+
+┌ 4: sym.sys_Tlsset (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047e0a4      f64f           inc 0x4f,x
+│ 0xc047e0a6      00             brk
+└ 0xc047e0a7      5a             nop
+
+┌ 1: fcn.c049d051 ();
+└ 0xc049d051      40             rti
+
+┌ 2: fcn.c0480092 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0480092      00             brk
+└ 0xc0480093      5c             nop 0x4d68,x
+
+┌ 1: fcn.c04a4151 ();
+└ 0xc04a4151      40             rti
+
+┌ 8: floating_point sym.nextafter (arithmetic x, arithmetic y);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049eab0      08             php
+│ 0xc049eab1      c000           cpy #0x00
+│ 0xc049eab3      58             cli
+│ 0xc049eab4      00             brk
+│ 0xc049eab5      c000           cpy #0x00
+└ 0xc049eab7      7f             rra 0x4d68,x
+
+┌ 4: fcn.c049ea02 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049ea02      090c           ora #0x0c
+│ 0xc049ea04      00             brk
+└ 0xc049ea05      c3             dcp (0x68,x)
+
+┌ 3: long sym.ftell (FILE *stream);
+│ 0xc049ca00      9472           sty 0x72,x
+└ 0xc049ca02      02             hlt
+
+┌ 3: sym.qurt_mutex_init ();
+│ 0xc0480330      1040           bpl 0xc0480372
+  false: 0xc0480332
+└ 0xc0480332      60             rts
+
+┌ 4: sym.exit (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049af80      201cf4         jsr 0xf41c
+└ 0xc049af83      eb             sbc #0x68
+
+┌ 3: size_t sym.strlen (const char *s);
+│ 0xc04a1de0      0147           ora (0x47,x)
+└ 0xc04a1de2      80             nop #0x68
+
+┌ 2: fcn.c00604b6 ();
+│ 0xc00604b6      de             invalid
+└ 0xc00604b7  ~   a7             lax 0x68
+| // true: 0xc00604b8
+┌ 5: float sym.tanhf (float x);
+│ 0xc04a6250      303c           bmi 0xc04a628e
+  false: 0xc04a6252
+│ 0xc04a6252      0170           ora (0x70,x)
+└ 0xc04a6254      80             nop #0x68
+
+┌ 6: double sym.atof (const char *str);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0499820      ec4500         cpx 0x0045
+│ 0xc0499823      00             brk
+│ 0xc0499824      68             pla
+└ 0xc0499825      40             rti
+
+┌ 3: int sym.printf (const char *format);
+│ 0xc04a0270      1040           bpl 0xc04a02b2
+  false: 0xc04a0272
+└ 0xc04a0272      60             rts
+
+┌ 5: sym.dspcache_linear_l2fetch ();
+│ 0xc04ce840      0148           ora (0x48,x)
+│ 0xc04ce842      018c           ora (0x8c,x)
+└ 0xc04ce844      fc             nop 0x4d68,x
+
+┌ 4: fcn.c04a5102 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5102      00             brk
+│ 0xc04a5103      00             brk
+│ 0xc04a5104      00             brk
+└ 0xc04a5105      40             rti
+
+  ;-- __qdsp_fixsfti:
+┌ 3: sym.__hexagon_fixsfti ();
+│ 0xc0062d50      103c           bpl 0xc0062d8e
+  false: 0xc0062d52
+└ 0xc0062d52      02             hlt
+
+┌ 2: sym.fast2_drecipsqrt (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0065a70      00             brk
+└ 0xc0065a71      7c             nop 0x4d68,x
+
+┌ 6: sym.HAP_cx_free (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04f732c      907d           bcc 0xc04f73ab
+  false: 0xc04f732e
+│ 0xc04f732e      f05b           beq 0xc04f738b
+  false: 0xc04f7330
+│ 0xc04f7330      00             brk
+└ 0xc04f7331      3c             nop 0x4d68,x
+
+  ;-- __qdsp_udivmodsi4:
+┌ 12: sym.__hexagon_udivmodsi4 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00643e0      a240           ldx #0x40
+│ 0xc00643e2      00             brk
+│ 0xc00643e3      8ca340         sty 0x40a3
+│ 0xc00643e6      018c           ora (0x8c,x)
+│ 0xc00643e8      2440           bit 0x40
+│ 0xc00643ea      00             brk
+└ 0xc00643eb      7c             nop 0x4d68,x
+
+  ;-- __hexagon_gtsf2:
+┌ 3: sym.__qdsp_gtsf2 ();
+│ 0xc0063ed0      e072           cpx #0x72
+└ 0xc0063ed2      ff             isb 0x4d68,x
+
+┌ 3: sym.qurt_pipe_destroy ();
+│ 0xc047eeb4      1040           bpl 0xc047eef6
+  false: 0xc047eeb6
+└ 0xc047eeb6      60             rts
+
+┌ 3: fcn.c04a5574 (int8_t arg_100h, int8_t arg_100h_2);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ ; arg int8_t arg_100h_2 @ sp+0x101
+│ 0xc04a5574      1040           bpl 0xc04a55b6
+  false: 0xc04a5576
+└ 0xc04a5576      60             rts
+
+┌ 8: sym.__cxa_pure_virtual ();
+│ 0xc04a3418      b467           ldy 0x67,x
+│ 0xc04a341a      fe5b00         inc 0x005b,x
+│ 0xc04a341d      c09d           cpy #0x9d
+│ 0xc04a341f      a0             invalid
+| // true: 0xc04a3420
+┌ 12: float sym.logf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049e3c0      c442           cpy 0x42
+│ 0xc049e3c2      00             brk
+│ 0xc049e3c3      00             brk
+│ 0xc049e3c4      00             brk
+│ 0xc049e3c5      c001           cpy #0x01
+│ 0xc049e3c7      1600           asl 0x00,x
+│ 0xc049e3c9      c000           cpy #0x00
+└ 0xc049e3cb      7f             rra 0x4d68,x
+
+  ;-- __hexagon_udivdi3:
+┌ 3: sym.__qdsp_udivdi3 ();
+│ 0xc0064320      4640           lsr 0x40
+└ 0xc0064322      40             rti
+
+┌ 3: sym.qurt_timer_get_attr ();
+│ 0xc0498190      b079           bcs 0xc049820b
+  false: 0xc0498192
+└ 0xc0498192      ff             isb 0x4d68,x
+
+  ; CODE XREF from fcn.c049cdc5 @ +0x39
+┌ 1: fcn.c049cda1 ();
+└ 0xc049cda1      40             rti
+
+┌ 8: sym.qurt_timer_group_enable (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0498354      2c75fc         bit 0xfc75
+│ 0xc0498357      59e26a         eor 0x6ae2,y
+│ 0xc049835a      00             brk
+└ 0xc049835b      73             rra (0x68),y
+
+┌ 11: sym.index (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0c60      1040           bpl 0xc04a0ca2
+| // true: 0xc04a0ca2  false: 0xc04a0c62
+│ 0xc04a0c62      00             brk
+│ 0xc04a0c63      1000           bpl 0xc04a0c65
+| // true: 0xc04a0c65  false: 0xc04a0c65
+│ ; CODE XREF from sym.index @ 0xc04a0c63
+│ 0xc04a0c65      c09d           cpy #0x9d
+│ 0xc04a0c67      a002           ldy #0x02
+│ 0xc04a0c69      40             rti
+
+│ ; CODE XREF from sym.index @ 0xc04a0c60
+└ 0xc04a0ca2      03             slo (0x68,x)
+
+┌ 5: sym.HAP_perf_get_pcycles ();
+│ 0xc04f74e8      a2cc           ldx #0xcc
+└ 0xc04f74ea  ~   6d59c0         adc 0xc059
+┌ 4: sym.HAP_get_chip_family_id (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x101
+│ 0xc04f74ec      c0             invalid
+
+┌ 3: fcn.c0061fc6 ();
+│ 0xc0061fc6      618d           adc (0x8d,x)
+│ ; CODE XREF from fcn.c0061f32 @ +0x44
+└ 0xc0061fc8      e3             isb (0x68,x)
+
+┌ 1: fcn.c04a0264 ();
+└ 0xc04a0264      60             rts
+
+┌ 8: sym.__builtinfunction_bitrev_update1_for_load (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0062270      9040           bcc 0xc00622b2
+  false: 0xc0062272
+│ 0xc0062272      00             brk
+│ 0xc0062273      6902           adc #0x02
+│ 0xc0062275      e000           cpx #0x00
+└ 0xc0062277      73             rra (0x68),y
+
+┌ 2: fcn.c0061da2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061da2      00             brk
+└ 0xc0061da3      5c             nop 0x4d68,x
+
+┌ 5: fcn.c049cdc5 ();
+│ 0xc049cdc5      c09d           cpy #0x9d
+│ 0xc049cdc7      a014           ldy #0x14
+└ 0xc049cdc9      44             nop 0x68
+
+┌ 3: fcn.c0499f93 ();
+│ 0xc0499f93      f500           sbc 0x00,x
+└ 0xc0499f95      40             rti
+
+  ;-- __hexagon_fast_muldf3:
+  ;-- __hexagon_fast2_muldf3:
+  ;-- __qdsp_muldf3:
+┌ 3: sym.__hexagon_muldf3 ();
+│ 0xc0067200      5040           bvc 0xc0067242
+  false: 0xc0067202
+└ 0xc0067202      80             nop #0x68
+
+┌ 10: sym.apps_mem_request_map64 ();
+│ 0xc01371d4      2649           rol 0x49
+│ 0xc01371d6      e55b           sbc 0x5b
+│ 0xc01371d8      0dc09d         ora 0x9dc0
+│ 0xc01371db      a016           ldy #0x16
+└ 0xc01371dd      42             hlt
+
+┌ 2: int sym.mbsinit (const mbstate_t *ps);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049e610      00             brk
+└ 0xc049e611      40             rti
+
+┌ 5: fcn.c049db75 ();
+│ 0xc049db75      c09d           cpy #0x9d
+│ 0xc049db77      a014           ldy #0x14
+└ 0xc049db79      44             nop 0x68
+
+┌ 3: fcn.c0060cbd ();
+│ 0xc0060cbd      c000           cpy #0x00
+└ 0xc0060cbf      92             hlt
+
+┌ 10: sym.fast2_f2qd_asm (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00656b0      4147           eor (0x47,x)
+│ 0xc00656b2      00             brk
+│ 0xc00656b3      8c005f         sty 0x5f00
+│ 0xc00656b6      00             brk
+│ 0xc00656b7      8504           sta 0x04
+└ 0xc00656b9      40             rti
+
+┌ 1: fcn.c049e8d1 ();
+└ 0xc049e8d1      40             rti
+
+┌ 2: void sym.free (void *ptr);
+│ 0xc006df00      e8             inx
+└ 0xc006df01      64             nop 0x68
+
+┌ 6: sym.abort (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0498380      b05c           bcs 0xc04983de
+  false: 0xc0498382
+│ 0xc0498382      015a           ora (0x5a,x)
+│ 0xc0498384      00             brk
+└ 0xc0498385      3c             nop 0x4d68,x
+
+┌ 5: sym.dsub ();
+│ 0xc0064e64      0e4062         asl 0x6240
+│ 0xc0064e67      e8             inx
+└ 0xc0064e68      0c             nop 0x4d68
+
+  ;-- __hexagon_fixunssfti:
+┌ 3: sym.__qdsp_fixunssfti ();
+│ 0xc0063320      103c           bpl 0xc006335e
+  false: 0xc0063322
+└ 0xc0063322      02             hlt
+
+┌ 7: fcn.c04a57c1 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a57c1      e101           sbc (0x01,x)
+│ 0xc04a57c3      58             cli
+│ 0xc04a57c4      00             brk
+│ 0xc04a57c5      c000           cpy #0x00
+└ 0xc04a57c7      7f             rra 0x4d68,x
+
+┌ 1: fcn.c0499041 ();
+└ 0xc0499041      40             rti
+
+┌ 1: fcn.c0061231 ();
+└ 0xc0061231      40             rti
+
+┌ 8: float sym.tanf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5dd0      203c01         jsr 0x013c
+│ 0xc04a5dd3      701e           bvs 0xc04a5df3
+  false: 0xc04a5dd5
+│ 0xc04a5dd5      58             cli
+│ 0xc04a5dd6      00             brk
+└ 0xc04a5dd7      5a             nop
+
+┌ 8: void *sym.memmove (void *s1, const void *s2, size_t n);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a0690      1040           bpl 0xc04a06d2
+  false: 0xc04a0692
+│ 0xc04a0692      01f5           ora (0xf5,x)
+│ 0xc04a0694      201cf4         jsr 0xf41c
+└ 0xc04a0697      eb             sbc #0x68
+
+┌ 12: int sym.iswpunct (wint_t wc);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049cff0      ba             tsx
+│ 0xc049cff1      4500           eor 0x00
+│ 0xc049cff3      00             brk
+│ 0xc049cff4      00             brk
+│ 0xc049cff5      c8             iny
+│ 0xc049cff6      0116           ora (0x16,x)
+│ 0xc049cff8      00             brk
+│ 0xc049cff9      c000           cpy #0x00
+└ 0xc049cffb      7f             rra 0x4d68,x
+
+┌ 4: fcn.c006248d ();
+│ 0xc006248d      c134           cmp (0x34,x)
+└ 0xc006248f  ~   1630           asl 0x30,x
+  ;-- __hexagon_cmpxsf2:
+┌ 3: sym.__qdsp_cmpxsf2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0062490      30             invalid
+
+┌ 1: fcn.c00617e1 ();
+└ 0xc00617e1      40             rti
+
+┌ 13: sym.apps_mem_request_unmap64 ();
+│ 0xc013725c      e648           inc 0x48
+│ 0xc013725e      e55b           sbc 0x5b
+│ 0xc0137260      06c0           asl 0xc0
+│ 0xc0137262      9da0e4         sta 0xe4a0,x
+│ 0xc0137265      7eff5b         ror 0x5bff,x
+└ 0xc0137268      14             nop 0x68,x
+
+┌ 3: sym.qurt_cond_broadcast ();
+│ 0xc0060f84      e17f           sbc (0x7f,x)
+└ 0xc0060f86      5f             sre 0x4d68,x
+
+┌ 1: fcn.c0065041 ();
+└ 0xc0065041      40             rti
+
+┌ 12: int sym.iswalnum (wint_t wc);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc049cf60      bc4500         ldy 0x0045,x
+│ 0xc049cf63      00             brk
+│ 0xc049cf64      20c101         jsr 0x01c1
+│ 0xc049cf67      1600           asl 0x00,x
+│ 0xc049cf69      c000           cpy #0x00
+└ 0xc049cf6b      7f             rra 0x4d68,x
+
+┌ 3: fcn.c049e131 ();
+│ 0xc049e131      5178           eor (0x78),y
+└ 0xc049e133      5b             sre 0x4d68,y
+
+┌ 5: sym.apps_mem_request_map ();
+│ 0xc01370dc      a249           ldx #0x49
+│ 0xc01370de      e55b           sbc 0x5b
+└ 0xc01370e0      0b             anc #0x68
+
+┌ 1: fcn.c0498581 ();
+└ 0xc0498581      40             rti
+
+┌ 7: fcn.c04a5a38 ();
+│ 0xc04a5a38      0a             asl a
+│ 0xc04a5a39      c09d           cpy #0x9d
+│ 0xc04a5a3b      a006           ldy #0x06
+│ 0xc04a5a3d      78             sei
+└ 0xc04a5a3e      07             slo 0x68
+
+┌ 6: fcn.c049e631 ();
+│ 0xc049e631      4e785b         lsr 0x5b78
+│ 0xc049e634      503c           bvc 0xc049e672
+  false: 0xc049e636
+└ 0xc049e636      02             hlt
+
+┌ 6: fcn.c04b11b4 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04b11b4      00             brk
+│ 0xc04b11b5      c09d           cpy #0x9d
+│ 0xc04b11b7      a040           ldy #0x40
+└ 0xc04b11b9      3f             rla 0x4d68,x
+
+┌ 3: sym.drecip ();
+│ 0xc00651d0      e57f           sbc 0x7f
+└ 0xc00651d2      df             dcp 0x4d68,x
+
+┌ 5: fcn.c049cc71 ();
+│ 0xc049cc71      c09d           cpy #0x9d
+│ 0xc049cc73      a0ee           ldy #0xee
+└ 0xc049cc75      77             rra 0x68,x
+
+┌ 4: sym.__save_r27_through_r22 ();
+│ 0xc00604bc      fdf6de         sbc 0xdef6,x
+└ 0xc00604bf  ~   a7             lax 0x68
+
+┌ 7: sym._Assert ();
+│ 0xc04a7b00      1040           bpl 0xc04a7b42
+  false: 0xc04a7b02
+│ 0xc04a7b02      01f5           ora (0xf5,x)
+│ 0xc04a7b04      101c           bpl 0xc04a7b22
+  false: 0xc04a7b06
+│ ; CODE XREF from fcn.c04a7ac1 @ +0x7
+└ 0xc04a7b06      f4             nop 0x68,x
+
+  ;-- __hexagon_gedf2:
+┌ 3: sym.__qdsp_gedf2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0063ea0      5072           bvc 0xc0063f14
+  false: 0xc0063ea2
+└ 0xc0063ea2      ff             isb 0x4d68,x
+
+┌ 1: fcn.c04a07b9 ();
+└ 0xc04a07b9      40             rti
+
+│ ; CODE XREF from sym._FSin @ 0xc04aa983
+│ 0xc04aa905      ccb0a1         cpy 0xa1b0
+│ 0xc04aa908      8a             txa
+│ 0xc04aa909      02             hlt
+
+┌ 11: sym._FSin (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04aa980      203c02         jsr 0x023c
+│ 0xc04aa983      7080           bvs 0xc04aa905
+| // true: 0xc04aa905  false: 0xc04aa985
+│ 0xc04aa985      40             rti
+
+┌ 1: fcn.c049b261 ();
+└ 0xc049b261      40             rti
+
+┌ 8: sym.__builtinfunction_bitrev_update2_for_store (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00622e8      9040           bcc 0xc006232a
+  false: 0xc00622ea
+│ 0xc00622ea      00             brk
+│ 0xc00622eb      6902           adc #0x02
+│ 0xc00622ed      e000           cpx #0x00
+└ 0xc00622ef      73             rra (0x68),y
+
+┌ 6: sym.qd_lt_dq (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00648a0      c440           cpy 0x40
+│ 0xc00648a2      e080           cpx #0x80
+│ 0xc00648a4      00             brk
+└ 0xc00648a5      42             hlt
+
+┌ 3: sym.memmove_v ();
+│ 0xc0060a10      0140           ora (0x40,x)
+└ 0xc0060a12      02             hlt
+
+│ ; CODE XREF from sym.qurt_lifo_remove @ 0xc04804f2
+│ 0xc0480485      c020           cpy #0x20
+│ 0xc0480487      3c             nop 0x4d68,x
+
+┌ 29: sym.qurt_lifo_remove (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04804d0      1040           bpl 0xc0480512
+| // true: 0xc0480512  false: 0xc04804d2
+│ 0xc04804d2      6170           adc (0x70,x)
+│ 0xc04804d4      101c           bpl 0xc04804f2
+| // true: 0xc04804f2  false: 0xc04804d6
+│ 0xc04804d6      f4             nop 0x68,x
+
+│ ; CODE XREF from sym.qurt_lifo_remove @ 0xc04804d4
+│ 0xc04804f2      9091           bcc 0xc0480485
+| // true: 0xc0480485  false: 0xc04804f4
+│ 0xc04804f4      00             brk
+│ 0xc04804f5      d2             hlt
+
+│ ; CODE XREF from sym.qurt_lifo_remove @ 0xc04804d0
+│ 0xc0480512      00             brk
+│ 0xc0480513      78             sei
+│ 0xc0480514      00             brk
+│ 0xc0480515      c000           cpy #0x00
+│ 0xc0480517      78             sei
+│ 0xc0480518      1ec01e         asl 0x1ec0,x
+│ 0xc048051b      9600           stx 0x00,y
+│ 0xc048051d      c00a           cpy #0x0a
+│ 0xc048051f      6a             ror a
+│ 0xc0480520      80             nop #0x68
+
+┌ 2: sym.__restore_r16_through_r27_and_deallocframe_before_tailcall (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060448      00             brk
+└ 0xc0060449      40             rti
+
+┌ 2: sym.__save_r16_through_r17 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060430      00             brk
+└ 0xc0060431      40             rti
+
+┌ 4: int sym.isupper (int c);
+│ 0xc049cf40      ac5801         ldy 0x0158
+└ 0xc049cf43      5a             nop
+
+┌ 1: fcn.c00a00b1 ();
+└ 0xc00a00b1      40             rti
+
+┌ 8: fcn.c0065f26 ();
+│ 0xc0065f26      1db003         ora 0x03b0,x
+│ 0xc0065f29      3e014c         rol 0x4c01,x
+│ 0xc0065f2c      08             php
+└ 0xc0065f2d      60             rts
+
+┌ 3: sym.__muldc3 ();
+│ 0xc04a1f20      7072           bvs 0xc04a1f94
+  false: 0xc04a1f22
+└ 0xc04a1f22      77             rra 0x68,x
+
+┌ 5: fcn.c0063f22 ();
+│ 0xc0063f22      0185           ora (0x85,x)
+| // true: 0xc0063f24
+│ ; CODE XREF from sym.__qdsp_gesf2 @ 0xc0063eb0
+│ 0xc0063f24      c040           cpy #0x40
+└ 0xc0063f26      80             nop #0x68
+
+┌ 4: fcn.c047faf9 ();
+│ 0xc047faf9      c00a           cpy #0x0a
+│ 0xc047fafb      6a             ror a
+└ 0xc047fafc      02             hlt
+
+┌ 1: fcn.c04a3235 ();
+└ 0xc04a3235      40             rti
+
+┌ 5: sym.sin (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a50e0      e942           sbc #0x42
+│ 0xc04a50e2      00             brk
+│ 0xc04a50e3      00             brk
+└ 0xc04a50e4      40             rti
+
+┌ 4: fcn.c0066907 ();
+│ 0xc0066907      8cae7f         sty 0x7fae
+└ 0xc006690a      ff             isb 0x4d68,x
+
+  ;-- fabsl:
+┌ 8: floating_point sym.fabs (arithmetic x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00645e0      215f           and (0x5f,x)
+│ 0xc00645e2      c18c           cmp (0x8c,x)
+│ 0xc00645e4      00             brk
+│ 0xc00645e5      c09f           cpy #0x9f
+└ 0xc00645e7      52             hlt
+
+┌ 2: fcn.c047ee4e ();
+│ 0xc047ee4e      7d             invalid
+│ 0xc047ee4f      59             invalid
+| // true: 0xc047ee50
+  ;-- __hexagon_fixsfdi:
+┌ 3: sym.__qdsp_fixsfdi ();
+│ 0xc0062b50      103c           bpl 0xc0062b8e
+  false: 0xc0062b52
+└ 0xc0062b52      02             hlt
+
+┌ 5: fcn.c04a7a31 ();
+│ 0xc04a7a31      c002           cpy #0x02
+│ 0xc04a7a33      1018           bpl 0xc04a7a4d
+  false: 0xc04a7a35
+└ 0xc04a7a35      40             rti
+
+┌ 1: fcn.c0499bd5 ();
+└ 0xc0499bd5      40             rti
+
+┌ 3: sym.qurt_lookup_physaddr (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047fce4      1040           bpl 0xc047fd26
+  false: 0xc047fce6
+└ 0xc047fce6      60             rts
+
+  ; CODE XREF from sym.fopen @ +0x1d
+┌ 8: int sym.fprintf (FILE *stream, const char *format,   ...);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc049c530      1040           bpl 0xc049c572
+  false: 0xc049c532
+│ 0xc049c532      01f5           ora (0xf5,x)
+│ 0xc049c534      201cf4         jsr 0xf41c
+└ 0xc049c537      eb             sbc #0x68
+
+┌ 1: fcn.c04a4741 ();
+└ 0xc04a4741      40             rti
+
+┌ 5: fcn.c04a53c1 ();
+│ 0xc04a53c1      c021           cpy #0x21
+│ 0xc04a53c3      9102           sta (0x02),y
+└ 0xc04a53c5      40             rti
+
+┌ 2: sym._Getpwcostate ();
+│ 0xc04b395c      aa             tax
+└ 0xc04b395d      ff             isb 0x4d68,x
+
+┌ 8: long long sym.strtoull (const char *str, char * *endptr, int base);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5970      eee301         inc 0x01e3
+│ 0xc04a5973      58             cli
+│ 0xc04a5974      00             brk
+│ 0xc04a5975      c000           cpy #0x00
+└ 0xc04a5977      7f             rra 0x4d68,x
+
+┌ 6: long double sym.nanl (const char *str);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049ea20      d654           dec 0x54,x
+│ 0xc049ea22      090c           ora #0x0c
+│ 0xc049ea24      00             brk
+└ 0xc049ea25      c3             dcp (0x68,x)
+
+┌ 3: int sym.scanf (const char *format);
+│ 0xc04a4960      1040           bpl 0xc04a49a2
+  false: 0xc04a4962
+└ 0xc04a4962      60             rts
+
+┌ 4: char *sym.strtok (char *s1, const char *s2);
+│ 0xc04a57d0      2c5677         bit 0x7756
+└ 0xc04a57d3      5b             sre 0x4d68,y
+
+┌ 8: fcn.c04a56a1 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x101
+│ 0xc04a56a1      3000           bmi 0xc04a56a3
+| // true: 0xc04a56a3  false: 0xc04a56a3
+│ ; CODE XREF from fcn.c04a56a1 @ 0xc04a56a1
+│ 0xc04a56a3      28             plp
+│ 0xc04a56a4      0640           asl 0x40
+│ 0xc04a56a6      00             brk
+│ 0xc04a56a7      58             cli
+└ 0xc04a56a8      03             slo (0x68,x)
+
+┌ 1: fcn.c0064a51 ();
+└ 0xc0064a51      40             rti
+
+┌ 3: sym.strsep ();
+│ 0xc04a1810      1040           bpl 0xc04a1852
+  false: 0xc04a1812
+└ 0xc04a1812      60             rts
+
+┌ 12: int sym.iswxdigit (wint_t wc);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc049d020      b94500         lda 0x0045,y
+│ 0xc049d023      00             brk
+│ 0xc049d024      20cb01         jsr 0x01cb
+│ 0xc049d027      1600           asl 0x00,x
+│ 0xc049d029      c000           cpy #0x00
+└ 0xc049d02b      7f             rra 0x4d68,x
+
+┌ 6: sym.qurt_tls_delete_key (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc04800d8      9060           bcc 0xc048013a
+  false: 0xc04800da
+│ 0xc04800da      207320         jsr 0x2073
+└ 0xc04800dd      1c             nop 0x4d68,x
+
+┌ 3: sym.dadd_asm ();
+│ 0xc00652d0      0640           asl 0x40
+└ 0xc00652d2      62             hlt
+
+┌ 3: fcn.c0064531 ();
+│ 0xc0064531      41e0           eor (0xe0,x)
+└ 0xc0064533      eb             sbc #0x68
+
+  ; CODE XREF from sym.tmpfile @ +0x8e
+┌ 12: wint_t sym.towlower (wint_t wc);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc04a7210      0d4300         ora 0x0043
+│ 0xc04a7213      00             brk
+│ 0xc04a7214      20c101         jsr 0x01c1
+│ 0xc04a7217      1600           asl 0x00,x
+│ 0xc04a7219      c000           cpy #0x00
+└ 0xc04a721b      7f             rra 0x4d68,x
+
+┌ 3: fcn.c0137199 ();
+│ 0xc0137199      49e5           eor #0xe5
+└ 0xc013719b      5b             sre 0x4d68,y
+
+┌ 3: fcn.c0061241 ();
+│ 0xc0061241      c000           cpy #0x00
+└ 0xc0061243      92             hlt
+
+┌ 6: float sym.logbf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049e2c0      203c02         jsr 0x023c
+│ 0xc049e2c3      7040           bvs 0xc049e305
+  false: 0xc049e2c5
+└ 0xc049e2c5      40             rti
+
+┌ 4: sym.qurt_get_core_pcycles ();
+│ 0xc0060e2c      08             php
+│ 0xc0060e2d      c000           cpy #0x00
+└ 0xc0060e2f      54             nop 0x68,x
+
+  ;-- __qdsp_fixsfsi:
+┌ 3: sym.__hexagon_fixsfsi (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0062c70      103c           bpl 0xc0062cae
+  false: 0xc0062c72
+└ 0xc0062c72      02             hlt
+
+┌ 10: sym.HAP_power_request ();
+│ 0xc01374cc      a247           ldx #0x47
+│ 0xc01374ce      e55b           sbc 0x5b
+│ 0xc01374d0      05c0           ora 0xc0
+│ 0xc01374d2      9da010         sta 0x10a0,x
+└ 0xc01374d5      42             hlt
+
+┌ 5: fcn.c04a4fa5 ();
+│ 0xc04a4fa5      c09d           cpy #0x9d
+│ 0xc04a4fa7      a010           ldy #0x10
+└ 0xc04a4fa9      40             rti
+
+┌ 3: sym.__divdc3 ();
+│ 0xc04a1fb4      2672           rol 0x72
+└ 0xc04a1fb6      77             rra 0x68,x
+
+┌ 3: fcn.c0136f70 ();
+│ 0xc0136f70      e07f           cpx #0x7f
+└ 0xc0136f72      62             hlt
+
+┌ 3: sym.adsp_power_boost_off ();
+│ 0xc0137584      a47f           ldy 0x7f
+└ 0xc0137586      ff             isb 0x4d68,x
+
+┌ 1: fcn.c049b3b1 ();
+└ 0xc049b3b1      40             rti
+
+│ ; CODE XREF from sym.qurt_thread_set_priority @ 0xc0061854
+│ 0xc006181a      205c00         jsr 0x005c
+│ 0xc006181d      e1a0           sbc (0xa0,x)
+│ 0xc006181f      74             nop 0x68,x
+
+┌ 10: sym.qurt_thread_set_priority (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc0061854      10c4           bpl 0xc006181a
+| // true: 0xc006181a  false: 0xc0061856
+│ 0xc0061856      00             brk
+│ 0xc0061857      54             nop 0x68,x
+
+  ;-- __hexagon_fixunssfsi:
+┌ 3: sym.__qdsp_fixunssfsi ();
+│ 0xc0063260      103c           bpl 0xc006329e
+  false: 0xc0063262
+└ 0xc0063262      02             hlt
+
+┌ 1: fcn.c00658f1 ();
+└ 0xc00658f1      60             rts
+
+  ; CODE XREF from fcn.c049db75 @ +0x39
+┌ 1: fcn.c049db51 ();
+└ 0xc049db51      40             rti
+
+┌ 4: fcn.c0060e71 ();
+│ 0xc0060e71      c080           cpy #0x80
+│ 0xc0060e73      78             sei
+└ 0xc0060e74      02             hlt
+
+┌ 1: fcn.c04a47d1 ();
+└ 0xc04a47d1      40             rti
+
+┌ 5: fcn.c0499831 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x101
+│ 0xc0499831      4600           lsr 0x00
+│ 0xc0499833      00             brk
+│ 0xc0499834      08             php
+└ 0xc0499835      40             rti
+
+│ ;-- (0xc0066907) fcn.c0066907:
+┌ 1: fcn.c0066906 ();
+└ 0xc0066906  ~   c3             dcp (0x68,x)
+
+┌ 3: fcn.c0062052 ();
+│ 0xc0062052      618d           adc (0x8d,x)
+└ 0xc0062054      e3             isb (0x68,x)
+
+  ;-- __hexagon_memcpy_likely_aligned_min32bytes_mult8bytes:
+┌ 2: sym.__qdsp_memcpy_likely_aligned_min32bytes_mult8bytes (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060560      00             brk
+│ ; CODE XREF from sym.__restore_r27_through_r26_and_deallocframe_before_sibcall @ +0xf
+└ 0xc0060561      47             sre 0x68
+
+┌ 8: sym.qd_add (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00649b8      8c4400         sty 0x0044
+│ 0xc00649bb      58             cli
+│ 0xc00649bc      00             brk
+│ 0xc00649bd      c000           cpy #0x00
+└ 0xc00649bf  ~   7f             rra 0x4d68,x
+
+┌ 1: fcn.c049dd51 ();
+└ 0xc049dd51      40             rti
+
+  ;-- __qdsp_fast_gtdf2:
+  ; CODE XREF from sym.__qdsp_fast_ltdf2 @ +0x4d
+┌ 3: sym.__hexagon_fast_gtdf2 ();
+│ 0xc0064b28      705c           bvs 0xc0064b86
+  false: 0xc0064b2a
+└ 0xc0064b2a      ff             isb 0x4d68,x
+
+┌ 3: fcn.c0480481 ();
+│ 0xc0480481      4140           eor (0x40,x)
+└ 0xc0480483      3c             nop 0x4d68,x
+
+┌ 3: sym._Wcsxfrmx ();
+│ 0xc04a7900      9445           sty 0x45,x
+└ 0xc04a7902      77             rra 0x68,x
+
+┌ 3: fcn.c0061875 ();
+│ 0xc0061875      c500           cmp 0x00
+└ 0xc0061877      54             nop 0x68,x
+
+┌ 1: fcn.c0480e61 ();
+└ 0xc0480e61      40             rti
+
+  ; CODE XREF from sym.printf @ +0x1e
+┌ 3: int sym.puts (const char *s);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0300      1040           bpl 0xc04a0342
+  false: 0xc04a0302
+└ 0xc04a0302      60             rts
+
+┌ 8: sym.__restore_r16_through_r17_and_deallocframe ();
+│ 0xc0060498      f07f           beq 0xc0060519                        ; sym.__restore_r27_through_r20_and_deallocframe+0x1
+  false: 0xc006049a
+│ 0xc006049a      de971e         dec 0x1e97,x
+│ 0xc006049d      c01e           cpy #0x1e
+│ 0xc006049f      96             invalid
+| // true: 0xc00604a0
+┌ 7: int sym.vwscanf (const wchar_t *format, va_list arg);
+│ 0xc04a7620      1040           bpl 0xc04a7662
+  false: 0xc04a7622
+│ 0xc04a7622      01f5           ora (0xf5,x)
+│ 0xc04a7624      101c           bpl 0xc04a7642
+  false: 0xc04a7626
+└ 0xc04a7626      f4             nop 0x68,x
+
+┌ 6: sym.fast2_ldrecipsqrt ();
+│ 0xc00661c0      0140           ora (0x40,x)
+│ 0xc00661c2      1db0fc         ora 0xfcb0,x
+└ 0xc00661c5      47             sre 0x68
+
+  ; CODE XREF from fcn.c04994f5 @ +0xc8
+┌ 6: float sym.atanhf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04995d0      203c01         jsr 0x013c
+│ 0xc04995d3      701e           bvs 0xc04995f3
+  false: 0xc04995d5
+└ 0xc04995d5      7c             nop 0x4d68,x
+
+┌ 1: fcn.c0063081 ();
+└ 0xc0063081      40             rti
+
+┌ 1: fcn.c00649d5 ();
+└ 0xc00649d5      40             rti
+
+┌ 3: sym._Get_eh_data ();
+│ 0xc04a32e0      a468           ldy 0x68
+└ 0xc04a32e2      77             rra 0x68,x
+
+┌ 3: fcn.c04b3b92 ();
+│ 0xc04b3b92      755b           adc 0x5b,x
+└ 0xc04b3b94      04             nop 0x68
+
+┌ 16: tm*sym.gmtime (const time_t *timer);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049cbe0      08             php
+│ 0xc049cbe1      3d0228         and 0x2802,x
+│ 0xc049cbe4      1e7502         asl 0x0275,x
+│ 0xc049cbe7      58             cli
+│ ; CODE XREF from fcn.c049ca35 @ +0x141
+│ 0xc049cbe8      01c0           ora (0xc0,x)
+│ ; CODE XREF from sym.getenv @ +0x36
+│ 0xc049cbea      8191           sta (0x91,x)
+│ 0xc049cbec      00             brk
+│ 0xc049cbed      c000           cpy #0x00
+└ 0xc049cbef  ~   7f             rra 0x4d68,x
+
+  ; CODE XREF from sym.sqrt @ +0x3d
+┌ 8: float sym.sqrtf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5260      00             brk
+│ 0xc04a5261      4ee085         lsr 0x85e0
+│ 0xc04a5264      cc6ffb         cpy 0xfb6f
+└ 0xc04a5267      0f             slo 0x4d68
+
+  ; CODE XREF from fcn.c00649f4 @ +0x12
+┌ 5: sym.qd_self_sub_dd ();
+│ 0xc0064a30      c040           cpy #0x40
+│ 0xc0064a32      e080           cpx #0x80
+└ 0xc0064a34      c2             nop #0x68
+
+┌ 1: fcn.c0063401 ();
+└ 0xc0063401      40             rti
+
+┌ 6: sym.qurt_pipe_try_receive (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047f0c0      1041           bpl 0xc047f103
+  false: 0xc047f0c2
+│ 0xc047f0c2      00             brk
+│ 0xc047f0c3      f520           sbc 0x20,x
+└ 0xc047f0c5      1c             nop 0x4d68,x
+
+┌ 5: sym.cos (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0499fd0      ad4500         lda 0x0045
+│ 0xc0499fd3      00             brk
+└ 0xc0499fd4      60             rts
+
+┌ 1: fcn.c04a7231 ();
+└ 0xc04a7231      40             rti
+
+┌ 4: fcn.c04a1ea2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a1ea2      00             brk
+│ 0xc04a1ea3      76e2           ror 0xe2,x
+└ 0xc04a1ea5      c3             dcp (0x68,x)
+
+┌ 1: fcn.c0063b01 ();
+└ 0xc0063b01      40             rti
+
+┌ 2: sym.l64a ();
+│ 0xc04a0d14      28             plp
+└ 0xc04a0d15      40             rti
+
+┌ 6: sym.__restore_r27_through_r22_and_deallocframe ();
+│ 0xc0060540      b67f           ldx 0x7f,y
+│ 0xc0060542      de97d8         dec 0xd897,x
+└ 0xc0060545      ff             isb 0x4d68,x
+
+┌ 2: fcn.c0061d52 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061d52      00             brk
+└ 0xc0061d53      5c             nop 0x4d68,x
+
+┌ 10: sym.HAP_power_get_max_speed ();
+│ 0xc013729c      c648           dec 0x48
+│ 0xc013729e      e55b           sbc 0x5b
+│ 0xc01372a0      08             php
+│ 0xc01372a1      c09d           cpy #0x9d
+│ 0xc01372a3      a0f0           ldy #0xf0
+└ 0xc01372a5      7f             rra 0x4d68,x
+
+┌ 3: sym.qurt_pipe_init ();
+└ 0xc047ee50      ec4a7c         cpx 0x7c4a
+
+┌ 6: sym.isascii (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0c90      01d0           ora (0xd0,x)
+│ 0xc04a0c92      00             brk
+│ 0xc04a0c93      78             sei
+│ 0xc04a0c94      00             brk
+└ 0xc04a0c95      40             rti
+
+┌ 4: sym.qurt_cond_signal ();
+│ 0xc0060f80      06c1           asl 0xc1
+└ 0xc0060f82      0116           ora (0x16,x)
+
+┌ 1: fcn.c0064631 ();
+└ 0xc0064631      40             rti
+
+┌ 2: sym.qurt_timer_attr_set_type ();
+│ 0xc0498238      ba             tsx
+└ 0xc0498239      7a             nop
+
+┌ 6: fcn.c04a4162 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a4162      d559           cmp 0x59,x
+│ 0xc04a4164      00             brk
+│ 0xc04a4165      c000           cpy #0x00
+└ 0xc04a4167      7f             rra 0x4d68,x
+
+┌ 5: fcn.c0136fb5 ();
+│ 0xc0136fb5      4123           eor (0x23,x)
+│ 0xc0136fb7      f1f0           sbc (0xf0),y
+└ 0xc0136fb9      7f             rra 0x4d68,x
+
+┌ 6: sym.adsp_pls_add_lookup ();
+│ 0xc0137e00      01c0           ora (0xc0,x)
+│ 0xc0137e02      9da048         sta 0x48a0,x
+└ 0xc0137e05      7f             rra 0x4d68,x
+
+┌ 1: fcn.c0480e21 ();
+└ 0xc0480e21      40             rti
+
+┌ 3: wint_t sym.fputwc (wchar_t c, FILE *stream);
+└ 0xc049c730      6c5e78         jmp (0x785e)
+
+┌ 1: fcn.c04802d5 ();
+└ 0xc04802d5      40             rti
+
+┌ 3: sym.qurt_elite_channel_add_signal ();
+│ 0xc0122bf0      1040           bpl 0xc0122c32
+  false: 0xc0122bf2
+└ 0xc0122bf2      02             hlt
+
+┌ 3: fcn.c0061685 ();
+│ 0xc0061685      d000           bne 0xc0061687
+| // true: 0xc0061687  false: 0xc0061687
+│ ; CODE XREF from fcn.c0061685 @ 0xc0061685
+└ 0xc0061687      92             hlt
+
+┌ 3: fcn.c0061381 ();
+│ 0xc0061381      c000           cpy #0x00
+└ 0xc0061383      92             hlt
+
+┌ 5: fcn.c04a1c53 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a1c53      5900c0         eor 0xc000,y
+│ 0xc04a1c56      00             brk
+└ 0xc04a1c57      7f             rra 0x4d68,x
+
+┌ 4: sym.__save_r16_through_r21 ();
+│ 0xc0060428      fd74de         sbc 0xde74,x
+└ 0xc006042b      a7             lax 0x68
+
+┌ 7: floating_point sym.sqrt (arithmetic x);
+│ 0xc04a5210      1040           bpl 0xc04a5252
+  false: 0xc04a5212
+│ 0xc04a5212      01f5           ora (0xf5,x)
+│ 0xc04a5214      301c           bmi 0xc04a5232
+  false: 0xc04a5216
+└ 0xc04a5216      f4             nop 0x68,x
+
+┌ 1: fcn.c04a4361 ();
+└ 0xc04a4361      60             rts
+
+┌ 4: floating_point sym.asinh (arithmetic x);
+│ 0xc0498cc0      a47b           ldy 0x7b
+│ 0xc0498cc2      78             sei
+└ 0xc0498cc3      5b             sre 0x4d68,y
+
+┌ 6: sym.fast2_dadd ();
+│ 0xc00656f0      0e40e0         asl 0xe040
+│ 0xc00656f3      7000           bvs 0xc00656f5
+| // true: 0xc00656f5  false: 0xc00656f5
+│ ; CODE XREF from sym.fast2_dadd @ 0xc00656f3
+└ 0xc00656f5      7c             nop 0x4d68,x
+
+┌ 5: fcn.c049d032 ();
+│ 0xc049d032      015a           ora (0x5a,x)
+│ 0xc049d034      1040           bpl 0xc049d076
+  false: 0xc049d036
+└ 0xc049d036      60             rts
+
+┌ 1: fcn.c049de41 ();
+└ 0xc049de41      40             rti
+
+  ;-- __hexagon_umoddi3:
+┌ 3: sym.__qdsp_umoddi3 ();
+│ 0xc0064490      4640           lsr 0x40
+└ 0xc0064492      40             rti
+
+┌ 2: fcn.c04810e4 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04810e4      00             brk
+└ 0xc04810e5      3c             nop 0x4d68,x
+
+┌ 3: sym.strptime (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0f60      507a           bvc 0xc04a0fdc
+  false: 0xc04a0f62
+└ 0xc04a0f62      77             rra 0x68,x
+
+┌ 6: int sym.iswalpha (wint_t wc);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049cf70      bc4500         ldy 0x0045,x
+│ 0xc049cf73      00             brk
+│ 0xc049cf74      00             brk
+└ 0xc049cf75      c2             nop #0x68
+
+┌ 4: sym._Getptolower ();
+│ 0xc04b3488      ac7fff         ldy 0xff7f
+└ 0xc04b348b      5b             sre 0x4d68,y
+
+┌ 1: fcn.c00a0121 ();
+└ 0xc00a0121      40             rti
+
+┌ 1: fcn.c04a48f1 ();
+└ 0xc04a48f1      40             rti
+
+┌ 4: int sym.strcoll (const char *s1, const char *s2);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a54f4      2655           rol 0x55
+│ 0xc04a54f6      00             brk
+└ 0xc04a54f7      5a             nop
+
+┌ 2: fcn.c0061df2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061df2      00             brk
+└ 0xc0061df3      5c             nop 0x4d68,x
+
+┌ 8: wint_t sym.ungetwc (wint_t c, FILE *stream);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a7310      f07f           beq 0xc04a7391
+  false: 0xc04a7312
+│ 0xc04a7312      2173           and (0x73,x)
+│ 0xc04a7314      201cf4         jsr 0xf41c
+└ 0xc04a7317      eb             sbc #0x68
+
+┌ 4: sym.HAP_power_request_abs ();
+│ 0xc01373b4      2e48e5         rol 0xe548
+└ 0xc01373b7      5b             sre 0x4d68,y
+
+  ; CODE XREF from sym.ldexpf @ +0x22
+┌ 3: long double sym.ldexpl (long double value, int exp);
+│ 0xc049d100      1040           bpl 0xc049d142
+  false: 0xc049d102
+└ 0xc049d102      62             hlt
+
+┌ 10: sym._Stoldx ();
+│ 0xc04b18a0      b475           ldy 0x75,x
+│ 0xc04b18a2      755b           adc 0x5b,x
+│ 0xc04b18a4      08             php
+│ 0xc04b18a5      c09d           cpy #0x9d
+│ 0xc04b18a7      a080           ldy #0x80
+└ 0xc04b18a9      43             sre (0x68,x)
+
+┌ 15: int sym.snprintf (char *s, size_t size, const char *format,  ...);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5140      e47f           cpx 0x7f
+│ 0xc04a5142      e1bf           sbc (0xbf,x)
+│ 0xc04a5144      203c10         jsr 0x103c
+│ 0xc04a5147      790640         adc 0x4006,y
+│ 0xc04a514a      00             brk
+│ 0xc04a514b      7e0640         ror 0x4006,x
+└ 0xc04a514e      80             nop #0x68
+
+┌ 2: sym.__restore_r27_through_r18_and_deallocframe (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060534      00             brk
+│ ; CODE XREF from fcn.c0060521 @ +0x12
+└ 0xc0060535      40             rti
+
+┌ 5: fcn.c04a7531 ();
+│ 0xc04a7531      4102           eor (0x02,x)
+│ 0xc04a7533      f510           sbc 0x10,x
+└ 0xc04a7535      40             rti
+
+┌ 6: sym.__restore_r27_through_r20_and_deallocframe ();
+│ 0xc0060518      947f           sty 0x7f,x
+│ 0xc006051a      de97b6         dec 0xb697,x
+└ 0xc006051d      ff             isb 0x4d68,x
+
+┌ 1: fcn.c04a5311 ();
+└ 0xc04a5311      40             rti
+
+┌ 4: sym.qurt_sem_down (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060ed0      24c0           bit 0xc0
+│ 0xc0060ed2      00             brk
+└ 0xc0060ed3      7c             nop 0x4d68,x
+
+┌ 5: sym.HAP_perf_get_pcycles ();
+│ 0xc04f74e8      a2cc           ldx #0xcc
+└ 0xc04f74ea  ~   6d59c0         adc 0xc059
+┌ 4: sym.HAP_get_chip_family_id (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x101
+│ 0xc04f74ec      c0             invalid
+
+┌ 1: fcn.c0060521 ();
+└ 0xc0060521      40             rti
+
+┌ 4: sym.fast2_drecip ();
+│ 0xc0065bd0      2c54ff         bit 0xff54
+└ 0xc0065bd3      5b             sre 0x4d68,y
+
+┌ 1: fcn.c0063c21 ();
+└ 0xc0063c21      40             rti
+
+┌ 3: fcn.c0061885 ();
+│ 0xc0061885      c500           cmp 0x00
+└ 0xc0061887      54             nop 0x68,x
+
+┌ 2: int sym.getpid ();
+│ 0xc04a0c40      a8             tay
+└ 0xc04a0c41      f4             nop 0x68,x
+
+┌ 1: fcn.c0481065 ();
+└ 0xc0481065      40             rti
+
+│ ;-- (0xc00626b4) fcn.c00626b4:
+┌ 1: fcn.c00626b3 ();
+└ 0xc00626b3  ~   0f             slo 0x4d68
+
+┌ 1: fcn.c04802c1 ();
+└ 0xc04802c1      40             rti
+
+┌ 2: sym.__restore_r27_through_r22_and_deallocframe_before_sibcall (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00604f0      00             brk
+└ 0xc00604f1      40             rti
+
+┌ 2: sym.qurt_sem_destroy (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0480470      00             brk
+└ 0xc0480471      40             rti
+
+┌ 8: sym.__registerx (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a3440      1040           bpl 0xc04a3482
+  false: 0xc04a3442
+│ 0xc04a3442      01f5           ora (0xf5,x)
+│ 0xc04a3444      201cf4         jsr 0xf41c
+└ 0xc04a3447      eb             sbc #0x68
+
+┌ 3: sym.qurt_thread_set_prefetch ();
+│ 0xc0060e0c      0130           ora (0x30,x)
+└ 0xc0060e0e      40             rti
+
+┌ 1: fcn.c0063f91 ();
+└ 0xc0063f91      40             rti
+
+┌ 3: sym.qd_lt_qd ();
+│ 0xc0064880      c040           cpy #0x40
+└ 0xc0064882      e2             nop #0x68
+
+┌ 4: long double sym.tanhl (long double x);
+│ 0xc04a63f0      08             php
+│ 0xc04a63f1      5077           bvc 0xc04a646a
+  false: 0xc04a63f3
+└ 0xc04a63f3      5b             sre 0x4d68,y
+
+┌ 1: fcn.c0480e01 ();
+└ 0xc0480e01      40             rti
+
+┌ 1: sym.qurt_mapping_remove ();
+└ 0xc047fcb0      40             rti
+
+┌ 2: sym.fast2_ldmpy ();
+│ 0xc0065fb0      08             php
+└ 0xc0065fb1      40             rti
+
+┌ 12: sym.operator_delete_void_ (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04bd6b0      0640           asl 0x40                              ; operator delete(void*)
+│ 0xc04bd6b2      00             brk
+│ 0xc04bd6b3      1000           bpl 0xc04bd6b5
+| // true: 0xc04bd6b5  false: 0xc04bd6b5
+│ ; CODE XREF from operator delete(void*) @ 0xc04bd6b3
+│ 0xc04bd6b5      c09d           cpy #0x9d
+│ 0xc04bd6b7      a024           ldy #0x24
+│ 0xc04bd6b9      c476           cpy 0x76
+└ 0xc04bd6bb      5b             sre 0x4d68,y
+
+┌ 2: int sym.iswctype (wint_t wc, wctype_t desc);
+│ 0xc049cfa0      68             pla
+└ 0xc049cfa1      f7             isb 0x68,x
+
+┌ 5: int sym.iswspace (wint_t wc);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049d000      b94500         lda 0x0045,y
+│ 0xc049d003      00             brk
+└ 0xc049d004      60             rts
+
+┌ 8: sym.__builtinfunction_bitrev_update1_for_store (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0062310      9040           bcc 0xc0062352
+  false: 0xc0062312
+│ 0xc0062312      00             brk
+│ 0xc0062313      6902           adc #0x02
+│ 0xc0062315      e000           cpx #0x00
+└ 0xc0062317      73             rra (0x68),y
+
+┌ 3: float sym.copysignf (float x, float y);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0499f70      10             invalid
+| // true: 0xc0499f71
+│ ; CODE XREF from sym.closedir @ 0xc0499ef0
+└ 0xc0499f71      30             invalid
+  false: 0xc0499f72
+└ 0xc0499f72      02             hlt
+
+┌ 8: sym.qurt_timer_stop (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0498030      be76fc         ldx 0xfc76,y
+│ 0xc0498033      59226a         eor 0x6a22,y
+│ 0xc0498036      00             brk
+└ 0xc0498037      73             rra (0x68),y
+
+┌ 7: sym.alarm_handler (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a0770      204000         jsr 0x0040
+│ 0xc04a0773      78             sei
+│ 0xc04a0774      101c           bpl 0xc04a0792
+  false: 0xc04a0776
+└ 0xc04a0776      f4             nop 0x68,x
+
+┌ 2: sym.qurt_timer_attr_set_group ();
+│ 0xc0498274      ba             tsx
+└ 0xc0498275      7a             nop
+
+┌ 4: size_t sym.fread (void *ptr, size_t size, size_t nmemb, FILE *stream);
+│ 0xc049c830      ec5d78         cpx 0x785d
+└ 0xc049c833      5b             sre 0x4d68,y
+
+┌ 1: fcn.c04a5b81 ();
+└ 0xc04a5b81      40             rti
+
+┌ 2: int sym.strcmp (const char *s1, const char *s2);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a1d40      00             brk
+└ 0xc04a1d41      47             sre 0x68
+
+┌ 7: int sym.toupper (int c);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a71e0      b461           ldy 0x61,x
+│ 0xc04a71e2      01             invalid
+| // true: 0xc04a71e3
+│ ; CODE XREF from sym.towctrans @ 0xc04a7200
+│ 0xc04a71e3      5a             nop
+│ 0xc04a71e4      1040           bpl 0xc04a7226
+  false: 0xc04a71e6
+└ 0xc04a71e6      60             rts
+
+  ;-- __hexagon_gesf2:
+┌ 3: sym.__qdsp_gesf2 ();
+│ 0xc0063eb0      f072           beq 0xc0063f24                        ; fcn.c0063f22+0x2
+  false: 0xc0063eb2
+└ 0xc0063eb2      ff             isb 0x4d68,x
+
+┌ 3: sym.atexit ();
+│ 0xc049af10      1040           bpl 0xc049af52
+  false: 0xc049af12
+└ 0xc049af12      60             rts
+
+┌ 18: fcn.c04f7339 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04f7339      48             pha
+│ 0xc04f733a      6d5b08         adc 0x085b
+│ 0xc04f733d      c09d           cpy #0x9d
+│ 0xc04f733f      a0d9           ldy #0xd9
+│ 0xc04f7341      59100c         eor 0x0c10,y
+│ 0xc04f7344      1546           ora 0x46,x
+│ 0xc04f7346      00             brk
+│ 0xc04f7347      78             sei
+│ 0xc04f7348      1041           bpl 0xc04f738b
+  false: 0xc04f734a
+└ 0xc04f734a      02             hlt
+
+┌ 9: fcn.c04a69e1 ();
+│ 0xc04a69e1      4d775b         eor 0x5b77
+│ 0xc04a69e4      09c0           ora #0xc0
+│ 0xc04a69e6      9da010         sta 0x10a0,x
+└ 0xc04a69e9      40             rti
+
+┌ 8: fcn.c049a012 (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc049a012      00             brk
+│ 0xc049a013      00             brk
+│ 0xc049a014      204002         jsr 0x0240
+│ 0xc049a017      1600           asl 0x00,x
+└ 0xc049a019      40             rti
+
+┌ 4: fcn.c00649d1 ();
+│ 0xc00649d1      c400           cpy 0x00
+│ 0xc00649d3      58             cli
+│ ;-- qd_sub_qd:
+└ 0xc00649d4  ~   c2             nop #0x68
+
+┌ 3: int sym.ilogbf (float x);
+│ 0xc049cd00      103c           bpl 0xc049cd3e
+  false: 0xc049cd02
+└ 0xc049cd02      02             hlt
+
+┌ 3: fcn.c049e3d2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049e3d2      00             brk
+│ 0xc049e3d3      00             brk
+└ 0xc049e3d4      40             rti
+
+┌ 3: fcn.c006200a ();
+│ 0xc006200a      618d           adc (0x8d,x)
+└ 0xc006200c      e3             isb (0x68,x)
+
+┌ 3: fcn.c0499ff2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0499ff2      00             brk
+│ 0xc0499ff3      00             brk
+└ 0xc0499ff4      60             rts
+
+┌ 4: fcn.c049a032 ();
+│ 0xc049a032      795b10         adc 0x105b,y
+└ 0xc049a035      40             rti
+
+┌ 3: fcn.c04a55d2 ();
+│ 0xc04a55d2      e0bf           cpx #0xbf
+└ 0xc04a55d4      34             nop 0x68,x
+
+┌ 3: fcn.c013f562 ();
+│ 0xc013f562      e45b           cpx 0x5b
+└ 0xc013f564      04             nop 0x68
+
+┌ 1: fcn.c049c941 ();
+└ 0xc049c941      40             rti
+
+┌ 8: wint_t sym.towctrans (wint_t wc, wctrans_t desc);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a7200      b0e1           bcs 0xc04a71e3                        ; sym.toupper+0x3
+| // true: 0xc04a71e3  false: 0xc04a7202
+│ 0xc04a7202      0158           ora (0x58,x)
+│ 0xc04a7204      00             brk
+│ 0xc04a7205      c000           cpy #0x00
+└ 0xc04a7207      7f             rra 0x4d68,x
+
+  ; CODE XREF from fcn.c0061ca6 @ +0x9
+┌ 2: sym.__builtin_pseudo_barrier (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061c94      00             brk
+└ 0xc0061c95      40             rti
+
+┌ 1: fcn.c049e471 ();
+└ 0xc049e471      40             rti
+
+┌ 2: fcn.c00649f4 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00649f4      00             brk
+└ 0xc00649f5      7c             nop 0x4d68,x
+
+┌ 4: sym._Getpctype ();
+│ 0xc04a8098      ac7fff         ldy 0xff7f
+└ 0xc04a809b      5b             sre 0x4d68,y
+
+┌ 5: long double sym.tanl (long double x);
+│ 0xc04a6770      48             pha
+│ 0xc04a6771      4e775b         lsr 0x5b77
+└ 0xc04a6774      02             hlt
+
+┌ 1: fcn.c0065e01 ();
+└ 0xc0065e01      40             rti
+
+┌ 5: fcn.c04810c3 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04810c3      5900e0         eor 0xe000,y
+│ 0xc04810c6      00             brk
+└ 0xc04810c7  ~   73             rra (0x68),y
+
+┌ 1: fcn.c0063d21 ();
+└ 0xc0063d21      40             rti
+
+┌ 1: fcn.c04994f5 ();
+└ 0xc04994f5      40             rti
+
+┌ 2: sym.__save_r24_through_r25 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00603c4      00             brk
+└ 0xc00603c5      40             rti
+
+  ; CODE XREF from fcn.c049c3e1 @ +0x21
+┌ 1: fcn.c049c3e1 ();
+└ 0xc049c3e1      40             rti
+
+┌ 5: sym.qurt_thread_context_get_pname (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0480f40      1042           bpl 0xc0480f84
+  false: 0xc0480f42
+│ 0xc0480f42      01f5           ora (0xf5,x)
+└ 0xc0480f44      03             slo (0x68,x)
+
+┌ 3: sym.__divsc3 ();
+│ 0xc04a20a4      0643           asl 0x43
+└ 0xc04a20a6      43             sre (0x68,x)
+
+┌ 10: sym.__deregister_frame_info_bases ();
+│ 0xc04a34e0      1e4000         asl 0x0040,x
+│ 0xc04a34e3      1000           bpl 0xc04a34e5
+| // true: 0xc04a34e5  false: 0xc04a34e5
+│ ; CODE XREF from sym.__deregister_frame_info_bases @ 0xc04a34e3
+│ 0xc04a34e5      c09d           cpy #0x9d
+│ 0xc04a34e7      a001           ldy #0x01
+└ 0xc04a34e9      40             rti
+
+│ ; CODE XREF from fcn.c0498289 @ 0xc049828b
+│ 0xc0498247      7f             rra 0x4d68,x
+
+┌ 6: fcn.c0498289 ();
+│ 0xc0498289      c000           cpy #0x00
+│ 0xc049828b      10ba           bpl 0xc0498247
+| // true: 0xc0498247  false: 0xc049828d
+│ 0xc049828d      7a             nop
+
+  ;-- __hexagon_fast_ltdf2:
+┌ 3: sym.__qdsp_fast_ltdf2 ();
+│ 0xc0064ac8      a05c           ldy #0x5c
+└ 0xc0064aca      ff             isb 0x4d68,x
+
+┌ 1: fcn.c0062791 ();
+└ 0xc0062791      40             rti
+
+┌ 2: sym.qurt_thread_join (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047f9e8      00             brk
+└ 0xc047f9e9      60             rts
+
+┌ 1: fcn.c049b011 ();
+└ 0xc049b011      40             rti
+
+│ ; CODE XREF from sym.acosf @ 0xc04984b3
+│ 0xc0498463      f500           sbc 0x00,x
+│ 0xc0498465      40             rti
+
+┌ 9: float sym.acosf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04984b0      203c01         jsr 0x013c
+│ 0xc04984b3      70ae           bvs 0xc0498463
+| // true: 0xc0498463  false: 0xc04984b5
+│ 0xc04984b5      44             nop 0x68
+
+┌ 1: fcn.c00649b1 ();
+└ 0xc00649b1      40             rti
+
+┌ 1: fcn.c049eac1 ();
+└ 0xc049eac1      40             rti
+
+┌ 8: sym.__builtinfunction_bitrev_update2_for_load (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0062248      9040           bcc 0xc006228a
+  false: 0xc006224a
+│ 0xc006224a      00             brk
+│ 0xc006224b      6902           adc #0x02
+│ 0xc006224d      e000           cpx #0x00
+└ 0xc006224f      73             rra (0x68),y
+
+┌ 4: sym.__save_r27_through_r24 ();
+│ 0xc00604c0      fef8de         inc 0xdef8,x
+└ 0xc00604c3      a7             lax 0x68
+
+  ;-- __hexagon_floatundidf:
+┌ 1: sym.__qdsp_floatundidf ();
+└ 0xc0063b00      02             hlt
+
+┌ 4: float sym.fminf (float x, float y);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc0064620      204180         jsr 0x8041
+└ 0xc0064623      eb             sbc #0x68
+
+┌ 4: fcn.c04a1eea (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a1eea      00             brk
+│ 0xc04a1eeb      76e2           ror 0xe2,x
+└ 0xc04a1eed      c3             dcp (0x68,x)
+
+┌ 5: fcn.c04a7581 ();
+│ 0xc04a7581      4102           eor (0x02,x)
+│ 0xc04a7583      f510           sbc 0x10,x
+└ 0xc04a7585      3c             nop 0x4d68,x
+
+┌ 5: sym.a64l (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0710      0140           ora (0x40,x)
+│ 0xc04a0712      00             brk
+│ 0xc04a0713      78             sei
+└ 0xc04a0714      02             hlt
+
+┌ 8: sym.qd_self_increment (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00649a8      9444           sty 0x44,x
+│ 0xc00649aa      00             brk
+│ 0xc00649ab      58             cli
+│ 0xc00649ac      00             brk
+│ 0xc00649ad      c000           cpy #0x00
+└ 0xc00649af  ~   7f             rra 0x4d68,x
+
+┌ 2: sym.memccpy (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0d70      00             brk
+└ 0xc04a0d71      3c             nop 0x4d68,x
+
+┌ 13: float sym.exp2f (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049b160      103c           bpl 0xc049b19e
+  false: 0xc049b162
+│ 0xc049b162      0170           ora (0x70,x)
+│ 0xc049b164      566e           lsr 0x6e,x
+│ 0xc049b166      015a           ora (0x5a,x)
+│ 0xc049b168      1128           ora (0x28),y
+│ 0xc049b16a      106c           bpl 0xc049b1d8
+  false: 0xc049b16c
+│ ; CODE XREF from fcn.c049b011 @ +0xe5
+└ 0xc049b16c      72             hlt
+
+┌ 1: fcn.c0060fb9 ();
+└ 0xc0060fb9      40             rti
+
+  ;-- __qdsp_divsf3:
+  ;-- __hexagon_divsf3:
+│ ;-- (0xc0064531) fcn.c0064531:
+┌ 1: sym.__hexagon_fast2_divsf3 ();
+└ 0xc0064530  ~   82             nop #0x68
+
+┌ 1: fcn.c0062f71 ();
+└ 0xc0062f71      40             rti
+
+┌ 3: char *sym.strrchr (const char *s, int c);
+│ 0xc04a56e0      1137           ora (0x37),y
+└ 0xc04a56e2      02             hlt
+
+┌ 3: sym.memcpy_v ();
+│ 0xc00608a0      0140           ora (0x40,x)
+└ 0xc00608a2      02             hlt
+
+  ;-- __qdsp_addsf3:
+┌ 7: sym.__hexagon_addsf3 ();
+│ 0xc0061a50      1140           ora (0x40),y
+│ 0xc0061a52      6170           adc (0x70,x)
+│ 0xc0061a54      1040           bpl 0xc0061a96
+  false: 0xc0061a56
+└ 0xc0061a56      60             rts
+
+┌ 4: sym._Stolx ();
+│ 0xc04b17d0      2c7675         bit 0x7576
+│ ; CODE XREF from sym._Stolx @ +0xf
+└ 0xc04b17d3      5b             sre 0x4d68,y
+
+┌ 5: fcn.c04a3525 ();
+│ 0xc04a3525      c102           cmp (0x02,x)
+│ 0xc04a3527      f56c           sbc 0x6c,x
+└ 0xc04a3529      67             rra 0x68
+
+┌ 3: sym.qurt_api_version ();
+│ 0xc047fb0c      c03f           cpy #0x3f
+└ 0xc047fb0e      60             rts
+
+┌ 4: sym.sysconf (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a1930      c03f           cpy #0x3f
+│ 0xc04a1932      00             brk
+└ 0xc04a1933      5a             nop
+
+┌ 5: int sym.iswlower (wint_t wc);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049cfd0      ba             tsx
+│ 0xc049cfd1      4500           eor 0x00
+│ 0xc049cfd3      00             brk
+└ 0xc049cfd4      40             rti
+
+  ;-- __qdsp_ltsf2:
+┌ 3: sym.__hexagon_ltsf2 ();
+│ 0xc0063f10      967f           stx 0x7f,y
+└ 0xc0063f12      ff             isb 0x4d68,x
+
+│ ;-- (0xc0066906) fcn.c0066906:
+┌ 1: fcn.c0066905 ();
+└ 0xc0066905  ~   5f             sre 0x4d68,x
+
+┌ 3: sym._Stod ();
+│ 0xc04b1354      36c0           rol 0xc0,x
+└ 0xc04b1356      33             rla (0x68),y
+
+┌ 3: sym._Atexit ();
+│ 0xc04a7dc0      1040           bpl 0xc04a7e02
+  false: 0xc04a7dc2
+└ 0xc04a7dc2      60             rts
+
+┌ 2: sym._Getptimes ();
+│ 0xc0498a2c      aa             tax
+└ 0xc0498a2d      ff             isb 0x4d68,x
+
+┌ 5: float sym.erff (float x);
+│ 0xc049a990      303c           bmi 0xc049a9ce
+  false: 0xc049a992
+│ 0xc049a992      0170           ora (0x70,x)
+└ 0xc049a994      80             nop #0x68
+
+┌ 5: fcn.c049cea2 ();
+│ 0xc049cea2      015a           ora (0x5a,x)
+│ 0xc049cea4      1040           bpl 0xc049cee6                        ; fcn.c049cee2+0x4
+  false: 0xc049cea6
+│ ; CODE XREF from fcn.c049ce61 @ 0xc049ce64
+└ 0xc049cea6      60             rts
+
+  ;-- __hexagon_cmpsf2:
+┌ 3: sym.__qdsp_cmpsf2 ();
+│ 0xc0062588      84c1           sty 0xc1
+└ 0xc006258a      32             hlt
+
+  ;-- __hexagon_negdf2:
+┌ 2: sym.__qdsp_negdf2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00641c0      00             brk
+└ 0xc00641c1      40             rti
+
+┌ 2: sym._Getpwcstate ();
+│ 0xc04b3a0c      aa             tax
+└ 0xc04b3a0d      ff             isb 0x4d68,x
+
+┌ 1: fcn.c0060b81 ();
+└ 0xc0060b81      40             rti
+
+┌ 2: sym.HAP_cx_malloc (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04f730c      00             brk
+└ 0xc04f730d      40             rti
+
+  ;-- __hexagon_fast2_adddf3:
+  ;-- __hexagon_fast_adddf3:
+  ;-- __hexagon_adddf3:
+┌ 7: sym.__qdsp_adddf3 ();
+│ 0xc0066860      844b           sty 0x4b
+│ 0xc0066862      418d           eor (0x8d,x)
+│ 0xc0066864      854b           sta 0x4b
+└ 0xc0066866      43             sre (0x68,x)
+
+┌ 4: int sym.isspace (int c);
+│ 0xc049cf20      bc5801         ldy 0x0158,x
+└ 0xc049cf23      5a             nop
+
+┌ 6: sym.qurt_tls_create_key (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047fff0      1041           bpl 0xc0480033
+  false: 0xc047fff2
+│ 0xc047fff2      00             brk
+│ 0xc047fff3      f520           sbc 0x20,x
+└ 0xc047fff5      1c             nop 0x4d68,x
+
+┌ 3: fcn.c04a71c1 ();
+│ 0xc04a71c1      6101           adc (0x01,x)
+└ 0xc04a71c3      5a             nop
+
+┌ 1: fcn.c0136f6f ();
+└ 0xc0136f6f      58             cli
+
+┌ 2: sym.HAP_pls_add ();
+│ 0xc0137bf8      08             php
+└ 0xc0137bf9      44             nop 0x68
+
+┌ 4: sym.get_exp_qd (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00646d4      c03f           cpy #0x3f
+│ 0xc00646d6      00             brk
+└ 0xc00646d7  ~   54             nop 0x68,x
+
+┌ 1: fcn.c049e331 ();
+└ 0xc049e331      40             rti
+
+┌ 13: fcn.c04b1362 ();
+│ 0xc04b1362      755b           adc 0x5b,x
+│ 0xc04b1364      05c0           ora 0xc0
+│ 0xc04b1366      9da080         sta 0x80a0,x
+│ 0xc04b1369      411d           eor (0x1d,x)
+│ 0xc04b136b      b010           bcs 0xc04b137d
+| // true: 0xc04b137d  false: 0xc04b136d
+│ 0xc04b136d      43             sre (0x68,x)
+
+│ ; CODE XREF from fcn.c04b1362 @ 0xc04b136b
+│ ; CODE XREF from fcn.c04b1362 @ +0xf
+└ 0xc04b137d      43             sre (0x68,x)
+
+┌ 1: fcn.c04a0371 ();
+└ 0xc04a0371      40             rti
+
+┌ 3: fcn.c0137dae ();
+│ 0xc0137dae      e55b           sbc 0x5b
+└ 0xc0137db0      02             hlt
+
+┌ 1: fcn.c04a208a ();
+└ 0xc04a208a      40             rti
+
+  ;-- __hexagon_floatsisf:
+┌ 3: sym.__qdsp_floatsisf ();
+│ 0xc00637b0      1040           bpl 0xc00637f2
+  false: 0xc00637b2
+└ 0xc00637b2      60             rts
+
+┌ 1: fcn.c0480311 ();
+└ 0xc0480311      40             rti
+
+┌ 1: fcn.c00648f1 ();
+└ 0xc00648f1      40             rti
+
+┌ 1: fcn.c049edf1 ();
+└ 0xc049edf1      40             rti
+
+┌ 1: fcn.c0498af5 ();
+└ 0xc0498af5      40             rti
+
+┌ 6: fcn.c0122e61 ();
+│ 0xc0122e61      4100           eor (0x00,x)
+│ 0xc0122e63      78             sei
+│ ; CODE XREF from sym.qurt_elite_memory_malloc @ +0x19a
+│ 0xc0122e64      101c           bpl 0xc0122e82
+  false: 0xc0122e66
+└ 0xc0122e66      f4             nop 0x68,x
+
+┌ 1: fcn.c049e3e1 ();
+└ 0xc049e3e1      40             rti
+
+│ ; CODE XREF from sym.fflush @ 0xc049bc9a
+│ 0xc049bc2d      c000           cpy #0x00
+│ 0xc049bc2f  ~   7f             rra 0x4d68,x
+
+┌ 19: int sym.fflush (FILE *stream);
+│ 0xc049bc50      1040           bpl 0xc049bc92
+| // true: 0xc049bc92  false: 0xc049bc52
+│ 0xc049bc52      60             rts
+
+│ 0xc049bc92      c010           cpy #0x10
+│ 0xc049bc94      11e0           ora (0xe0),y
+│ 0xc049bc96      11fb           ora (0xfb),y
+│ 0xc049bc98      8140           sta (0x40,x)
+│ 0xc049bc9a      9091           bcc 0xc049bc2d
+| // true: 0xc049bc2d  false: 0xc049bc9c
+│ ; CODE XREF from sym.fflush @ +0x9a
+│ 0xc049bc9c      f6f1           inc 0xf1,x
+│ ; CODE XREF from sym.feof @ +0x16
+│ 0xc049bc9e      33             rla (0x68),y
+
+┌ 1: fcn.c04a0ec1 ();
+└ 0xc04a0ec1      40             rti
+
+┌ 4: fcn.c0061ca6 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061ca6      00             brk
+│ 0xc0061ca7      78             sei
+│ 0xc0061ca8      0a             asl a
+└ 0xc0061ca9      e2             nop #0x68
+
+┌ 4: int sym.fsetpos (FILE *stream, const fpos_t*pos);
+│ 0xc049c9d0      ac7202         ldy 0x0272
+└ 0xc049c9d3      5a             nop
+
+  ;-- __qdsp_umodsi3:
+┌ 12: sym.__hexagon_umodsi3 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00644f0      a240           ldx #0x40
+│ 0xc00644f2      00             brk
+│ 0xc00644f3      8ca340         sty 0x40a3
+│ 0xc00644f6      018c           ora (0x8c,x)
+│ 0xc00644f8      00             brk
+│ 0xc00644f9      c061           cpy #0x61
+└ 0xc00644fb      f2             hlt
+
+┌ 3: sym.qurt_profile_get_idle_pcycles ();
+│ 0xc0060e34      0140           ora (0x40,x)
+└ 0xc0060e36      60             rts
+
+┌ 4: sym.qd_gt (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc00648c0      201ced         jsr 0xed1c
+└ 0xc00648c3      eb             sbc #0x68
+
+┌ 5: sym.qurt_thread_set_timetest_id ();
+│ 0xc0060dd0      0130           ora (0x30,x)
+│ 0xc0060dd2      5028           bvc 0xc0060dfc
+  false: 0xc0060dd4
+└ 0xc0060dd4      14             nop 0x68,x
+
+┌ 6: fcn.c0480f96 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0480f96      0117           ora (0x17,x)
+│ 0xc0480f98      a269           ldx #0x69
+│ 0xc0480f9a      00             brk
+└ 0xc0480f9b      73             rra (0x68),y
+
+┌ 5: sym.qurt_signal_get (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc006154c      c03f           cpy #0x3f
+│ 0xc006154e      00             brk
+│ 0xc006154f      00             brk
+│ ;-- qurt_signal_clear:
+└ 0xc0061550      02             hlt
+
+┌ 3: sym._Parse_fde_instr ();
+│ 0xc04a2680      c46e           cpy 0x6e
+└ 0xc04a2682      77             rra 0x68,x
+
+┌ 1: fcn.c0066055 ();
+└ 0xc0066055      40             rti
+
+┌ 10: fcn.c006054a ();
+│ 0xc006054a      de971e         dec 0x1e97,x
+│ 0xc006054d      c01e           cpy #0x1e
+│ 0xc006054f      9000           bcc 0xc0060551
+| // true: 0xc0060551  false: 0xc0060551
+│ ; CODE XREF from fcn.c006054a @ 0xc006054f
+│ 0xc0060551      c09f           cpy #0x9f
+└ 0xc0060553      52             hlt
+
+┌ 9: sym.adsp_power_boost_on (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0137574      ac7fff         ldy 0xff7f
+│ 0xc0137577      590140         eor 0x4001,y
+│ ; CODE XREF from sym.adsp_power_boost_off @ +0x13
+│ 0xc013757a      00             brk
+│ 0xc013757b      00             brk
+└ 0xc013757c      80             nop #0x68
+
+┌ 3: sym.tan ();
+│ 0xc04a5be0      1054           bpl 0xc04a5c36
+  false: 0xc04a5be2
+└ 0xc04a5be2      77             rra 0x68,x
+
+┌ 3: fcn.c0122a41 ();
+└ 0xc0122a41      6ce75b         jmp (0x5be7)
+
+┌ 5: file*sym.fopen (const char *filename, const char *mode);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049c500      1040           bpl 0xc049c542
+  false: 0xc049c502
+│ 0xc049c502      01f5           ora (0xf5,x)
+└ 0xc049c504      40             rti
+
+┌ 7: float sym.ceilf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0499e50      0140           ora (0x40,x)
+│ 0xc0499e52      00             brk
+│ 0xc0499e53      78             sei
+│ 0xc0499e54      1040           bpl 0xc0499e96                        ; sym.ceill+0x6
+  false: 0xc0499e56
+└ 0xc0499e56      60             rts
+
+┌ 1: fcn.c00603e1 ();
+└ 0xc00603e1      40             rti
+
+┌ 2: bool sym.isinf (arithmetic x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0ef0      00             brk
+│ ; CODE XREF from fcn.c04a0ec1 @ +0xa
+└ 0xc04a0ef1      40             rti
+
+  ;-- __qdsp_floatsidf:
+┌ 2: sym.__hexagon_floatsidf (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0063670      00             brk
+└ 0xc0063671      40             rti
+
+┌ 5: fcn.c04a5511 ();
+│ 0xc04a5511      c060           cpy #0x60
+│ 0xc04a5513      7023           bvs 0xc04a5538
+  false: 0xc04a5515
+└ 0xc04a5515      40             rti
+
+┌ 11: void sym.bzero (void *s, size_t n);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0a50      5040           bvc 0xc04a0a92
+| // true: 0xc04a0a92  false: 0xc04a0a52
+│ 0xc04a0a52      00             brk
+│ 0xc04a0a53      1000           bpl 0xc04a0a55
+| // true: 0xc04a0a55  false: 0xc04a0a55
+│ ; CODE XREF from sym.bzero @ 0xc04a0a53
+│ 0xc04a0a55      c09d           cpy #0x9d
+│ 0xc04a0a57      a00e           ldy #0x0e
+│ 0xc04a0a59      eb             sbc #0x68
+
+│ ; CODE XREF from sym.bzero @ +0x80
+└ 0xc04a0a92      44             nop 0x68
+
+  ;-- __qdsp_floatunsisf:
+┌ 2: sym.__hexagon_floatunsisf (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0063dc0      00             brk
+│ ; CODE XREF from fcn.c0063d21 @ +0x76
+└ 0xc0063dc1      40             rti
+
+┌ 5: fcn.c049cbf1 ();
+│ 0xc049cbf1      c09d           cpy #0x9d
+│ 0xc049cbf3      a04e           ldy #0x4e
+└ 0xc049cbf5      73             rra (0x68),y
+
+┌ 8: sym.__builtinfunction_bitrev_update4_for_store (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00622c0      9040           bcc 0xc0062302
+  false: 0xc00622c2
+│ 0xc00622c2      00             brk
+│ 0xc00622c3      6902           adc #0x02
+│ 0xc00622c5      e000           cpx #0x00
+└ 0xc00622c7      73             rra (0x68),y
+
+┌ 7: fcn.c0060e5d (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060e5d      c000           cpy #0x00
+│ 0xc0060e5f      78             sei
+│ 0xc0060e60      00             brk
+│ 0xc0060e61      c500           cmp 0x00
+└ 0xc0060e63      54             nop 0x68,x
+
+┌ 2: fcn.c047ee46 ();
+└ 0xc047ee46      0958           ora #0x58
+| // true: 0xc047ee48
+┌ 7: long double sym.sqrtl (long double x);
+│ 0xc04a52a0      1040           bpl 0xc04a52e2
+  false: 0xc04a52a2
+│ 0xc04a52a2      01f5           ora (0xf5,x)
+│ 0xc04a52a4      301c           bmi 0xc04a52c2
+  false: 0xc04a52a6
+└ 0xc04a52a6      f4             nop 0x68,x
+
+┌ 4: fcn.c04b2891 ();
+│ 0xc04b2891      6d755b         adc 0x5b75
+└ 0xc04b2894      0f             slo 0x4d68
+
+┌ 3: fcn.c049b811 ();
+│ 0xc049b811      6578           adc 0x78
+└ 0xc049b813      5b             sre 0x4d68,y
+
+┌ 1: fcn.c0064211 ();
+└ 0xc0064211      40             rti
+
+  ;-- __hexagon_fixunsdfti:
+┌ 1: sym.__qdsp_fixunsdfti ();
+└ 0xc0063080      02             hlt
+
+┌ 3: sym.memsmove ();
+│ 0xc00a0010      9041           bcc 0xc00a0053
+  false: 0xc00a0012
+└ 0xc00a0012      a3             lax (0x68,x)
+
+┌ 4: ssize_t sym.write (int fd, const char *ptr, size_t nbytes);
+│ 0xc04a1e80      8c70d5         sty 0xd570
+└ 0xc04a1e83      5b             sre 0x4d68,y
+
+┌ 15: fcn.c04a0db5 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0db5      c09d           cpy #0x9d
+│ 0xc04a0db7      a010           ldy #0x10
+│ 0xc04a0db9      c060           cpy #0x60
+│ 0xc04a0dbb      7040           bvs 0xc04a0dfd
+  false: 0xc04a0dbd
+│ ; CODE XREF from fcn.c04a0db5 @ +0x26
+│ 0xc04a0dbd      ca             dex
+│ 0xc04a0dbe      00             brk
+│ 0xc04a0dbf      78             sei
+│ 0xc04a0dc0      00             brk
+│ 0xc04a0dc1      c000           cpy #0x00
+└ 0xc04a0dc3      54             nop 0x68,x
+
+┌ 1: fcn.c0062a01 ();
+└ 0xc0062a01      40             rti
+
+│ ; CODE XREF from sym.longjmp @ 0xc04a1cc0
+│ 0xc04a1c82      80             nop #0x68
+
+┌ 4: void sym.longjmp (jmp_buf env, int val);
+│ 0xc04a1cc0      30c0           bmi 0xc04a1c82
+| // true: 0xc04a1c82  false: 0xc04a1cc2
+│ 0xc04a1cc2      80             nop #0x68
+
+┌ 2: sym.__restore_r16_through_r25_and_deallocframe ();
+│ 0xc0060484      00             brk
+└ 0xc0060485      40             rti
+
+┌ 12: sym.log (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc049e3b0      7e4300         ror 0x0043,x
+│ 0xc049e3b3      00             brk
+│ 0xc049e3b4      20c002         jsr 0x02c0
+│ 0xc049e3b7      1600           asl 0x00,x
+│ 0xc049e3b9      c000           cpy #0x00
+└ 0xc049e3bb      7f             rra 0x4d68,x
+
+┌ 12: sym.qurt_allsignal_set (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00615dc      e47f           cpx 0x7f
+│ 0xc00615de      6176           adc (0x76,x)
+│ 0xc00615e0      85c0           sta 0xc0
+│ 0xc00615e2      00             brk
+│ 0xc00615e3      b002           bcs 0xc00615e7
+| // true: 0xc00615e7  false: 0xc00615e5
+│ 0xc00615e5      c000           cpy #0x00
+| // true: 0xc00615e7
+│ ; CODE XREF from sym.qurt_allsignal_set @ 0xc00615e3
+└ 0xc00615e7      92             hlt
+
+┌ 7: sym.qd_mul_dq ();
+│ 0xc0064788      c040           cpy #0x40
+│ 0xc006478a      e080           cpx #0x80
+└ 0xc006478c      4cc600         jmp 0x00c6
+
+┌ 14: fcn.c049ca35 ();
+│ 0xc049ca35      c09d           cpy #0x9d
+│ 0xc049ca37      a010           ldy #0x10
+│ 0xc049ca39      4103           eor (0x03,x)
+│ 0xc049ca3b      f50b           sbc 0x0b,x
+│ 0xc049ca3d      3000           bmi 0xc049ca3f
+| // true: 0xc049ca3f  false: 0xc049ca3f
+│ ; CODE XREF from fcn.c049ca35 @ 0xc049ca3d
+│ 0xc049ca3f      28             plp
+│ 0xc049ca40      1550           ora 0x50,x
+└ 0xc049ca42      02             hlt
+
+┌ 1: fcn.c049e6b1 ();
+└ 0xc049e6b1      40             rti
+
+  ;-- __qdsp_udivmoddi4:
+┌ 3: sym.__hexagon_udivmoddi4 ();
+│ 0xc0064380      4640           lsr 0x40
+└ 0xc0064382      40             rti
+
+┌ 3: sym.memscpy ();
+│ 0xc0067590      9041           bcc 0xc00675d3
+  false: 0xc0067592
+└ 0xc0067592      a3             lax (0x68,x)
+
+┌ 8: sym._Tls_get__Errno (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc049adb0      2140           and (0x40,x)
+│ 0xc049adb2      00             brk
+│ 0xc049adb3      78             sei
+│ 0xc049adb4      201cf4         jsr 0xf41c
+└ 0xc049adb7      eb             sbc #0x68
+
+┌ 8: uintmax_t sym.strtoumax (const char *str, char * *endptr, int base);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5980      e6e3           inc 0xe3
+│ 0xc04a5982      0158           ora (0x58,x)
+│ 0xc04a5984      00             brk
+│ 0xc04a5985      c000           cpy #0x00
+└ 0xc04a5987      7f             rra 0x4d68,x
+
+┌ 4: int sym.islower (int c);
+│ 0xc049cec0      ec5801         cpx 0x0158
+└ 0xc049cec3      5a             nop
+
+┌ 3: sym.strtok_r ();
+│ 0xc04a58c0      b455           ldy 0x55,x
+└ 0xc04a58c2      77             rra 0x68,x
+
+┌ 1: fcn.c04a4821 ();
+└ 0xc04a4821      40             rti
+
+┌ 2: int sym.memcmp (const void *s1, const void *s2, size_t n);
+│ 0xc049e6e0      08             php
+└ 0xc049e6e1      40             rti
+
+┌ 6: sym.__restore_r16_through_r21_and_deallocframe_before_tailcall ();
+│ 0xc0060458      b47f           ldy 0x7f,x
+│ 0xc006045a      de97d2         dec 0xd297,x
+└ 0xc006045d      ff             isb 0x4d68,x
+
+┌ 4: int sym.fseek (FILE *stream, long offset, int whence);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049c9a0      201cf4         jsr 0xf41c
+└ 0xc049c9a3      eb             sbc #0x68
+
+┌ 3: fcn.c049a051 ();
+│ 0xc049a051      7178           adc (0x78),y
+└ 0xc049a053      5b             sre 0x4d68,y
+
+┌ 4: sym.fcvt (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a0bb4      201cf4         jsr 0xf41c
+└ 0xc04a0bb7      eb             sbc #0x68
+
+┌ 4: floating_point sym.expm1 (arithmetic x);
+│ 0xc049b4f0      8c6778         sty 0x7867
+└ 0xc049b4f3      5b             sre 0x4d68,y
+
+  ;-- __qdsp_unorddf2:
+│ ;-- (0xc0064631) fcn.c0064631:
+┌ 1: sym.__hexagon_unorddf2 ();
+└ 0xc0064630  ~   04             nop 0x68
+
+┌ 3: sym.qurt_rmutex_init ();
+│ 0xc04803e0      1040           bpl 0xc0480422
+  false: 0xc04803e2
+└ 0xc04803e2      60             rts
+
+┌ 3: fcn.c00612e1 ();
+│ 0xc00612e1      c000           cpy #0x00
+└ 0xc00612e3      92             hlt
+
+┌ 4: fcn.c0060ea9 ();
+│ 0xc0060ea9      c000           cpy #0x00
+│ 0xc0060eab      78             sei
+└ 0xc0060eac      02             hlt
+
+┌ 1: sym._Stoullx ();
+└ 0xc04b1f40      60             rts
+
+┌ 3: fcn.c0480f26 ();
+│ 0xc0480f26      0117           ora (0x17,x)
+└ 0xc0480f28      42             hlt
+
+┌ 5: sym.qurt_sysenv_get_process_name (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0480e94      0140           ora (0x40,x)
+│ 0xc0480e96      00             brk
+│ 0xc0480e97      00             brk
+└ 0xc0480e98      42             hlt
+
+│ ; CODE XREF from sym.lroundf @ 0xc049e4f3
+│ 0xc049e483      ea             nop
+│ 0xc049e484      fe4f01         inc 0x014f,x
+│ 0xc049e487      5a             nop
+
+┌ 11: long sym.lroundf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049e4f0      203c01         jsr 0x013c
+│ 0xc049e4f3      708e           bvs 0xc049e483
+| // true: 0xc049e483  false: 0xc049e4f5
+│ 0xc049e4f5      54             nop 0x68,x
+
+┌ 2: sym.qurt_power_tcxo_enter ();
+│ 0xc04810f0      ba             tsx
+└ 0xc04810f1      43             sre (0x68,x)
+
+┌ 5: sym.qurt_thread_context_get_tname (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0480eb0      1042           bpl 0xc0480ef4
+  false: 0xc0480eb2
+│ 0xc0480eb2      01f5           ora (0xf5,x)
+└ 0xc0480eb4      03             slo (0x68,x)
+
+┌ 3: fcn.c04a2189 ();
+│ 0xc04a2189      7177           adc (0x77),y
+└ 0xc04a218b      5b             sre 0x4d68,y
+
+┌ 6: fcn.c0060402 ();
+│ 0xc0060402      dea7fb         dec 0xfba7,x
+│ 0xc0060405      f8             sed
+│ 0xc0060406      de             invalid
+│ ; CODE XREF from sym.__restore_r16_through_r17_and_deallocframe_before_tailcall @ +0xf
+└ 0xc0060407  ~   a7             lax 0x68
+| // true: 0xc0060408
+┌ 3: fcn.c006477d ();
+│ 0xc006477d      c600           dec 0x00
+└ 0xc006477f      58             cli
+| // true: 0xc0064780
+┌ 7: float sym.tgammaf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a6c70      0140           ora (0x40,x)
+│ 0xc04a6c72      00             brk
+│ 0xc04a6c73      78             sei
+│ 0xc04a6c74      1040           bpl 0xc04a6cb6
+  false: 0xc04a6c76
+└ 0xc04a6c76      60             rts
+
+┌ 1: fcn.c049e991 ();
+└ 0xc049e991      40             rti
+
+┌ 2: sym._Getpcostate ();
+│ 0xc04a7fec      aa             tax
+└ 0xc04a7fed      ff             isb 0x4d68,x
+
+┌ 6: fcn.c049ce81 ();
+│ 0xc049ce81      59015a         eor 0x5a01,y
+│ 0xc049ce84      1040           bpl 0xc049cec6
+  false: 0xc049ce86
+│ ; CODE XREF from sym.isblank @ +0x4
+└ 0xc049ce86      60             rts
+
+┌ 2: sym.create_qdouble (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0064770      00             brk
+└ 0xc0064771      42             hlt
+
+┌ 3: fcn.c04a7ac1 ();
+│ 0xc04a7ac1      6904           adc #0x04
+└ 0xc04a7ac3      0c             nop 0x4d68
+
+┌ 2: fcn.c0061e92 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061e92      00             brk
+└ 0xc0061e93      5c             nop 0x4d68,x
+
+┌ 1: fcn.c00628e1 ();
+└ 0xc00628e1      40             rti
+
+┌ 3: fcn.c0061895 ();
+│ 0xc0061895      c600           dec 0x00
+└ 0xc0061897      54             nop 0x68,x
+
+┌ 4: int sym.ispunct (int c);
+│ 0xc049cf00      cc5801         cpy 0x0158
+└ 0xc049cf03      5a             nop
+
+  ;-- __qdsp_floatunsidf:
+│ ;-- (0xc0063d21) fcn.c0063d21:
+┌ 1: sym.__hexagon_floatunsidf ();
+└ 0xc0063d20  ~   03             slo (0x68,x)
+
+┌ 10: sym.HAP_pls_add_lookup ();
+│ 0xc0137c94      c643           dec 0x43
+│ 0xc0137c96      e55b           sbc 0x5b
+│ 0xc0137c98      05c0           ora 0xc0
+│ 0xc0137c9a      9da0f0         sta 0xf0a0,x
+└ 0xc0137c9d      7f             rra 0x4d68,x
+
+┌ 6: sym.qurt_elite_signal_create (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc0123100      9062           bcc 0xc0123164
+  false: 0xc0123102
+│ 0xc0123102      207300         jsr 0x0073
+└ 0xc0123105      40             rti
+
+┌ 3: sym._Getpmbstate ();
+│ 0xc04b11bc      a4ff           ldy 0xff
+└ 0xc04b11be  ~   ff             isb 0x4d68,x
+
+┌ 1: fcn.c0065a01 ();
+└ 0xc0065a01      40             rti
+
+┌ 3: fcn.c049a321 ();
+│ 0xc049a321      7078           bvs 0xc049a39b
+  false: 0xc049a323
+└ 0xc049a323      5b             sre 0x4d68,y
+
+│ ;-- (0xc047ee44) qurt_calloc:
+┌ 4: fcn.c047ee42 ();
+│ 0xc047ee42  ~   7d59b2         adc 0xb259,x
+└ 0xc047ee45      f8             sed
+
+┌ 6: float sym.sinhf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5110      e06c           cpx #0x6c
+│ 0xc04a5112      00             brk
+│ 0xc04a5113      58             cli
+│ 0xc04a5114      00             brk
+└ 0xc04a5115      40             rti
+
+┌ 7: sym.qd_gt_dq (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0064918      c040           cpy #0x40
+│ 0xc006491a      e080           cpx #0x80
+│ 0xc006491c      101c           bpl 0xc006493a
+  false: 0xc006491e
+└ 0xc006491e      f4             nop 0x68,x
+
+┌ 4: size_t sym.strftime (char *s, size_t maxsize, const char *format, const tm *timeptr);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a55a0      201cf4         jsr 0xf41c
+└ 0xc04a55a3      eb             sbc #0x68
+
+┌ 3: int sym.isalnum (int c);
+└ 0xc049ce00      4c5901         jmp 0x0159
+
+┌ 3: fcn.c0060cad (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060cad      c8             iny
+│ 0xc0060cae      00             brk
+└ 0xc0060caf      54             nop 0x68,x
+
+┌ 5: fcn.c0064746 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0064746      00             brk
+│ 0xc0064747      00             brk
+│ 0xc0064748      0528           ora 0x28
+└ 0xc006474a      f4             nop 0x68,x
+
+┌ 12: long double sym.sinl (long double x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc04a5130      2542           and 0x42
+│ 0xc04a5132      00             brk
+│ 0xc04a5133      00             brk
+│ 0xc04a5134      20c002         jsr 0x02c0
+│ 0xc04a5137      1600           asl 0x00,x
+│ 0xc04a5139      c000           cpy #0x00
+└ 0xc04a513b      7f             rra 0x4d68,x
+
+┌ 4: sym.qurt_trace_get_marker (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00611f4      00             brk
+│ 0xc00611f5      c8             iny
+│ 0xc00611f6      00             brk
+└ 0xc00611f7      54             nop 0x68,x
+
+┌ 7: float sym.truncf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a7250      0140           ora (0x40,x)
+│ 0xc04a7252      00             brk
+│ 0xc04a7253      78             sei
+│ 0xc04a7254      103c           bpl 0xc04a7292                        ; sym.ungetc+0x2
+  false: 0xc04a7256
+└ 0xc04a7256      02             hlt
+
+┌ 3: fcn.c0060d8d ();
+│ 0xc0060d8d      c000           cpy #0x00
+└ 0xc0060d8f      92             hlt
+
+┌ 3: fcn.c0060ddd ();
+│ 0xc0060ddd      c000           cpy #0x00
+└ 0xc0060ddf      54             nop 0x68,x
+
+┌ 8: float sym.ldexpf (float value, int exp);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049d0b0      1040           bpl 0xc049d0f2
+  false: 0xc049d0b2
+│ 0xc049d0b2      6170           adc (0x70,x)
+│ 0xc049d0b4      201cf4         jsr 0xf41c
+└ 0xc049d0b7      eb             sbc #0x68
+
+┌ 6: sym.__restore_r16_through_r21_and_deallocframe ();
+│ 0xc0060490      b4             invalid
+| // true: 0xc0060491
+│ ; CODE XREF from fcn.c00604b1 @ 0xc00604b1
+│ 0xc0060491      7fde97         rra 0x97de,x
+│ 0xc0060494      d2             hlt
+└ 0xc0060495      ff             isb 0x4d68,x
+
+  ;-- __hexagon_modsi3:
+│ ;-- (0xc0063f91) fcn.c0063f91:
+┌ 1: sym.__qdsp_modsi3 ();
+└ 0xc0063f90  ~   82             nop #0x68
+
+┌ 1: fcn.c049ea31 ();
+└ 0xc049ea31      40             rti
+
+┌ 12: double sym.strtod (const char *str, char * *endptr);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a57a0      ee4200         inc 0x0042
+│ 0xc04a57a3      00             brk
+│ 0xc04a57a4      68             pla
+│ 0xc04a57a5      c002           cpy #0x02
+│ 0xc04a57a7      1600           asl 0x00,x
+│ 0xc04a57a9      c000           cpy #0x00
+└ 0xc04a57ab      7f             rra 0x4d68,x
+
+┌ 5: int sym.raise (int sig);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a3ce0      2140           and (0x40,x)
+│ 0xc04a3ce2      00             brk
+│ 0xc04a3ce3      78             sei
+└ 0xc04a3ce4      40             rti
+
+┌ 2: sym.qurt_timer_restart (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0498040      00             brk
+└ 0xc0498041      40             rti
+
+┌ 3: fcn.c04a5932 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5932      00             brk
+│ 0xc04a5933      00             brk
+└ 0xc04a5934      40             rti
+
+┌ 4: sym.__cxa_guard_abort ();
+│ 0xc04a3420      a456           ldy 0x56
+│ 0xc04a3422      fb5b           isb 0x4d5b,y
+
+  ; CODE XREF from fcn.c049e131 @ +0xcc
+┌ 5: floating_point sym.log2 (arithmetic x);
+│ 0xc049e210      98             tya
+│ ; CODE XREF from fcn.c049e241 @ +0x3d
+│ 0xc049e211      7001           bvs 0xc049e214
+| // true: 0xc049e214  false: 0xc049e213
+│ 0xc049e213      58             cli
+| // true: 0xc049e214
+└ 0xc049e214      e2             nop #0x68
+
+┌ 5: sym.alarm (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0824      2140           and (0x40,x)
+│ 0xc04a0826      00             brk
+│ 0xc04a0827      78             sei
+└ 0xc04a0828      02             hlt
+
+┌ 5: sym.__restore_r16_through_r19_and_deallocframe (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060478      1040           bpl 0xc00604ba
+  false: 0xc006047a
+│ 0xc006047a      00             brk
+│ 0xc006047b      58             cli
+└ 0xc006047c      d2             hlt
+
+┌ 3: sym.qurt_mutex_destroy ();
+│ 0xc0480374      0110           ora (0x10,x)
+└ 0xc0480376      03             slo (0x68,x)
+
+┌ 3: sym.fast2_ldrecip ();
+│ 0xc0066320      8450           sty 0x50
+│ ; CODE XREF from sym.fast2_ldrecip @ 0xc0066321
+└ 0xc0066322      ff             isb 0x4d68,x
+
+│ ;-- (0xc00625a2) fcn.c00625a2:
+│ ; CODE XREF from sym.__qdsp_cmpxsf2 @ +0xd0
+┌ 1: fcn.c00625a1 ();
+└ 0xc00625a1  ~   5f             sre 0x4d68,x
+
+┌ 1: fcn.c00639d1 ();
+└ 0xc00639d1      40             rti
+
+┌ 2: sym.qurt_timer_attr_set_expiry ();
+│ 0xc04981c4      ba             tsx
+└ 0xc04981c5      7a             nop
+
+┌ 1: fcn.c049e241 ();
+└ 0xc049e241      40             rti
+
+  ; CODE XREF from sym.remquol @ +0x1c8
+┌ 5: fcn.c04a4712 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a4712      015a           ora (0x5a,x)
+│ 0xc04a4714      1040           bpl 0xc04a4756
+  false: 0xc04a4716
+└ 0xc04a4716      60             rts
+
+  ;-- __hexagon_truncdfsf2:
+┌ 1: sym.__qdsp_truncdfsf2 ();
+└ 0xc0064210      02             hlt
+
+┌ 6: sym.__restore_r16_through_r23_and_deallocframe ();
+│ 0xc0060470      967f           stx 0x7f,y
+│ 0xc0060472      de97b4         dec 0xb497,x
+└ 0xc0060475      ff             isb 0x4d68,x
+
+┌ 9: fcn.c04a7a51 ();
+│ 0xc04a7a51      e140           sbc (0x40,x)
+│ 0xc04a7a53      1543           ora 0x43,x
+│ 0xc04a7a55      4102           eor (0x02,x)
+│ 0xc04a7a57      c400           cpy 0x00
+└ 0xc04a7a59      40             rti
+
+┌ 2: int sym.strcasecmp (const char *s1, const char *s2);
+│ 0xc00a0030      08             php
+└ 0xc00a0031      40             rti
+
+┌ 4: sym.qurt_power_shutdown_fail_exit ();
+│ 0xc04810c8      ce437c         dec 0x7c43
+└ 0xc04810cb      5b             sre 0x4d68,y
+
+┌ 3:  void *sym.malloc (size_t size);
+│ 0xc006d464      1040           bpl 0xc006d4a6
+  false: 0xc006d466
+└ 0xc006d466      60             rts
+
+┌ 3: floating_point sym.ldexp (arithmetic value, int exp);
+│ 0xc049d060      1040           bpl 0xc049d0a2
+  false: 0xc049d062
+└ 0xc049d062      62             hlt
+
+┌ 3: sym.dsub_asm ();
+│ 0xc0065374      0640           asl 0x40
+└ 0xc0065376      62             hlt
+
+┌ 2: sym.gettimeofday ();
+│ 0xc04a0c50      a8             tay
+└ 0xc04a0c51      f4             nop 0x68,x
+
+┌ 5: fcn.c04a75d1 ();
+│ 0xc04a75d1      4102           eor (0x02,x)
+│ 0xc04a75d3      f510           sbc 0x10,x
+└ 0xc04a75d5      3c             nop 0x4d68,x
+
+┌ 1: fcn.c00626a4 ();
+└ 0xc00626a4      40             rti
+
+┌ 1: sym._Log ();
+└ 0xc04ac340      60             rts
+
+┌ 8: sym.qurt_sysclock_get_hw_ticks (int8_t arg_ffh_2, int8_t arg_ffh);
+│ ; arg int8_t arg_ffh_2 @ sp+0xff
+│ ; arg int8_t arg_ffh @ sp+0x101
+│ 0xc0480fa0      20f802         jsr 0x02f8
+│ 0xc0480fa3      58             cli
+│ 0xc0480fa4      201cf4         jsr 0xf41c
+└ 0xc0480fa7      eb             sbc #0x68
+
+┌ 8: sym.__builtinfunction_bitrev_update4_for_load (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0062220      9040           bcc 0xc0062262
+  false: 0xc0062222
+│ 0xc0062222      00             brk
+│ 0xc0062223      6902           adc #0x02
+│ 0xc0062225      e000           cpx #0x00
+└ 0xc0062227      73             rra (0x68),y
+
+┌ 1: fcn.c049cd51 ();
+└ 0xc049cd51      40             rti
+
+┌ 1: fcn.c00647e5 ();
+└ 0xc00647e5      40             rti
+
+┌ 12: clock_t sym.clock ();
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0499ee0      fe4100         inc 0x0041,x
+│ 0xc0499ee3      00             brk
+│ 0xc0499ee4      00             brk
+│ 0xc0499ee5      c000           cpy #0x00
+│ 0xc0499ee7      1600           asl 0x00,x
+│ 0xc0499ee9      c000           cpy #0x00
+└ 0xc0499eeb      7f             rra 0x4d68,x
+
+┌ 1: fcn.c0064795 ();
+└ 0xc0064795      40             rti
+
+  ; CODE XREF from sym.qurt_pipe_init @ +0x1a
+┌ 3: sym.qurt_pipe_create ();
+│ 0xc047eee0      a44a           ldy 0x4a
+└ 0xc047eee2      7c             nop 0x4d68,x
+
+┌ 8: fcn.c04f7426 ();
+│ 0xc04f7426      6d5b06         adc 0x065b
+│ 0xc04f7429      c09d           cpy #0x9d
+│ 0xc04f742b      a004           ldy #0x04
+└ 0xc04f742d      47             sre 0x68
+
+┌ 8: sym.qd_self_sub (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0064a28      a644           ldx 0x44
+│ 0xc0064a2a      00             brk
+│ 0xc0064a2b      58             cli
+│ 0xc0064a2c      00             brk
+│ 0xc0064a2d      c000           cpy #0x00
+└ 0xc0064a2f  ~   7f             rra 0x4d68,x
+
+  ;-- __qdsp_floattisf:
+│ ;-- (0xc00639d1) fcn.c00639d1:
+┌ 1: sym.__hexagon_floattisf ();
+└ 0xc00639d0  ~   04             nop 0x68
+
+  ;-- __qdsp_divdf3:
+  ;-- __hexagon_fast2_divdf3:
+  ;-- __hexagon_divdf3:
+│ ;-- (0xc0066ae1) fcn.c0066ae1:
+┌ 1: sym.__hexagon_fast_divdf3 ();
+└ 0xc0066ae0  ~   53             sre (0x68),y
+
+┌ 5: float sym.cosf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0499fe0      2644           rol 0x44
+│ 0xc0499fe2      00             brk
+│ 0xc0499fe3      00             brk
+└ 0xc0499fe4      40             rti
+
+┌ 2: sym.__restore_r27_through_r18_and_deallocframe_before_sibcall (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00604e4      00             brk
+└ 0xc00604e5      40             rti
+
+┌ 24: wchar_t*sym.wmemchr (wchar_t *s, wchar_t c, size_t n);
+│ ; arg int8_t arg_ffh_2 @ sp+0xff
+│ ; arg int8_t arg_ffh @ sp+0x102
+│ ; arg int8_t arg_100h @ sp+0x105
+│ 0xc04a79e0      0640           asl 0x40
+│ 0xc04a79e2      00             brk
+│ 0xc04a79e3      1603           asl 0x03,x
+│ 0xc04a79e5      c060           cpy #0x60
+│ 0xc04a79e7      7043           bvs 0xc04a7a2c
+  false: 0xc04a79e9
+│ 0xc04a79e9      20f227         jsr 0x27f2
+│ 0xc04a79ec      08             php
+│ 0xc04a79ed      c002           cpy #0x02
+│ 0xc04a79ef      1004           bpl 0xc04a79f5
+| // true: 0xc04a79f5  false: 0xc04a79f1
+│ 0xc04a79f1      40             rti
+
+│ ; CODE XREF from sym.wmemchr @ 0xc04a79ef
+│ 0xc04a79f5      e172           sbc (0x72,x)
+│ 0xc04a79f7      2000c0         jsr 0xc000
+└ 0xc04a79fa      63             rra (0x68,x)
+
+┌ 1: fcn.c049dbb1 ();
+└ 0xc049dbb1      40             rti
+
+┌ 7: int sym.vscanf (const char *format, va_list ap);
+│ 0xc04a7450      1040           bpl 0xc04a7492
+  false: 0xc04a7452
+│ 0xc04a7452      01f5           ora (0xf5,x)
+│ 0xc04a7454      101c           bpl 0xc04a7472
+  false: 0xc04a7456
+└ 0xc04a7456      f4             nop 0x68,x
+
+┌ 1: float sym.coshf (float x);
+└ 0xc049a000      40             rti
+
+┌ 8: sym.__cxa_guard_acquire (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc04a3380      2140           and (0x40,x)
+│ 0xc04a3382      00             brk
+│ 0xc04a3383      78             sei
+│ 0xc04a3384      201cf4         jsr 0xf41c
+└ 0xc04a3387      eb             sbc #0x68
+
+┌ 5: fcn.c04a7aa1 ();
+│ 0xc04a7aa1      c002           cpy #0x02
+│ 0xc04a7aa3      1018           bpl 0xc04a7abd
+  false: 0xc04a7aa5
+└ 0xc04a7aa5      40             rti
+
+┌ 6: fcn.c0065421 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0065421      5002           bvc 0xc0065425
+| // true: 0xc0065425  false: 0xc0065423
+└ 0xc0065423      8c2050         sty 0x5020
+
+│ ; CODE XREF from fcn.c0065421 @ 0xc0065421
+│ 0xc0065425      50             invalid
+
+┌ 1: fcn.c049c971 ();
+└ 0xc049c971      40             rti
+
+┌ 1: fcn.c0065d81 ();
+└ 0xc0065d81      40             rti
+
+┌ 4: sym.npa_query_by_name (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00a0290      8440           sty 0x40
+│ 0xc00a0292      00             brk
+└ 0xc00a0293      5a             nop
+
+│ ; CODE XREF from sym.atanf @ 0xc0499453
+│ 0xc0499433      28             plp
+│ 0xc0499434      566b           lsr 0x6b,x
+│ 0xc0499436      795b00         adc 0x005b,y
+│ 0xc0499439      c405           cpy 0x05
+│ 0xc049943b      f500           sbc 0x00,x
+│ 0xc049943d      c0dd           cpy #0xdd
+│ 0xc049943f      a1b0           lda (0xb0,x)
+│ 0xc0499441      73             rra (0x68),y
+
+┌ 21: float sym.atanf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc0499450      203c01         jsr 0x013c
+│ 0xc0499453      70de           bvs 0xc0499433
+| // true: 0xc0499433  false: 0xc0499455
+│ 0xc0499455      7c             nop 0x4d68,x
+
+┌ 3: sym.fast2_dsub_asm ();
+│ 0xc0065520      0640           asl 0x40
+└ 0xc0065522      62             hlt
+
+┌ 6: sym.qd_sub_dq ();
+│ 0xc00649e0      c040           cpy #0x40
+│ 0xc00649e2      e080           cpx #0x80
+│ 0xc00649e4      ca             dex
+└ 0xc00649e5      44             nop 0x68
+
+┌ 4: fcn.c049cf91 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049cf91      4500           eor 0x00
+│ 0xc049cf93      00             brk
+└ 0xc049cf94      40             rti
+
+┌ 2: sym.set_mant_qd (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00646a8      00             brk
+└ 0xc00646a9      7c             nop 0x4d68,x
+
+  ; CODE XREF from fcn.c049c1a1 @ +0x21
+┌ 1: fcn.c049c1a1 ();
+└ 0xc049c1a1      40             rti
+
+┌ 3: fcn.c0480f06 ();
+│ 0xc0480f06      0117           ora (0x17,x)
+└ 0xc0480f08      02             hlt
+
+┌ 4: sym.__save_r24_through_r27 ();
+│ 0xc00603c0      fefade         inc 0xdefa,x
+└ 0xc00603c3  ~   a7             lax 0x68
+
+  ;-- __qdsp_mulsf3:
+┌ 7: sym.__hexagon_mulsf3 ();
+│ 0xc0063ff0      1040           bpl 0xc0064032
+  false: 0xc0063ff2
+│ 0xc0063ff2      6170           adc (0x70,x)
+│ 0xc0063ff4      1140           ora (0x40),y
+└ 0xc0063ff6      60             rts
+
+┌ 3: float sym.fdimf (float x, float y);
+│ 0xc049bb60      103c           bpl 0xc049bb9e
+  false: 0xc049bb62
+└ 0xc049bb62      02             hlt
+
+  ;-- __qdsp_fixunsdfsi:
+┌ 1: sym.__hexagon_fixunsdfsi ();
+└ 0xc0062f70      02             hlt
+
+┌ 8: sym.qurt_timer_attr_get_type (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0498250      1040           bpl 0xc0498292
+  false: 0xc0498252
+│ 0xc0498252      00             brk
+│ 0xc0498253      1002           bpl 0xc0498257
+| // true: 0xc0498257  false: 0xc0498255
+│ 0xc0498255      c0             invalid
+| // true: 0xc0498256
+│ ; CODE XREF from sym.qurt_timer_attr_get_remaining @ 0xc0498214
+│ 0xc0498256      80             nop #0x68
+| // true: 0xc0498257
+│ ; CODE XREF from sym.qurt_timer_attr_get_type @ 0xc0498253
+└ 0xc0498257      47             sre 0x68
+
+┌ 3: sym.qurt_thread_exit ();
+│ 0xc047f8a0      c445           cpy 0x45
+└ 0xc047f8a2      7c             nop 0x4d68,x
+
+  ;-- __qdsp_ltdf2:
+┌ 3: sym.__hexagon_ltdf2 ();
+│ 0xc0063f00      917f           sta (0x7f),y
+└ 0xc0063f02      ff             isb 0x4d68,x
+
+┌ 4: fcn.c0498871 ();
+│ 0xc0498871      7d785b         adc 0x5b78,x
+└ 0xc0498874      02             hlt
+
+  ;-- __qdsp_subdf3:
+  ;-- __hexagon_fast2_subdf3:
+  ;-- __hexagon_fast_subdf3:
+│ ;-- (0xc0066905) fcn.c0066905:
+┌ 1: sym.__hexagon_subdf3 ();
+└ 0xc0066904  ~   43             sre (0x68,x)
+
+┌ 5: float sym.erfcf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049a570      303c           bmi 0xc049a5ae
+  false: 0xc049a572
+│ ; CODE XREF from fcn.c049a321 @ +0x1df
+│ 0xc049a572      0170           ora (0x70,x)
+└ 0xc049a574      80             nop #0x68
+
+┌ 4: fcn.c006122d ();
+│ 0xc006122d      c132           cmp (0x32,x)
+└ 0xc006122f  ~   1642           asl 0x42,x
+│ ;-- qurt_pmu_get:
+└ 0xc0061230      42             hlt
+
+┌ 3: fcn.c0062122 ();
+│ 0xc0062122      618d           adc (0x8d,x)
+└ 0xc0062124      e3             isb (0x68,x)
+
+┌ 3: float sym.fmodf (float x, float y);
+│ 0xc049c2c0      303c           bmi 0xc049c2fe
+  false: 0xc049c2c2
+└ 0xc049c2c2      02             hlt
+
+┌ 5: fcn.c04a3f45 ();
+│ 0xc04a3f45      c09d           cpy #0x9d
+│ 0xc04a3f47      a05c           ldy #0x5c
+└ 0xc04a3f49      7f             rra 0x4d68,x
+
+┌ 1: fcn.c04983a1 ();
+└ 0xc04983a1      40             rti
+
+┌ 6: fcn.c04a5531 ();
+│ 0xc04a5531      1003           bpl 0xc04a5536
+| // true: 0xc04a5536  false: 0xc04a5533
+│ ; CODE XREF from fcn.c04a5531 @ +0x1a
+│ 0xc04a5533      5016           bvc 0xc04a554b
+  false: 0xc04a5535
+│ 0xc04a5535      40             rti
+
+│ ; CODE XREF from fcn.c04a5531 @ 0xc04a5531
+└ 0xc04a5536      02             hlt
+
+┌ 2: sym.qurt_power_tcxo_fail_exit ();
+│ 0xc0481110      aa             tax
+└ 0xc0481111      43             sre (0x68,x)
+
+┌ 8: sym.__builtinfunction_bitrevupdate (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00621d0      9040           bcc 0xc0062212
+  false: 0xc00621d2
+│ 0xc00621d2      00             brk
+│ 0xc00621d3      6902           adc #0x02
+│ 0xc00621d5      e000           cpx #0x00
+└ 0xc00621d7      73             rra (0x68),y
+
+┌ 8: sym.__builtinfunction_bitrev_update8_for_store (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0062298      9040           bcc 0xc00622da
+  false: 0xc006229a
+│ 0xc006229a      00             brk
+│ 0xc006229b      6902           adc #0x02
+│ 0xc006229d      e000           cpx #0x00
+└ 0xc006229f      73             rra (0x68),y
+
+┌ 5: sym.__restore_r27_through_r16_and_deallocframe_before_sibcall ();
+│ 0xc00604e0      50             invalid
+| // true: 0xc00604e1
+│ 0xc00604e1      ff             isb 0x4d68,x
+| // true: 0xc00604e1  false: 0xc00604e2
+│ ;-- (0xc00604e4) __restore_r27_through_r18_and_deallocframe_before_sibcall:
+└ 0xc00604e2  ~   de9700         dec 0x0097,x
+
+┌ 1: fcn.c049c911 ();
+└ 0xc049c911      40             rti
+
+  ; CODE XREF from sym.sqrtl @ +0x3d
+┌ 4: void sym.srand (int seed);
+│ 0xc04a52f0      88             dey
+│ 0xc04a52f1      75ff           adc 0xff,x
+└ 0xc04a52f3      5b             sre 0x4d68,y
+
+┌ 2: lconv*sym.localeconv ();
+│ 0xc049df6c      aa             tax
+└ 0xc049df6d      ff             isb 0x4d68,x
+
+┌ 5: fcn.c049cee2 ();
+│ 0xc049cee2      015a           ora (0x5a,x)
+│ 0xc049cee4      1040           bpl 0xc049cf26
+  false: 0xc049cee6
+│ ; CODE XREF from fcn.c049cea2 @ 0xc049cea4
+└ 0xc049cee6      60             rts
+
+┌ 3: sym._FSinh ();
+│ 0xc04aaad0      303c           bmi 0xc04aab0e
+  false: 0xc04aaad2
+└ 0xc04aaad2      02             hlt
+
+┌ 7: fcn.c04a1d21 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a1d21      f1d5           sbc (0xd5),y
+│ 0xc04a1d23      5900c0         eor 0xc000,y
+│ 0xc04a1d26      00             brk
+└ 0xc04a1d27      7f             rra 0x4d68,x
+
+┌ 6: fcn.c049ed34 ();
+│ 0xc049ed34      09c0           ora #0xc0
+│ 0xc049ed36      9da000         sta 0x00a0,x
+└ 0xc049ed39      44             nop 0x68
+
+┌ 11: fcn.c049cfb1 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049cfb1      4500           eor 0x00
+│ 0xc049cfb3      00             brk
+│ 0xc049cfb4      00             brk
+│ 0xc049cfb5      c401           cpy 0x01
+│ 0xc049cfb7      1600           asl 0x00,x
+│ 0xc049cfb9      c000           cpy #0x00
+└ 0xc049cfbb      7f             rra 0x4d68,x
+
+┌ 9: sym.qd_add_dq (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00649c8      c040           cpy #0x40
+│ 0xc00649ca      e080           cpx #0x80
+│ 0xc00649cc      84c4           sty 0xc4
+│ 0xc00649ce      00             brk
+│ 0xc00649cf      58             cli
+│ ;-- qd_sub:
+└ 0xc00649d0      d2             hlt
+
+┌ 2: sym.bcmp ();
+│ 0xc04a08a0      08             php
+└ 0xc04a08a1      40             rti
+
+│ ; CODE XREF from sym.bcopy @ 0xc04a08db
+│ 0xc04a0893      9e             shx 0x4d68,y
+
+│ ; CODE XREF from sym.bcopy @ 0xc04a08df
+│ 0xc04a0895      c01e           cpy #0x1e
+│ 0xc04a0897      9600           stx 0x00,y
+│ 0xc04a0899      c000           cpy #0x00
+│ 0xc04a089b      7f             rra 0x4d68,x
+
+┌ 28: sym.bcopy ();
+│ 0xc04a08d0      be4001         ldx 0x0140,y
+│ 0xc04a08d3      1000           bpl 0xc04a08d5
+| // true: 0xc04a08d5  false: 0xc04a08d5
+│ ; CODE XREF from sym.bcopy @ 0xc04a08d3
+│ 0xc04a08d5      c09d           cpy #0x9d
+│ 0xc04a08d7      a0ba           ldy #0xba
+│ 0xc04a08d9      c000           cpy #0x00
+│ 0xc04a08db      10b6           bpl 0xc04a0893
+| // true: 0xc04a0893  false: 0xc04a08dd
+│ 0xc04a08dd      e002           cpx #0x02
+│ 0xc04a08df      10b4           bpl 0xc04a0895
+| // true: 0xc04a0895  false: 0xc04a08e1
+│ 0xc04a08e1      e001           cpx #0x01
+│ 0xc04a08e3      14             nop 0x68,x
+
+┌ 1: fcn.c00605b1 ();
+└ 0xc00605b1      40             rti
+
+┌ 5: fcn.c00650b1 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00650b1      7e5f78         ror 0x785f,x
+│ 0xc00650b4      00             brk
+└ 0xc00650b5      7c             nop 0x4d68,x
+
+┌ 5: sym.__restore_r16_through_r19_and_deallocframe_before_tailcall (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060440      1040           bpl fcn.c0060482
+  false: 0xc0060442
+│ 0xc0060442      00             brk
+│ 0xc0060443      58             cli
+└ 0xc0060444      d2             hlt
+
+┌ 4: sym.__builtin_mr_assignment (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061c90      00             brk
+│ 0xc0061c91      c09f           cpy #0x9f
+└ 0xc0061c93      52             hlt
+
+│ ; CODE XREF from sym._FCosh @ 0xc04a8a83
+│ 0xc04a8a05      40             rti
+
+┌ 7: sym._FCosh (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a8a80      203c02         jsr 0x023c
+│ 0xc04a8a83      7080           bvs 0xc04a8a05
+| // true: 0xc04a8a05  false: 0xc04a8a85
+│ 0xc04a8a85      40             rti
+
+┌ 1: fcn.c0498329 ();
+└ 0xc0498329      40             rti
+
+┌ 3: fcn.c00616a1 ();
+│ 0xc00616a1      c000           cpy #0x00
+└ 0xc00616a3      92             hlt
+
+┌ 1: fcn.c0065d01 ();
+└ 0xc0065d01      40             rti
+
+  ; CODE XREF from fcn.c0064942 @ +0xf
+┌ 2: fcn.c0064964 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0064964      00             brk
+└ 0xc0064965      7c             nop 0x4d68,x
+
+┌ 3: sym.fast2_dadd_asm ();
+│ 0xc00654a0      0640           asl 0x40
+└ 0xc00654a2      62             hlt
+
+  ;-- __hexagon_udivsi3:
+┌ 12: sym.__qdsp_udivsi3 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0064440      a240           ldx #0x40
+│ 0xc0064442      00             brk
+│ 0xc0064443      8ca340         sty 0x40a3
+│ 0xc0064446      018c           ora (0x8c,x)
+│ 0xc0064448      2440           bit 0x40
+│ 0xc006444a      00             brk
+└ 0xc006444b      7c             nop 0x4d68,x
+
+┌ 5: fcn.c0136ff1 ();
+│ 0xc0136ff1      4123           eor (0x23,x)
+│ 0xc0136ff3      f1f0           sbc (0xf0),y
+└ 0xc0136ff5      7f             rra 0x4d68,x
+
+┌ 4: sym.qurt_tls_get_specific (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04800b8      00             brk
+│ 0xc04800b9      e000           cpx #0x00
+└ 0xc04800bb      73             rra (0x68),y
+
+┌ 1: fcn.c0060d49 ();
+└ 0xc0060d49      40             rti
+
+┌ 1: fcn.c049b481 ();
+└ 0xc049b481      40             rti
+
+┌ 1: fcn.c049ccb1 ();
+└ 0xc049ccb1      40             rti
+
+┌ 3: sym.qd2d ();
+│ 0xc0064fd0      e57f           sbc 0x7f
+└ 0xc0064fd2      df             dcp 0x4d68,x
+
+┌ 2: sym.dmpy ();
+│ 0xc0064f28      08             php
+└ 0xc0064f29      43             sre (0x68,x)
+
+┌ 10: sym.qurt_thread_get_id (int8_t arg_100h, int8_t arg_100h_2);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ ; arg int8_t arg_100h_2 @ sp+0x101
+│ 0xc047fae8      01c0           ora (0xc0,x)
+│ 0xc047faea      0a             asl a
+│ 0xc047faeb      6a             ror a
+│ 0xc047faec      1039           bpl 0xc047fb27
+  false: 0xc047faee
+│ 0xc047faee      00             brk
+│ 0xc047faef      28             plp
+│ 0xc047faf0      00             brk
+└ 0xc047faf1      40             rti
+
+┌ 3: sym._Geterrno ();
+│ 0xc049ae50      b0             invalid
+| // true: 0xc049ae51
+│ 0xc049ae51      ff             isb 0x4d68,x
+| // true: 0xc049ae51  false: 0xc049ae52
+└ 0xc049ae52      ff             isb 0x4d68,x
+
+┌ 3: sym.qurt_pipe_send ();
+│ 0xc047ef98      1040           bpl 0xc047efda
+  false: 0xc047ef9a
+└ 0xc047ef9a      60             rts
+
+┌ 2: sym.__restore_r16_through_r17_and_deallocframe_before_tailcall (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060460      00             brk
+└ 0xc0060461      40             rti
+
+┌ 4: fcn.c049e711 ();
+│ 0xc049e711      4e785b         lsr 0x5b78
+│ ; CODE XREF from fcn.c049e631 @ +0x6a
+└ 0xc049e714      0b             anc #0x68
+
+┌ 10: fcn.c04a5942 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5942      00             brk
+│ 0xc04a5943      00             brk
+│ 0xc04a5944      68             pla
+│ 0xc04a5945      c002           cpy #0x02
+│ 0xc04a5947      1600           asl 0x00,x
+│ 0xc04a5949      c000           cpy #0x00
+└ 0xc04a594b      7f             rra 0x4d68,x
+
+┌ 8: sym.toascii (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a1940      e04f           cpx #0x4f
+│ 0xc04a1942      00             brk
+│ 0xc04a1943      7600           ror 0x00,x
+│ 0xc04a1945      c09f           cpy #0x9f
+└ 0xc04a1947      52             hlt
+
+┌ 4: sym.qurt_mem_pool_attach ();
+│ 0xc047fb10      68             pla
+│ 0xc047fb11      5104           eor (0x04),y
+└ 0xc047fb13      5a             nop
+
+┌ 7: fcn.c04a5951 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5951      e001           cpx #0x01
+│ 0xc04a5953      58             cli
+│ 0xc04a5954      00             brk
+│ 0xc04a5955      c000           cpy #0x00
+└ 0xc04a5957      7f             rra 0x4d68,x
+
+┌ 4: sym._Atrealloc ();
+│ 0xc049ae60      e46a           cpx 0x6a
+│ ; CODE XREF from sym._Tls_get__Errno @ +0x70
+│ 0xc049ae62      78             sei
+└ 0xc049ae63      5b             sre 0x4d68,y
+
+┌ 6: file*sym.tmpfile ();
+│ 0xc04a7110      11c0           ora (0xc0),y
+│ ; CODE XREF from sym.tmpfile @ +0x40
+│ 0xc04a7112      9da02e         sta 0x2ea0,x
+└ 0xc04a7115      40             rti
+
+┌ 4: fcn.c006248d ();
+│ 0xc006248d      c134           cmp (0x34,x)
+└ 0xc006248f  ~   1630           asl 0x30,x
+  ;-- __hexagon_cmpxsf2:
+┌ 3: sym.__qdsp_cmpxsf2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0062490      30             invalid
+
+┌ 4: long double sym.erfl (long double x);
+│ 0xc049aae0      906c           bcc 0xc049ab4e
+  false: 0xc049aae2
+│ 0xc049aae2      78             sei
+└ 0xc049aae3      5b             sre 0x4d68,y
+
+  ; CODE XREF from fcn.c04a0c11 @ +0x1d
+┌ 2: int sym.isatty (int fd);
+│ 0xc04a0ca0      88             dey
+└ 0xc04a0ca1      f4             nop 0x68,x
+
+┌ 1: fcn.c047fc19 ();
+└ 0xc047fc19      40             rti
+
+┌ 3: fcn.c0499f33 ();
+│ 0xc0499f33      f500           sbc 0x00,x
+└ 0xc0499f35      40             rti
+
+┌ 1: fcn.c04ab721 ();
+└ 0xc04ab721      40             rti
+
+┌ 3: fcn.c0498065 ();
+│ 0xc0498065      4179           eor (0x79,x)
+└ 0xc0498067      5b             sre 0x4d68,y
+
+┌ 3: sym.fast2_dmpy ();
+│ 0xc0065830      e57f           sbc 0x7f
+└ 0xc0065832      df             dcp 0x4d68,x
+
+  ;-- __qdsp_divsi3:
+┌ 3: sym.__hexagon_divsi3 ();
+│ 0xc0062620      8140           sta (0x40,x)
+└ 0xc0062622      80             nop #0x68
+
+┌ 1: fcn.c0497fa1 ();
+└ 0xc0497fa1      40             rti
+
+┌ 8: sym.qurt_timer_attr_get_duration (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04981f0      1040           bpl 0xc0498232
+  false: 0xc04981f2
+│ 0xc04981f2      00             brk
+│ 0xc04981f3      1002           bpl 0xc04981f7
+| // true: 0xc04981f7  false: 0xc04981f5
+│ 0xc04981f5      c080           cpy #0x80
+| // true: 0xc04981f7
+│ ; CODE XREF from sym.qurt_timer_attr_get_duration @ 0xc04981f3
+└ 0xc04981f7      47             sre 0x68
+
+┌ 7: float sym.log2f (float x);
+│ 0xc049e220      5059           bvc 0xc049e27b
+  false: 0xc049e222
+│ 0xc049e222      0158           ora (0x58,x)
+│ 0xc049e224      e1ff           sbc (0xff,x)
+└ 0xc049e226      df             dcp 0x4d68,x
+
+┌ 3: fcn.c0062096 ();
+│ 0xc0062096      618d           adc (0x8d,x)
+└ 0xc0062098      e3             isb (0x68,x)
+
+┌ 2: sym.qurt_power_shutdown_prepare ();
+│ 0xc04810d4      c8             iny
+└ 0xc04810d5      43             sre (0x68,x)
+
+┌ 3: sym.dlinfo ();
+│ 0xc013ef0c      1040           bpl 0xc013ef4e
+  false: 0xc013ef0e
+└ 0xc013ef0e      62             hlt
+
+  ;-- __hexagon_fast_negdf2:
+┌ 1: sym.__qdsp_fast_negdf2 ();
+└ 0xc0064a50      02             hlt
+
+  ;-- __qdsp_cmpdf2:
+┌ 1: sym.__hexagon_cmpdf2 ();
+└ 0xc006248c      5a             nop
+
+┌ 4: wint_t sym.fgetwc (FILE *stream);
+│ 0xc049bf10      8c6278         sty 0x7862
+└ 0xc049bf13      5b             sre 0x4d68,y
+
+┌ 3: sym.dlclose (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc013eca8      1040           bpl 0xc013ecea
+  false: 0xc013ecaa
+└ 0xc013ecaa      60             rts
+
+┌ 7: sym.qurt_elite_thread_join (int8_t arg_100h_2, int8_t arg_100h);
+│ ; arg int8_t arg_100h_2 @ sp+0x100
+│ ; arg int8_t arg_100h @ sp+0x101
+│ 0xc0123410      1040           bpl 0xc0123452
+  false: 0xc0123412
+│ 0xc0123412      01f5           ora (0xf5,x)
+│ 0xc0123414      301c           bmi 0xc0123432
+  false: 0xc0123416
+└ 0xc0123416      f4             nop 0x68,x
+
+┌ 4: sym.qurt_thread_stop ();
+│ 0xc047fa04      4e7fff         lsr 0xff7f
+└ 0xc047fa07      5b             sre 0x4d68,y
+
+┌ 2: sym.remote_handle_close (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc013ac88      00             brk
+└ 0xc013ac89      60             rts
+
+┌ 1: fcn.c0480e41 ();
+└ 0xc0480e41      40             rti
+
+  ;-- __hexagon_lesf2:
+┌ 3: sym.__qdsp_lesf2 ();
+│ 0xc0063ef0      967f           stx 0x7f,y
+└ 0xc0063ef2      ff             isb 0x4d68,x
+
+┌ 3: sym.qurt_rmutex_destroy ();
+│ 0xc0480424      0110           ora (0x10,x)
+└ 0xc0480426      03             slo (0x68,x)
+
+┌ 8: long double sym.ceill (long double x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc0499e90      1040           bpl 0xc0499ed2
+  false: 0xc0499e92
+│ 0xc0499e92      01f5           ora (0xf5,x)
+│ 0xc0499e94      201cf4         jsr 0xf41c
+└ 0xc0499e97      eb             sbc #0x68
+
+┌ 1: sym.qurt_elite_memory_aligned_malloc ();
+└ 0xc0122f50      40             rti
+
+┌ 2: sym.DeInterleave_16 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04cf480      00             brk
+└ 0xc04cf481      40             rti
+
+┌ 8: sym.__deallocframe ();
+│ 0xc00604a0      1ec01e         asl 0x1ec0,x
+│ 0xc00604a3      9600           stx 0x00,y
+│ 0xc00604a5      c000           cpy #0x00
+└ 0xc00604a7      7f             rra 0x4d68,x
+
+┌ 2: fcn.c0060dba (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060dba      00             brk
+│ ; CODE XREF from fcn.c0060d49 @ +0xe
+└ 0xc0060dbb      54             nop 0x68,x
+
+┌ 8: sym.sys_Tlsget (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047e0b8      00             brk
+│ 0xc047e0b9      d000           bne 0xc047e0bb
+| // true: 0xc047e0bb  false: 0xc047e0bb
+│ ; CODE XREF from sym.sys_Tlsget @ 0xc047e0b9
+│ 0xc047e0bb      58             cli
+│ 0xc047e0bc      00             brk
+│ 0xc047e0bd      c000           cpy #0x00
+└ 0xc047e0bf      7f             rra 0x4d68,x
+
+┌ 15: fcn.c04a02f1 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a02f1      61ff           adc (0xff,x)
+│ 0xc04a02f3      59ca54         eor 0x54ca,y
+│ 0xc04a02f6      090c           ora #0x0c
+│ 0xc04a02f8      01c7           ora (0xc7,x)
+│ 0xc04a02fa      00             brk
+│ 0xc04a02fb      78             sei
+│ 0xc04a02fc      00             brk
+│ 0xc04a02fd      c000           cpy #0x00
+└ 0xc04a02ff  ~   7f             rra 0x4d68,x
+
+┌ 8: sym.qurt_elite_memory_malloc (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc0122c70      1040           bpl 0xc0122cb2
+  false: 0xc0122c72
+│ 0xc0122c72      01f5           ora (0xf5,x)
+│ 0xc0122c74      201cf4         jsr 0xf41c
+└ 0xc0122c77      eb             sbc #0x68
+
+│ ; CODE XREF from sym.qurt_futex_wake @ 0xc0060cb4
+│ 0xc0060c7e      0640           asl 0x40
+│ 0xc0060c80      00             brk
+│ 0xc0060c81      c09f           cpy #0x9f
+│ 0xc0060c83      52             hlt
+
+┌ 10: sym.qurt_futex_wake (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060cb4      10c8           bpl 0xc0060c7e
+| // true: 0xc0060c7e  false: 0xc0060cb6
+│ 0xc0060cb6      00             brk
+│ 0xc0060cb7      54             nop 0x68,x
+
+┌ 1: fcn.c01229c5 ();
+└ 0xc01229c5      40             rti
+
+┌ 3: fcn.c0064601 ();
+│ 0xc0064601      c100           cmp (0x00,x)
+└ 0xc0064603      ef             isb 0x4d68
+
+┌ 2: sym._Sinh (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04b0e00      00             brk
+└ 0xc04b0e01      7b             rra 0x4d68,y
+
+┌ 5: fcn.c00659b6 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00659b6      00             brk
+│ 0xc00659b7      8ce148         sty 0x48e1
+└ 0xc00659ba      40             rti
+
+┌ 1: fcn.c00626c1 ();
+└ 0xc00626c1      40             rti
+
+┌ 2: fcn.c0061d02 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061d02      00             brk
+└ 0xc0061d03      5c             nop 0x4d68,x
+
+┌ 3: sym._Strcollx ();
+│ 0xc04a5400      1058           bpl 0xc04a545a
+  false: 0xc04a5402
+└ 0xc04a5402      77             rra 0x68,x
+
+┌ 1: fcn.c0480e81 ();
+└ 0xc0480e81      40             rti
+
+  ;-- __hexagon_cmpxdf2:
+  ; CODE XREF from sym.__builtinfunction_bitrev_update4_for_store @ +0x26
+┌ 5: sym.__qdsp_cmpxdf2 ();
+│ 0xc0062340      0640           asl 0x40
+│ 0xc0062342      01f5           ora (0xf5,x)
+└ 0xc0062344      04             nop 0x68
+
+┌ 3: sym.sys_Tlsalloc (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047e060      1040           bpl 0xc047e0a2
+  false: 0xc047e062
+└ 0xc047e062      60             rts
+
+┌ 1: fcn.c0062e71 ();
+└ 0xc0062e71      40             rti
+
+┌ 6: float sym.expm1f (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049b720      203c01         jsr 0x013c
+│ 0xc049b723      7076           bvs 0xc049b79b
+  false: 0xc049b725
+└ 0xc049b725      6b             arr #0x68
+
+┌ 6: sym._Unlocksyslock (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04b30c8      00             brk
+│ 0xc04b30c9      c09d           cpy #0x9d
+│ 0xc04b30cb      a007           ldy #0x07
+└ 0xc04b30cd      63             rra (0x68,x)
+
+┌ 6: sym.closedir (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc0499ef0      f07f           beq 0xc0499f71                        ; sym.copysignf+0x1
+  false: 0xc0499ef2
+│ 0xc0499ef2      207310         jsr 0x1073
+└ 0xc0499ef5      1c             nop 0x4d68,x
+
+┌ 1: fcn.c049f5a4 ();
+└ 0xc049f5a4      60             rts
+
+┌ 22: fcn.c04cf4e1 ();
+│ 0xc04cf4e1      3020           bmi 0xc04cf503
+| // true: 0xc04cf503  false: 0xc04cf4e3
+│ 0xc04cf4e3      28             plp
+│ 0xc04cf4e4      18             clc
+│ 0xc04cf4e5      e004           cpx #0x04
+│ 0xc04cf4e7      1016           bpl 0xc04cf4ff
+| // true: 0xc04cf4ff  false: 0xc04cf4e9
+│ 0xc04cf4e9      e001           cpx #0x01
+│ 0xc04cf4eb      1014           bpl 0xc04cf501
+| // true: 0xc04cf501  false: 0xc04cf4ed
+│ 0xc04cf4ed      e002           cpx #0x02
+│ 0xc04cf4ef      1012           bpl 0xc04cf503
+| // true: 0xc04cf503  false: 0xc04cf4f1
+│ 0xc04cf4f1      40             rti
+
+│ ; CODE XREF from fcn.c04cf4e1 @ 0xc04cf4e7
+│ 0xc04cf4ff      7f             rra 0x4d68,x
+
+│ ; CODE XREF from fcn.c04cf4e1 @ 0xc04cf4eb
+│ 0xc04cf501      40             rti
+
+│ ; CODE XREFS from fcn.c04cf4e1 @ 0xc04cf4e1, 0xc04cf4ef
+│ 0xc04cf503      9108           sta (0x08),y
+└ 0xc04cf505      d3             dcp (0x68),y
+
+┌ 2: sym.dlerror (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc013eeac      00             brk
+└ 0xc013eead      40             rti
+
+  ; CODE XREF from fcn.c00647e5 @ +0x18
+┌ 7: sym.qd_self_div (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0064810      1040           bpl 0xc0064852
+  false: 0xc0064812
+│ 0xc0064812      01f5           ora (0xf5,x)
+│ 0xc0064814      00             brk
+│ 0xc0064815      42             hlt
+
+│ ; CODE XREF from sym.qd_self_div_dd @ +0x24
+└ 0xc0064816      03             slo (0x68,x)
+
+┌ 4: sym.qurt_barrier_destroy (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04804a8      00             brk
+│ 0xc04804a9      e000           cpx #0x00
+└ 0xc04804ab      73             rra (0x68),y
+
+┌ 4: sym.dlsym ();
+│ 0xc013f714      8a             txa
+│ 0xc013f715      46e4           lsr 0xe4
+└ 0xc013f717      5b             sre 0x4d68,y
+
+┌ 4: floating_point sym.remquo (arithmetic x, arithmetic y, int *pquo);
+│ 0xc04a4170      48             pha
+│ 0xc04a4171      6177           adc (0x77,x)
+└ 0xc04a4173      5b             sre 0x4d68,y
+
+┌ 1: fcn.c049e561 ();
+└ 0xc049e561      40             rti
+
+┌ 1: fcn.c00647c1 ();
+└ 0xc00647c1      40             rti
+
+┌ 2: sym.qurt_qdi_write (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047ed7c      00             brk
+└ 0xc047ed7d      60             rts
+
+┌ 8: sym.qurt_timer_recover_pc (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0498370      1e75fc         asl 0xfc75,x
+│ 0xc0498373      598040         eor 0x4080,y
+│ 0xc0498376      00             brk
+└ 0xc0498377      7c             nop 0x4d68,x
+
+┌ 12: float sym.log10f (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049df80      d542           cmp 0x42,x
+│ 0xc049df82      00             brk
+│ 0xc049df83      00             brk
+│ 0xc049df84      00             brk
+│ 0xc049df85      c101           cmp (0x01,x)
+│ 0xc049df87      1600           asl 0x00,x
+│ 0xc049df89      c000           cpy #0x00
+└ 0xc049df8b      7f             rra 0x4d68,x
+
+┌ 6: fcn.c0060422 ();
+│ 0xc0060422      dea7fc         dec 0xfca7,x
+│ 0xc0060425      f6de           inc 0xde,x
+└ 0xc0060427  ~   a7             lax 0x68
+
+┌ 6: fcn.c049bc31 ();
+│ 0xc049bc31      79025a         adc 0x5a02,y
+│ 0xc049bc34      1040           bpl 0xc049bc76
+  false: 0xc049bc36
+└ 0xc049bc36      60             rts
+
+  ; CODE XREF from fcn.c049de41 @ +0xef
+┌ 10: fcn.c049df72 (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc049df72      00             brk
+│ 0xc049df73      00             brk
+│ 0xc049df74      20c102         jsr 0x02c1
+│ 0xc049df77      1600           asl 0x00,x
+│ 0xc049df79      c000           cpy #0x00
+└ 0xc049df7b      7f             rra 0x4d68,x
+
+┌ 3: long double sym.tgammal (long double x);
+│ 0xc04a6e80      c44a           cpy 0x4a
+└ 0xc04a6e82      77             rra 0x68,x
+
+┌ 3: fcn.c00611e1 ();
+│ 0xc00611e1      c000           cpy #0x00
+└ 0xc00611e3      92             hlt
+
+┌ 1: fcn.c0136f6e ();
+└ 0xc0136f6e      72             hlt
+
+┌ 7: float sym.modff (float value, float *iptr);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049e940      1140           ora (0x40),y
+│ 0xc049e942      6170           adc (0x70,x)
+│ 0xc049e944      1040           bpl 0xc049e986
+  false: 0xc049e946
+└ 0xc049e946      60             rts
+
+┌ 2: fcn.c0061f32 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061f32      00             brk
+└ 0xc0061f33      5c             nop 0x4d68,x
+
+│ ; CODE XREF from sym.__wrap_free @ 0xc0136f60
+│ 0xc0136f59      1f             slo 0x4d68,x
+
+┌ 6: sym.__wrap_free ();
+│ 0xc0136f60      d0f7           bne 0xc0136f59
+| // true: 0xc0136f59  false: 0xc0136f62
+│ 0xc0136f62      e659           inc 0x59
+│ ;-- __wrap_calloc:
+│ 0xc0136f64      22             hlt
+
+┌ 2: sym.qurt_timer_attr_set_duration ();
+│ 0xc04981a0      ba             tsx
+└ 0xc04981a1      7a             nop
+
+┌ 4: sym.__cxa_guard_release ();
+│ 0xc04a3400      fe620f         inc 0x0f62,x
+└ 0xc04a3403      0c             nop 0x4d68
+
+┌ 5: sym._Stoulx ();
+│ 0xc04b1d60      5073           bvc 0xc04b1dd5
+  false: 0xc04b1d62
+│ 0xc04b1d62      755b           adc 0x5b,x
+└ 0xc04b1d64      80             nop #0x68
+
+┌ 5: float sym.asinhf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0498da0      303c           bmi 0xc0498dde
+  false: 0xc0498da2
+│ 0xc0498da2      0170           ora (0x70,x)
+└ 0xc0498da4      80             nop #0x68
+
+┌ 1: fcn.c0498f35 ();
+└ 0xc0498f35      40             rti
+
+│ ; CODE XREF from sym.acoshf @ 0xc0498693
+│ 0xc0498653      f500           sbc 0x00,x
+│ 0xc0498655      d2             hlt
+
+  ; CODE XREF from fcn.c0498581 @ +0xfc
+┌ 9: float sym.acoshf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc0498690      203c01         jsr 0x013c
+│ 0xc0498693      70be           bvs 0xc0498653
+| // true: 0xc0498653  false: 0xc0498695
+│ 0xc0498695      43             sre (0x68,x)
+
+┌ 1: fcn.c04a1871 ();
+└ 0xc04a1871      40             rti
+
+┌ 4: sym.qurt_thread_context_get_stack_size ();
+│ 0xc0480f30      797fff         adc 0xff7f,y
+└ 0xc0480f33      0f             slo 0x4d68
+
+┌ 7: float sym.lgammaf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049d520      0140           ora (0x40,x)
+│ 0xc049d522      00             brk
+│ ; CODE XREF from sym.lgammaf @ +0x2b
+│ 0xc049d523      78             sei
+│ 0xc049d524      1040           bpl 0xc049d566
+  false: 0xc049d526
+└ 0xc049d526      60             rts
+
+┌ 4: sym.adsp_release_mmap ();
+│ 0xc0137e50      ae7bff         ldx 0xff7b
+└ 0xc0137e53      5b             sre 0x4d68,y
+
+┌ 4: fcn.c0060452 ();
+│ 0xc0060452      de9796         dec 0x9697,x
+└ 0xc0060455      ff             isb 0x4d68,x
+
+┌ 6: sym.todouble ();
+│ 0xc0064720      2440           bit 0x40
+│ 0xc0064722      de7802         dec 0x0278,x
+└ 0xc0064725      40             rti
+
+┌ 6: sym.__restore_r16_through_r23_and_deallocframe_before_tailcall ();
+│ 0xc0060438      967f           stx 0x7f,y
+│ 0xc006043a      de97b4         dec 0xb497,x
+└ 0xc006043d      ff             isb 0x4d68,x
+
+┌ 1: fcn.c049dfa5 ();
+└ 0xc049dfa5      40             rti
+
+┌ 3: sym.opendir (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049edb0      1040           bpl 0xc049edf2
+  false: 0xc049edb2
+└ 0xc049edb2      60             rts
+
+┌ 3: fcn.c0061f82 ();
+│ 0xc0061f82      618d           adc (0x8d,x)
+└ 0xc0061f84      e3             isb (0x68,x)
+
+┌ 1: fcn.c0499271 ();
+└ 0xc0499271      40             rti
+
+┌ 3: fcn.c0061569 ();
+│ 0xc0061569      c000           cpy #0x00
+└ 0xc006156b      92             hlt
+
+┌ 1: fcn.c049dcc1 ();
+└ 0xc049dcc1      40             rti
+
+┌ 8: floating_point sym.floor (arithmetic x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049c0c0      1040           bpl 0xc049c102
+  false: 0xc049c0c2
+│ 0xc049c0c2      01f5           ora (0xf5,x)
+│ 0xc049c0c4      201cf4         jsr 0xf41c
+└ 0xc049c0c7      eb             sbc #0x68
+
+  ;-- __qdsp_nedf2:
+┌ 3: sym.__hexagon_nedf2 ();
+│ 0xc00641b0      867f           stx 0x7f
+└ 0xc00641b2      ff             isb 0x4d68,x
+
+┌ 2: fcn.c047eff1 ();
+│ 0xc047eff1      4a             lsr a
+└ 0xc047eff2      7c             nop 0x4d68,x
+
+┌ 3: fcn.c00604b1 ();
+│ 0xc00604b1      f0de           beq 0xc0060491                        ; sym.__restore_r16_through_r21_and_deallocframe+0x1
+| // true: 0xc0060491  false: 0xc00604b3
+  ;-- (0xc00604b4) __save_r27_through_r18:
+└ 0xc00604b3  ~   a7             lax 0x68
+
+┌ 7: fcn.c0060e45 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060e45      c000           cpy #0x00
+│ 0xc0060e47      78             sei
+│ 0xc0060e48      00             brk
+│ 0xc0060e49      c500           cmp 0x00
+│ ; CODE XREF from sym.qurt_profile_get_idle_pcycles @ +0x3
+└ 0xc0060e4b      54             nop 0x68,x
+
+┌ 4: int sym.vfprintf (FILE *stream, const char *format, va_list ap);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a7380      201cf4         jsr 0xf41c
+└ 0xc04a7383      eb             sbc #0x68
+
+  ;-- __hexagon_floatundisf:
+┌ 1: sym.__qdsp_floatundisf ();
+└ 0xc0063c20      02             hlt
+
+┌ 10: fcn.c04a57b2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a57b2      00             brk
+│ 0xc04a57b3      00             brk
+│ 0xc04a57b4      68             pla
+│ 0xc04a57b5      c002           cpy #0x02
+│ 0xc04a57b7      1600           asl 0x00,x
+│ 0xc04a57b9      c000           cpy #0x00
+└ 0xc04a57bb      7f             rra 0x4d68,x
+
+│ ; CODE XREF from sym.setjmp @ 0xc04a1c61
+│ 0xc04a1be3      8cc64e         sty 0x4ec6
+│ 0xc04a1be6      86c3           stx 0xc3
+│ 0xc04a1be8      c0df           cpy #0xdf
+│ ; CODE XREF from sym.toascii @ +0x2a1
+│ 0xc04a1bea      00             brk
+│ 0xc04a1beb      74             nop 0x68,x
+
+┌ 13: int sym.setjmp (jmpbuf env);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a1c60      08             php
+│ 0xc04a1c61      d080           bne 0xc04a1be3
+| // true: 0xc04a1be3  false: 0xc04a1c63
+│ 0xc04a1c63      ab             lxa #0x68
+
+┌ 1: fcn.c04a7271 ();
+└ 0xc04a7271      40             rti
+
+┌ 2: sym.__restore_r27_through_r26_and_deallocframe_before_sibcall (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060500      00             brk
+└ 0xc0060501      40             rti
+
+┌ 1: fcn.c04a51c1 ();
+└ 0xc04a51c1      40             rti
+
+┌ 2: fcn.c0061ee2 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061ee2      00             brk
+└ 0xc0061ee3      5c             nop 0x4d68,x
+
+  ;-- __qdsp_floatdisf:
+│ ;-- (0xc0063541) fcn.c0063541:
+┌ 1: sym.__hexagon_floatdisf ();
+└ 0xc0063540  ~   04             nop 0x68
+
+┌ 9: sym.__builtinfunction_bitreverse (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00621a8      9040           bcc 0xc00621ea
+  false: 0xc00621aa
+│ 0xc00621aa      00             brk
+│ 0xc00621ab      6902           adc #0x02
+│ 0xc00621ad      3001           bmi 0xc00621b0
+| // true: 0xc00621b0  false: 0xc00621af
+│ 0xc00621af      28             plp
+| // true: 0xc00621b0
+│ ; CODE XREF from sym.__builtinfunction_bitreverse @ 0xc00621ad
+└ 0xc00621b0      22             hlt
+
+┌ 2: int sym.vsnprintf (char *s, size_t size, const char *format, va_list arg);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a74b0      00             brk
+└ 0xc04a74b1      40             rti
+
+┌ 6: sym.fast2_dsub ();
+│ 0xc0065790      0e40e0         asl 0xe040
+│ 0xc0065793      7000           bvs 0xc0065795
+| // true: 0xc0065795  false: 0xc0065795
+│ ; CODE XREF from sym.fast2_dsub @ 0xc0065793
+└ 0xc0065795      7c             nop 0x4d68,x
+
+┌ 1: sym.qd_mul_qd ();
+└ 0xc0064780      c2             nop #0x68
+
+┌ 1: fcn.c0480439 ();
+└ 0xc0480439      40             rti
+
+  ; CODE XREF from sym.qurt_mem_pool_attach @ +0x9a
+┌ 3: sym.qurt_mem_region_delete ();
+│ 0xc047fc14      a6f8           ldx 0xf8
+└ 0xc047fc16  ~   ff             isb 0x4d68,x
+
+┌ 2: float sym.remainderf (float x, float y);
+│ 0xc04a4140      08             php
+└ 0xc04a4141      40             rti
+
+┌ 2: sym.l64a_r ();
+│ 0xc04a0cb0      2a             rol a
+└ 0xc04a0cb1      40             rti
+
+┌ 1: fcn.c0063891 ();
+└ 0xc0063891      40             rti
+
+┌ 11: fcn.c04a50f1 (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc04a50f1      4100           eor (0x00,x)
+│ 0xc04a50f3      00             brk
+│ ; CODE XREF from fcn.c04a4fa5 @ +0xdf
+│ 0xc04a50f4      20c001         jsr 0x01c0
+│ 0xc04a50f7      1600           asl 0x00,x
+│ 0xc04a50f9      c000           cpy #0x00
+└ 0xc04a50fb      7f             rra 0x4d68,x
+
+┌ 3: sym._Wcscollx (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a7680      d046           bne 0xc04a76c8
+  false: 0xc04a7682
+└ 0xc04a7682      77             rra 0x68,x
+
+┌ 3: fcn.c0061845 ();
+│ 0xc0061845      c400           cpy 0x00
+└ 0xc0061847      54             nop 0x68,x
+
+┌ 3: sym.qurt_timer_group_disable ();
+│ 0xc0498360      2675           rol 0x75
+└ 0xc0498362      fc             nop 0x4d68,x
+
+┌ 3: int sym.fclose (FILE *stream);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049ba40      1040           bpl 0xc049ba82
+  false: 0xc049ba42
+└ 0xc049ba42      60             rts
+
+┌ 8: sym._Tls_get__Times (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc0498980      2140           and (0x40,x)
+│ 0xc0498982      00             brk
+│ 0xc0498983      78             sei
+│ 0xc0498984      201cf4         jsr 0xf41c
+└ 0xc0498987      eb             sbc #0x68
+
+┌ 8: long double sym.floorl (long double x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049c150      1040           bpl 0xc049c192
+  false: 0xc049c152
+│ 0xc049c152      01f5           ora (0xf5,x)
+│ 0xc049c154      20             invalid
+│ 0xc049c155      1c             nop 0x4d68,x
+| // true: 0xc049c156
+│ ; CODE XREF from sym.floorf @ 0xc049c114
+│ 0xc049c156      f4eb           nop 0xeb,x
+
+┌ 4: int sym.feof (FILE *stream);
+│ 0xc049bc10      8c7902         sty 0x0279
+└ 0xc049bc13      5a             nop
+
+┌ 3: fcn.c0137e1a ();
+│ 0xc0137e1a      e55b           sbc 0x5b
+└ 0xc0137e1c      02             hlt
+
+┌ 6: sym.s32_div_s32_s32_normalized ();
+│ 0xc04d0230      7e4000         ror 0x0040,x
+│ 0xc04d0233      1023           bpl 0xc04d0258
+  false: 0xc04d0235
+└ 0xc04d0235      60             rts
+
+┌ 7: float sym.fabsf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc00645f0      205fc0         jsr 0xc05f
+│ 0xc00645f3      8c00c0         sty 0xc000
+└ 0xc00645f6      9f             sha 0x4d68,y
+
+┌ 3: int sym.fgetc (FILE *stream);
+│ 0xc049bd30      1040           bpl 0xc049bd72
+  false: 0xc049bd32
+└ 0xc049bd32      60             rts
+
+┌ 3: fcn.c0060e69 ();
+│ 0xc0060e69      c400           cpy 0x00
+└ 0xc0060e6b      54             nop 0x68,x
+
+  ; CODE XREF from sym._Strxfrmx @ +0x4d
+┌ 6: fcn.c04a5962 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5962      0158           ora (0x58,x)
+│ 0xc04a5964      00             brk
+│ 0xc04a5965      c000           cpy #0x00
+└ 0xc04a5967      7f             rra 0x4d68,x
+
+  ;-- __hexagon_subsf3:
+┌ 3: sym.__qdsp_subsf3 ();
+│ 0xc0061c70      1040           bpl 0xc0061cb2
+  false: 0xc0061c72
+└ 0xc0061c72      60             rts
+
+┌ 4: fcn.c049cf81 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049cf81      4500           eor 0x00
+│ 0xc049cf83      00             brk
+└ 0xc049cf84      60             rts
+
+┌ 3: fcn.c0480f16 ();
+│ 0xc0480f16      0117           ora (0x17,x)
+└ 0xc0480f18      22             hlt
+
+┌ 4: sym.qurt_system_avscfg_set (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc006188c      00             brk
+│ 0xc006188d      c600           dec 0x00
+└ 0xc006188f      54             nop 0x68,x
+
+┌ 2: sym.qurt_qdi_close (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047ed60      00             brk
+└ 0xc047ed61      60             rts
+
+┌ 5: sym.qurt_realloc ();
+│ 0xc047ee48      94f8           sty 0xf8,x
+│ 0xc047ee4a      0958           ora #0x58
+│ ;-- qurt_free:
+└ 0xc047ee4c      5a             nop
+
+┌ 5: fcn.c0499851 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0499851      4600           lsr 0x00
+│ 0xc0499853      00             brk
+│ 0xc0499854      78             sei
+└ 0xc0499855      40             rti
+
+┌ 5: fcn.c0499841 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0499841      4600           lsr 0x00
+│ 0xc0499843      00             brk
+│ 0xc0499844      68             pla
+└ 0xc0499845      40             rti
+
+┌ 1: fcn.c049fb04 ();
+└ 0xc049fb04      60             rts
+
+┌ 8: floating_point sym.ceil (arithmetic x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc0499e00      1040           bpl 0xc0499e42
+  false: 0xc0499e02
+│ 0xc0499e02      01f5           ora (0xf5,x)
+│ 0xc0499e04      201cf4         jsr 0xf41c
+└ 0xc0499e07      eb             sbc #0x68
+
+┌ 8: sym.stat (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0f50      0a             asl a
+│ 0xc04a0f51      f8             sed
+│ 0xc04a0f52      d559           cmp 0x59,x
+│ 0xc04a0f54      00             brk
+│ 0xc04a0f55      c000           cpy #0x00
+└ 0xc04a0f57      7f             rra 0x4d68,x
+
+┌ 4: sym.readdir (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a4100      1060           bpl fcn.c04a4162
+  false: 0xc04a4102
+│ 0xc04a4102      00             brk
+└ 0xc04a4103      73             rra (0x68),y
+
+┌ 2: sym.qurt_qdi_read (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047ed6c      00             brk
+└ 0xc047ed6d      60             rts
+
+┌ 15: fcn.c049bdf4 ();
+│ 0xc049bdf4      05c0           ora 0xc0
+│ 0xc049bdf6      9da088         sta 0x88a0,x
+│ 0xc049bdf9      61c1           adc (0xc1,x)
+│ 0xc049bdfb      1024           bpl 0xc049be21
+  false: 0xc049bdfd
+│ 0xc049bdfd      3d0a30         and 0x300a,x
+│ 0xc049be00      9478           sty 0x78,x
+└ 0xc049be02      02             hlt
+
+┌ 3: sym.qurt_power_tcxo_prepare ();
+│ 0xc04810f8      b643           ldx 0x43,y
+└ 0xc04810fa      7c             nop 0x4d68,x
+
+  ;-- __hexagon_fixunsdfdi:
+┌ 1: sym.__qdsp_fixunsdfdi ();
+└ 0xc0062e70      02             hlt
+
+┌ 2: fcn.c0064942 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0064942      00             brk
+└ 0xc0064943      5a             nop
+
+┌ 5: sym._FLog ();
+│ 0xc04a94c0      b477           ldy 0x77,x
+│ ; CODE XREF from sym._FCosh @ +0xa10
+│ 0xc04a94c2      765b           ror 0x5b,x
+└ 0xc04a94c4      40             rti
+
+┌ 3: fcn.c0123191 ();
+│ 0xc0123191      69e7           adc #0xe7
+└ 0xc0123193      5b             sre 0x4d68,y
+
+┌ 4: fcn.c049a741 ();
+│ 0xc049a741      6e785b         ror 0x5b78
+└ 0xc049a744      02             hlt
+
+┌ 7: int sym.fputc (int c, FILE *stream);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049c5a0      1040           bpl 0xc049c5e2
+  false: 0xc049c5a2
+│ 0xc049c5a2      01f5           ora (0xf5,x)
+│ 0xc049c5a4      101c           bpl 0xc049c5c2
+  false: 0xc049c5a6
+└ 0xc049c5a6      f4             nop 0x68,x
+
+┌ 2: floating_point sym.tanh (arithmetic x);
+│ 0xc04a5ed0      98             tya
+└ 0xc04a5ed1      52             hlt
+
+┌ 10: sym.qurt_elite_memory_aligned_free ();
+│ 0xc0122fb0      0e4000         asl 0x0040
+│ 0xc0122fb3      1000           bpl 0xc0122fb5
+| // true: 0xc0122fb5  false: 0xc0122fb5
+│ ; CODE XREF from sym.qurt_elite_memory_aligned_free @ 0xc0122fb3
+│ 0xc0122fb5      c09d           cpy #0x9d
+│ 0xc0122fb7      a0e1           ldy #0xe1
+└ 0xc0122fb9      ff             isb 0x4d68,x
+
+┌ 7: char *sym.strstr (const char *s1, const char *s2);
+│ 0xc04a5740      1040           bpl 0xc04a5782
+  false: 0xc04a5742
+│ 0xc04a5742      01f5           ora (0xf5,x)
+│ 0xc04a5744      101c           bpl 0xc04a5762
+  false: 0xc04a5746
+└ 0xc04a5746      f4             nop 0x68,x
+
+┌ 1: fcn.c0064861 ();
+└ 0xc0064861      40             rti
+
+┌ 5: long double sym.cosl (long double x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049a020      e944           sbc #0x44
+│ 0xc049a022      00             brk
+│ 0xc049a023      00             brk
+└ 0xc049a024      40             rti
+
+┌ 5: int sym.iswgraph (wint_t wc);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049cfc0      ba             tsx
+│ 0xc049cfc1      4500           eor 0x00
+│ 0xc049cfc3      00             brk
+└ 0xc049cfc4      60             rts
+
+┌ 8: sym.__builtinfunction_bitrev_update8_for_load (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00621f8      9040           bcc 0xc006223a
+  false: 0xc00621fa
+│ 0xc00621fa      00             brk
+│ 0xc00621fb      6902           adc #0x02
+│ 0xc00621fd      e000           cpx #0x00
+└ 0xc00621ff      73             rra (0x68),y
+
+┌ 1: fcn.c0480449 ();
+└ 0xc0480449      40             rti
+
+┌ 5: sym.qd_self_mul ();
+│ 0xc0064790      48             pha
+│ 0xc0064791      c600           dec 0x00
+│ 0xc0064793      58             cli
+│ ;-- qd_self_mul_qd:
+└ 0xc0064794  ~   c2             nop #0x68
+
+│ 0xc049e04b      f502           sbc 0x02,x
+│ 0xc049e04d      52             hlt
+
+  ; CODE XREF from fcn.c049dfa5 @ +0xc8
+┌ 11: float sym.log1pf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049e080      203c01         jsr 0x013c
+│ 0xc049e083      70c6           bvs 0xc049e04b
+| // true: 0xc049e04b  false: 0xc049e085
+│ 0xc049e085      5601           lsr 0x01,x
+│ 0xc049e087      5a             nop
+
+┌ 6: fcn.c049ce21 ();
+│ 0xc049ce21      59015a         eor 0x5a01,y
+│ 0xc049ce24      1040           bpl 0xc049ce66                        ; fcn.c049ce61+0x5
+  false: 0xc049ce26
+└ 0xc049ce26      60             rts
+
+┌ 1: fcn.c0499761 ();
+└ 0xc0499761      40             rti
+
+┌ 1: fcn.c049bbb1 ();
+└ 0xc049bbb1      40             rti
+
+┌ 2: sym.set_exp_qd (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00646a0      00             brk
+└ 0xc00646a1      40             rti
+
+┌ 2: sym.qurt_sem_init (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0480460      00             brk
+│ ; CODE XREF from sym.qurt_rmutex_init @ +0x3f
+└ 0xc0480461      40             rti
+
+  ;-- __hexagon_fixdfti:
+┌ 1: sym.__qdsp_fixdfti ();
+└ 0xc0062a00      02             hlt
+
+┌ 1: fcn.c0061421 ();
+└ 0xc0061421      40             rti
+
+┌ 8: fcn.c04a53a2 (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc04a53a2      0176           ora (0x76,x)
+│ ; CODE XREF from fcn.c04a5311 @ +0x41
+│ 0xc04a53a4      0140           ora (0x40,x)
+│ ; CODE XREF from fcn.c04a5371 @ +0x12
+│ 0xc04a53a6      20910a         jsr 0x0a91
+└ 0xc04a53a9      c2             nop #0x68
+
+┌ 6: int sym.fputs (const char *s, FILE *stream);
+│ ; arg int8_t arg_100h @ sp+0x101
+│ 0xc049c620      1041           bpl 0xc049c663
+  false: 0xc049c622
+│ 0xc049c622      00             brk
+│ 0xc049c623      f540           sbc 0x40,x
+└ 0xc049c625      1c             nop 0x4d68,x
+
+┌ 2: fcn.c00603ce ();
+│ 0xc00603ce      de             invalid
+└ 0xc00603cf  ~   97             sax 0x68,y
+| // true: 0xc00603d0
+┌ 5: sym._Locksyslock ();
+│ 0xc04b3014      0a             asl a
+│ 0xc04b3015      6a             ror a
+│ 0xc04b3016      755b           adc 0x5b,x
+└ 0xc04b3018      03             slo (0x68,x)
+
+┌ 6: float sym.hypotf (float x, float y);
+│ 0xc049cc30      01c0           ora (0xc0,x)
+│ 0xc049cc32      9da056         sta 0x56a0,x
+└ 0xc049cc35      63             rra (0x68,x)
+
+┌ 3: sym.__register_frame_info_bases ();
+│ 0xc04a3490      1040           bpl 0xc04a34d2
+  false: 0xc04a3492
+└ 0xc04a3492      02             hlt
+
+  ;-- __qdsp_fixdfsi:
+┌ 1: sym.__hexagon_fixdfsi ();
+└ 0xc00628e0      02             hlt
+
+┌ 14: float sym.expf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049b420      103c           bpl 0xc049b45e
+  false: 0xc049b422
+│ 0xc049b422      0170           ora (0x70,x)
+│ 0xc049b424      f66c           inc 0x6c,x
+│ 0xc049b426      015a           ora (0x5a,x)
+│ 0xc049b428      1128           ora (0x28),y
+│ 0xc049b42a      106c           bpl 0xc049b498
+  false: 0xc049b42c
+│ 0xc049b42c      28             plp
+└ 0xc049b42d      40             rti
+
+┌ 2: sym.__save_r27_through_r20 ();
+│ 0xc00604b8      fcf4           nop 0x4df4,x
+
+┌ 1: fcn.c00604d9 ();
+└ 0xc00604d9      40             rti
+
+┌ 1: fcn.c04f7475 ();
+└ 0xc04f7475      40             rti
+
+┌ 1: fcn.c0498391 ();
+└ 0xc0498391      40             rti
+
+┌ 4: fcn.c013ab01 ();
+│ 0xc013ab01      4100           eor (0x00,x)
+│ 0xc013ab03      78             sei
+└ 0xc013ab04      23             rla (0x68,x)
+
+┌ 4: sym.normf (int8_t arg_ffh);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049ed00      201cf4         jsr 0xf41c
+└ 0xc049ed03      eb             sbc #0x68
+
+┌ 1: fcn.c04a0c11 ();
+└ 0xc04a0c11      40             rti
+
+┌ 2: int sym.strncmp (const char *s1, const char *s2, size_t n);
+│ 0xc04a5600      08             php
+└ 0xc04a5601      40             rti
+
+┌ 8: sym._Stoll ();
+│ 0xc04b1b44      7ec033         ror 0x33c0,x
+│ 0xc04b1b47      1600           asl 0x00,x
+│ 0xc04b1b49      c000           cpy #0x00
+└ 0xc04b1b4b      7f             rra 0x4d68,x
+
+  ;-- __hexagon_floatdidf:
+│ ;-- (0xc0063401) fcn.c0063401:
+┌ 1: sym.__qdsp_floatdidf ();
+└ 0xc0063400  ~   04             nop 0x68
+
+┌ 5: size_t sym.wcslen (const wchar_t *s);
+│ 0xc04a77f0      81ff           sta (0xff,x)
+│ 0xc04a77f2      e0bf           cpx #0xbf
+│ ; CODE XREF from sym._Wcscollx @ +0x161
+└ 0xc04a77f4      12             hlt
+
+┌ 1: fcn.c047fbf1 ();
+└ 0xc047fbf1      40             rti
+
+┌ 4: fcn.c0480491 ();
+│ 0xc0480491      3000           bmi 0xc0480493
+| // true: 0xc0480493  false: 0xc0480493
+│ ; CODE XREF from fcn.c0480491 @ 0xc0480491
+│ 0xc0480493      28             plp
+└ 0xc0480494      1f             slo 0x4d68,x
+
+┌ 3: sym.__mulxc3 ();
+│ 0xc04a20f4      8671           stx 0x71
+└ 0xc04a20f6      77             rra 0x68,x
+
+┌ 2: fcn.c0481104 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0481104      00             brk
+└ 0xc0481105      3c             nop 0x4d68,x
+
+┌ 5: long double sym.sinhl (long double x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5120      3042           bmi 0xc04a5164
+  false: 0xc04a5122
+│ 0xc04a5122      00             brk
+│ 0xc04a5123      00             brk
+└ 0xc04a5124      40             rti
+
+┌ 3: sym.qurt_pimutex_init ();
+│ 0xc0480388      1040           bpl 0xc04803ca
+  false: 0xc048038a
+└ 0xc048038a      60             rts
+
+┌ 3: fcn.c00611bd ();
+│ 0xc00611bd      c000           cpy #0x00
+└ 0xc00611bf      92             hlt
+
+┌ 4: sym.qurt_signal_set ();
+│ 0xc0061504      08             php
+│ 0xc0061505      d000           bne 0xc0061507
+| // true: 0xc0061507  false: 0xc0061507
+│ ; CODE XREF from sym.qurt_signal_set @ 0xc0061505
+└ 0xc0061507      92             hlt
+
+┌ 3: fcn.c0062166 ();
+│ 0xc0062166      618d           adc (0x8d,x)
+└ 0xc0062168      e3             isb (0x68,x)
+
+┌ 4: fcn.c04982b2 ();
+│ 0xc04982b2      4e7c10         lsr 0x107c
+└ 0xc04982b5      40             rti
+
+┌ 4: sym.qurt_power_wait_for_idle ();
+│ 0xc006186c      08             php
+│ 0xc006186d      c500           cmp 0x00
+└ 0xc006186f      54             nop 0x68,x
+
+│ ;-- (0xc00626a4) fcn.c00626a4:
+┌ 1: fcn.c00626a3 ();
+└ 0xc00626a3  ~   0f             slo 0x4d68
+
+┌ 3: sym.qurt_wait ();
+│ 0xc0481044      b46e           ldy 0x6e,x
+└ 0xc0481046      ff             isb 0x4d68,x
+
+┌ 4: sym.ffs (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a0bf0      00             brk
+│ 0xc04a0bf1      e000           cpx #0x00
+└ 0xc04a0bf3      73             rra (0x68),y
+
+  ; CODE XREF from sym._Parse_fde_instr @ +0xa1a
+┌ 1: fcn.c04a30e8 ();
+└ 0xc04a30e8      40             rti
+
+┌ 7: float sym.floorf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049c110      0140           ora (0x40,x)
+│ 0xc049c112      00             brk
+│ 0xc049c113      78             sei
+│ 0xc049c114      1040           bpl 0xc049c156                        ; sym.floorl+0x6
+  false: 0xc049c116
+└ 0xc049c116      60             rts
+
+┌ 2: sym.__save_r16_through_r19 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060410      00             brk
+└ 0xc0060411      40             rti
+
+┌ 3: char *sym.setlocale (int category, const char *locale);
+│ 0xc04a4d20      845b           sty 0x5b
+└ 0xc04a4d22      77             rra 0x68,x
+
+┌ 4: fcn.c0498161 ();
+│ 0xc0498161      7d0178         adc 0x7801,x
+└ 0xc0498164      03             slo (0x68,x)
+
+┌ 1: fcn.c0480321 ();
+└ 0xc0480321      40             rti
+
+┌ 7: fcn.c0060e51 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0060e51      c000           cpy #0x00
+│ 0xc0060e53      78             sei
+│ 0xc0060e54      00             brk
+│ 0xc0060e55      c500           cmp 0x00
+└ 0xc0060e57      54             nop 0x68,x
+
+  ;-- __qdsp_fixdfdi:
+┌ 1: sym.__hexagon_fixdfdi ();
+└ 0xc0062790      02             hlt
+
+┌ 6: fcn.c049ec84 ();
+│ 0xc049ec84      09c0           ora #0xc0
+│ 0xc049ec86      9da000         sta 0x00a0,x
+└ 0xc049ec89      44             nop 0x68
+
+┌ 1: fcn.c00649c1 ();
+└ 0xc00649c1      40             rti
+
+┌ 4: sym.qurt_system_vid_get ();
+│ 0xc006189c      08             php
+│ 0xc006189d      c600           dec 0x00
+└ 0xc006189f      54             nop 0x68,x
+
+┌ 4: fcn.c049ea12 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049ea12      090c           ora #0x0c
+│ 0xc049ea14      00             brk
+└ 0xc049ea15      c3             dcp (0x68,x)
+
+┌ 4: float sym.cbrtf (float x);
+│ 0xc0499a90      cc7478         cpy 0x7874
+└ 0xc0499a93      5b             sre 0x4d68,y
+
+┌ 8: fcn.c0065ea2 ();
+│ 0xc0065ea2      1db003         ora 0x03b0,x
+│ 0xc0065ea5      3e014c         rol 0x4c01,x
+│ 0xc0065ea8      08             php
+└ 0xc0065ea9      60             rts
+
+┌ 5: fcn.c049e5e1 ();
+│ 0xc049e5e1      4100           eor (0x00,x)
+│ 0xc049e5e3      f520           sbc 0x20,x
+└ 0xc049e5e5      3c             nop 0x4d68,x
+
+┌ 4: float sym.fmaxf (float x, float y);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0064610      00             brk
+│ 0xc0064611      4180           eor (0x80,x)
+└ 0xc0064613      eb             sbc #0x68
+
+┌ 4: sym.__wrap_malloc ();
+│ 0xc0136f5c      84f2           sty 0xf2
+└ 0xc0136f5e      e659           inc 0x59
+| // true: 0xc0136f60
+┌ 10: sym.HAP_perf_get_time_us (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04f7494      864d           stx 0x4d
+│ 0xc04f7496      f15b           sbc (0x5b),y
+│ 0xc04f7498      00             brk
+│ 0xc04f7499      c09d           cpy #0x9d
+│ 0xc04f749b      a008           ldy #0x08
+└ 0xc04f749d      40             rti
+
+┌ 1: fcn.c0061225 ();
+└ 0xc0061225      40             rti
+
+┌ 4: sym._Valbytes (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a2260      00             brk
+│ 0xc04a2261      e000           cpx #0x00
+└ 0xc04a2263      73             rra (0x68),y
+
+┌ 3: sym._Stoul ();
+│ 0xc04b1f34      16c0           asl 0xc0,x
+└ 0xc04b1f36      33             rla (0x68),y
+
+┌ 3: sym.qurt_timer_delete ();
+│ 0xc04982a4      8475           sty 0x75
+└ 0xc04982a6      fc             nop 0x4d68,x
+
+┌ 1: long double sym.log2l (long double x);
+└ 0xc049e230      40             rti
+
+  ; CODE XREF from fcn.c049dbb1 @ +0x7c
+┌ 8: long long sym.llrintf (float x);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049dc40      303c           bmi 0xc049dc7e
+  false: 0xc049dc42
+│ 0xc049dc42      0170           ora (0x70,x)
+│ 0xc049dc44      1040           bpl 0xc049dc86
+  false: 0xc049dc46
+│ 0xc049dc46      00             brk
+└ 0xc049dc47      7c             nop 0x4d68,x
+
+┌ 10: fcn.c04a5592 (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc04a5592      00             brk
+│ 0xc04a5593      00             brk
+│ 0xc04a5594      20c001         jsr 0x01c0
+│ 0xc04a5597      1600           asl 0x00,x
+│ 0xc04a5599      c000           cpy #0x00
+└ 0xc04a559b      7f             rra 0x4d68,x
+
+┌ 2: sym._Mbtowcx (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04ae280      00             brk
+│ ; CODE XREF from sym._Mbtowcx @ +0x1f
+└ 0xc04ae281      3c             nop 0x4d68,x
+
+  ;-- __qdsp_extendsfdf2:
+│ ;-- (0xc00626c1) fcn.c00626c1:
+┌ 1: sym.__hexagon_extendsfdf2 ();
+└ 0xc00626c0  ~   04             nop 0x68
+
+┌ 4: char *sym.getenv (const char *name);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ 0xc049cb80      201cf4         jsr 0xf41c
+└ 0xc049cb83      eb             sbc #0x68
+
+┌ 1: fcn.c0499391 ();
+└ 0xc0499391      40             rti
+
+┌ 1: sym.HAP_setFARFRuntimeLoggingParams ();
+└ 0xc04f74f0      9c             shy 0x4d68,x
+
+┌ 1: fcn.c049bb01 ();
+└ 0xc049bb01      40             rti
+
+┌ 6: float sym.rintf (float x);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a4790      203c01         jsr 0x013c
+│ 0xc04a4793      703e           bvs 0xc04a47d3
+  false: 0xc04a4795
+└ 0xc04a4795      63             rra (0x68,x)
+
+┌ 2: sym.__restore_r24_through_r25_and_deallocframe_before_tailcall ();
+│ 0xc00603d0      00             brk
+└ 0xc00603d1      40             rti
+
+┌ 3: fcn.c04b1a42 ();
+│ 0xc04b1a42      755b           adc 0x5b,x
+└ 0xc04b1a44      04             nop 0x68
+
+  ;-- __hexagon_floattidf:
+│ ;-- (0xc0063891) fcn.c0063891:
+┌ 1: sym.__qdsp_floattidf ();
+└ 0xc0063890  ~   04             nop 0x68
+
+┌ 4: sym._Read_sleb (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a2298      013d           ora (0x3d,x)
+│ 0xc04a229a      00             brk
+└ 0xc04a229b      3c             nop 0x4d68,x
+
+┌ 3: fcn.c0499681 ();
+│ 0xc0499681      7678           ror 0x78,x
+└ 0xc0499683      5b             sre 0x4d68,y
+
+┌ 4: floating_point sym.cbrt (arithmetic x);
+│ 0xc0499860      d075           bne 0xc04998d7
+  false: 0xc0499862
+│ 0xc0499862      78             sei
+└ 0xc0499863      5b             sre 0x4d68,y
+
+┌ 8: sym.qurt_timer_attr_get_remaining (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0498214      1040           bpl 0xc0498256                        ; sym.qurt_timer_attr_get_type+0x6
+  false: 0xc0498216
+│ 0xc0498216      00             brk
+│ 0xc0498217      1002           bpl 0xc049821b
+| // true: 0xc049821b  false: 0xc0498219
+│ 0xc0498219      c080           cpy #0x80
+| // true: 0xc049821b
+│ ; CODE XREF from sym.qurt_timer_attr_get_remaining @ 0xc0498217
+└ 0xc049821b      47             sre 0x68
+
+│ ; CODE XREF from sym.qurt_pipe_delete @ 0xc047efa6
+│ 0xc047ef58      00             brk
+│ ; CODE XREF from sym.qurt_pipe_send @ +0x2e
+│ 0xc047ef59      d190           cmp (0x90),y
+│ 0xc047ef5b      a154           lda (0x54,x)
+│ 0xc047ef5d      78             sei
+│ 0xc047ef5e      fb             isb 0x4d68,y
+
+┌ 15: sym.qurt_pipe_delete (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc047ef64      1040           bpl 0xc047efa6
+| // true: 0xc047efa6  false: 0xc047ef66
+│ 0xc047ef66      60             rts
+
+│ ; CODE XREF from sym.qurt_pipe_delete @ 0xc047ef64
+│ 0xc047efa6      10b0           bpl 0xc047ef58
+| // true: 0xc047ef58  false: 0xc047efa8
+│ 0xc047efa8      050a           ora 0x0a
+│ 0xc047efaa      89             nop #0x68
+
+┌ 3: sym._Strxfrmx ();
+│ 0xc04a5990      0678           asl 0x78
+└ 0xc04a5992      07             slo 0x68
+
+┌ 2: sym.qurt_mapping_create ();
+│ 0xc047fc74      08             php
+└ 0xc047fc75      40             rti
+
+┌ 4: sym._Read_enc_ptr (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc04a2314      8a             txa
+│ 0xc04a2315      7077           bvs 0xc04a238e
+  false: 0xc04a2317
+└ 0xc04a2317      5b             sre 0x4d68,y
+
+│ 0xc047f049      e080           cpx #0x80
+│ 0xc047f04b      7e124f         ror 0x4f12,x
+│ 0xc047f04e      7c             nop 0x4d68,x
+
+  ; CODE XREF from fcn.c047eff1 @ +0x68
+┌ 12: sym.qurt_pipe_receive ();
+│ 0xc047f064      1040           bpl 0xc047f0a6
+| // true: 0xc047f0a6  false: 0xc047f066
+│ 0xc047f066      60             rts
+
+│ ; CODE XREF from sym.qurt_pipe_receive @ 0xc047f064
+│ 0xc047f0a6      90a1           bcc 0xc047f049
+| // true: 0xc047f049  false: 0xc047f0a8
+│ 0xc047f0a8      9c             shy 0x4d68,x
+
+│ ;-- (0xc0063f22) fcn.c0063f22:
+┌ 1: fcn.c0063f21 ();
+└ 0xc0063f21  ~   df             dcp 0x4d68,x
+
+┌ 5: fcn.c04a5371 ();
+│ 0xc04a5371      c060           cpy #0x60
+│ 0xc04a5373      7023           bvs 0xc04a5398
+  false: 0xc04a5375
+└ 0xc04a5375      40             rti
+
+┌ 3: sym.fma ();
+│ 0xc0066d80      5040           bvc 0xc0066dc2
+  false: 0xc0066d82
+└ 0xc0066d82      80             nop #0x68
+
+┌ 2: sym._LLog ();
+│ 0xc04abeb0      a8             tay
+└ 0xc04abeb1      62             hlt
+
+┌ 1: fcn.c0065631 ();
+└ 0xc0065631      40             rti
+
+┌ 4: ldiv_t sym.ldiv (long numer, long denom);
+│ 0xc049d150      68             pla
+│ 0xc049d151      6a             ror a
+│ 0xc049d152      78             sei
+└ 0xc049d153      5b             sre 0x4d68,y
+
+┌ 15: int sym.swprintf (wchar_t *s, size_t n, const wchar_t *format);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a5af0      e47f           cpx 0x7f
+│ 0xc04a5af2      e1bf           sbc (0xbf,x)
+│ 0xc04a5af4      203c10         jsr 0x103c
+│ 0xc04a5af7      790640         adc 0x4006,y
+│ 0xc04a5afa      00             brk
+│ 0xc04a5afb      7e0640         ror 0x4006,x
+└ 0xc04a5afe      80             nop #0x68
+
+┌ 6: sym.toqdouble (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00646f0      0540           ora 0x40
+│ 0xc00646f2      00             brk
+│ 0xc00646f3      78             sei
+│ 0xc00646f4      00             brk
+└ 0xc00646f5      42             hlt
+
+┌ 2: fcn.c0061e42 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc0061e42      00             brk
+└ 0xc0061e43      5c             nop 0x4d68,x
+
+┌ 10: sym._Stodx ();
+│ 0xc04b11c0      2479           bit 0x79
+│ 0xc04b11c2      755b           adc 0x5b,x
+│ 0xc04b11c4      08             php
+│ 0xc04b11c5      c09d           cpy #0x9d
+│ 0xc04b11c7      a080           ldy #0x80
+└ 0xc04b11c9      43             sre (0x68,x)
+
+┌ 3: sym.ecvt ();
+│ 0xc04a0b00      847c           sty 0x7c
+└ 0xc04a0b02      77             rra 0x68,x
+
+┌ 11: sym.qurt_barrier_wait (int8_t arg_ffh, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0xc0061060      101c           bpl 0xc006107e
+  false: 0xc0061062
+│ 0xc0061062      05c1           ora 0xc1
+│ 0xc0061064      2440           bit 0x40
+│ 0xc0061066      00             brk
+│ 0xc0061067      78             sei
+│ 0xc0061068      01c0           ora (0xc0,x)
+└ 0xc006106a      23             rla (0x68,x)
+
+┌ 6: fcn.c04a5701 ();
+│ 0xc04a5701      1003           bpl 0xc04a5706
+| // true: 0xc04a5706  false: 0xc04a5703
+│ ; CODE XREF from fcn.c04a5701 @ +0x1a
+│ 0xc04a5703      5014           bvc 0xc04a5719
+  false: 0xc04a5705
+│ 0xc04a5705      40             rti
+
+│ ; CODE XREF from fcn.c04a5701 @ 0xc04a5701
+└ 0xc04a5706      02             hlt
+
+┌ 3: floating_point sym.lgamma (arithmetic x);
+└ 0xc049d170      4c5978         jmp 0x7859
+
+┌ 4: sym._Read_uleb (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a22e4      013d           ora (0x3d,x)
+│ 0xc04a22e6      00             brk
+└ 0xc04a22e7      3c             nop 0x4d68,x
+
+┌ 6: sym.__restore_r27_through_r20_and_deallocframe_before_sibcall ();
+│ 0xc00604d0      947f           sty 0x7f,x
+│ 0xc00604d2      de97b6         dec 0xb697,x
+└ 0xc00604d5      ff             isb 0x4d68,x
+
+┌ 3: fcn.c013ab65 ();
+└ 0xc013ab65      6ce45b         jmp (0x5be4)
+
+┌ 2: int sym.wmemcmp (wchar_t *s1, const wchar_t *s2, size_t n);
+│ 0xc04a7a00      08             php
+└ 0xc04a7a01      40             rti
+
+┌ 10: fcn.c00603f6 ();
+│ 0xc00603f6      de971e         dec 0x1e97,x
+│ 0xc00603f9      c01e           cpy #0x1e
+│ 0xc00603fb      9000           bcc 0xc00603fd
+| // true: 0xc00603fd  false: 0xc00603fd
+│ ; CODE XREF from fcn.c00603f6 @ 0xc00603fb
+│ ; CODE XREF from sym.__save_r16_through_r19 @ +0xd
+│ 0xc00603fd      c09f           cpy #0x9f
+└ 0xc00603ff      52             hlt
+
+┌ 6: int sym.ungetc (int c, FILE *stream);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc04a7290      1041           bpl 0xc04a72d3
+  false: 0xc04a7292
+│ ; CODE XREF from sym.truncf @ 0xc04a7254
+│ 0xc04a7292      00             brk
+│ 0xc04a7293      f520           sbc 0x20,x
+│ ; CODE XREF from sym.ungetc @ +0x62
+└ 0xc04a7295      1c             nop 0x4d68,x
+
+┌ 14: sym.fast2_dmpy_asm (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00655a0      2d5002         and 0x0250
+│ 0xc00655a3      8c2c50         sty 0x502c
+│ 0xc00655a6      00             brk
+│ 0xc00655a7      8c0434         sty 0x3404
+│ 0xc00655aa      2534           and 0x34
+│ 0xc00655ac      0a             asl a
+└ 0xc00655ad      43             sre (0x68,x)
+
+┌ 5: int sym.iswupper (wint_t wc);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc049d010      b94500         lda 0x0045,y
+│ 0xc049d013      00             brk
+└ 0xc049d014      40             rti
+
+┌ 3: fcn.c047f925 ();
+│ 0xc047f925      457c           eor 0x7c
+└ 0xc047f927      5b             sre 0x4d68,y
+
+┌ 3: long double sym.remquol (long double x, long double y, int *pquo);
+│ 0xc04a4520      705f           bvs 0xc04a4581
+  false: 0xc04a4522
+└ 0xc04a4522      77             rra 0x68,x
+
+┌ 3: fcn.c04a7811 ();
+│ 0xc04a7811      4577           eor 0x77
+└ 0xc04a7813      5b             sre 0x4d68,y
+
+┌ 4: sym.__save_r16_through_r23 ();
+│ 0xc0060408      fc76de         nop 0xde76,x
+└ 0xc006040b      a7             lax 0x68
+
+┌ 3: fcn.c00611fd (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0xc00611fd      c8             iny
+│ 0xc00611fe      00             brk
+└ 0xc00611ff      54             nop 0x68,x
+
+┌ 7: fcn.c00618a5 ();
+│ 0xc00618a5      c060           cpy #0x60
+│ 0xc00618a7      7014           bvs 0xc00618bd
+  false: 0xc00618a9
+│ 0xc00618a9      c500           cmp 0x00
+└ 0xc00618ab      54             nop 0x68,x
+

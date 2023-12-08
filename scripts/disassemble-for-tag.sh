@@ -9,6 +9,7 @@ git checkout $LATEST_TAG
 
 cd $START
 
+python3 ./diassembly/6502.py $LATEST_TAG
 python3 ./disassembly/avr.py $LATEST_TAG
 python3 ./disassembly/superh.py $LATEST_TAG
 python3 ./disassembly/mips.py $LATEST_TAG

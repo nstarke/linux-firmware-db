@@ -1,0 +1,17 @@
+  ;-- segment.LOAD0:
+  ;-- segment.ehdr:
+  ;-- pc:
+┌ 17: entry0 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x00005000      10d0           bpl 0x004fd2                          ; [03] -rw- segment size 52 named ehdr
+| // true: 0x00004fd2  false: 0x00005002
+│ 0x00005002      6d01a3         adc 0xa301
+│ 0x00005005      010b           ora (0x0b,x)
+│ 0x00005007      88             dey
+│ 0x00005008      7100           adc (0x00),y
+│ 0x0000500a      09b8           ora #0xb8
+│ 0x0000500c      7100           adc (0x00),y
+│ 0x0000500e      00             brk
+│ 0x0000500f      a8             tay
+└ 0x00005010      04             nop 0xba
+

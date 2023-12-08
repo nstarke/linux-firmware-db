@@ -1,0 +1,32 @@
+  ;-- pc:
+  ;-- a:
+  ;-- x:
+  ;-- y:
+  ;-- flags:
+  ;-- sp:
+┌ 1: fcn.00000000 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x00000000      de             invalid
+| // true: 0x00000001
+  ; CALL XREF from fcn.00000001 @ +0xff
+┌ 17: fcn.00000001 ();
+│ 0x00000001      1000           bpl 0x000003
+│ 0x00000003      00             brk
+│ 0x00000004      0100           ora (0x00,x)
+│ 0x00000006      00             brk
+│ 0x00000007      00             brk
+│ 0x00000008      00             brk
+│ 0x00000009      1100           ora (0x00),y
+│ 0x0000000b      00             brk
+│ 0x0000000c      00             brk
+│ 0x0000000d      0100           ora (0x00,x)
+│ 0x0000000f      00             brk
+│ 0x00000010      00             brk
+└ 0x00000011      02             hlt
+
+  ; CALL XREF from fcn.000003c0 @ +0xb7c
+┌ 6: fcn.000003c0 ();
+│ 0x000003c0      e644           inc 0x44
+│ 0x000003c2      0e3bdf         asl 0xdf3b
+└ 0x000003c5      80             nop #0x62
+

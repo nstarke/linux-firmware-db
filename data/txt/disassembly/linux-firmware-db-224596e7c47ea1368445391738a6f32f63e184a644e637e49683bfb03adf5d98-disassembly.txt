@@ -1,0 +1,69 @@
+  ;-- pc:
+  ;-- a:
+  ;-- x:
+  ;-- y:
+  ;-- flags:
+  ;-- sp:
+┌ 1: fcn.00000000 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x00000000      de             invalid
+| // true: 0x00000001
+  ; CALL XREF from fcn.00000001 @ +0xff
+┌ 17: fcn.00000001 ();
+│ 0x00000001      1000           bpl 0x000003
+│ 0x00000003      00             brk
+│ 0x00000004      0100           ora (0x00,x)
+│ 0x00000006      00             brk
+│ 0x00000007      00             brk
+│ 0x00000008      00             brk
+│ 0x00000009      590000         eor 0x0000,y
+│ 0x0000000c      00             brk
+│ 0x0000000d      0100           ora (0x00,x)
+│ 0x0000000f      00             brk
+│ 0x00000010      00             brk
+└ 0x00000011      02             hlt
+
+  ; CALL XREF from fcn.00000484 @ +0x566
+┌ 1: fcn.00000484 ();
+└ 0x00000484      60             rts
+
+  ; CALL XREF from fcn.00000d63 @ +0x341
+┌ 3: fcn.000014d7 ();
+│ 0x000014d7      e99c           sbc #0x9c
+└ 0x000014d9      f3             isb (0x5e),y
+
+  ; CALL XREF from fcn.000014d7 @ +0x11e
+┌ 3: fcn.000034ac ();
+│ 0x000034ac      512e           eor (0x2e),y
+└ 0x000034ae      3f             rla 0x205e,x
+
+  ; CALL XREF from fcn.000014d7 @ +0x17f
+┌ 4: fcn.00002883 ();
+│ 0x00002883      d9daf6         cmp 0xf6da,y
+└ 0x00002886      9b             shs 0x205e,y
+
+  ; CALL XREF from fcn.000014d7 @ +0x1ff
+┌ 6: fcn.0000043d ();
+│ 0x0000043d      56a0           lsr 0xa0,x
+│ 0x0000043f      acec4c         ldy 0x4cec
+└ 0x00000442      17             slo 0x5e,x
+
+  ; CALL XREF from fcn.000014d7 @ +0x559
+┌ 4: fcn.00000d63 ();
+│ 0x00000d63      ecc787         cpx 0x87c7
+└ 0x00000d66      54             nop 0x5e,x
+
+  ; CALL XREF from fcn.000014d7 @ +0x123d
+┌ 7: fcn.000049fe (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x000049fe      00             brk
+│ 0x000049ff      00             brk
+│ 0x00004a00      b6c2           ldx 0xc2,y
+│ 0x00004a02      31e9           and (0xe9),y
+└ 0x00004a04      03             slo (0x5e,x)
+
+  ; CALL XREF from fcn.000037a6 @ +0x31
+┌ 3: fcn.000037a6 ();
+│ 0x000037a6      e04c           cpx #0x4c
+└ 0x000037a8      07             slo 0x5e
+

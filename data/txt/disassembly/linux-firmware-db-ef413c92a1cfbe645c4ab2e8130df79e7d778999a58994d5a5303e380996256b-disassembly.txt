@@ -1,0 +1,56 @@
+  ;-- pc:
+  ;-- a:
+  ;-- x:
+  ;-- y:
+  ;-- flags:
+  ;-- sp:
+┌ 22: fcn.00000000 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x100
+│ 0x00000000      de1000         dec 0x0010,x
+│ 0x00000003      00             brk
+│ 0x00000004      0100           ora (0x00,x)
+│ 0x00000006      00             brk
+│ 0x00000007      00             brk
+│ 0x00000008      00             brk
+│ 0x00000009      4600           lsr 0x00
+│ 0x0000000b      00             brk
+│ 0x0000000c      00             brk
+│ 0x0000000d      0100           ora (0x00,x)
+│ 0x0000000f      00             brk
+│ 0x00000010      00             brk
+│ 0x00000011      0600           asl 0x00
+│ 0x00000013      00             brk
+│ 0x00000014      00             brk
+└ 0x00000015      40             rti
+
+  ; CALL XREF from fcn.00000000 @ +0x2a2
+┌ 5: fcn.0000282f ();
+│ 0x0000282f      05dd           ora 0xdd
+│ 0x00002831      c92a           cmp #0x2a
+└ 0x00002833      f4             nop 0x02,x
+
+  ; CALL XREF from fcn.00000000 @ +0xdc4
+┌ 6: fcn.000022a5 ();
+│ 0x000022a5      8d855e         sta 0x5e85
+│ 0x000022a8      a45d           ldy 0x5d
+└ 0x000022aa      df             dcp 0x4502,x
+
+  ; CALL XREF from fcn.00000000 @ +0xe11
+┌ 7: fcn.00000eb7 ();
+│ 0x00000eb7      a200           ldx #0x00
+│ 0x00000eb9      fef29f         inc 0x9ff2,x
+│ ; CODE XREF from fcn.00000000 @ +0xe8c
+│ 0x00000ebc      aa             tax
+└ 0x00000ebd      62             hlt
+
+  ; CALL XREF from fcn.000022a5 @ +0x17f
+┌ 3: fcn.00001a17 ();
+│ 0x00001a17      4151           eor (0x51,x)
+│ ; CODE XREF from fcn.00001a17 @ +0x65
+└ 0x00001a19      22             hlt
+
+  ; CALL XREF from fcn.0000282f @ +0x5cc
+┌ 3: fcn.000015c7 ();
+│ 0x000015c7      c9a5           cmp #0xa5
+└ 0x000015c9      5a             nop
+

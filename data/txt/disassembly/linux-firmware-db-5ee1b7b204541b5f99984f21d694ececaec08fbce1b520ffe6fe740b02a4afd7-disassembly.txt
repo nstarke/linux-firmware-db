@@ -1,0 +1,24 @@
+│ ; CODE XREF from entry0 @ 0x1736ecb
+│ 0x01736e95      4f             sre 0x5ca8
+
+│ ; CODE XREF from entry0 @ 0x1736f09
+│ 0x01736ecb      10c8           bpl 0x1736e95
+| // true: 0x01736e95  false: 0x01736ecd
+│ 0x01736ecd      ff             isb 0x5ca8,x
+
+  ;-- pc:
+  ;-- r15:
+┌ 20: entry0 (int32_t arg_100h);
+│ ; arg int32_t arg_100h @ sp+0x100
+│ 0x01736f00      00             brk
+│ 0x01736f01      c040           cpy #0x40
+│ 0x01736f03      a8             tay
+│ 0x01736f04      00             brk
+│ 0x01736f05      c000           cpy #0x00
+│ 0x01736f07      a200           ldx #0x00
+│ 0x01736f09      d0c0           bne 0x1736ecb
+| // true: 0x01736ecb  false: 0x01736f0b
+│ 0x01736f0b      5602           lsr 0x02,x
+│ 0x01736f0d      c0c0           cpy #0xc0
+│ 0x01736f0f      57             sre 0xa8,x
+

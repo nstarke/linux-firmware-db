@@ -1,0 +1,56 @@
+┌ 5: fcn.00000001 (int8_t arg_100h);
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0x00000001      4d4100         eor 0x0041
+│ 0x00000004      00             brk
+└ 0x00000005      00             brk
+| // true: 0x00000006
+  ; CODE XREFS from fcn.00000006 @ +0x2f, +0x1c2
+┌ 4: fcn.00000219 ();
+│ 0x00000219      ad9dbb         lda 0xbb9d
+└ 0x0000021c      83             sax (0x66,x)
+
+  ; CALL XREFS from fcn.00000219 @ +0x30c, +0x334, +0x884, +0x8d4
+┌ 43: fcn.00000006 (int8_t arg_ffh, int8_t arg_100h_2, int8_t arg_100h);
+│ ; arg int8_t arg_ffh @ sp+0xff
+│ ; arg int8_t arg_100h_2 @ sp+0x100
+│ ; arg int8_t arg_100h @ sp+0x102
+│ 0x00000006      00             brk
+│ 0x00000007      00             brk
+│ 0x00000008      200000         jsr 0x0000
+│ 0x0000000b      00             brk
+│ 0x0000000c      010f           ora (0x0f,x)
+│ 0x0000000e      7000           bvs 0x000010
+| // true: 0x00000010  false: 0x00000010
+│ ; CODE XREF from fcn.00000006 @ 0xe
+│ 0x00000010      00             brk
+│ 0x00000011      00             brk
+│ 0x00000012      00             brk
+│ 0x00000013      00             brk
+│ 0x00000014      00             brk
+│ 0x00000015      00             brk
+│ 0x00000016      00             brk
+│ 0x00000017      00             brk
+│ 0x00000018      0170           ora (0x70,x)
+│ 0x0000001a      00             brk
+│ 0x0000001b      00             brk
+│ 0x0000001c      00             brk
+│ 0x0000001d      00             brk
+│ 0x0000001e      00             brk
+│ 0x0000001f      00             brk
+│ 0x00000020      00             brk
+│ 0x00000021      00             brk
+│ 0x00000022      00             brk
+│ 0x00000023      00             brk
+│ 0x00000024      00             brk
+│ 0x00000025      00             brk
+│ 0x00000026      00             brk
+│ 0x00000027      00             brk
+│ 0x00000028      00             brk
+│ 0x00000029      00             brk
+│ 0x0000002a      00             brk
+│ 0x0000002b      00             brk
+│ 0x0000002c      0100           ora (0x00,x)
+│ 0x0000002e      00             brk
+│ 0x0000002f      00             brk
+└ 0x00000030      82             nop #0x66
+
