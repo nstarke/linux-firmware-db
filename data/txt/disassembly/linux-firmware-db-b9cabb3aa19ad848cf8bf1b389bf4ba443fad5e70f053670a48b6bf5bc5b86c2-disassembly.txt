@@ -1,0 +1,59 @@
+┌ 8: fcn.00000048 (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x00000048      3e01001b       madd w30, w9, w0, w0                  ; arg1
+└ 0x0000004c      00020300       invalid
+
+  ; CALL XREF from aav.0x00007e00 @ +0x82c
+┌ 16: fcn.0003ca7c ();
+│ 0x0003ca7c      10b50029       stp w16, w13, [x8, 4]
+│ 0x0003ca80      0ad00878       sturh w10, [x0, 0x8d]
+│ 0x0003ca84      002807d0       adrp x0, 0xe53e000
+└ 0x0003ca88      05487844       invalid
+
+  ; CALL XREF from fcn.0002c3bc @ +0x810
+┌ 8: fcn.0004a580 ();
+│ 0x0004a580      48bf00f8       str x8, [x26, 0xb]!
+└ 0x0004a584      012b7047       invalid
+
+  ; CALL XREF from fcn.0002c3bc @ +0xca0
+┌ 12: fcn.00035c68 (int64_t arg2);
+│ ; arg int64_t arg2 @ x1
+│ 0x00035c68      c06101ea       ands x0, x14, x1, lsl 24              ; arg2
+│ 0x00035c6c      40274ff0       adrp x0, 0x9e520000
+└ 0x00035c70      e06821e0       invalid
+
+┌ 12: fcn.00036608 (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x00036608      0025202d       stp s0, s9, [x8, -aav.0x00000100]
+│ 0x0003660c      1fd05af8       ldur xzr, [x0, -0x53]                 ; 0xc7 ; arg1
+└ 0x00036610      25103346       invalid
+
+┌ 8: fcn.0004d0f4 (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x0004d0f4      04f8012c       stnp s4, s30, [x0, 0xc]               ; arg1
+└ 0x0004d0f8      2371a4f8       invalid
+
+┌ 12: fcn.0002c3bc ();
+│ 0x0002c3bc      f04201d1       sub x16, x23, 0x50
+│ 0x0002c3c0      98190890       adrp x24, 0x1035c000
+└ 0x0002c3c4      32460123       invalid
+
+┌ 12: fcn.00032a5c ();
+│ 0x00032a5c      f04201d1       sub x16, x23, 0x50
+│ 0x00032a60      98190890       adrp x24, 0x10362000
+└ 0x00032a64      32460123       invalid
+
+┌ 8: fcn.0000be2c ();
+│ 0x0000be2c      f82b02a9       stp x24, x10, [sp, 0x20]
+└ 0x0000be30      50469047       invalid
+
+│ ; CODE XREF from fcn.00030254 @ 0x30258
+│ 0x0002fa68      00000000       invalid
+
+┌ 16: fcn.00030254 (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x00030254      f0f810a9       stp x16, x30, [x7, aav.aav.0x00000108] ; arg8
+│ 0x00030258      97c0bfb7       tbnz x23, 0x37, 0x2fa68
+| // true: 0x0002fa68  false: 0x0003025c
+│ 0x0003025c      b45fd41f       invalid
+
