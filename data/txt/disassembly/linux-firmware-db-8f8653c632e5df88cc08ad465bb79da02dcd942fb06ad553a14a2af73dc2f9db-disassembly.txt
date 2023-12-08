@@ -1,0 +1,82 @@
+  ;-- zero:
+  ;-- at:
+  ;-- v0:
+  ;-- v1:
+  ;-- a0:
+  ;-- a1:
+  ;-- a2:
+  ;-- a3:
+  ;-- t0:
+  ;-- t1:
+  ;-- t2:
+  ;-- t3:
+  ;-- t4:
+  ;-- t5:
+  ;-- t6:
+  ;-- t7:
+  ;-- s0:
+  ;-- s1:
+  ;-- s2:
+  ;-- s3:
+  ;-- s4:
+  ;-- s5:
+  ;-- s6:
+  ;-- s7:
+  ;-- t8:
+  ;-- t9:
+  ;-- k0:
+  ;-- k1:
+  ;-- gp:
+  ;-- ra:
+  ;-- pc:
+  ;-- hi:
+  ;-- lo:
+  ;-- t:
+  ; CALL XREFS from aav.0x00000500 @ +0x360, +0x3b4, +0x4a4
+  ; CALL XREF from aav.0x00000d00 @ +0x1c
+┌ 8: fcn.00000000 ();
+│ 0x00000000      574d4452       beql s2, a0, 0x13560
+└ 0x00000004      10000000       mfhi zero
+
+  ; CALL XREF from aav.0x00000500 @ +0x18
+┌ 16: fcn.0000025c ();
+│ 0x0000025c      0000007f       ext zero, t8, 0, 1
+│ 0x00000260      03000000       sra zero, zero, 0
+│ 0x00000264      00080000       sll at, zero, 0
+└ 0x00000268      00000800       sll zero, t0, 0
+
+  ; CALL XREFS from aav.0x00000500 @ +0x48, +0x348
+┌ 28: fcn.00000240 ();
+│ 0x00000240      7f32726f       ldr s2, 0x327f(k1)
+│ 0x00000244      87433f7d       dins ra, t1, 0xe, -5
+│ 0x00000248      0374f004       bltzal a3, 0x1d258
+│ 0x0000024c      00080000       sll at, zero, 0
+│ 0x00000250      00000800       sll zero, t0, 0
+│ 0x00000254      00000000       nop
+└ 0x00000258      ffff0000       dsra32 ra, zero, 0x1f
+
+  ; CALL XREFS from aav.0x00000500 @ +0x36c, +0x3c0
+┌ 12: fcn.00000030 (int64_t arg2);
+│ ; arg int64_t arg2 @ a1
+│ 0x00000030      6f6a6563       daddi a1, k1, 0x6a6f                  ; arg2
+│ 0x00000034      745c4c65       daddiu t4, t2, 0x5c74
+└ 0x00000038      6e6f766f       ldr s6, 0x6f6e(k1)
+
+  ; CALL XREF from aav.0x00000a00 @ +0x4
+┌ 4: fcn.0000018c ();
+└ 0x0000018c      03a60004       bltz zero, -0x16664
+
+  ; CODE XREF from aav.0x00000500 @ +0x9c
+  ; CALL XREF from aav.0x00000d00 @ +0x13c
+┌ 4: fcn.0000002c ();
+└ 0x0000002c      735c5072       cins32 s0, s2, 0x11, 0xb
+
+│ ; CODE XREF from fcn.00000308 @ 0x308
+│ 0x00000020      8d000000       break 0, 2
+
+  ; CALL XREF from aav.0x00000d00 @ +0x31c
+┌ 12: fcn.00000308 (int64_t arg1);
+│ ; arg int64_t arg1 @ a0
+│ 0x00000308      08000008       j 0x20
+│ 0x0000030c      00200000       sll a0, zero, 0                       ; arg1
+| // true: 0x00000020

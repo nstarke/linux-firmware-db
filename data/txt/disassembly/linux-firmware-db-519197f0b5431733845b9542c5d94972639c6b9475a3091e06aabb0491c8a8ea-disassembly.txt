@@ -1,0 +1,110 @@
+┌ 36: fcn.000000cc ();
+│ 0x000000cc      27bd0020       addi zero, zero, -0x42d9
+│ 0x000000d0      00000000       nop
+│ 0x000000d4      00000000       nop
+│ 0x000000d8      00000000       nop
+│ 0x000000dc      27bdffe0       sc ra, -0x42d9(a3)
+│ 0x000000e0      afbf001c       bgtz zero, -0x10060
+│ 0x000000e4      afb20018       blez zero, -0x1345c
+  false: 0x000000ec
+│ 0x000000ec      0e00005b       blezl t8, 0x128
+└ 0x000000f0      afb00010       b -0x13c50
+
+┌ 36: fcn.00000174 ();
+│ 0x00000174      27bd0020       addi zero, zero, -0x42d9
+│ 0x00000178      27bdffe0       sc ra, -0x42d9(a3)
+│ 0x0000017c      3c040800       dsll32 zero, t0, 0x10
+│ 0x00000180      24841ac0       ll k0, -0x7bdc(zero)
+│ 0x00000184      00002821       addi t0, t1, 0
+│ 0x00000188      00003021       addi s0, t1, 0
+│ 0x0000018c      00003821       addi t8, t1, 0
+│ 0x00000190      afbf0018       blez zero, -0xffb0
+└ 0x00000194      afa00010       b -0x17bac
+
+┌ 36: fcn.00000294 ();
+│ 0x00000294      27bd0020       addi zero, zero, -0x42d9
+│ 0x00000298      27bdffe0       sc ra, -0x42d9(a3)
+│ 0x0000029c      3c040800       dsll32 zero, t0, 0x10
+│ 0x000002a0      24841ad8       bbit032 zero, 0x1a, -0x1eccc
+│ 0x000002a4      00002821       addi t0, t1, 0
+│ 0x000002a8      00003021       addi s0, t1, 0
+│ 0x000002ac      00003821       addi t8, t1, 0
+│ 0x000002b0      afbf0018       blez zero, -0xfe90
+└ 0x000002b4      afa00010       b -0x17a8c
+
+┌ 4: fcn.000002d8 ();
+└ 0x000002d8      27bd0020       addi zero, zero, -0x42d9
+
+┌ 60: fcn.000007c8 (int64_t arg1);
+│ ; arg int64_t arg1 @ a0
+│ 0x000007c8      27bd0030       andi zero, zero, 0xbd27
+│ 0x000007cc      27bdffd0       lld ra, -0x42d9(a3)
+│ 0x000007d0      afbf0028       slti zero, zero, -0x4051
+│ 0x000007d4      afb30024       addiu zero, zero, -0x4c51
+│ 0x000007d8      afb20020       addi zero, zero, -0x4d51
+│ 0x000007dc      afb1001c       bgtz zero, -0x13164
+│ 0x000007e0      afb00018       blez zero, -0x13560
+  false: 0x000007e8
+│ 0x000007e8      3c0200ff       sd zero, 0x23c(t8)
+│ 0x000007ec      3442fff8       bbit132 a3, 0x1f, 0x110c0
+│ 0x000007f0      3c070800       dsll32 zero, t0, 0x1c
+│ 0x000007f4      24e71bb4       sdr k1, -0x18dc(zero)
+│ 0x000007f8      02428824       addiu t0, a0, 0x4202                  ; arg1
+│ 0x000007fc      9623000e       jal 0x8008e58
+│ ;-- syscall.0:
+│ 0x00000800      8ce20000       syscall 0x38a
+└ 0x00000804      00431021       addi s0, t0, 0x4300
+
+┌ 20: fcn.00000ccc ();
+│ 0x00000ccc      27bd0030       andi zero, zero, 0xbd27
+│ 0x00000cd0      8f634450       beql v0, a0, 0x19b10
+│ 0x00000cd4      3c040800       dsll32 zero, t0, 0x10
+  false: 0x00000cd8
+│ 0x00000cd8      24841b88       lwl k1, -0x7bdc(zero)
+│ ;-- syscall.0.0:
+└ 0x00000cdc      8c820000       syscall 0x20a
+
+┌ 16: fcn.00001308 (int64_t arg4);
+│ ; arg int64_t arg4 @ a3
+│ 0x00001308      27bd0020       addi zero, zero, -0x42d9
+│ 0x0000130c      27bdffb8       swr ra, -0x42d9(a3)                   ; arg4
+│ 0x00001310      3c050800       dsll32 zero, t0, 0x14
+└ 0x00001314      24a51b96       lhu k1, -0x5adc(s0)
+
+┌ 20: fcn.0000175c ();
+│ 0x0000175c      27bd0018       blez zero, -0xf404
+│ ; CODE XREF from syscall.0 @ +0x26c
+│ 0x00001760      00000000       nop
+  false: 0x00001764
+│ 0x00001764      00000000       nop
+│ 0x00001768      00000000       nop
+└ 0x0000176c      27bdffe8       bbit1 a3, 0x1f, -0xf3f4
+
+  ; CODE XREF from syscall.0.0 @ +0x288
+┌ 20: fcn.0000181c ();
+│ 0x0000181c      27bd0018       blez zero, -0xf344
+│ 0x00001820      3c040800       dsll32 zero, t0, 0x10
+  false: 0x00001824
+│ ;-- syscall.0.1:
+│ 0x00001824      8c870000       syscall 0x21e
+│ 0x00001828      3c03aa55       bnel t5, t2, 0x251c
+└ 0x0000182c      3463aa55       bnel t5, t2, 0x1a500
+
+┌ 8: fcn.0000189c ();
+│ 0x0000189c      27bd0008       j 0x2f49c
+└ 0x000018a0      8f634450       beql v0, a0, 0x1a6e0
+
+┌ 48: fcn.0000199c ();
+│ 0x0000199c      27bd0020       addi zero, zero, -0x42d9
+│ 0x000019a0      00000000       nop
+│ 0x000019a4      00000000       nop
+│ 0x000019a8      00000000       nop
+│ 0x000019ac      3c020800       dsll32 zero, t0, 8
+│ 0x000019b0      34423000       teq at, s0, 0x108
+│ 0x000019b4      3c030800       dsll32 zero, t0, 0xc
+│ 0x000019b8      34633000       teq at, s0, 0x18c
+│ 0x000019bc      3c040800       dsll32 zero, t0, 0x10
+│ 0x000019c0      348437ff       sd s7, -0x7bcc(t9)
+│ 0x000019c4      3c010800       dsll32 zero, t0, 4
+└ 0x000019c8      ac221b74       jalx 0x6c8ab0
+

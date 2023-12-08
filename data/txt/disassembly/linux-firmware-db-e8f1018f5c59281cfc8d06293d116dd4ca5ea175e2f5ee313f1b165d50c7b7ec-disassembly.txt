@@ -1,0 +1,70 @@
+  ;-- zero:
+  ;-- at:
+  ;-- v0:
+  ;-- v1:
+  ;-- a0:
+  ;-- a1:
+  ;-- a2:
+  ;-- a3:
+  ;-- t0:
+  ;-- t1:
+  ;-- t2:
+  ;-- t3:
+  ;-- t4:
+  ;-- t5:
+  ;-- t6:
+  ;-- t7:
+  ;-- s0:
+  ;-- s1:
+  ;-- s2:
+  ;-- s3:
+  ;-- s4:
+  ;-- s5:
+  ;-- s6:
+  ;-- s7:
+  ;-- t8:
+  ;-- t9:
+  ;-- k0:
+  ;-- k1:
+  ;-- gp:
+  ;-- ra:
+  ;-- pc:
+  ;-- hi:
+  ;-- lo:
+  ;-- t:
+  ; CALL XREF from fcn.000003c0 @ +0x3d4
+  ; CALL XREF from aav.0x00000800 @ +0xc0
+┌ 8: fcn.00000000 ();
+│ 0x00000000      574d4452       beql s2, a0, 0x13560
+└ 0x00000004      10000000       mfhi zero
+
+│ ; CODE XREFS from aav.0x00000100 @ +0x148, +0x2bc
+│ ; CODE XREF from fcn.000003c0 @ 0x3d4
+│ ; CODE XREF from fcn.000003c0 @ +0x188
+│ 0x00000080      31305c55       bnel t2, gp, 0xc148
+│ 0x00000084      4d353330       andi s3, at, 0x354d
+| // true: 0x0000c148  false: 0x00000088
+  ; CALL XREF from fcn.000003c0 @ +0x428
+┌ 36: fcn.000003c0 (int64_t arg1, int64_t arg3);
+│ ; arg int64_t arg1 @ a0
+│ ; arg int64_t arg3 @ a2
+│ 0x000003c0      5b288aa4       sh t2, 0x285b(a0)                     ; arg1
+│ 0x000003c4      0068da6c       ldr k0, 0x6800(a2)                    ; arg3
+│ 0x000003c8      da0068da       bbit032 s3, 8, 0x734
+│ 0x000003cc      00030068       ldl zero, 0x300(zero)
+│ 0x000003d0      00000800       sll zero, t0, 0
+│ 0x000003d4      20000008       j 0x80
+│ 0x000003d8      5b288aa4       sh t2, 0x285b(a0)                     ; arg1
+| // true: 0x00000080
+  ; CALL XREF from aav.0x00000800 @ +0x15c
+┌ 12: fcn.00000054 ();
+│ 0x00000054      41535553       beql k0, s5, 0x14d5c
+│ 0x00000058      5c415355       bnel t2, s3, 0x105cc
+  false: 0x00000060
+└ 0x00000060      6e626f6f       ldr t7, 0x626e(k1)
+
+  ; CODE XREF from fcn.000003c0 @ +0x170
+  ; CALL XREF from aav.0x00000c00 @ +0xc8
+┌ 4: fcn.0000002c ();
+└ 0x0000002c      5c747961       daddi t9, t3, 0x745c
+
