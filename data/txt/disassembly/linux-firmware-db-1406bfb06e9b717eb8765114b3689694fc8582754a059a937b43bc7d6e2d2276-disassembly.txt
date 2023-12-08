@@ -1,0 +1,53 @@
+┌ 8: fcn.00000048 (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x00000048      3e01001b       madd w30, w9, w0, w0                  ; arg1
+└ 0x0000004c      00220300       invalid
+
+  ; CALL XREF from fcn.0002e3bc @ +0x810
+┌ 8: fcn.0004c580 ();
+│ 0x0004c580      48bf00f8       str x8, [x26, 0xb]!
+└ 0x0004c584      012b7047       invalid
+
+  ; CALL XREF from fcn.0002e3bc @ +0xca0
+┌ 12: fcn.00037c68 (int64_t arg2);
+│ ; arg int64_t arg2 @ x1
+│ 0x00037c68      c06101ea       ands x0, x14, x1, lsl 24              ; arg2
+│ 0x00037c6c      40274ff0       adrp x0, 0x9e522000
+└ 0x00037c70      e06821e0       invalid
+
+┌ 16: fcn.00007100 ();
+│ 0x00007100      880148b1       adds x8, x12, aav.aav.0x00000200, lsl 12
+│ 0x00007104      002108f0       adrp x0, 0x1042a000
+│ 0x00007108      23fb40f0       adrp x3, 0x81f6e000
+└ 0x0000710c      0102d7f8       invalid
+
+┌ 12: fcn.00038608 (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x00038608      0025202d       stp s0, s9, [x8, -aav.0x00000100]
+│ 0x0003860c      1fd05af8       ldur xzr, [x0, -0x53]                 ; 0xc7 ; arg1
+└ 0x00038610      25103346       invalid
+
+┌ 8: fcn.0004ed28 (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x0004ed28      04f8012c       stnp s4, s30, [x0, 0xc]               ; arg1
+└ 0x0004ed2c      2371a4f8       invalid
+
+┌ 12: fcn.0002e3bc ();
+│ 0x0002e3bc      f04201d1       sub x16, x23, 0x50
+│ 0x0002e3c0      98190890       adrp x24, 0x1035e000
+└ 0x0002e3c4      32460123       invalid
+
+┌ 12: fcn.00034a5c ();
+│ 0x00034a5c      f04201d1       sub x16, x23, 0x50
+│ 0x00034a60      98190890       adrp x24, 0x10364000
+└ 0x00034a64      32460123       invalid
+
+│ 0x00031a68      00000000       invalid
+
+┌ 16: fcn.00032254 (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x00032254      f0f810a9       stp x16, x30, [x7, aav.aav.0x00000108] ; arg8
+│ 0x00032258      97c0bfb7       tbnz x23, 0x37, 0x31a68
+| // true: 0x00031a68  false: 0x0003225c
+│ 0x0003225c      b45fd41f       invalid
+

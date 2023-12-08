@@ -1,0 +1,57 @@
+┌ 84: fcn.00000024 ();
+│ 0x00000024      232d2d2d       stp s3, s11, [x9, -0x98]
+│ 0x00000028      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x0000002c      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000030      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000034      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000038      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x0000003c      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ ;-- aav.0x00000040:
+│ ; UNKNOWN XREFS from fcn.000060bc @ +0x2d00, +0x2d14
+│ 0x00000040      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000044      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000048      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x0000004c      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000050      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000054      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000058      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x0000005c      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000060      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000064      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000068      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x0000006c      2d2d2d2d       stp s13, s11, [x9, -0x98]
+│ 0x00000070      2d2d2d2d       stp s13, s11, [x9, -0x98]
+└ 0x00000074      2d000600       invalid
+
+  ; CALL XREF from aav.0x00000700 @ +0xab8
+┌ 12: fcn.0000a1e4 ();
+│ 0x0000a1e4      021900ac       stnp q2, q6, [x8]
+│ 0x0000a1e8      1ffa81f9       prfm 0x1f, [x16, 0x3f0]
+└ 0x0000a1ec      61100be0       invalid
+
+│ 0x0000ba68      9f000124       invalid
+
+  ; CALL XREF from fcn.0000a1e4 @ +0x1504
+┌ 12: fcn.0000bee8 ();
+│ 0x0000bee8      00dc3737       tbnz w0, 6, 0xba68
+| // true: 0x0000ba68  false: 0x0000beec
+│ 0x0000beec      7d100000       invalid
+
+  ; CALL XREF from fcn.0000a1e4 @ +0x1c08
+┌ 8: fcn.0000be2c ();
+│ 0x0000be2c      0034c00d       ld3 {v0.b, v1.b, v2.b}[5], [x0], x0
+└ 0x0000be30      c031bf93       invalid
+
+┌ 12: fcn.0000055c (int64_t arg1, int64_t arg7);
+│ ; arg int64_t arg1 @ x0
+│ ; arg int64_t arg7 @ x6
+│ 0x0000055c      ff2a0ed1       sub sp, x23, 0x38a
+│ 0x00000560      c278002a       orr w2, w6, w0, lsl 30                ; arg7
+└ 0x00000564      0bd1427e       invalid
+
+┌ 8: fcn.000060bc (int64_t arg1, int64_t arg8);
+│ ; arg int64_t arg1 @ x0
+│ ; arg int64_t arg8 @ x7
+│ 0x000060bc      f1000fa9       stp x17, x0, [x7, 0xf0]               ; arg8
+└ 0x000060c0      4c00fb07       invalid
+

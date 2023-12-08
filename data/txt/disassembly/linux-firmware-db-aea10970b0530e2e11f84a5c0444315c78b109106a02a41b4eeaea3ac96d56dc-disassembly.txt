@@ -1,0 +1,23 @@
+┌ 8: fcn.0000002c (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x0000002c      2b01001b       madd w11, w9, w0, w0                  ; arg1
+└ 0x00000030      00310000       invalid
+
+  ; CALL XREF from aav.0x000012b8 @ +0x650
+┌ 8: fcn.0000ad2c ();
+│ 0x0000ad2c      a46a14b1       adds x4, x21, 0x51a
+└ 0x0000ad30      a44630bc       invalid
+
+  ; CALL XREF from aav.0x00004154 @ +0xa18
+┌ 12: fcn.0000cba4 ();
+│ 0x0000cba4      5f344b5f       srsra d31, d2, 0x35
+│ 0x0000cba8      42414e4b       sub w2, w10, w14, lsr 16
+└ 0x0000cbac      305f5741       invalid
+
+┌ 12: fcn.0000ba84 ();
+│ 0x0000ba84      cde901b6       tbz x13, 0x20, 0xf7bc
+| // true: 0x0000f7bc  false: 0x0000ba88
+│ 0x0000ba88      43462846       invalid
+
+└ 0x0000f7bc      06000000       invalid
+

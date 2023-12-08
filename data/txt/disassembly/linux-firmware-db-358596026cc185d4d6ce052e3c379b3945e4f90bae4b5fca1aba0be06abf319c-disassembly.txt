@@ -1,0 +1,12 @@
+┌ 24: fcn.00000100 (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x00000100      08f269b6       tbz x8, 0x2d, 0x3f40
+| // true: 0x00003f40  false: 0x00000104
+│ 0x00000104      9bfe256c       stnp d27, d31, [x20, -0x1a8]
+│ 0x00000108      722b1b53       ubfiz w18, w27, 5, 0xb
+│ 0x0000010c      9270638e       invalid
+
+│ ; CODE XREF from fcn.00000100 @ 0x100
+│ 0x00003f40      0000302b       adds w0, w0, w16, uxtb                ; arg1
+└ 0x00003f44      1c0000cf       invalid
+
