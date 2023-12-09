@@ -5,7 +5,7 @@ DIVISOR = 4
 
 def do_bz2(compressed_data, metadata):
     data_length = len(compressed_data)
-    for i in range(int(data_length)):
+    for i in range(int(data_length * 0.65)):
         try: 
             unzipped = bz2.decompress(compressed_data[i:])
         except Exception as ex:
@@ -20,7 +20,7 @@ def do_bz2(compressed_data, metadata):
 
 def do_lzma(compressed_data, metadata):
     data_length = len(compressed_data)
-    for i in range(int(data_length)):
+    for i in range(int(data_length * 0.65)):
         try: 
             unzipped = lzma.decompress(compressed_data[i:])
         except Exception as ex:
@@ -35,7 +35,7 @@ def do_lzma(compressed_data, metadata):
         
 def do_zlib(compressed_data, metadata):
     data_length = len(compressed_data)
-    for i in range(int(data_length)):
+    for i in range(int(data_length * 0.65)):
         try:
             unzipped = zlib.decompress(compressed_data[i:], -zlib.MAX_WBITS)
         except Exception as ex:

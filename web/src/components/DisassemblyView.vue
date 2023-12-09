@@ -6,6 +6,16 @@
         <p class="text-info">
             Disassembly assumes a naive base address of 0.  
         </p>
+        <div v-if="!noState">
+          <p> File Name: {{ state.file_name }}</p>
+          <p>SHA256: {{ state.sha256 }}</p>
+          <p>Shannon Entropy: {{ state.shannon_entropy }}</p>
+          <p>Full Arch: {{ state.full_arch }}</p>
+          <p>Chunk Arch: {{ state.chunk_arch }}</p>
+          <p>Full Length: {{ state.full_length }}</p>
+          <p>Chunk Length: {{ state.chunk_length }}</p>
+          <p>Chunk Count: {{ state.chunk_count }}</p>
+        </div>
         <textarea v-model="disassembly" class="form-control">
         </textarea>
     </div>
@@ -17,10 +27,19 @@
     data() {
         return {
             errorMsg: '',
-            disassembly: ''
+            disassembly: '',
+            noState: false,
+            state: {}
         }
     },
    async mounted() {
+      const data = localStorage.getItem('state');
+      if (data) {
+        this.noState = false;
+        this.state = JSON.parse(data);
+      } else {
+        this.noState = true;
+      }
       let res = await fetch('/data/txt/disassembly/linux-firmware-db-' + this.$route.params.sha256 + "-disassembly.txt")
       if (res.status === 200) {
         this.disassembly = await res.text()
