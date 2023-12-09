@@ -37,9 +37,15 @@
       if (data) {
         this.noState = false;
         this.state = JSON.parse(data);
+        if (this.$route.params.sha256 !== this.state.sha256) {
+          localStorage.clear();
+          this.state = { }
+          this.noState = true;
+        }
       } else {
         this.noState = true;
       }
+
       let res = await fetch('/data/txt/disassembly/linux-firmware-db-' + this.$route.params.sha256 + "-disassembly.txt")
       if (res.status === 200) {
         this.disassembly = await res.text()
