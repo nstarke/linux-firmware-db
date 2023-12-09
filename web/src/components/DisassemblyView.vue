@@ -1,24 +1,24 @@
 <template>
-    <div class="stuff">
+    <div class="container">
         <p class="text-danger">
             {{  errorMsg }}
         </p>
         <p class="text-info">
             Disassembly assumes a naive base address of 0.  
         </p>
-        <div v-if="!noState">
-          <p> File Name: {{ state.file_name }}</p>
-          <p>SHA256: {{ state.sha256 }}</p>
-          <p>Shannon Entropy: {{ state.shannon_entropy }}</p>
-          <p>Full Arch: {{ state.full_arch }}</p>
-          <p>Chunk Arch: {{ state.chunk_arch }}</p>
-          <p>Full Length: {{ state.full_length }}</p>
-          <p>Chunk Length: {{ state.chunk_length }}</p>
-          <p>Chunk Count: {{ state.chunk_count }}</p>
-        </div>
-        <textarea v-model="disassembly" class="form-control">
-        </textarea>
     </div>
+    <div v-if="!noState">
+          <span><b>File Name: </b>{{ state.file_name }} </span> |
+          <span><b>SHA256: </b>{{ state.sha256 }} </span> |
+          <span><b>Shannon Entropy: </b> {{ state.shannon_entropy }} </span> |
+          <span><b>Full Arch: </b> {{ state.full_arch }} </span> |
+          <span><b>Chunk Arch: </b> {{ state.chunk_arch }} </span> |
+          <span><b>Full Length: </b> {{ state.full_length }} </span> |
+          <span><b>Chunk Length: </b> {{ state.chunk_length }} </span> |
+          <span><b>Chunk Count: </b> {{ state.chunk_count }} </span>
+        </div>
+    <textarea v-model="disassembly" class="form-control">
+        </textarea>
   </template>
   
   <script>
@@ -58,7 +58,6 @@
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
   h3 {
-    margin: 40px 0 0;
   }
   ul {
     list-style-type: none;
@@ -66,19 +65,16 @@
   }
   li {
     display: inline-block;
-    margin: 0 10px;
   }
   a {
     color: #42b983;
   }
-  div, textarea {
-  resize: none;
-  outline: none;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  height: 100vh;
-  margin: -10px;
-}
+  textarea {
+    resize: none;
+    outline: none;
+    width: 100%;
+    border: none;
+    height: 100vh;
+  }
   </style>
   
