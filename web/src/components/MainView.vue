@@ -247,7 +247,12 @@ export default {
     },
     performSort(field) {
       this.asc = !this.asc;
-      return this.results = this.results.sort((a, b) => this.asc ? a[field] > b[field] : a[field] < b[field] );
+      this.results.sort((a, b) => {
+        if (a[field] > b[field] ) {
+          return this.asc ? -1 : 1;
+        } else if (a[field] < b[field] ) 
+          return this.asc ? 1 : -1;
+      });
     },
     getCache() {
       this.dataOnly = localStorage.getItem('dataOnly') === 'true';

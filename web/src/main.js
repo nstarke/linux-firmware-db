@@ -30,13 +30,13 @@ if (refresh) {
     refresh = 0;
 }
 
-const current = (new Date()).getTime();
-const day = 60 * 60 * 24 * 1000;
+// const current = (new Date()).getTime();
+// const day = 60 * 60 * 24 * 1000;
 
-if ((current - refresh) > day) {
-    localStorage.clear();
-    localStorage.setItem('refresh', (new Date()).getTime());
-}
+// if ((current - refresh) > day) {
+//     localStorage.clear();
+//     localStorage.setItem('refresh', (new Date()).getTime());
+// }
 
 let app = createApp(App);
 app.use(router);
