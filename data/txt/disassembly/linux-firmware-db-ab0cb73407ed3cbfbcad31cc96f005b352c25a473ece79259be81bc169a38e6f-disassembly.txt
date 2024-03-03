@@ -1,0 +1,67 @@
+  ;-- zero:
+  ;-- at:
+  ;-- v0:
+  ;-- v1:
+  ;-- a0:
+  ;-- a1:
+  ;-- a2:
+  ;-- a3:
+  ;-- t0:
+  ;-- t1:
+  ;-- t2:
+  ;-- t3:
+  ;-- t4:
+  ;-- t5:
+  ;-- t6:
+  ;-- t7:
+  ;-- s0:
+  ;-- s1:
+  ;-- s2:
+  ;-- s3:
+  ;-- s4:
+  ;-- s5:
+  ;-- s6:
+  ;-- s7:
+  ;-- t8:
+  ;-- t9:
+  ;-- k0:
+  ;-- k1:
+  ;-- gp:
+  ;-- ra:
+  ;-- pc:
+  ;-- hi:
+  ;-- lo:
+  ;-- t:
+┌ 8: fcn.00000000 ();
+│ 0x00000000      52544254       bnel v0, v0, 0x1514c
+└ 0x00000004      436f7265       daddiu s2, t3, 0x6f43
+
+  ; XREFS(35)
+│ ;-- (0x00000011) fcn.00000011:
+│ ; CALL XREFS from fcn.00000017 @ +0x22c9, +0x29a9, +0x378d
+┌ 1: fcn.00000010 ();
+│ 0x00000010  ~   02             invalid
+| // true: 0x00000011
+  ; CALL XREFS from fcn.00000017 @ +0x9c1, +0x10e1, +0x74ed
+┌ 1: fcn.00000016 ();
+└ 0x00000016                     unaligned
+| // true: 0x00000017
+  ; XREFS: CALL 0x000018f4  CALL 0x000029b4  CALL 0x00003a84  
+  ; XREFS: CALL 0x00004f6c  CALL 0x0000728c  CALL 0x000072ac  
+┌ 1: fcn.00000017 ();
+└ 0x00000017                     unaligned
+
+  ; CALL XREFS from fcn.00000017 @ +0x22c9, +0x29a9, +0x378d
+┌ 2: fcn.00000011 ();
+│ 0x00000011                     unaligned
+└ 0x00000012                     unaligned
+| // true: 0x00000013
+  ; CALL XREFS from fcn.00000017 @ +0x3515, +0x6091
+┌ 2: fcn.00000013 ();
+│ 0x00000013                     unaligned
+│ 0x00000014  ~   01             invalid
+| // true: 0x00000015
+  ; CALL XREF from fcn.00000017 @ +0x361d
+┌ 1: fcn.00000015 ();
+└ 0x00000015                     unaligned
+| // true: 0x00000016
