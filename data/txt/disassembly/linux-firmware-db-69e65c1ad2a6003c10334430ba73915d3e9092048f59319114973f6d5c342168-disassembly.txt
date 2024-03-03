@@ -1,0 +1,158 @@
+┌ 8: fcn.0000001c ();
+│ 0x0000001c      18a06a34       cbz w24, 0xd541c
+| // true: 0x000d541c  false: 0x00000020
+└ 0x00000020      00000000       invalid
+
+  ; CALL XREF from fcn.00002130 @ +0xbb8
+┌ 4: fcn.0000bcf4 ();
+└ 0x0000bcf4      0a0a0aaa       orr x10, x16, x10, lsl 2
+| // true: 0x0000bcf8
+  ; CALL XREF from fcn.00002130 @ +0xbc4
+┌ 4: fcn.0000bcf8 ();
+└ 0x0000bcf8      cde90ca0       invalid
+
+  ; CALL XREF from fcn.00002130 @ +0x1dc0
+┌ 4: fcn.0001df78 ();
+└ 0x0001df78      01307115       b 0x5c69f7c
+
+  ; CALL XREF from aav.0x0000bd70 @ +0xdfc
+┌ 8: fcn.00016bac ();
+│ 0x00016bac      5f296fd2       eor sp, x10, 0xffe0000
+└ 0x00016bb0      00e031e0       invalid
+
+  ; CALL XREF from aav.0x00010000 @ +0x90c
+  ; DATA XREF from fcn.0001fd90 @ +0x63c
+┌ 12: fcn.0002233c ();
+│ 0x0002233c      10214d48       ldxrh w16, [x8]
+│ 0x00022340      44220168       invalid
+└ 0x00022344      3846fbf7       invalid
+
+┌ 8: fcn.0000bb14 (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x0000bb14      00a041f2       ands x0, x0, 0x800000ffffffffff       ; arg1
+└ 0x0000bb18      00012960       invalid
+
+┌ 8: fcn.00011f80 (int64_t arg4);
+│ ; arg int64_t arg4 @ x3
+│ 0x00011f80      617804f1       subs x1, x3, 0x11e                    ; arg4
+└ 0x00011f84      08009346       invalid
+
+┌ 8: fcn.00013534 (int64_t arg3);
+│ ; arg int64_t arg3 @ x2
+│ 0x00013534      44e00aeb       subs x4, x2, x10, lsl 56              ; arg3
+└ 0x00013538      07105d46       invalid
+
+┌ 8: fcn.00002130 ();
+│ 0x00002130      ff2a76d1       sub sp, x23, 0xd8a, lsl 12
+└ 0x00002134      78e0022a       invalid
+
+┌ 8: fcn.00004f58 ();
+│ 0x00004f58      73d0ce48       ldarh w19, [x3]
+└ 0x00004f5c      20448be1       invalid
+
+┌ 8: fcn.00004ff0 (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x00004ff0      fb182ed1       sub x27, x7, 0xb86                    ; arg8
+└ 0x00004ff4      1fe1af4b       invalid
+
+┌ 8: fcn.0000ae60 ();
+│ 0x0000ae60      ff2908d1       sub sp, x15, 0x20a
+└ 0x0000ae64      084a0120       invalid
+
+┌ 12: fcn.0000ec40 ();
+│ 0x0000ec40      ff3900d1       sub sp, x15, 0xe
+│ 0x0000ec44      1f20224a       eon wzr, w0, w2, lsl 8
+└ 0x0000ec48      0123b340       invalid
+
+┌ 12: fcn.00012190 ();
+│ 0x00012190      ff2d00d1       sub sp, x15, 0xb
+│ 0x00012194      2546641c       ldr s5, 0xdaa58
+└ 0x00012198      082c9bd3       invalid
+
+┌ 16: fcn.000141a4 (int64_t arg1, int64_t arg8);
+│ ; arg int64_t arg1 @ x0
+│ ; arg int64_t arg8 @ x7
+│ 0x000141a4      ff3800d1       sub sp, x7, 0xe                       ; arg8
+│ 0x000141a8      1f260a48       stxrh w10, wzr, [x16]                 ; arg1
+│ 0x000141ac      50f82610       adr x16, 0x620b4
+└ 0x000141b0      41f04001       invalid
+
+┌ 12: fcn.00014578 (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x00014578      ff3803d1       sub sp, x7, 0xce                      ; arg8
+│ 0x0001457c      264807b0       adrp x6, 0xe919000
+└ 0x00014580      bde8f08f       invalid
+
+┌ 8: fcn.00015ffc ();
+│ 0x00015ffc      ff391dd1       sub sp, x15, 0x74e
+└ 0x00016000      24e07ae0       invalid
+
+┌ 20: fcn.0001fd90 ();
+│ 0x0001fd90      002261b1       adds x0, x16, 0x848, lsl 12
+│ 0x0001fd94      68b10128       stnp w8, w12, [x11, 0xc]
+│ 0x0001fd98      0bd00228       stnp w11, w20, [x0, 0x14]
+│ 0x0001fd9c      09d00328       stnp w9, w20, [x0, 0x1c]
+└ 0x0001fda0      07d00c22       invalid
+
+┌ 8: fcn.000205e8 ();
+│ 0x000205e8      ff2b05d1       sub sp, sp, 0x14a
+└ 0x000205ec      4088ff28       invalid
+
+┌ 12: fcn.00022984 (int64_t arg5);
+│ ; arg int64_t arg5 @ x4
+│ 0x00022984      4ff00008       stlxrb w0, w15, [x2]
+│ 0x00022988      04463028       stnp w4, w17, [x16, -0x80]            ; arg5
+└ 0x0002298c      464602d3       invalid
+
+┌ 8: fcn.000229e8 ();
+│ 0x000229e8      1eb185f8       prfum 0x1e, [x8, 0x5b]
+└ 0x000229ec      4d204046       invalid
+
+┌ 16: fcn.00022d94 ();
+│ 0x00022d94      ff2901d1       sub sp, x15, 0x4a
+│ 0x00022d98      90f84b10       adr x16, 0xbaca8
+│ 0x00022d9c      02220091       add x2, x16, 8
+└ 0x00022da0      d0e90113       invalid
+
+┌ 16: fcn.00023080 ();
+│ 0x00023080      ff2901d1       sub sp, x15, 0x4a
+│ 0x00023084      90f84b10       adr x16, 0xbaf94
+│ 0x00023088      0091c368       ldpsw x0, x4, [x8], 0x1c
+└ 0x0002308c      41681ae0       invalid
+
+┌ 12: fcn.00023b3c (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x00023b3c      ff2801d1       sub sp, x7, 0x4a                      ; arg8
+│ 0x00023b40      10480078       sttrh w16, [x0, 4]
+└ 0x00023b44      fdf7c4fd       invalid
+
+┌ 8: fcn.0002dc54 ();
+│ 0x0002dc54      ff3803d0       adrp xzr, 0x674b000
+└ 0x0002dc58      4846fef7       invalid
+
+┌ 16: fcn.0000ffa0 (int64_t arg4, int64_t arg5, int64_t arg8);
+│ ; arg int64_t arg4 @ x3
+│ ; arg int64_t arg5 @ x4
+│ ; arg int64_t arg8 @ x7
+│ 0x0000ffa0      fbd01ba9       stp x27, x20, [x7, 0x1b8]             ; arg8
+│ 0x0000ffa4      384600f0       adrp x24, 0x8d6000
+│ 0x0000ffa8      83f80028       stnp w3, w30, [x4, 4]                 ; arg5
+└ 0x0000ffac      f5d11b99       invalid
+
+┌ 8: fcn.00015f10 (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x00015f10      fde004a9       stp x29, x24, [x7, 0x48]              ; arg8
+└ 0x00015f14      1046f6f7       invalid
+
+┌ 8: fcn.000318e8 (int64_t arg_10h);
+│ ; arg int64_t arg_10h @ sp+0x20
+│ 0x000318e8      fa63c1a9       ldp x26, x24, [arg_10h]!
+└ 0x000318ec      b7b86757       invalid
+
+┌ 16: fcn.00031da8 (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x00031da8      f2847ba9       ldp x18, x1, [x7, -0x48]              ; arg8
+│ 0x00031dac      c787f129       ldp w7, w1, [x30, -0x74]!
+│ 0x00031db0      9f1c4d95       bl 0x537902c
+└ 0x00031db4      73d54205       invalid
+
