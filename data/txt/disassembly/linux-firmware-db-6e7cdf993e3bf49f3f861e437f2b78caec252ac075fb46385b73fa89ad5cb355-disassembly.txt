@@ -1,0 +1,65 @@
+  ; XREFS: DATA 0x00008504  DATA 0x000085a4  DATA 0x00008d10  
+  ; XREFS: DATA 0x00008d44  DATA 0x0000fe04  DATA 0x00010580  
+  ; XREFS: DATA 0x000105b4  DATA 0x000204f0  
+┌ 8: fcn.00000110 (int64_t arg2);
+│ ; arg int64_t arg2 @ x1
+│ 0x00000110      24505331       adds w4, w1, aav.aav.0x000004d4, lsl 12 ; arg2
+└ 0x00000114      .qword 0x0000000000038f00 ; aav.0x00038f00
+
+┌ 8: fcn.00002a5c ();
+│ 0x00002a5c      00000094       bl fcn.00002a5c
+└ 0x00002a60      0ad8062f       invalid
+
+┌ 8: fcn.00005008 ();
+│ 0x00005008      00000094       bl fcn.00005008
+└ 0x0000500c      0ad8062f       invalid
+
+┌ 8: fcn.00007660 ();
+│ 0x00007660      00000094       bl fcn.00007660
+└ 0x00007664      0ad8062f       invalid
+
+  ; CALL XREF from aav.0x00007e00 @ +0x368
+┌ 8: fcn.00013d8c ();
+│ 0x00013d8c      00f5bc70       adr x0, 0xfffffffffff8dc2f
+└ 0x00013d90      01a90422       invalid
+
+┌ 8: fcn.00009dcc ();
+│ 0x00009dcc      00000094       bl fcn.00009dcc
+└ 0x00009dd0      0ad8052f       invalid
+
+  ; CALL XREF from aav.0x0000a000 @ +0x8d4
+┌ 16: fcn.000164e8 (int64_t arg2, int64_t arg7);
+│ ; arg int64_t arg2 @ x1
+│ ; arg int64_t arg7 @ x6
+│ 0x000164e8      d20050f8       ldur x18, [x6, -0x100]                ; 0xcd ; arg7
+│ 0x000164ec      25000ceb       subs x5, x1, x12                      ; arg2
+│ 0x000164f0      80000430       adr x0, 0x1e501
+└ 0x000164f4      01a90422       invalid
+
+┌ 8: fcn.0000c44c ();
+│ 0x0000c44c      00000094       bl fcn.0000c44c
+└ 0x0000c450      0ad8042f       invalid
+
+  ; CALL XREF from fcn.0000c44c @ +0xc04
+┌ 8: fcn.00018c64 ();
+│ 0x00018c64      6a6a12b1       adds x10, x19, 0x49a
+└ 0x00018c68      52f82000       invalid
+
+┌ 8: fcn.0000ee08 ();
+│ 0x0000ee08      00000094       bl fcn.0000ee08
+└ 0x0000ee0c      0ad8032f       invalid
+
+  ; CALL XREF from aav.0x00014000 @ +0x148c
+┌ 12: fcn.00015494 ();
+│ 0x00015494      7bdf0098       ldrsw x27, 0x17080
+│ 0x00015498      c0070ed1       sub x0, x30, 0x381
+└ 0x0001549c      0820cbe7       invalid
+
+┌ 8: fcn.00018930 ();
+│ 0x00018930      04f0a6f9       prfm pldl3keep, [x0, 0x4de0]
+└ 0x00018934      0546daf8       invalid
+
+┌ 8: fcn.0001ebc8 ();
+│ 0x0001ebc8      f87501a9       stp x24, x29, [x15, 0x10]
+└ 0x0001ebcc      6ff4f974       invalid
+

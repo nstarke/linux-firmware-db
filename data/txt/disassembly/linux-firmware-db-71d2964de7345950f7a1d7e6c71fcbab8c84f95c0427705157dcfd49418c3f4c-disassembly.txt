@@ -1,0 +1,17 @@
+│ 0x000fff0a      8c7e           ldrb r4, [r1, 0x1a]                   ; arg2
+│ 0x000fff0c      2bf6f4b3       b.w 0xffb2b6f8
+
+  ;-- pc:
+  ;-- r15:
+┌ 22: entry0 (int16_t arg2, int16_t arg3, int16_t arg_74h);
+│ ; arg int16_t arg_74h @ sp+0x74
+│ ; arg int16_t arg2 @ r1
+│ ; arg int16_t arg3 @ r2
+│ 0x000ffff0      eae95dec       strd lr, ip, [sl, 0x174]!
+│ 0x000ffff4      121c           adds r2, r2, 0                        ; arg3
+│ 0x000ffff6      1daf           add r7, arg_74h
+│ 0x000ffff8      e2ecefb0       stcl p0, c11, [r2], 0x3bc
+│ 0x000ffffc      85d4           bmi 0xfff0a
+| // true: 0x000fff0a  false: 0x000ffffe
+│ 0x000ffffe      c7a4           adr r4, 0x31c                         ; 0x10031c
+

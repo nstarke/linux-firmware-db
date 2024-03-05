@@ -1,0 +1,23 @@
+┌ 8: fcn.00000108 ();
+│ 0x00000108      b4ab21b5       cbnz x20, 0x4367c
+| // true: 0x0004367c  false: 0x0000010c
+└ 0x0000010c      55b8085d       invalid
+
+┌ 8: fcn.0000e734 ();
+│ 0x0000e734      f10080d1       subg x17, x7, 0x0, 0x0
+└ 0x0000e738      004040de       invalid
+
+┌ 20: fcn.0000ee7c ();
+│ 0x0000ee7c      f40080d1       subg x20, x7, 0x0, 0x0
+│ 0x0000ee80      0300409b       smulh x3, x0, x0
+│ 0x0000ee84      4f0000d8       prfm 0xf, 0xee8c
+│ 0x0000ee88      00000090       adrp x0, 0xe000
+└ 0x0000ee8c      feffcf9a       invalid
+
+┌ 12: fcn.0000f294 (int64_t arg1, int64_t arg8);
+│ ; arg int64_t arg1 @ x0
+│ ; arg int64_t arg8 @ x7
+│ 0x0000f294      fa0000d1       sub x26, x7, 0                        ; arg8
+│ 0x0000f298      0100437c       ldur h1, [x0, 0x30]                   ; 0xc7 ; arg1
+└ 0x0000f29c      fb0000cf       invalid
+
