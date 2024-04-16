@@ -27,7 +27,6 @@ export LATEST_TAG=$(git tag | tail -n 1)
 git checkout "$LATEST_TAG"
 
 CURRENT_TAG=$(cat ../../data/.current_tag)
-"
 if [[ "$CURRENT_TAG" == "$LATEST_TAG" ]]; then
     echo "No New Tag, exiting"
     exit 0
