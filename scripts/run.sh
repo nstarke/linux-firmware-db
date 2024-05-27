@@ -16,7 +16,7 @@ if [ -d linux-firmware ]; then
     echo "Linux-firmware found, pulling"
     cd linux-firmware
     git checkout main
-    git pull
+    git pull origin main
 else
     echo "No Linux Firmware, Cloning now"
     git clone "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git"
