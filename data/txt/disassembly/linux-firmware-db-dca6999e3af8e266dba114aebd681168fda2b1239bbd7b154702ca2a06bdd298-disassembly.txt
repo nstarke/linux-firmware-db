@@ -1,0 +1,56 @@
+  ;-- pc:
+  ;-- r15:
+┌ 16: fcn.00001000 ();
+│ 0x00001000      8280fd47       ldrbmi r8, [sp, r2, lsl 1]!
+│ 0x00001004      63e8a706       strteq lr, [r7], r3, ror 16
+│ 0x00001008      05679306       ldreq r6, [r3], r5, lsl 14
+└ 0x0000100c  ~   07f63305       ldreq pc, [r3, -0x607]!
+│ ;-- aav.0x0000100f:
+│ ; UNKNOWN XREF from aav.0x00002013 @ +0x45
+│ ; UNKNOWN XREF from aav.0x00031494 @ +0x3c
+│ ; UNKNOWN XREF from aav.0x00031563 @ +0xd
+└ 0x0000100f                     unaligned
+
+  ; CALL XREF from aav.0x00004f49 @ +0x3ff
+┌ 16: fcn.0000679c ();
+│ 0x0000679c      95e31855       ldrpl lr, [r8, -0x395]
+│ 0x000067a0      83270515       strne r2, [r5, -0x783]
+│ 0x000067a4      63d5e700       rsceq sp, r7, r3, ror 10
+└ 0x000067a8      13050011       invalid
+
+  ; CALL XREF from aav.0x00009a41 @ +0x5bb
+┌ 20: fcn.0000ba50 ();
+│ 0x0000ba50      8326c52c       stclhs p6, c2, [r5], {0x83}
+│ 0x0000ba54      aa8795ce       cdpgt p7, 9, c8, c5, c10, 5
+│ 0x0000ba58      09677d17       ldrbne r6, [sp, -sb, lsl 14]!         ; 0x178000
+│                                                                      ; r13
+│ 0x0000ba5c      58d938d1       teqle r8, r8, asr sb
+└ 0x0000ba60      11671307       invalid
+
+  ; CALL XREF from aav.0x0000a2eb @ +0x6c5
+┌ 16: fcn.0000c404 (int32_t arg1);
+│ ; arg int32_t arg1 @ r0
+│ 0x0000c404      f5000945       strmi r0, [sb, -0xf5]                 ; arg1
+│ 0x0000c408      7d15ef80       rschi r1, pc, sp, ror r5
+│ 0x0000c40c      c2688947       strmi r6, [sb, r2, asr 17]
+└ 0x0000c410      aa8b6353       invalid
+
+  ; CALL XREF from aav.0x00011a23 @ +0x4bd
+┌ 8: fcn.0001a0a4 ();
+│ 0x0001a0a4      81466388       stmdahi r3!, {r0, r7, sb, sl, lr} ^   ; '\xff\xff\xff\xff\xff\xff\xff\xff'
+└ 0x0001a0a8      f4029147       invalid
+
+  ; CALL XREF from aav.0x00011a23 @ +0x2705
+┌ 12: fcn.000082ec ();
+│ 0x000082ec      05458280       addhi r4, r2, r5, lsl 10
+│ 0x000082f0      23a2e7f4       vld3.8 {d26[1], d27[1], d28[1]}, [r7], r3
+└ 0x000082f4      0347a501       invalid
+
+  ; CALL XREF from aav.0x00011a23 @ +0x3805
+┌ 16: fcn.000053ec (int32_t arg1);
+│ ; arg int32_t arg1 @ r0
+│ 0x000053ec      e7008327       strhs r0, [r3, r7, ror 1]             ; arg1
+│ 0x000053f0      85088326       strhs r0, [r3], r5, lsl 17            ; arg1
+│ 0x000053f4      051d63d0       rsble r1, r3, r5, lsl 26
+└ 0x000053f8      d70c8547       invalid
+

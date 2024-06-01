@@ -1,0 +1,57 @@
+  ;-- zero:
+  ;-- at:
+  ;-- v0:
+  ;-- v1:
+  ;-- a0:
+  ;-- a1:
+  ;-- a2:
+  ;-- a3:
+  ;-- t0:
+  ;-- t1:
+  ;-- t2:
+  ;-- t3:
+  ;-- t4:
+  ;-- t5:
+  ;-- t6:
+  ;-- t7:
+  ;-- s0:
+  ;-- s1:
+  ;-- s2:
+  ;-- s3:
+  ;-- s4:
+  ;-- s5:
+  ;-- s6:
+  ;-- s7:
+  ;-- t8:
+  ;-- t9:
+  ;-- k0:
+  ;-- k1:
+  ;-- gp:
+  ;-- ra:
+  ;-- pc:
+  ;-- hi:
+  ;-- lo:
+  ;-- t:
+┌ 10: fcn.00000000 (int64_t arg1);
+│ ; arg int64_t arg1 @ a0
+│ 0x00000000      00210000       sll a0, zero, 4                       ; arg1
+│ 0x00000004      34000000       teq zero, zero
+│ 0x00000008  ~   0100           invalid
+| // true: 0x0000000a
+  ; CALL XREFS from fcn.0000001b @ +0x22d, +0x935
+┌ 17: fcn.0000000a ();
+│ 0x0000000a                     unaligned
+│ 0x0000000b                     unaligned
+│ 0x0000000c      06000000       srlv zero, zero, zero
+│ 0x00000010      02000000       srl zero, zero, 0
+│ 0x00000014      00200000       sll a0, zero, 0                       ; arg1
+│ 0x00000018  ~   000100         invalid
+| // true: 0x0000001b
+  ; CALL XREF from fcn.0000001b @ +0xc61
+┌ 17: fcn.0000001b ();
+│ 0x0000001b                     unaligned
+│ 0x0000001c      95c24de2       sc t5, -0x3d6b(s2)
+│ 0x00000020      01000000       movf zero, zero, fcc0
+│ 0x00000024      00000000       nop
+└ 0x00000028      00000000       nop
+

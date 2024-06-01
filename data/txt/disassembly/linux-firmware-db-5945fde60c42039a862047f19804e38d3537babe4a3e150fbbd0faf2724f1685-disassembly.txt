@@ -1,0 +1,61 @@
+  ;-- zero:
+  ;-- at:
+  ;-- v0:
+  ;-- v1:
+  ;-- a0:
+  ;-- a1:
+  ;-- a2:
+  ;-- a3:
+  ;-- t0:
+  ;-- t1:
+  ;-- t2:
+  ;-- t3:
+  ;-- t4:
+  ;-- t5:
+  ;-- t6:
+  ;-- t7:
+  ;-- s0:
+  ;-- s1:
+  ;-- s2:
+  ;-- s3:
+  ;-- s4:
+  ;-- s5:
+  ;-- s6:
+  ;-- s7:
+  ;-- t8:
+  ;-- t9:
+  ;-- k0:
+  ;-- k1:
+  ;-- gp:
+  ;-- ra:
+  ;-- pc:
+  ;-- hi:
+  ;-- lo:
+  ;-- t:
+┌ 14: fcn.00000000 (int64_t arg1, int64_t arg_38e4h);
+│ ; arg int64_t arg_38e4h @ fp+0x38e4
+│ ; arg int64_t arg1 @ a0
+│ 0x00000000      80040400       sll zero, a0, 0x12                    ; arg1
+│ 0x00000004      2c000000       dadd zero, zero, zero
+│ 0x00000008      01000000       movf zero, zero, fcc0
+│ 0x0000000c  ~   0a00           invalid
+| // true: 0x0000000e
+  ; CALL XREF from aav.0x00040180 @ +0xbc
+┌ 8: fcn.00000020 ();
+│ 0x00000020      2c000000       dadd zero, zero, zero
+└ 0x00000024      00000100       sll zero, at, 0
+
+  ; CALL XREF from aav.0x00040180 @ +0xcc
+┌ 2: fcn.0000000e (int64_t arg1);
+│ ; arg int64_t arg1 @ a0
+│ 0x0000000e                     unaligned
+└ 0x0000000f                     unaligned
+| // true: 0x00000010
+  ; CALL XREF from aav.0x00040180 @ +0xd4
+┌ 16: fcn.00000010 (int64_t arg1);
+│ ; arg int64_t arg1 @ a0
+│ 0x00000010      25000000       move zero, zero                       ; '\xff\xff\xff\xff\xff\xff\xff\xff'
+│ 0x00000014      80030400       sll zero, a0, 0xe                     ; arg1
+│ 0x00000018      00010000       sll zero, zero, 4
+└ 0x0000001c      e438dbff       sd k1, 0x38e4(fp)
+| // true: 0x00000020

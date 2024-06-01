@@ -1,0 +1,97 @@
+  ; CALL XREF from aav.0x00001260 @ +0xdcc
+  ; CALL XREF from aav.0x00004000 @ +0x754
+┌ 4: fcn.00008620 ();
+└ 0x00008620      a8218817       bne gp, t0, 0x10cc4
+
+  ; XREFS: CALL 0x00003724  CALL 0x00003da0  UNKNOWN 0x0001a634  
+  ; XREFS: UNKNOWN 0x0001ae34  UNKNOWN 0x0001b634  UNKNOWN 0x0001c634  
+  ; XREFS: UNKNOWN 0x0001ce34  UNKNOWN 0x0001d634  UNKNOWN 0x0001de34  
+  ; XREFS: UNKNOWN 0x0001e634  UNKNOWN 0x0001ee34  UNKNOWN 0x0001f634  
+│ ;-- (0x00000019) fcn.00000019:
+│ ; CALL XREFS from aav.0x00001260 @ +0xa4c, +0xae0
+│ ; CALL XREF from aav.0x00009000 @ +0x22ac
+│ ; CALL XREF from aav.0x00012400 @ +0x12f0
+│ ; CALL XREF from fcn.00014080 @ +0x384
+┌ 1: fcn.00000018 ();
+│ 0x00000018  ~   1e             invalid
+| // true: 0x00000019
+  ; CALL XREF from aav.0x00005800 @ +0x958
+┌ 3: fcn.0000001e ();
+│ 0x0000001e                     unaligned
+│ 0x0000001f                     unaligned
+│ ;-- aav.0x00000020:
+│ ; XREFS: UNKNOWN 0x00019004  UNKNOWN 0x00019310  UNKNOWN 0x0001957c  
+│ ; XREFS: UNKNOWN 0x0001961c  UNKNOWN 0x00019804  UNKNOWN 0x00019b10  
+│ ; XREFS: UNKNOWN 0x00019b5c  UNKNOWN 0x0001ae90  UNKNOWN 0x0001aecc  
+│ ; XREFS: UNKNOWN 0x0001b804  UNKNOWN 0x0001c004  UNKNOWN 0x0001c804  
+│ ; XREFS: UNKNOWN 0x0001d004  UNKNOWN 0x0001d804  UNKNOWN 0x0001e004  
+│ ; XREFS: UNKNOWN 0x0001e804  UNKNOWN 0x0001ee90  UNKNOWN 0x0001eecc  
+│ 0x00000020  ~   1e             invalid
+| // true: 0x00000021
+  ; CALL XREF from aav.0x00005800 @ +0x157c
+┌ 24: fcn.00014080 (signed int64_t arg4);
+│ ; arg signed int64_t arg4 @ a3
+│ 0x00014080      46e0f002       rotrv gp, s0, s7
+│ 0x00014084      10843020       addi s0, at, -0x7bf0
+│ 0x00014088      f00d9a02       tge s4, k0, 0x37
+│ 0x0001408c      0401e128       slti at, a3, aav.0x00000104           ; arg4
+│ 0x00014090      14e02208       j 0x8b8050
+└ 0x00014094      49ab7007       bltzal k1, -0x1244                    ; fcn.0000001d
+
+  ; CALL XREF from aav.0x000000c0 @ +0x3c
+  ; CALL XREF from aav.0x00001260 @ +0x468
+  ; CALL XREF from aav.0x00005800 @ +0x2424
+  ; CALL XREF from fcn.00014080 @ 0x14094
+┌ 1: fcn.0000001d ();
+└ 0x0000001d                     unaligned
+| // true: 0x0000001e
+  ; CALL XREFS from aav.0x00001260 @ +0xa4c, +0xae0
+  ; CALL XREF from aav.0x00009000 @ +0x22ac
+  ; CALL XREF from aav.0x00012400 @ +0x12f0
+  ; CALL XREF from fcn.00014080 @ +0x384
+┌ 1: fcn.00000019 ();
+└ 0x00000019                     unaligned
+| // true: 0x0000001a
+  ; XREFS: CALL 0x000017c4  CALL 0x0000b320  CALL 0x0000d248  
+  ; XREFS: CALL 0x0000d2ac  CALL 0x0000d444  CALL 0x0000d4a0  
+  ; XREFS: CALL 0x0000e12c  CALL 0x0000e188  CALL 0x0000e1e4  
+  ; XREFS: CALL 0x0000e240  CALL 0x0000e29c  CALL 0x0000e2f8  
+  ; XREFS: CALL 0x0000e330  CALL 0x0000e384  CALL 0x00011694  
+  ; XREFS: CALL 0x000116ac  CALL 0x00011908  CALL 0x00011a9c  
+┌ 3: fcn.0000001a ();
+│ 0x0000001a                     unaligned
+│ 0x0000001b                     unaligned
+│ 0x0000001c  ~   1e             invalid
+| // true: 0x0000001d
+  ; CALL XREF from aav.0x00000c00 @ +0xa0
+  ; CALL XREF from aav.0x00009000 @ +0x2b34
+  ; CALL XREF from fcn.00014080 @ +0xc38
+┌ 27: fcn.00000021 ();
+│ 0x00000021                     unaligned
+│ 0x00000022                     unaligned
+│ 0x00000023                     unaligned
+│ 0x00000024      1e000068       ldl zero, 0x1e(zero)
+│ 0x00000028      1e000066       daddiu zero, s0, 0x1e
+│ ;-- aav.0x0000002c:
+│ ; XREFS: UNKNOWN 0x0001a518  UNKNOWN 0x0001ad18  UNKNOWN 0x0001b518  
+│ ; XREFS: UNKNOWN 0x0001bd18  UNKNOWN 0x0001c518  UNKNOWN 0x0001cd18  
+│ ; XREFS: UNKNOWN 0x0001d518  UNKNOWN 0x0001dd18  UNKNOWN 0x0001e518  
+│ ; XREFS: UNKNOWN 0x0001ed18  UNKNOWN 0x0001f518  
+│ 0x0000002c      1e00005c       bgtzl zero, 0xa8
+│ ;-- aav.0x00000030:
+│ ; XREFS: UNKNOWN 0x000197f4  UNKNOWN 0x00019ff4  UNKNOWN 0x0001bff4  
+│ ; XREFS: UNKNOWN 0x0001c7f4  UNKNOWN 0x0001cff4  UNKNOWN 0x0001d7f4  
+│ ; XREFS: UNKNOWN 0x0001dff4  UNKNOWN 0x0001eff4  
+│ 0x00000030      1e00005a       blezl s0, 0xac
+  false: 0x00000038
+│ 0x00000038      1e000056       bnel s0, zero, 0xb4
+└ 0x0000003c      1e0071b2       sdl s1, 0x1e(s3)
+
+  ; CALL XREF from aav.0x00012400 @ +0x3cc
+┌ 16: fcn.00004834 (int64_t arg_4428h);
+│ ; arg int64_t arg_4428h @ sp+0x4428
+│ 0x00004834      2844a867       daddiu t0, sp, 0x4428
+│ 0x00004838      88710080       lb zero, 0x7188(zero)
+│ 0x0000483c      c61748c3       ll t0, 0x17c6(k0)
+└ 0x00004840      a8030489       lwl a0, 0x3a8(t0)
+

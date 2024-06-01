@@ -1,0 +1,45 @@
+  ; XREFS(38)
+┌ 8: fcn.00000004 ();
+│ 0x00000004      49574c0a       and w9, w26, w12, lsr 21
+│ ;-- aav.0x00000008:
+│ ; XREFS: UNKNOWN 0x0002d674  UNKNOWN 0x0002de40  UNKNOWN 0x00063bcc  
+│ ; XREFS: UNKNOWN 0x00064398  UNKNOWN 0x0009a514  UNKNOWN 0x0009ace0  
+└ 0x00000008      31333520       invalid
+
+  ; CALL XREF from fcn.0004650c @ +0x2148
+┌ 8: fcn.00048858 ();
+│ 0x00048858      b479a091       addg x20, x13, 0x0, 0xe
+└ 0x0004885c      10e5a0b1       invalid
+
+┌ 8: fcn.0001f460 ();
+│ 0x0001f460      0b04cf70       adr x11, 0xfffffffffffbd4e3
+└ 0x0001f464      80004821       invalid
+
+┌ 12: fcn.0008f768 (int64_t arg_f0h);
+│ ; arg int64_t arg_f0h @ sp+0x1e0
+│ 0x0008f768      f20f4ff8       ldr x18, [arg_f0h]!                   ; fcn.00000004
+│                                                                      ; 0x4
+│ 0x0008f76c      00d895b8       ldtrsw x0, [x0, -0xa3]
+└ 0x0008f770      ea0a4003       invalid
+
+┌ 8: fcn.0004650c (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x0004650c      f40840a9       ldp x20, x2, [x7]                     ; arg8
+└ 0x00046510      0a21c00f       invalid
+
+┌ 8: fcn.0005b9dc (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x0005b9dc      ffd800a9       stp xzr, x22, [x7, 8]                 ; arg8
+└ 0x0005b9e0      00898c20       invalid
+
+┌ 8: fcn.00092018 (int64_t arg8);
+│ ; arg int64_t arg8 @ x7
+│ 0x00092018      ffd800a9       stp xzr, x22, [x7, 8]                 ; arg8
+└ 0x0009201c      00898c20       invalid
+
+┌ 12: fcn.00093f0c (int64_t arg1);
+│ ; arg int64_t arg1 @ x0
+│ 0x00093f0c      fe0310a9       stp x30, x0, [sp, aav.0x00000100]     ; arg1
+│ 0x00093f10      44ba02b8       sttr w4, [x18, 0x2b]
+└ 0x00093f14      c4198200       invalid
+

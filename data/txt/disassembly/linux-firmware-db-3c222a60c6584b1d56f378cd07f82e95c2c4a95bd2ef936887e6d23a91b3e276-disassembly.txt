@@ -1,0 +1,53 @@
+  ;-- zero:
+  ;-- at:
+  ;-- v0:
+  ;-- v1:
+  ;-- a0:
+  ;-- a1:
+  ;-- a2:
+  ;-- a3:
+  ;-- t0:
+  ;-- t1:
+  ;-- t2:
+  ;-- t3:
+  ;-- t4:
+  ;-- t5:
+  ;-- t6:
+  ;-- t7:
+  ;-- s0:
+  ;-- s1:
+  ;-- s2:
+  ;-- s3:
+  ;-- s4:
+  ;-- s5:
+  ;-- s6:
+  ;-- s7:
+  ;-- t8:
+  ;-- t9:
+  ;-- k0:
+  ;-- k1:
+  ;-- gp:
+  ;-- ra:
+  ;-- pc:
+  ;-- hi:
+  ;-- lo:
+  ;-- t:
+│ ;-- (0x00000002) fcn.00000002:
+│ ; CALL XREFS from aav.0x00000060 @ +0x104, +0xa04, +0x2bc4, +0x2c80
+┌ 2: fcn.00000000 ();
+│ 0x00000000  ~   8042           invalid
+| // true: 0x00000002
+  ; CALL XREFS from aav.0x00000060 @ +0x104, +0xa04, +0x2bc4, +0x2c80
+┌ 1: fcn.00000002 ();
+└ 0x00000002                     unaligned
+| // true: 0x00000003
+  ; XREFS: CALL 0x0000044c  CALL 0x000004d4  CALL 0x00000504  
+  ; XREFS: CALL 0x00000ec4  DATA 0x000013e0  CALL 0x00001a84  
+  ; XREFS: CALL 0x00003248  CALL 0x00003910  CALL 0x00003a78  
+  ; XREFS: CALL 0x00003b2c  CALL 0x00003c24  
+┌ 13: fcn.00000003 ();
+│ 0x00000003                     unaligned
+│ 0x00000004      2c000000       dadd zero, zero, zero
+│ 0x00000008      01000000       movf zero, zero, fcc0
+└ 0x0000000c      07000200       srav zero, v0, zero
+
