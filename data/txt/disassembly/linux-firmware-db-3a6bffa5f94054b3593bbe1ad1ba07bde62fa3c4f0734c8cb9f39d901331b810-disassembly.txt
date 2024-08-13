@@ -1,0 +1,913 @@
+  ; XREFS: CALL 0x00000a00  CALL 0x00003040  CALL 0x00003a60  
+  ; XREFS: CALL 0x00003e34  CALL 0x0000ece4  CALL 0x0000ffd8  
+  ; XREFS: CALL 0x000102f0  CALL 0x000110dc  CALL 0x00018bd4  
+  ; XREFS: CALL 0x0001a010  CALL 0x0001ace0  CALL 0x0001af48  
+  ; XREFS: CALL 0x0001afcc  CALL 0x0001d8b8  CALL 0x0001dccc  
+  ; XREFS: CALL 0x0001ebac  CALL 0x0001ecd8  CALL 0x0001f3f4  
+┌ 16: fcn.000104d8 (signed int64_t arg2);
+│ ; arg signed int64_t arg2 @ a1
+│ 0x000104d8      03b2a480       lb a0, -0x4dfd(a1)                    ; arg2
+│ 0x000104dc      c20753ba       swr s3, 0x7c2(s2)
+│ 0x000104e0      a7a26116       bne s3, at, -0x7080
+└ 0x000104e4      661c0532       andi a1, s0, 0x1c66                   ; arg2
+
+  ; CALL XREF from aav.0x000001e4 @ +0xa44
+┌ 20: fcn.0000ce18 ();
+│ 0x0000ce18      e8001b22       addi k1, s0, 0xe8
+│ 0x0000ce1c      c03f0550       beql zero, a1, 0x1cd20
+│ 0x0000ce20      3320f0cc       pref 0x10, 0x2033(a3)
+  false: 0x0000ce24
+│ 0x0000ce24      11c90139       xori at, t0, 0xc911
+└ 0x0000ce28      116a62f6       sdc1 f2, 0x6a11(s3)
+
+│ 0x00002b98      0fa5c0fe       sd zero, -0x5af1(s6)
+│ 0x00002b9c      46b8ff00       rotrv s7, ra, a3
+│ 0x00002ba0      e221110c       jal 0x448788
+│ 0x00002ba4      08facd0c       jal 0x337e820
+│ 0x00002ba8      19dd0692       lbu a2, -0x22e7(s0)
+│ 0x00002bac      6af0926a       ldl s2, -0xf96(s4)
+│ 0x00002bb0      e9c08983       lb t1, -0x3f17(gp)
+│ 0x00002bb4      ad02cd0b       j 0xf340ab4
+│ 0x00002bb8      bd08258c       lw a1, 0x8bd(at)
+
+│ ; CODE XREF from fcn.00009218 @ 0x9224
+│ 0x00003ad4      30fcc016       bnez s6, 0x2b98
+│ 0x00003ad8      df1c16a3       sb s6, 0x1cdf(t8)
+| // true: 0x00002b98  false: 0x00003adc
+│ 0x00003adc      1c3268e3       sc t0, 0x321c(k1)
+│ 0x00003ae0      80d2a0d2       lld zero, -0x2d80(s5)
+│ 0x00003ae4      dd03720d       jal 0x5c80f74
+
+  ; CALL XREF from aav.0x000001e4 @ +0xb1c
+┌ 112: fcn.00009218 (int64_t arg3);
+│ ; var int64_t var_22e5h @ fp-0x22e5
+│ ; arg int64_t arg3 @ a2
+│ 0x00009218      1bddd26b       ldl s2, (var_22e5h)
+│ 0x0000921c      efc22363       daddi v1, t9, -0x3d11
+│ ; DATA XREF from fcn.00003748 @ +0x553c
+│ 0x00009220      d71c30d2       lld s0, 0x1cd7(s1)
+│ 0x00009224      2beaf811       beq t7, t8, 0x3ad4
+│ 0x00009228      1bddd26b       ldl s2, (var_22e5h)
+| // true: 0x00003ad4  false: 0x0000922c
+│ 0x0000922c      eaa226a0       sb a2, -0x5d16(at)
+│ 0x00009230      91ec00e2       sc zero, -0x136f(s0)
+│ 0x00009234      24961bca       bbit0 s0, 0x1b, -0x11538
+│ 0x00009238      c266a0c1       ll zero, 0x66c2(t5)
+│ 0x0000923c      ed003b8a       lwl k1, 0xed(s1)
+│ 0x00009240      2baac22c       sltiu v0, a2, -0x55d5                 ; arg3
+│ 0x00009244      96a266a0       sb a2, -0x5d6a(v1)
+│ 0x00009248      92299682       lb s6, 0x2992(s4)
+│ 0x0000924c      66a0e90f       jal 0xfa68198
+
+  ; XREFS: CALL 0x00001b68  CALL 0x0000ca44  CALL 0x00014e10  
+  ; XREFS: CALL 0x00016164  CALL 0x00018c88  CALL 0x00019b64  
+  ; XREFS: CALL 0x0001f2ec  
+┌ 24: fcn.000184d8 ();
+│ 0x000184d8      00822255       bnel t1, v0, -0x7324
+│ 0x000184dc      1648f66a       ldl s6, 0x4816(s7)
+  false: 0x000184e0
+│ 0x000184e0      4442247f       ins a0, t9, 9, 0
+│ 0x000184e4      7a729207       bltzall gp, 0x34ed0                   ; fcn.0000001e
+│ 0x000184e8      7e304480       lb a0, 0x307e(v0)
+└ 0x000184ec      4204a1bc       cache 1, 0x442(a1)
+
+  ; CALL XREF from aav.0x00001a4c @ +0x204
+  ; CALL XREF from fcn.00009218 @ +0x25a8
+  ; CALL XREF from fcn.000104d8 @ +0x3e4
+│ ;-- (0x0000000e) fcn.0000000e:
+│ ; XREFS: CALL 0x00002950  CALL 0x0000299c  CALL 0x000087d0  
+│ ; XREFS: CALL 0x00008a20  CALL 0x000106bc  CALL 0x00011038  
+│ ; XREFS: CALL 0x0001b934  
+┌ 2: fcn.0000000c (int64_t arg1);
+│ ; arg int64_t arg1 @ a0
+│ 0x0000000c  ~   0300           invalid                               ; arg1
+| // true: 0x0000000e
+  ; CALL XREF from aav.0x00001a4c @ +0x718
+  ; CALL XREF from fcn.00009218 @ +0x26ec
+  ; CALL XREF from fcn.000104d8 @ +0x112c
+┌ 8: fcn.000204d8 ();
+│ 0x000204d8      c21c0000       srl v1, zero, 0x13
+│ ;-- syscall.0:
+└ 0x000204dc      cc1c0000       syscall 0x73
+
+  ; XREFS: CALL 0x00002950  CALL 0x0000299c  CALL 0x000087d0  
+  ; XREFS: CALL 0x00008a20  CALL 0x000106bc  CALL 0x00011038  
+  ; XREFS: CALL 0x0001b934  
+┌ 2: fcn.0000000e ();
+│ 0x0000000e                     unaligned
+└ 0x0000000f                     unaligned
+
+│ 0x0000579c      00000000       nop
+│ 0x000057a0      00000000       nop
+│ 0x000057a4      00000000       nop
+│ 0x000057a8      00000000       nop
+│ 0x000057ac      00000000       nop
+│ 0x000057b0      00000000       nop
+│ 0x000057b4      00000000       nop
+│ 0x000057b8      00000000       nop
+│ 0x000057bc      00000000       nop
+│ 0x000057c0      00000000       nop
+│ 0x000057c4      00000000       nop
+│ 0x000057c8      00000000       nop
+│ 0x000057cc      00000000       nop
+│ 0x000057d0      00000000       nop
+│ 0x000057d4      00000000       nop
+│ 0x000057d8      00000000       nop
+│ 0x000057dc      00000000       nop
+│ 0x000057e0      00000000       nop
+│ 0x000057e4      00000000       nop
+│ 0x000057e8      00000000       nop
+│ 0x000057ec      00000000       nop
+│ 0x000057f0      00000000       nop
+│ 0x000057f4      00000000       nop
+│ 0x000057f8      00000000       nop
+│ 0x000057fc      00000000       nop
+│ 0x00005800      00000000       nop
+│ 0x00005804      00000000       nop
+│ 0x00005808      00000000       nop
+│ 0x0000580c      00000000       nop
+│ 0x00005810      00000000       nop
+│ 0x00005814      00000000       nop
+│ 0x00005818      00000000       nop
+│ 0x0000581c      00000000       nop
+│ 0x00005820      00000000       nop
+│ 0x00005824      00000000       nop
+│ 0x00005828      00000000       nop
+│ 0x0000582c      00000000       nop
+│ 0x00005830      00000000       nop
+│ 0x00005834      00000000       nop
+│ 0x00005838      00000000       nop
+│ 0x0000583c      00000000       nop
+│ 0x00005840      00000000       nop
+│ 0x00005844      00000000       nop
+│ 0x00005848      00000000       nop
+│ 0x0000584c      00000000       nop
+│ 0x00005850      00000000       nop
+│ 0x00005854      00000000       nop
+│ 0x00005858      00000000       nop
+│ 0x0000585c      00000000       nop
+│ 0x00005860      00000000       nop
+│ 0x00005864      00000000       nop
+│ 0x00005868      00000000       nop
+│ 0x0000586c      00000000       nop
+│ 0x00005870      00000000       nop
+│ 0x00005874      00000000       nop
+│ 0x00005878      00000000       nop
+│ 0x0000587c      00000000       nop
+│ 0x00005880      00000000       nop
+│ 0x00005884      00000000       nop
+│ 0x00005888      00000000       nop
+│ 0x0000588c      00000000       nop
+│ 0x00005890      00000000       nop
+│ 0x00005894      00000000       nop
+│ 0x00005898      00000000       nop
+│ ; CODE XREF from fcn.000104d8 @ +0xb4c
+│ 0x0000589c      00000000       nop
+│ 0x000058a0      00000000       nop
+│ 0x000058a4      00000000       nop
+│ 0x000058a8      00000000       nop
+│ 0x000058ac      00000000       nop
+│ 0x000058b0      00000000       nop
+│ 0x000058b4      00000000       nop
+│ 0x000058b8      00000000       nop
+│ 0x000058bc      00000000       nop
+│ 0x000058c0      00000000       nop
+│ 0x000058c4      00000000       nop
+│ 0x000058c8      00000000       nop
+│ 0x000058cc      00000000       nop
+│ 0x000058d0      00000000       nop
+│ 0x000058d4      00000000       nop
+│ 0x000058d8      00000000       nop
+│ 0x000058dc      00000000       nop
+│ 0x000058e0      00000000       nop
+│ 0x000058e4      00000000       nop
+│ 0x000058e8      00000000       nop
+│ 0x000058ec      00000000       nop
+│ 0x000058f0      00000000       nop
+│ 0x000058f4      00000000       nop
+│ 0x000058f8      00000000       nop
+│ 0x000058fc      00000000       nop
+│ 0x00005900      00000000       nop
+│ 0x00005904      00000000       nop
+│ 0x00005908      00000000       nop
+│ 0x0000590c      00000000       nop
+│ 0x00005910      00000000       nop
+│ 0x00005914      00000000       nop
+│ 0x00005918      00000000       nop
+│ 0x0000591c      00000000       nop
+│ 0x00005920      00000000       nop
+│ 0x00005924      00000000       nop
+│ 0x00005928      00000000       nop
+│ 0x0000592c      00000000       nop
+│ 0x00005930      00000000       nop
+│ 0x00005934      00000000       nop
+│ 0x00005938      00000000       nop
+│ 0x0000593c      00000000       nop
+│ 0x00005940      00000000       nop
+│ 0x00005944      00000000       nop
+│ 0x00005948      00000000       nop
+│ 0x0000594c      00000000       nop
+│ 0x00005950      00000000       nop
+│ 0x00005954      00000000       nop
+│ 0x00005958      00000000       nop
+│ 0x0000595c      00000000       nop
+│ 0x00005960      00000000       nop
+│ 0x00005964      00000000       nop
+│ 0x00005968      00000000       nop
+│ 0x0000596c      00000000       nop
+│ 0x00005970      00000000       nop
+│ 0x00005974      00000000       nop
+│ 0x00005978      00000000       nop
+│ 0x0000597c      00000000       nop
+│ 0x00005980      00000000       nop
+│ 0x00005984      00000000       nop
+│ 0x00005988      00000000       nop
+│ 0x0000598c      00000000       nop
+│ 0x00005990      00000000       nop
+│ 0x00005994      00000000       nop
+│ 0x00005998      00000000       nop
+│ 0x0000599c      00000000       nop
+│ 0x000059a0      00000000       nop
+│ 0x000059a4      00000000       nop
+│ 0x000059a8      00000000       nop
+│ 0x000059ac      00000000       nop
+│ 0x000059b0      00000000       nop
+│ 0x000059b4      00000000       nop
+│ 0x000059b8      00000000       nop
+│ 0x000059bc      00000000       nop
+│ 0x000059c0      00000000       nop
+│ 0x000059c4      00000000       nop
+│ 0x000059c8      00000000       nop
+│ 0x000059cc      00000000       nop
+│ 0x000059d0      00000000       nop
+│ 0x000059d4      00000000       nop
+│ ; DATA XREF from fcn.00003748 @ +0x5770
+│ 0x000059d8      00000000       nop
+│ 0x000059dc      00000000       nop
+│ 0x000059e0      00000000       nop
+│ 0x000059e4      00000000       nop
+│ 0x000059e8      00000000       nop
+│ 0x000059ec      00000000       nop
+│ 0x000059f0      00000000       nop
+│ 0x000059f4      00000000       nop
+│ 0x000059f8      00000000       nop
+│ 0x000059fc      00000000       nop
+│ 0x00005a00      00000000       nop
+│ 0x00005a04      00000000       nop
+│ 0x00005a08      00000000       nop
+│ 0x00005a0c      00000000       nop
+│ 0x00005a10      00000000       nop
+│ 0x00005a14      00000000       nop
+│ 0x00005a18      00000000       nop
+│ 0x00005a1c      00000000       nop
+│ 0x00005a20      00000000       nop
+│ 0x00005a24      00000000       nop
+│ 0x00005a28      00000000       nop
+│ 0x00005a2c      00000000       nop
+│ 0x00005a30      00000000       nop
+│ 0x00005a34      00000000       nop
+│ 0x00005a38      00000000       nop
+│ 0x00005a3c      00000000       nop
+│ 0x00005a40      00000000       nop
+│ 0x00005a44      00000000       nop
+│ 0x00005a48      00000000       nop
+│ 0x00005a4c      00000000       nop
+│ 0x00005a50      00000000       nop
+│ 0x00005a54      00000000       nop
+│ 0x00005a58      00000000       nop
+│ 0x00005a5c      00000000       nop
+│ 0x00005a60      00000000       nop
+│ 0x00005a64      00000000       nop
+│ 0x00005a68      00000000       nop
+│ 0x00005a6c      00000000       nop
+│ 0x00005a70      00000000       nop
+│ 0x00005a74      00000000       nop
+│ 0x00005a78      00000000       nop
+│ 0x00005a7c      00000000       nop
+│ 0x00005a80      00000000       nop
+│ 0x00005a84      00000000       nop
+│ 0x00005a88      00000000       nop
+│ 0x00005a8c      00000000       nop
+│ 0x00005a90      00000000       nop
+│ 0x00005a94      00000000       nop
+│ 0x00005a98      00000000       nop
+│ ; DATA XREF from fcn.000104d8 @ +0x1164
+│ 0x00005a9c      00000000       nop
+│ 0x00005aa0      00000000       nop
+│ 0x00005aa4      00000000       nop
+│ 0x00005aa8      00000000       nop
+│ 0x00005aac      00000000       nop
+│ 0x00005ab0      00000000       nop
+│ 0x00005ab4      00000000       nop
+│ 0x00005ab8      00000000       nop
+│ 0x00005abc      00000000       nop
+│ 0x00005ac0      00000000       nop
+│ 0x00005ac4      00000000       nop
+│ 0x00005ac8      00000000       nop
+│ 0x00005acc      00000000       nop
+│ 0x00005ad0      00000000       nop
+│ 0x00005ad4      00000000       nop
+│ 0x00005ad8      00000000       nop
+│ 0x00005adc      00000000       nop
+│ 0x00005ae0      00000000       nop
+│ 0x00005ae4      00000000       nop
+│ 0x00005ae8      00000000       nop
+│ 0x00005aec      00000000       nop
+│ 0x00005af0      00000000       nop
+│ 0x00005af4      00000000       nop
+│ 0x00005af8      00000000       nop
+│ 0x00005afc      00000000       nop
+│ 0x00005b00      00000000       nop
+│ 0x00005b04      00000000       nop
+│ 0x00005b08      00000000       nop
+│ 0x00005b0c      00000000       nop
+│ 0x00005b10      00000000       nop
+│ 0x00005b14      00000000       nop
+│ 0x00005b18      00000000       nop
+│ 0x00005b1c      00000000       nop
+│ 0x00005b20      00000000       nop
+│ 0x00005b24      00000000       nop
+│ 0x00005b28      00000000       nop
+│ 0x00005b2c      00000000       nop
+│ 0x00005b30      00000000       nop
+│ 0x00005b34      00000000       nop
+│ 0x00005b38      00000000       nop
+│ 0x00005b3c      00000000       nop
+│ 0x00005b40      00000000       nop
+│ 0x00005b44      00000000       nop
+│ 0x00005b48      00000000       nop
+│ 0x00005b4c      00000000       nop
+│ 0x00005b50      00000000       nop
+│ 0x00005b54      00000000       nop
+│ 0x00005b58      00000000       nop
+│ 0x00005b5c      00000000       nop
+│ 0x00005b60      00000000       nop
+│ 0x00005b64      00000000       nop
+│ 0x00005b68      00000000       nop
+│ ; DATA XREF from fcn.000104d8 @ +0x1278
+│ 0x00005b6c      00000000       nop
+│ 0x00005b70      00000000       nop
+│ 0x00005b74      00000000       nop
+│ 0x00005b78      00000000       nop
+│ 0x00005b7c      00000000       nop
+│ 0x00005b80      00000000       nop
+│ 0x00005b84      00000000       nop
+│ 0x00005b88      00000000       nop
+│ 0x00005b8c      00000000       nop
+│ 0x00005b90      00000000       nop
+│ 0x00005b94      00000000       nop
+│ 0x00005b98      00000000       nop
+│ 0x00005b9c      00000000       nop
+│ 0x00005ba0      00000000       nop
+│ 0x00005ba4      00000000       nop
+│ 0x00005ba8      00000000       nop
+│ 0x00005bac      00000000       nop
+│ 0x00005bb0      00000000       nop
+│ 0x00005bb4      00000000       nop
+│ 0x00005bb8      00000000       nop
+│ 0x00005bbc      00000000       nop
+│ 0x00005bc0      00000000       nop
+│ 0x00005bc4      00000000       nop
+│ 0x00005bc8      00000000       nop
+│ 0x00005bcc      00000000       nop
+│ 0x00005bd0      00000000       nop
+│ 0x00005bd4      00000000       nop
+│ 0x00005bd8      00000000       nop
+│ 0x00005bdc      00000000       nop
+│ 0x00005be0      00000000       nop
+│ 0x00005be4      00000000       nop
+│ 0x00005be8      00000000       nop
+│ 0x00005bec      00000000       nop
+│ 0x00005bf0      00000000       nop
+│ 0x00005bf4      00000000       nop
+│ ; CODE XREF from fcn.00018ac4 @ +0x52c
+│ 0x00005bf8      00000000       nop
+│ 0x00005bfc      00000000       nop
+│ 0x00005c00      00000000       nop
+│ 0x00005c04      00000000       nop
+│ 0x00005c08      00000000       nop
+│ 0x00005c0c      00000000       nop
+│ 0x00005c10      00000000       nop
+│ 0x00005c14      00000000       nop
+│ 0x00005c18      00000000       nop
+│ 0x00005c1c      00000000       nop
+│ 0x00005c20      00000000       nop
+│ 0x00005c24      00000000       nop
+│ 0x00005c28      00000000       nop
+│ 0x00005c2c      00000000       nop
+│ 0x00005c30      00000000       nop
+│ 0x00005c34      00000000       nop
+│ 0x00005c38      00000000       nop
+│ 0x00005c3c      00000000       nop
+│ 0x00005c40      00000000       nop
+│ 0x00005c44      00000000       nop
+│ 0x00005c48      00000000       nop
+│ 0x00005c4c      00000000       nop
+│ 0x00005c50      00000000       nop
+│ 0x00005c54      00000000       nop
+│ 0x00005c58      00000000       nop
+│ 0x00005c5c      00000000       nop
+│ 0x00005c60      00000000       nop
+│ 0x00005c64      00000000       nop
+│ 0x00005c68      00000000       nop
+│ ; DATA XREF from fcn.000104d8 @ +0x1284
+│ 0x00005c6c      00000000       nop
+│ 0x00005c70      00000000       nop
+│ 0x00005c74      00000000       nop
+│ 0x00005c78      00000000       nop
+│ 0x00005c7c      00000000       nop
+│ 0x00005c80      00000000       nop
+│ 0x00005c84      00000000       nop
+│ 0x00005c88      00000000       nop
+│ 0x00005c8c      00000000       nop
+│ 0x00005c90      00000000       nop
+│ 0x00005c94      00000000       nop
+│ 0x00005c98      00000000       nop
+│ 0x00005c9c      00000000       nop
+│ 0x00005ca0      00000000       nop
+│ 0x00005ca4      00000000       nop
+│ 0x00005ca8      00000000       nop
+│ 0x00005cac      00000000       nop
+│ 0x00005cb0      00000000       nop
+│ 0x00005cb4      00000000       nop
+│ 0x00005cb8      00000000       nop
+│ 0x00005cbc      00000000       nop
+│ 0x00005cc0      00000000       nop
+│ 0x00005cc4      00000000       nop
+│ 0x00005cc8      00000000       nop
+│ 0x00005ccc      00000000       nop
+│ 0x00005cd0      00000000       nop
+│ 0x00005cd4      00000000       nop
+│ 0x00005cd8      00000000       nop
+│ 0x00005cdc      00000000       nop
+│ 0x00005ce0      00000000       nop
+│ 0x00005ce4      00000000       nop
+│ 0x00005ce8      00000000       nop
+│ 0x00005cec      00000000       nop
+│ 0x00005cf0      00000000       nop
+│ 0x00005cf4      00000000       nop
+│ 0x00005cf8      00000000       nop
+│ 0x00005cfc      00000000       nop
+│ 0x00005d00      00000000       nop
+│ 0x00005d04      00000000       nop
+│ 0x00005d08      00000000       nop
+│ 0x00005d0c      00000000       nop
+│ 0x00005d10      00000000       nop
+│ 0x00005d14      00000000       nop
+│ ; CODE XREF from fcn.000104d8 @ +0xdbc
+│ 0x00005d18      00000000       nop
+│ 0x00005d1c      00000000       nop
+│ 0x00005d20      00000000       nop
+│ 0x00005d24      00000000       nop
+│ 0x00005d28      00000000       nop
+│ 0x00005d2c      00000000       nop
+│ 0x00005d30      00000000       nop
+│ 0x00005d34      00000000       nop
+│ 0x00005d38      00000000       nop
+│ 0x00005d3c      00000000       nop
+│ 0x00005d40      00000000       nop
+│ 0x00005d44      00000000       nop
+│ 0x00005d48      00000000       nop
+│ 0x00005d4c      00000000       nop
+│ 0x00005d50      00000000       nop
+│ 0x00005d54      00000000       nop
+│ 0x00005d58      00000000       nop
+│ 0x00005d5c      00000000       nop
+│ 0x00005d60      00000000       nop
+│ ; DATA XREF from fcn.000104d8 @ +0x11d4
+│ 0x00005d64      00000000       nop
+│ 0x00005d68      00000000       nop
+│ 0x00005d6c      00000000       nop
+│ 0x00005d70      00000000       nop
+│ 0x00005d74      00000000       nop
+│ 0x00005d78      00000000       nop
+│ 0x00005d7c      00000000       nop
+│ 0x00005d80      00000000       nop
+│ 0x00005d84      00000000       nop
+│ 0x00005d88      00000000       nop
+│ 0x00005d8c      00000000       nop
+│ 0x00005d90      00000000       nop
+│ 0x00005d94      00000000       nop
+│ 0x00005d98      00000000       nop
+│ 0x00005d9c      00000000       nop
+│ 0x00005da0      00000000       nop
+│ 0x00005da4      00000000       nop
+│ 0x00005da8      00000000       nop
+│ 0x00005dac      00000000       nop
+│ 0x00005db0      00000000       nop
+│ 0x00005db4      00000000       nop
+│ 0x00005db8      00000000       nop
+│ 0x00005dbc      00000000       nop
+│ 0x00005dc0      00000000       nop
+│ ; CODE XREF from fcn.00003748 @ +0x5844
+│ 0x00005dc4      00000000       nop
+│ 0x00005dc8      00000000       nop
+│ 0x00005dcc      00000000       nop
+│ 0x00005dd0      00000000       nop
+│ 0x00005dd4      00000000       nop
+│ 0x00005dd8      00000000       nop
+│ 0x00005ddc      00000000       nop
+│ 0x00005de0      00000000       nop
+│ 0x00005de4      00000000       nop
+│ 0x00005de8      00000000       nop
+│ 0x00005dec      00000000       nop
+│ 0x00005df0      00000000       nop
+│ 0x00005df4      00000000       nop
+│ 0x00005df8      00000000       nop
+│ 0x00005dfc      00000000       nop
+│ 0x00005e00      00000000       nop
+│ 0x00005e04      00000000       nop
+│ 0x00005e08      00000000       nop
+│ 0x00005e0c      00000000       nop
+│ 0x00005e10      00000000       nop
+│ 0x00005e14      00000000       nop
+│ 0x00005e18      00000000       nop
+│ 0x00005e1c      00000000       nop
+│ 0x00005e20      00000000       nop
+│ 0x00005e24      00000000       nop
+│ 0x00005e28      00000000       nop
+│ 0x00005e2c      00000000       nop
+│ 0x00005e30      00000000       nop
+│ 0x00005e34      00000000       nop
+│ 0x00005e38      00000000       nop
+│ 0x00005e3c      00000000       nop
+│ 0x00005e40      00000000       nop
+│ 0x00005e44      00000000       nop
+│ 0x00005e48      00000000       nop
+│ 0x00005e4c      00000000       nop
+│ 0x00005e50      00000000       nop
+│ 0x00005e54      00000000       nop
+│ 0x00005e58      00000000       nop
+│ 0x00005e5c      00000000       nop
+│ 0x00005e60      00000000       nop
+│ 0x00005e64      00000000       nop
+│ 0x00005e68      00000000       nop
+│ 0x00005e6c      00000000       nop
+│ 0x00005e70      00000000       nop
+│ 0x00005e74      00000000       nop
+│ 0x00005e78      00000000       nop
+│ 0x00005e7c      00000000       nop
+│ ; CODE XREF from fcn.00018ac4 @ +0x534
+│ 0x00005e80      00000000       nop
+│ 0x00005e84      00000000       nop
+│ 0x00005e88      00000000       nop
+│ 0x00005e8c      00000000       nop
+│ 0x00005e90      00000000       nop
+│ 0x00005e94      00000000       nop
+│ 0x00005e98      00000000       nop
+│ 0x00005e9c      00000000       nop
+│ 0x00005ea0      00000000       nop
+│ 0x00005ea4      00000000       nop
+│ 0x00005ea8      00000000       nop
+│ 0x00005eac      00000000       nop
+│ 0x00005eb0      00000000       nop
+│ 0x00005eb4      00000000       nop
+│ 0x00005eb8      00000000       nop
+│ 0x00005ebc      00000000       nop
+│ 0x00005ec0      00000000       nop
+│ 0x00005ec4      00000000       nop
+│ 0x00005ec8      00000000       nop
+│ 0x00005ecc      00000000       nop
+│ 0x00005ed0      00000000       nop
+│ 0x00005ed4      00000000       nop
+│ 0x00005ed8      00000000       nop
+│ 0x00005edc      00000000       nop
+│ 0x00005ee0      00000000       nop
+│ 0x00005ee4      00000000       nop
+│ 0x00005ee8      00000000       nop
+│ 0x00005eec      00000000       nop
+│ 0x00005ef0      00000000       nop
+│ 0x00005ef4      00000000       nop
+│ 0x00005ef8      00000000       nop
+│ 0x00005efc      00000000       nop
+│ 0x00005f00      00000000       nop
+│ 0x00005f04      00000000       nop
+│ 0x00005f08      00000000       nop
+│ 0x00005f0c      00000000       nop
+│ 0x00005f10      00000000       nop
+│ 0x00005f14      00000000       nop
+│ 0x00005f18      00000000       nop
+│ 0x00005f1c      00000000       nop
+│ 0x00005f20      00000000       nop
+│ 0x00005f24      00000000       nop
+│ 0x00005f28      00000000       nop
+│ 0x00005f2c      00000000       nop
+│ 0x00005f30      00000000       nop
+│ 0x00005f34      00000000       nop
+│ 0x00005f38      00000000       nop
+│ 0x00005f3c      00000000       nop
+│ 0x00005f40      00000000       nop
+│ 0x00005f44      00000000       nop
+│ 0x00005f48      00000000       nop
+│ 0x00005f4c      00000000       nop
+│ 0x00005f50      00000000       nop
+│ 0x00005f54      00000000       nop
+│ 0x00005f58      00000000       nop
+│ 0x00005f5c      00000000       nop
+│ 0x00005f60      00000000       nop
+│ 0x00005f64      00000000       nop
+│ 0x00005f68      00000000       nop
+│ ; DATA XREF from fcn.000104d8 @ +0x180
+│ 0x00005f6c      00000000       nop
+│ 0x00005f70      00000000       nop
+│ 0x00005f74      00000000       nop
+│ 0x00005f78      00000000       nop
+│ 0x00005f7c      00000000       nop
+│ 0x00005f80      00000000       nop
+│ 0x00005f84      00000000       nop
+│ 0x00005f88      00000000       nop
+│ 0x00005f8c      00000000       nop
+│ 0x00005f90      00000000       nop
+│ 0x00005f94      00000000       nop
+│ 0x00005f98      00000000       nop
+│ 0x00005f9c      00000000       nop
+│ 0x00005fa0      00000000       nop
+│ 0x00005fa4      00000000       nop
+│ 0x00005fa8      00000000       nop
+│ 0x00005fac      00000000       nop
+│ 0x00005fb0      00000000       nop
+│ 0x00005fb4      00000000       nop
+│ 0x00005fb8      00000000       nop
+│ 0x00005fbc      00000000       nop
+│ 0x00005fc0      00000000       nop
+│ 0x00005fc4      00000000       nop
+│ 0x00005fc8      00000000       nop
+│ 0x00005fcc      00000000       nop
+│ 0x00005fd0      00000000       nop
+│ 0x00005fd4      00000000       nop
+│ 0x00005fd8      00000000       nop
+│ 0x00005fdc      00000000       nop
+│ 0x00005fe0      00000000       nop
+│ 0x00005fe4      00000000       nop
+│ 0x00005fe8      00000000       nop
+│ 0x00005fec      00000000       nop
+│ 0x00005ff0      00000000       nop
+│ 0x00005ff4      00000000       nop
+│ 0x00005ff8      00000000       nop
+│ 0x00005ffc      00000000       nop
+│ 0x00006000      366100d2       lld zero, 0x6136(s0)
+│ 0x00006004      d21b622d       sltiu v0, t3, 0x1bd2
+
+  ; CALL XREF from aav.0x000030d4 @ +0x64
+┌ 2172: fcn.00025794 (int64_t arg4);
+│ ; arg int64_t arg4 @ a3
+│ 0x00025794      003a0c00       sll a3, t4, 8                         ; arg4
+│ 0x00025798      00808250       beql a0, v0, 0x579c
+│ 0x0002579c      40380800       sll a3, t0, 1                         ; arg4
+| // true: 0x0000579c  false: 0x000257a0
+│ 0x000257a0      e3942610       beq at, a2, 0xab30
+
+  ; CALL XREFS from fcn.00003748 @ +0x250, +0x298, +0x30c
+┌ 8: fcn.00028308 (int64_t arg1, int64_t arg4);
+│ ; arg int64_t arg1 @ a0
+│ ; arg int64_t arg4 @ a3
+│ 0x00028308      00808190       lbu at, -0x8000(a0)                   ; arg1
+└ 0x0002830c      40380800       sll a3, t0, 1                         ; arg4
+
+  ; CALL XREF from fcn.00003748 @ +0x5350
+┌ 8: fcn.00003748 ();
+│ 0x00003748      80d20ddc       ld t5, -0x2d80(zero)
+└ 0x0000374c      a53400d2       lld zero, 0x34a5(s0)
+
+  ; CALL XREF from fcn.00009218 @ +0x1700
+┌ 8: fcn.0001bac4 (int64_t arg2);
+│ ; arg int64_t arg2 @ a1
+│ 0x0001bac4      344c7bb3       sdl k1, 0x4c34(k1)
+└ 0x0001bac8      fc07a3fc       sd v1, 0x7fc(a1)                      ; arg2
+
+  ; CALL XREFS from fcn.00009218 @ +0x2104, +0x2608
+┌ 24: fcn.00018ac4 ();
+│ 0x00018ac4      114982c6       lwc1 f2, 0x4911(s4)
+│ 0x00018ac8      91ff99a2       sb t9, -0x6f(s4)
+│ 0x00018acc      b8d1a221       addi v0, t5, -0x2e48
+│ 0x00018ad0      120c0cc2       ll t4, 0xc12(s0)
+│ 0x00018ad4      62571baa       swl k1, 0x5762(s0)
+└ 0x00018ad8      0bbbb262       daddi s2, s5, -0x44f5
+
+  ; CALL XREF from fcn.00009218 @ +0x2138
+┌ 28: fcn.00012858 ();
+│ 0x00012858      a8e17cdc       ld gp, -0x1e58(v1)
+│ 0x0001285c      c09910d2       lld s0, -0x6640(s0)
+│ 0x00012860      2a391b88       lwl k1, 0x392a(zero)
+│ 0x00012864      8263a092       lbu zero, 0x6382(s5)
+│ 0x00012868      6b1dfadd       ld k0, 0x1d6b(t7)
+│ 0x0001286c      c20d4882       lb t0, 0xdc2(s2)
+└ 0x00012870      a0fe80cc       pref 0, -0x160(a0)
+
+  ; CALL XREF from fcn.00009218 @ +0x391c
+  ; CALL XREF from fcn.00019a44 @ +0xf34
+┌ 4: fcn.00018688 ();
+└ 0x00018688      3130e3f0       scd v1, 0x3031(a3)
+
+  ; CALL XREF from fcn.00009218 @ +0x3934
+┌ 16: fcn.00018748 (int64_t arg1);
+│ ; arg int64_t arg1 @ a0
+│ 0x00018748      bbc01bbb       swr k1, -0x3f45(t8)
+│ 0x0001874c      b0aa82b8       swr v0, -0x5550(a0)                   ; arg1
+│ 0x00018750      52c0aac0       ll t2, -0x3fae(a1)
+└ 0x00018754      d0aa8265       daddiu v0, t4, -0x5530
+
+  ; CALL XREF from fcn.0000ce18 @ +0x2d0
+┌ 60: fcn.00028a88 ();
+│ 0x00028a88      0331910d       jal 0x644c40c
+│ 0x00028a8c      bebc668d       lw a2, -0x4342(t3)
+│ 0x00028a90      d9fb45ac       sw a1, -0x427(v0)
+│ 0x00028a94      a1a0fab0       sdl k0, -0x5f5f(a3)
+│ 0x00028a98      c020f29a       lwr s2, 0x20c0(s7)
+│ 0x00028a9c      577372b5       sdr s2, 0x7357(t3)
+│ 0x00028aa0      76d191eb       bbit1 gp, 0x11, 0x1d07c
+│ 0x00028aa4      1c283b32       andi k1, s1, 0x281c
+│ 0x00028aa8      73177cdc       ld gp, 0x1773(v1)
+│ 0x00028aac      adc7179a       lwr s7, -0x3853(s0)
+│ 0x00028ab0      e208a3e1       sc v1, 0x8e2(t5)
+│ 0x00028ab4      7d915b34       ori k1, v0, 0x917d
+│ 0x00028ab8      06ab9bb7       sdr k1, -0x54fa(gp)
+│ 0x00028abc      c045f490       lbu s4, 0x45c0(a3)
+└ 0x00028ac0      e7b7612a       slti at, s3, -0x4819
+
+  ; CALL XREF from fcn.0000ce18 @ +0x1930
+┌ 16: fcn.00019a44 ();
+│ 0x00019a44      f90c0f0c       jal 0x3c33e4
+│ 0x00019a48      08c22d96       lhu t5, -0x3df8(s1)
+│ 0x00019a4c      5addd20d       jal 0x74b7568
+└ 0x00019a50      dc890125       addiu at, t0, -0x7624
+
+  ; XREFS: CALL 0x0000f77c  CALL 0x00012fd4  CALL 0x00012fec  
+  ; XREFS: CALL 0x00013128  CALL 0x00013134  CALL 0x00013270  
+  ; XREFS: CALL 0x00013288  
+│ ;-- (0x00000009) fcn.00000009:
+│ ; CALL XREFS from fcn.00018ac4 @ +0x8b0, +0xa00
+┌ 1: fcn.00000008 ();
+│ 0x00000008  ~   01             invalid
+| // true: 0x00000009
+  ; CALL XREF from fcn.000104d8 @ +0x818
+┌ 24: fcn.000284d8 (int64_t arg1);
+│ ; arg int64_t arg1 @ a0
+│ 0x000284d8      81773af0       scd k0, 0x7781(at)
+│ 0x000284dc      be0588e4       swc1 f8, 0x5be(a0)                    ; arg1
+│ 0x000284e0      ea08e90f       jal 0xfa423a8
+│ 0x000284e4      8a8bdcae       sw gp, -0x7476(s6)
+│ 0x000284e8      10086018       blez v1, 0x2a52c
+└ 0x000284ec      95011f10       beq zero, ra, 0x28b44
+
+  ; CALL XREF from fcn.000104d8 @ +0x860
+┌ 28: fcn.00020244 ();
+│ 0x00020244      c1ba0060       daddi zero, zero, -0x453f
+│ 0x00020248      b8ba0060       daddi zero, zero, -0x4548
+│ 0x0002024c      afba0060       daddi zero, zero, -0x4551
+│ 0x00020250      a6ba0060       daddi zero, zero, -0x455a
+│ 0x00020254      9dba0060       daddi zero, zero, -0x4563
+│ 0x00020258      94ba0060       daddi zero, zero, -0x456c
+└ 0x0002025c      8bba0060       daddi zero, zero, -0x4575
+
+  ; XREFS: CALL 0x00014514  CALL 0x000162e4  CALL 0x00018d60  
+  ; XREFS: CALL 0x0001a340  CALL 0x0001ab54  CALL 0x0001abf0  
+│ ;-- (0x0000001b) fcn.0000001b:
+│ ; CALL XREF from aav.0x000001e4 @ +0x874
+│ ; CALL XREF from fcn.0001bac4 @ +0x3340
+┌ 3: fcn.00000018 ();
+│ 0x00000018  ~   000100         invalid
+| // true: 0x0000001b
+  ; CALL XREFS from fcn.00012858 @ +0x47f0, +0x5660
+  ; UNKNOWN XREFS from fcn.00025794 @ +0x158, +0x1e68
+│ ;-- (0x0000001e) fcn.0000001e:
+│ ; CALL XREF from fcn.00009218 @ +0x2764
+│ ; CALL XREFS from fcn.00012858 @ +0x764, +0x10f4
+│ ; CALL XREF from fcn.000184d8 @ 0x184e4
+┌ 2: fcn.0000001c ();
+│ 0x0000001c  ~   98d7           invalid
+| // true: 0x0000001e
+  ; CALL XREF from fcn.00009218 @ +0x2764
+  ; CALL XREFS from fcn.00012858 @ +0x764, +0x10f4
+  ; CALL XREF from fcn.000184d8 @ 0x184e4
+┌ 322: fcn.0000001e ();
+│ 0x0000001e                     unaligned
+│ ; CALL XREF from fcn.00003748 @ +0x438
+│ 0x0000001f                     unaligned
+│ ; CALL XREF from fcn.000184d8 @ +0x88
+│ 0x00000020      00000000       nop
+│ ;-- aav.0x00000024:
+│ ; UNKNOWN XREFS from fcn.00025794 @ +0x248, +0x1f58
+│ 0x00000024      00000000       nop
+│ 0x00000028      00000000       nop
+│ 0x0000002c      00000000       nop
+│ 0x00000030      00000000       nop
+│ ;-- aav.0x00000034:
+│ ; UNKNOWN XREFS from aav.0x000001e4 @ +0xb8, +0x144
+│ 0x00000034      00000000       nop
+│ 0x00000038      00000000       nop
+│ 0x0000003c      00000000       nop
+│ 0x00000040      00000000       nop
+│ ;-- aav.0x00000044:
+│ ; UNKNOWN XREF from aav.0x00024a00 @ +0x4ac
+│ ; UNKNOWN XREF from fcn.00025794 @ +0x1428
+│ 0x00000044      00000000       nop
+│ 0x00000048      00000000       nop
+│ 0x0000004c      00000000       nop
+│ 0x00000050      00000000       nop
+│ 0x00000054      00000000       nop
+│ 0x00000058      00000000       nop
+│ 0x0000005c      00000000       nop
+│ 0x00000060      00000000       nop
+│ 0x00000064      00000000       nop
+│ 0x00000068      00000000       nop
+│ 0x0000006c      00000000       nop
+│ 0x00000070      00000000       nop
+│ 0x00000074      00000000       nop
+│ 0x00000078      00000000       nop
+│ 0x0000007c      00000000       nop
+│ 0x00000080      00000000       nop
+│ 0x00000084      00000000       nop
+│ 0x00000088      00000000       nop
+│ 0x0000008c      00000000       nop
+│ 0x00000090      00000000       nop
+│ 0x00000094      00000000       nop
+│ 0x00000098      00000000       nop
+│ 0x0000009c      00000000       nop
+│ 0x000000a0      00000000       nop
+│ 0x000000a4      00000000       nop
+│ 0x000000a8      00000000       nop
+│ 0x000000ac      00000000       nop
+│ 0x000000b0      00000000       nop
+│ 0x000000b4      00000000       nop
+│ 0x000000b8      00000000       nop
+│ 0x000000bc      00000000       nop
+│ 0x000000c0      00000000       nop
+│ 0x000000c4      00000000       nop
+│ 0x000000c8      00000000       nop
+│ 0x000000cc      00000000       nop
+│ 0x000000d0      00000000       nop
+│ 0x000000d4      00000000       nop
+│ 0x000000d8      00000000       nop
+│ 0x000000dc      00000000       nop
+│ 0x000000e0      00000000       nop
+│ 0x000000e4      00000000       nop
+│ 0x000000e8      00000000       nop
+│ 0x000000ec      00000000       nop
+│ 0x000000f0      00000000       nop
+│ 0x000000f4      00000000       nop
+│ 0x000000f8      00000000       nop
+│ 0x000000fc      00000000       nop
+│ 0x00000100      2e753397       lhu s3, 0x752e(t9)
+│ 0x00000104      8d8b9c6c       ldr gp, -0x7473(a0)
+│ 0x00000108      e893d0a3       sb s0, -0x6c18(fp)
+│ 0x0000010c      5f2a37b4       sdr s7, 0x2a5f(at)
+│ 0x00000110      02000000       srl zero, zero, 0
+│ 0x00000114      .qword 0x0000000000024a00 ; aav.0x00024a00
+│ ; DATA XREF from fcn.00018ac4 @ +0x8e4
+│ 0x0000011c      00000000       nop
+│ 0x00000120      00000000       nop
+│ ;-- aav.0x00000124:
+│ ; DATA XREF from fcn.00003748 @ +0x5790
+│ ; UNKNOWN XREFS from fcn.00025794 @ +0x2f0, +0x2000
+│ 0x00000124      00000000       nop
+│ ; DATA XREF from fcn.0000eb94 @ +0x12dc
+│ 0x00000128      00000000       nop
+│ 0x0000012c      00000000       nop
+│ ; DATA XREF from aav.0x000001e4 @ +0x3b4
+│ 0x00000130      01000000       movf zero, zero, fcc0
+│ 0x00000134      00000000       nop
+│ 0x00000138      9f421ae6       swc1 f26, 0x429f(s0)
+│ 0x0000013c      e89a4911       beq t2, t1, -0x19320
+│ 0x00000140      8cae9190       lbu s1, -0x5174(a0)
+  false: 0x00000144
+│ 0x00000144      0cf29469       ldl s4, -0xdf4(t4)
+│ 0x00000148      00000000       nop
+│ 0x0000014c      00000000       nop
+│ 0x00000150      00000000       nop
+│ 0x00000154      00000000       nop
+│ ; DATA XREF from aav.0x00001a4c @ +0x294
+│ 0x00000158      00000000       nop
+└ 0x0000015c      00000000       nop
+
+  ; CALL XREFS from fcn.00018ac4 @ +0x8b0, +0xa00
+┌ 3: fcn.00000009 ();
+│ 0x00000009                     unaligned
+│ 0x0000000a                     unaligned
+└ 0x0000000b                     unaligned
+
+  ; CALL XREF from fcn.0001bac4 @ +0xc6c
+┌ 8: fcn.000287c8 ();
+│ 0x000287c8      f11eebb1       sdl t3, 0x1ef1(t7)
+└ 0x000287cc      8fac8600       sync 0x12
+
+  ; CALL XREF from fcn.0001bac4 @ +0x1268
+┌ 44: fcn.0000eb94 (int64_t arg1);
+│ ; arg int64_t arg1 @ a0
+│ 0x0000eb94      f20c0abd       cache 0xa, 0xcf2(t0)
+│ 0x0000eb98      03cd0465       daddiu a0, t0, -0x32fd                ; arg1
+│ 0x0000eb9c      cbf20c2a       slti t4, s0, -0xd35
+│ 0x0000eba0      bd0340c4       lwc1 f0, 0x3bd(v0)
+│ 0x0000eba4      20a5caf2       scd t2, -0x5ae0(s6)
+│ 0x0000eba8      922324ac       sw a0, 0x2392(at)
+│ 0x0000ebac      19ad030c       jal 0xeb464
+│ 0x0000ebb0      0bc2a0ff       sd zero, -0x3df5(sp)
+│ 0x0000ebb4      40d420a5       sh zero, -0x2bc0(t1)
+│ 0x0000ebb8      bbf20c0b       j 0xc33caec
+└ 0x0000ebbc      0c0a0c0c       jal 0x302830
+
+  ; CALL XREF from aav.0x000001e4 @ +0x874
+  ; CALL XREF from fcn.0001bac4 @ +0x3340
+┌ 1: fcn.0000001b ();
+└ 0x0000001b                     unaligned
+| // true: 0x0000001c

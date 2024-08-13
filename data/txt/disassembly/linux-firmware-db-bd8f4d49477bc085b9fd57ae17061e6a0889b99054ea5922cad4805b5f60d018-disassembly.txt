@@ -1,0 +1,85 @@
+  ;-- zero:
+  ;-- at:
+  ;-- v0:
+  ;-- v1:
+  ;-- a0:
+  ;-- a1:
+  ;-- a2:
+  ;-- a3:
+  ;-- t0:
+  ;-- t1:
+  ;-- t2:
+  ;-- t3:
+  ;-- t4:
+  ;-- t5:
+  ;-- t6:
+  ;-- t7:
+  ;-- s0:
+  ;-- s1:
+  ;-- s2:
+  ;-- s3:
+  ;-- s4:
+  ;-- s5:
+  ;-- s6:
+  ;-- s7:
+  ;-- t8:
+  ;-- t9:
+  ;-- k0:
+  ;-- k1:
+  ;-- gp:
+  ;-- ra:
+  ;-- pc:
+  ;-- hi:
+  ;-- lo:
+  ;-- t:
+│ ;-- (0x00000002) fcn.00000002:
+│ ; XREFS: CALL 0x000004f8  CALL 0x0000050c  CALL 0x00000518  
+│ ; XREFS: CALL 0x00001898  CALL 0x00001aac  CALL 0x000033c0  
+│ ; XREFS: CALL 0x000038f0  CALL 0x00003910  CALL 0x00003c1c  
+│ ; XREFS: CALL 0x00003c38  CALL 0x000062d4  CALL 0x000063c8  
+┌ 2: fcn.00000000 ();
+│ 0x00000000  ~   0087           invalid
+| // true: 0x00000002
+  ; XREFS: CALL 0x000004f8  CALL 0x0000050c  CALL 0x00000518  
+  ; XREFS: CALL 0x00001898  CALL 0x00001aac  CALL 0x000033c0  
+  ; XREFS: CALL 0x000038f0  CALL 0x00003910  CALL 0x00003c1c  
+  ; XREFS: CALL 0x00003c38  CALL 0x000062d4  CALL 0x000063c8  
+┌ 1: fcn.00000002 ();
+└ 0x00000002                     unaligned
+| // true: 0x00000003
+  ; CALL XREF from aav.0x00001000 @ +0xb4c
+┌ 12: fcn.0000000c ();
+│ 0x0000000c      06000000       srlv zero, zero, zero
+│ 0x00000010      09000000       jr zero
+└ 0x00000014      00860000       sll s0, zero, 0x18
+
+  ; CALL XREF from aav.0x00001000 @ +0xf14
+│ ;-- (0x00000009) fcn.00000009:
+│ ; CALL XREF from aav.0x00004400 @ +0xb9c
+┌ 1: fcn.00000008 ();
+│ 0x00000008  ~   02             invalid
+| // true: 0x00000009
+  ; CALL XREF from fcn.000021d4 @ +0x175c
+  ; CALL XREFS from aav.0x00004400 @ +0x1f88, +0x2020
+┌ 2: fcn.0000000a ();
+│ 0x0000000a                     unaligned
+└ 0x0000000b                     unaligned
+| // true: 0x0000000c
+  ; CALL XREF from aav.0x00004200 @ +0x80
+┌ 24: fcn.000021d4 ();
+│ 0x000021d4      03005425       addiu s4, t2, 3
+│ 0x000021d8      a1054099       lwr zero, 0x5a1(t2)
+│ 0x000021dc      af0014c4       lwc1 f20, 0xaf(zero)
+│ 0x000021e0      1a004099       lwr zero, 0x1a(t2)
+│ 0x000021e4      01009809       j 0x6600004
+└ 0x000021e8      faff8f99       lwr t7, -6(t4)
+
+  ; CALL XREFS from aav.0x00004400 @ +0x9b4, +0x1ed8
+┌ 5: fcn.00000003 ();
+│ 0x00000003                     unaligned
+└ 0x00000004      40000000       ssnop
+| // true: 0x00000008
+  ; CALL XREF from aav.0x00004400 @ +0xb9c
+┌ 1: fcn.00000009 ();
+└ 0x00000009                     unaligned
+| // true: 0x0000000a

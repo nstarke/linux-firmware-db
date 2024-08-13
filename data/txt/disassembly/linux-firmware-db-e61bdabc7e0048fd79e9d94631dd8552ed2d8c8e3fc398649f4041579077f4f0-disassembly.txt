@@ -1,0 +1,81 @@
+  ;-- zero:
+  ;-- at:
+  ;-- v0:
+  ;-- v1:
+  ;-- a0:
+  ;-- a1:
+  ;-- a2:
+  ;-- a3:
+  ;-- t0:
+  ;-- t1:
+  ;-- t2:
+  ;-- t3:
+  ;-- t4:
+  ;-- t5:
+  ;-- t6:
+  ;-- t7:
+  ;-- s0:
+  ;-- s1:
+  ;-- s2:
+  ;-- s3:
+  ;-- s4:
+  ;-- s5:
+  ;-- s6:
+  ;-- s7:
+  ;-- t8:
+  ;-- t9:
+  ;-- k0:
+  ;-- k1:
+  ;-- gp:
+  ;-- ra:
+  ;-- pc:
+  ;-- hi:
+  ;-- lo:
+  ;-- t:
+  ; CALL XREF from aav.0x00000400 @ +0x900
+  ; CALL XREF from aav.0x00002f9c @ +0x1310
+  ; CALL XREF from fcn.00006c48 @ +0xcc4
+  ; CALL XREF from fcn.000098c8 @ +0x15a4
+│ ;-- (0x00000002) fcn.00000002:
+│ ; XREFS: CALL 0x00000d14  CALL 0x00000dd4  CALL 0x000042c0  
+│ ; XREFS: CALL 0x00004380  CALL 0x00007920  CALL 0x000079e0  
+│ ; XREFS: CALL 0x0000ae80  CALL 0x0000af40  
+┌ 2: fcn.00000000 ();
+│ 0x00000000  ~   4000           invalid
+| // true: 0x00000002
+  ; CALL XREF from aav.0x00000400 @ +0x8bc
+  ; CALL XREF from aav.0x00002f9c @ +0x12cc
+  ; CALL XREF from fcn.00006c48 @ +0xc80
+  ; CALL XREF from fcn.000098c8 @ +0x1560
+┌ 8: fcn.00006c48 ();
+│ 0x00006c48      addefeca       bbit0 s7, 0x1e, -0x1900
+└ 0x00006c4c      06000000       srlv zero, zero, zero
+
+  ; XREFS: CALL 0x00000d14  CALL 0x00000dd4  CALL 0x000042c0  
+  ; XREFS: CALL 0x00004380  CALL 0x00007920  CALL 0x000079e0  
+  ; XREFS: CALL 0x0000ae80  CALL 0x0000af40  
+┌ 6: fcn.00000002 ();
+│ 0x00000002                     unaligned
+│ 0x00000003                     unaligned
+│ ;-- aav.0x00000004:
+│ ; XREFS: UNKNOWN 0x00000d50  UNKNOWN 0x00000e14  UNKNOWN 0x000042fc  
+│ ; XREFS: UNKNOWN 0x000043c0  UNKNOWN 0x0000795c  UNKNOWN 0x00007a20  
+│ ; XREFS: UNKNOWN 0x0000aebc  UNKNOWN 0x0000af80  
+└ 0x00000004      0c000000       syscall
+
+  ; CALL XREF from aav.0x00000400 @ +0x1ccc
+  ; CALL XREF from aav.0x00002f9c @ +0x26dc
+  ; CALL XREF from fcn.00006c48 @ +0x2090
+  ; CALL XREF from fcn.000098c8 @ +0x2970
+┌ 4: fcn.0000cc08 ();
+└ 0x0000cc08      02730057       bnel t8, zero, 0x29814
+
+  ; CALL XREFS from fcn.000098c8 @ +0x420, +0x43c
+┌ 24: fcn.000098c8 ();
+│ 0x000098c8      0263006f       ldr zero, 0x6302(t8)
+│ 0x000098cc      1503000e       jal 0x8000c54
+│ 0x000098d0      0e020060       daddi zero, zero, 0x20e
+│ 0x000098d4      60600026       addiu zero, s0, 0x6060
+│ 0x000098d8      261a0060       daddi zero, zero, 0x1a26
+└ 0x000098dc      60600010       b 0x21a60
+

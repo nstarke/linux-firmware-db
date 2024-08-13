@@ -1,0 +1,85 @@
+  ;-- zero:
+  ;-- at:
+  ;-- v0:
+  ;-- v1:
+  ;-- a0:
+  ;-- a1:
+  ;-- a2:
+  ;-- a3:
+  ;-- t0:
+  ;-- t1:
+  ;-- t2:
+  ;-- t3:
+  ;-- t4:
+  ;-- t5:
+  ;-- t6:
+  ;-- t7:
+  ;-- s0:
+  ;-- s1:
+  ;-- s2:
+  ;-- s3:
+  ;-- s4:
+  ;-- s5:
+  ;-- s6:
+  ;-- s7:
+  ;-- t8:
+  ;-- t9:
+  ;-- k0:
+  ;-- k1:
+  ;-- gp:
+  ;-- ra:
+  ;-- pc:
+  ;-- hi:
+  ;-- lo:
+  ;-- t:
+  ; CALL XREF from aav.0x00000400 @ +0x914
+  ; CALL XREF from aav.0x00002f9c @ +0x1338
+  ; CALL XREFS from syscall.0 @ +0xcfc, +0x4270
+│ ;-- (0x00000002) fcn.00000002:
+│ ; XREFS: CALL 0x00000d28  CALL 0x00000de8  CALL 0x000042e8  
+│ ; XREFS: CALL 0x000043a8  CALL 0x0000795c  CALL 0x00007a1c  
+│ ; XREFS: CALL 0x0000aed0  CALL 0x0000af90  
+┌ 2: fcn.00000000 ();
+│ 0x00000000  ~   4000           invalid
+| // true: 0x00000002
+  ; CALL XREF from aav.0x00000400 @ +0x8d0
+  ; CALL XREF from aav.0x00002f9c @ +0x12f4
+  ; CALL XREFS from syscall.0 @ +0xcb8, +0x422c
+┌ 8: fcn.00006c48 ();
+│ 0x00006c48      3a000000       dsrl zero, zero, 0
+│ ;-- syscall.0:
+└ 0x00006c4c      0c000000       syscall
+
+  ; XREFS: CALL 0x00000d28  CALL 0x00000de8  CALL 0x000042e8  
+  ; XREFS: CALL 0x000043a8  CALL 0x0000795c  CALL 0x00007a1c  
+  ; XREFS: CALL 0x0000aed0  CALL 0x0000af90  
+┌ 6: fcn.00000002 ();
+│ 0x00000002                     unaligned
+│ 0x00000003                     unaligned
+│ ;-- aav.0x00000004:
+│ ; XREFS: UNKNOWN 0x00000d64  UNKNOWN 0x00000e28  UNKNOWN 0x00004324  
+│ ; XREFS: UNKNOWN 0x000043e8  UNKNOWN 0x00007998  UNKNOWN 0x00007a5c  
+│ ; XREFS: UNKNOWN 0x0000af0c  UNKNOWN 0x0000afd0  
+└ 0x00000004      0c000000       syscall
+
+  ; CALL XREF from aav.0x00000400 @ +0x1ce0
+  ; CALL XREF from aav.0x00002f9c @ +0x2704
+  ; CALL XREFS from syscall.0 @ +0x20c8, +0x563c
+┌ 52: fcn.0000cc08 ();
+│ 0x0000cc08      60600034       ori zero, zero, 0x6060
+│ 0x0000cc0c      34280038       xori zero, zero, 0x2834
+│ 0x0000cc10      382c0000       dsll a1, zero, 0x10
+│ 0x0000cc14      02830055       bnel t0, zero, -0x127e0
+│ 0x0000cc18      950b0034       ori zero, zero, 0xb95
+  false: 0x0000cc1c
+│ 0x0000cc1c      34280060       daddi zero, zero, 0x2834
+│ 0x0000cc20      60600034       ori zero, zero, 0x6060
+│ 0x0000cc24      3428001e       bgtz s0, 0x16cf8
+│ 0x0000cc28      1e120060       daddi zero, zero, 0x121e
+  false: 0x0000cc2c
+│ 0x0000cc2c      60600034       ori zero, zero, 0x6060
+│ ; CODE XREF from aav.0x00000400 @ +0x76c
+│ 0x0000cc30      34280038       xori zero, zero, 0x2834
+│ 0x0000cc34      382c0000       dsll a1, zero, 0x10
+└ 0x0000cc38      02730056       bnel s0, zero, 0x29844
+

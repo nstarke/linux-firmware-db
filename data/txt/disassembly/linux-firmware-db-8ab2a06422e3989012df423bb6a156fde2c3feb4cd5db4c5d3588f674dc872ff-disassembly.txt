@@ -1,0 +1,38 @@
+│ ; CODE XREF from entry0 @ 0x16c0e0c
+│ 0x016b0e18      02400078       shf.b w0, w8, 0
+│ 0x016b0e1c      01d2bda1       sb sp, -0x2dff(t5)
+│ 0x016b0e20      a2c09d91       lbu sp, -0x3f5e(t4)
+│ 0x016b0e24      005522c7       lwc1 f2, 0x5500(t9)
+│ ; CODE XREF from entry0 @ +0x1c
+│ 0x016b0e28      5048005c       bgtzl zero, 0x16c2f6c
+
+  ;-- pc:
+  ;-- r15:
+┌ 36: entry0 ();
+│ 0x016c0e00      00c040a8       swl zero, -0x4000(v0)
+│ 0x016c0e04      00c000a2       sb zero, -0x4000(s0)
+│ 0x016c0e08      00d0c056       bnel s6, zero, 0x16b4e0c
+│ 0x016c0e0c      02c0c057       bnel fp, zero, 0x16b0e18
+| // true: 0x016b0e18  false: 0x016c0e14
+  ; CALL XREF from aav.0x016e3600 @ +0x9ae0
+┌ 4: fcn.01010048 ();
+└ 0x01010048      3640005c       bgtzl zero, 0x1020124
+
+  ; CALL XREF from segment.LOAD7 @ +0x22d8
+┌ 12: fcn.017954d4 ();
+│ 0x017954d4      24400078       st.b w0, (t0)
+│ 0x017954d8      632c1528       slti s5, zero, 0x2c63
+└ 0x017954dc      42c13091       lbu s0, -0x3ebe(t1)
+
+│ 0x017bdac0      62dc9191       lbu s1, -0x239e(t4)
+│ 0x017bdac4      03c48291       lbu v0, -0x3bfd(t4)
+
+  ; CALL XREF from aav.0x01579698 @ +0xcb8
+  ; CALL XREF from aav.0x0157ad90 @ +0x68
+┌ 24: fcn.017ccd98 ();
+│ 0x017ccd98      504cfd0f       jal 0xff53140
+│ 0x017ccd9c      48c30016       bnez s0, 0x17bdac0
+| // true: 0x017bdac0  false: 0x017ccda4
+│ 0x017ccda4      f15f0376       jalx 0x80d7fc4
+│ 0x017ccda8      08f44221       addi v0, t2, -0xbf8
+
